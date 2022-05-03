@@ -6,7 +6,7 @@ use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Meditation extends Model
+class Breath extends Model
 {
     use HasFactory;
 

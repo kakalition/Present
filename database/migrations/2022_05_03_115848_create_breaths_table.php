@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Breath;
-use App\Models\Meditation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('breaths', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Meditation::class);
-            $table->foreignIdFor(Breath::class);
-            $table->bigInteger('user_id');
-            $table->date('date');
-            $table->string('comment');
-            $table->decimal('rating', 2, 1, true);
+            $table->string('duration_json');
+            $table->string('short_description');
+            $table->string('author_name');
+            $table->date('published_date');
+            $table->bigInteger('total_saved');
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('breaths');
     }
 };
