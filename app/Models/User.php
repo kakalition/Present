@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\SavedMeditation;
+use App\Models\SavedBreathing;
+use App\Models\History;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -41,4 +44,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function savedMeditation() {
+        return $this->hasMany(SavedMeditation::class);
+    }
+
+    public function savedBreathing() {
+        return $this->hasMany(SavedBreathing::class);
+    }
+
+    public function history() {
+        return $this->hasMany(History::class);
+    }
 }
