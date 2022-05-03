@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use \app\Models\SavedMeditation;
-use \app\Models\SavedBreathing;
-use \app\Models\History;
+use App\Models\SavedMeditation;
+use App\Models\SavedBreathing;
+use App\Models\History;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
