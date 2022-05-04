@@ -77,8 +77,6 @@ export const CommonButton = (props) => {
         }
     }
 
-    console.log(className);
-
     return (
         <button
             className={className}

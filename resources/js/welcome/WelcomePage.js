@@ -1,4 +1,4 @@
-import { React, StrictMode } from "react";
+import { React, cloneElement, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { CommonButton } from "../common-component/CommonButton";
 
@@ -37,15 +37,23 @@ export default function WelcomePage(props) {
                     padding="p-6"
                     textSize="text-3xl"
                 />
+
+                <img
+                    src={
+                        props.publicpath + "/illustrations/meditation.svg"
+                    }
+                    alt="jkdsnfkjdfs"
+                />
             </div>
         </div>
     );
 }
 
 if (document.getElementById("welcome-root")) {
-    createRoot(document.getElementById("welcome-root")).render(
-        <StrictMode>
-            <WelcomePage />
-        </StrictMode>
-    );
+    const element = document.getElementById("welcome-root");
+    const props = Object.assign({}, element.dataset);
+    const root = cloneElement(<WelcomePage />, props);
+    console.log(props.publicpath)
+
+    createRoot(element).render(root);
 }

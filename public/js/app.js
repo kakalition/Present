@@ -2257,7 +2257,6 @@ var CommonButton = function CommonButton(props) {
       }
   }
 
-  console.log(className);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     className: className,
     type: "button",
@@ -2384,15 +2383,20 @@ function WelcomePage(props) {
         text: "Get started",
         padding: "p-6",
         textSize: "text-3xl"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        src: props.publicpath + "/illustrations/meditation.svg",
+        alt: "jkdsnfkjdfs"
       })]
     })]
   });
 }
 
 if (document.getElementById("welcome-root")) {
-  (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById("welcome-root")).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(WelcomePage, {})
-  }));
+  var element = document.getElementById("welcome-root");
+  var props = Object.assign({}, element.dataset);
+  var root = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(WelcomePage, {}), props);
+  console.log(props.publicpath);
+  (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(element).render(root);
 }
 
 /***/ }),
