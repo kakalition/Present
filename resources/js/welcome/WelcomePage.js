@@ -1,47 +1,22 @@
 import { React, cloneElement, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { CommonButton } from "../common-component/CommonButton";
+import { MainContent } from "./components/MainContent";
+import { WelcomeHeader } from "./components/WelcomeHeader";
 
 export default function WelcomePage(props) {
-    const hspace = "h-8";
-
     return (
-        <div className="grid h-screen w-screen bg-web-bg px-[3rem] pt-[3rem] lg:grid-cols-12">
-            <p className="font-poppins text-3xl font-semibold text-black">
-                Present
-            </p>
-            <div className="col-end-13 justify-self-end ">
-                <CommonButton buttonType="tertiary" text="Login" />
+        <div className="grid h-screen w-screen overflow-x-hidden bg-web-bg px-[3rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4">
+            <div className="col-start-1 col-end-13">
+                <WelcomeHeader />
             </div>
 
-            <div className="col-start-1 col-end-13">
-                <h1 className="font-poppins text-7xl font-semibold leading-tight">
-                    Bring <span className="text-sky-400">calmness</span>
-                    <br />
-                    to your <span className="text-orange-300">mind</span>.
-                </h1>
-
-                <div className={hspace} />
-
-                <h2 className="col-start-1 col-end-9 font-poppins text-xl font-light leading-tight">
-                    Habitual meditation can help reduce
-                    <br />
-                    anxiety and improve stress reactivity.
-                </h2>
-
-                <div className={hspace} />
-
-                <CommonButton
-                    buttonType="primary"
-                    text="Get started"
-                    padding="p-6"
-                    textSize="text-3xl"
-                />
-
+            <div className="col-start-1 col-end-7 row-start-2 row-end-6 self-center">
+                <MainContent />
+            </div>
+            <div className="relative -right-72 col-start-7 col-end-13 row-start-2 row-end-6 self-center">
                 <img
-                    src={
-                        props.publicpath + "/illustrations/meditation.svg"
-                    }
+                    className="scale-125"
+                    src={props.publicpath + "/illustrations/meditation.svg"}
                     alt="jkdsnfkjdfs"
                 />
             </div>
@@ -53,7 +28,7 @@ if (document.getElementById("welcome-root")) {
     const element = document.getElementById("welcome-root");
     const props = Object.assign({}, element.dataset);
     const root = cloneElement(<WelcomePage />, props);
-    console.log(props.publicpath)
+    console.log(props.publicpath);
 
     createRoot(element).render(root);
 }

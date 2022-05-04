@@ -2340,53 +2340,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common-component/CommonButton */ "./resources/js/common-component/CommonButton.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_MainContent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/MainContent */ "./resources/js/welcome/components/MainContent.js");
+/* harmony import */ var _components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/WelcomeHeader */ "./resources/js/welcome/components/WelcomeHeader.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 
 function WelcomePage(props) {
-  var hspace = "h-8";
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "grid h-screen w-screen bg-web-bg px-[3rem] pt-[3rem] lg:grid-cols-12",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      className: "font-poppins text-3xl font-semibold text-black",
-      children: "Present"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "col-end-13 justify-self-end ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__.CommonButton, {
-        buttonType: "tertiary",
-        text: "Login"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "grid h-screen w-screen overflow-x-hidden bg-web-bg px-[3rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "col-start-1 col-end-13",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
-        className: "font-poppins text-7xl font-semibold leading-tight",
-        children: ["Bring ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-          className: "text-sky-400",
-          children: "calmness"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "to your ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-          className: "text-orange-300",
-          children: "mind"
-        }), "."]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: hspace
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
-        className: "col-start-1 col-end-9 font-poppins text-xl font-light leading-tight",
-        children: ["Habitual meditation can help reduce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "anxiety and improve stress reactivity."]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: hspace
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__.CommonButton, {
-        buttonType: "primary",
-        text: "Get started",
-        padding: "p-6",
-        textSize: "text-3xl"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_3__.WelcomeHeader, {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "col-start-1 col-end-7 row-start-2 row-end-6 self-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_MainContent__WEBPACK_IMPORTED_MODULE_2__.MainContent, {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "relative -right-72 col-start-7 col-end-13 row-start-2 row-end-6 self-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        className: "scale-125",
         src: props.publicpath + "/illustrations/meditation.svg",
         alt: "jkdsnfkjdfs"
-      })]
+      })
     })]
   });
 }
@@ -2394,9 +2372,90 @@ function WelcomePage(props) {
 if (document.getElementById("welcome-root")) {
   var element = document.getElementById("welcome-root");
   var props = Object.assign({}, element.dataset);
-  var root = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(WelcomePage, {}), props);
+  var root = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(WelcomePage, {}), props);
   console.log(props.publicpath);
   (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(element).render(root);
+}
+
+/***/ }),
+
+/***/ "./resources/js/welcome/components/MainContent.js":
+/*!********************************************************!*\
+  !*** ./resources/js/welcome/components/MainContent.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MainContent": () => (/* binding */ MainContent)
+/* harmony export */ });
+/* harmony import */ var _common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButton */ "./resources/js/common-component/CommonButton.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function MainContent(props) {
+  var hspace = "h-8";
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "w-full",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h1", {
+      className: "font-poppins text-7xl font-semibold leading-tight",
+      children: ["Bring ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "text-sky-400",
+        children: "calmness"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "to your ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "text-orange-300",
+        children: "mind"
+      }), "."]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: hspace
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+      className: "col-start-1 col-end-9 font-poppins text-2xl font-light leading-tight",
+      children: ["Habitual meditation can help reduce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "anxiety and improve stress reactivity."]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: hspace
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__.CommonButton, {
+      buttonType: "primary",
+      text: "Get started",
+      padding: "p-6",
+      textSize: "text-3xl"
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/welcome/components/WelcomeHeader.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/welcome/components/WelcomeHeader.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "WelcomeHeader": () => (/* binding */ WelcomeHeader)
+/* harmony export */ });
+/* harmony import */ var _common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButton */ "./resources/js/common-component/CommonButton.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function WelcomeHeader() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex w-full flex-row items-center justify-between",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-poppins text-3xl font-semibold text-black",
+      children: "Present"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "col-end-13 justify-self-end ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__.CommonButton, {
+        buttonType: "tertiary",
+        text: "Login"
+      })
+    })]
+  });
 }
 
 /***/ }),
