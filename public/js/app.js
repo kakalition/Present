@@ -2352,7 +2352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "grid h-screen w-screen overflow-hidden bg-web-bg px-[6rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4",
+    className: "grid h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-hidden bg-web-bg px-[6rem] pt-[3rem] md:grid-cols-8 md:gap-3 lg:grid-cols-12 lg:gap-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "col-start-1 col-end-13",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_3__.WelcomeHeader, {})
