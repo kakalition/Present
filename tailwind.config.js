@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         "web-bg": "#F9FDFF",
-        "primary-button": "#0050E6",
+        "primary-button": "#1BABFC",
         "secondary-button": "#393939",
         "danger-button": "#DA1E28"
       },

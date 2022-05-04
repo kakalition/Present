@@ -8,16 +8,20 @@ import { ClassComposer } from "../utils/ClassComposer";
  * @returns
  */
 export const CommonButton = (props) => {
-    let className = "p-3";
+    let className = "";
+    let textSize = props.textSize ?? "text-lg";
+    let padding = props.padding ?? "p-3";
 
     switch (props.buttonType) {
         case "primary": {
             className = ClassComposer(
                 className,
+                textSize,
+                padding,
                 "pr-16",
                 "bg-primary-button",
                 "text-white",
-                "text-lg",
+                "font-semibold",
                 "font-ibm-plex-sans",
                 "hover:brightness-[90%]",
                 "transition-all",
@@ -28,10 +32,10 @@ export const CommonButton = (props) => {
         case "secondary": {
             className = ClassComposer(
                 className,
+                textSize,
                 "pr-16",
                 "bg-secondary-button",
                 "text-white",
-                "text-lg",
                 "font-ibm-plex-sans",
                 "hover:brightness-[90%]",
                 "transition-all",
@@ -42,6 +46,7 @@ export const CommonButton = (props) => {
         case "tertiary": {
             className = ClassComposer(
                 className,
+                padding,
                 "pr-16",
                 "border-2 border-primary-button",
                 "text-primary-button",
@@ -58,10 +63,11 @@ export const CommonButton = (props) => {
         case "ghost": {
             className = ClassComposer(
                 className,
+                textSize,
+                padding,
                 "px-5",
                 "py-3",
                 "text-primary-button",
-                "text-lg",
                 "font-ibm-plex-sans",
                 "transition-all",
                 "duration-100",

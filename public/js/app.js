@@ -2225,30 +2225,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CommonButton = function CommonButton(props) {
-  var className = "p-3";
+  var _props$textSize, _props$padding;
+
+  var className = "";
+  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "text-lg";
+  var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "p-3";
 
   switch (props.buttonType) {
     case "primary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-16", "bg-primary-button", "text-white", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "pr-16", "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "secondary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-16", "bg-secondary-button", "text-white", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, "pr-16", "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "tertiary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-16", "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, padding, "pr-16", "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
         break;
       }
 
     case "ghost":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "px-5", "py-3", "text-primary-button", "text-lg", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "px-5", "py-3", "text-primary-button", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
         break;
       }
   }
@@ -2345,17 +2349,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function WelcomePage(props) {
+  var hspace = "h-8";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "grid h-screen w-screen bg-web-bg px-[3rem] pt-[3rem] lg:grid-cols-12",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       className: "font-poppins text-3xl font-semibold text-black",
       children: "Present"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "col-end-13 justify-self-end",
+      className: "col-end-13 justify-self-end ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__.CommonButton, {
         buttonType: "tertiary",
         text: "Login"
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "col-start-1 col-end-13",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        className: "font-poppins text-7xl font-semibold leading-tight",
+        children: ["Bring ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-sky-400",
+          children: "calmness"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "to your ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-orange-300",
+          children: "mind"
+        }), "."]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: hspace
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
+        className: "col-start-1 col-end-9 font-poppins text-xl font-light leading-tight",
+        children: ["Habitual meditation can help reduce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "anxiety and improve stress reactivity."]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: hspace
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__.CommonButton, {
+        buttonType: "primary",
+        text: "Get started",
+        padding: "p-6",
+        textSize: "text-3xl"
+      })]
     })]
   });
 }

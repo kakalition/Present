@@ -424,14 +424,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.col-start-5 {
-  grid-column-start: 5;
+.col-start-1 {
+  grid-column-start: 1;
 }
-.col-end-12 {
-  grid-column-end: 12;
+.col-start-11 {
+  grid-column-start: 11;
 }
 .col-end-13 {
   grid-column-end: 13;
+}
+.col-end-9 {
+  grid-column-end: 9;
 }
 .grid {
   display: grid;
@@ -439,8 +442,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-screen {
   height: 100vh;
 }
+.h-4 {
+  height: 1rem;
+}
+.h-8 {
+  height: 2rem;
+}
 .w-screen {
   width: 100vw;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .place-self-end {
   place-self: end;
@@ -456,11 +470,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-primary-button {
   --tw-border-opacity: 1;
-  border-color: rgb(0 80 230 / var(--tw-border-opacity));
+  border-color: rgb(27 171 252 / var(--tw-border-opacity));
 }
 .bg-primary-button {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 80 230 / var(--tw-bg-opacity));
+  background-color: rgb(27 171 252 / var(--tw-bg-opacity));
 }
 .bg-secondary-button {
   --tw-bg-opacity: 1;
@@ -477,56 +491,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-3 {
   padding: 0.75rem;
 }
-.p-\[8rem\] {
-  padding: 8rem;
-}
-.p-\[6rem\] {
-  padding: 6rem;
-}
-.p-2 {
-  padding: 0.5rem;
+.p-8 {
+  padding: 2rem;
 }
 .p-6 {
   padding: 1.5rem;
-}
-.p-4 {
-  padding: 1rem;
-}
-.px-\[6rem\] {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-.px-\[3rem\] {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-.pr-12 {
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.px-\[3rem\] {
+  padding-left: 3rem;
   padding-right: 3rem;
-}
-.pt-\[2rem\] {
-  padding-top: 2rem;
-}
-.pt-\[3rem\] {
-  padding-top: 3rem;
 }
 .pr-16 {
   padding-right: 4rem;
+}
+.pt-\[3rem\] {
+  padding-top: 3rem;
 }
 .font-ibm-plex-sans {
   font-family: IBM Plex Sans, sans-serif;
@@ -542,8 +529,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .font-semibold {
   font-weight: 600;
+}
+.font-light {
+  font-weight: 300;
+}
+.leading-tight {
+  line-height: 1.25;
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -551,33 +560,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-primary-button {
   --tw-text-opacity: 1;
-  color: rgb(0 80 230 / var(--tw-text-opacity));
+  color: rgb(27 171 252 / var(--tw-text-opacity));
 }
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-sky-400 {
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity));
+}
+.text-orange-300 {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity));
 }
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.duration-300 {
-  transition-duration: 300ms;
-}
-.duration-75 {
-  transition-duration: 75ms;
-}
 .duration-100 {
   transition-duration: 100ms;
 }
 .hover\:bg-primary-button:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 80 230 / var(--tw-bg-opacity));
-}
-.hover\:bg-slate-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  background-color: rgb(27 171 252 / var(--tw-bg-opacity));
 }
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
@@ -590,15 +597,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:brightness-\[90\%\]:hover {
   --tw-brightness: brightness(90%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.focus\:outline-offset-4:focus {
-  outline-offset: 4px;
-}
-.focus\:outline-white:focus {
-  outline-color: #fff;
-}
-.focus\:outline-black:focus {
-  outline-color: #000;
 }
 @media (min-width: 1024px) {
 
