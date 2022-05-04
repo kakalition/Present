@@ -487,6 +487,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .row-end-7 {
   grid-row-end: 7;
 }
+.mx-\[6rem\] {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
 .flex {
   display: flex;
 }
@@ -618,6 +622,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 3rem;
   padding-right: 3rem;
 }
+.px-\[5rem\] {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.px-\[6rem\] {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.px-\[8rem\] {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
 .pr-16 {
   padding-right: 4rem;
 }
@@ -632,6 +648,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-24 {
   padding-right: 6rem;
+}
+.pt-\[5rem\] {
+  padding-top: 5rem;
 }
 .font-ibm-plex-sans {
   font-family: IBM Plex Sans, sans-serif;
