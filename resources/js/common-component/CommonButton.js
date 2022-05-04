@@ -9,8 +9,9 @@ import { ClassComposer } from "../utils/ClassComposer";
  */
 export const CommonButton = (props) => {
     let className = "";
-    let textSize = props.textSize ?? "text-lg";
-    let padding = props.padding ?? "p-3";
+    const textSize = props.textSize ?? "text-lg";
+    const padding = props.padding ?? "p-3";
+    const rightPadding = props.rightPadding ?? "pr-16";
 
     switch (props.buttonType) {
         case "primary": {
@@ -18,7 +19,7 @@ export const CommonButton = (props) => {
                 className,
                 textSize,
                 padding,
-                "pr-16",
+                rightPadding,
                 "bg-primary-button",
                 "text-white",
                 "font-semibold",
@@ -33,7 +34,7 @@ export const CommonButton = (props) => {
             className = ClassComposer(
                 className,
                 textSize,
-                "pr-16",
+                rightPadding,
                 "bg-secondary-button",
                 "text-white",
                 "font-ibm-plex-sans",
@@ -47,7 +48,7 @@ export const CommonButton = (props) => {
             className = ClassComposer(
                 className,
                 padding,
-                "pr-16",
+                rightPadding,
                 "border-2 border-primary-button",
                 "text-primary-button",
                 "text-lg",

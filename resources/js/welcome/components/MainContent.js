@@ -25,6 +25,7 @@ export function MainContent(props) {
                 buttonType="primary"
                 text="Get started"
                 padding="p-6"
+                rightPadding="pr-24"
                 textSize="text-3xl"
             />
         </div>

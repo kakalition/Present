@@ -2225,28 +2225,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CommonButton = function CommonButton(props) {
-  var _props$textSize, _props$padding;
+  var _props$textSize, _props$padding, _props$rightPadding;
 
   var className = "";
   var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "text-lg";
   var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "p-3";
+  var rightPadding = (_props$rightPadding = props.rightPadding) !== null && _props$rightPadding !== void 0 ? _props$rightPadding : "pr-16";
 
   switch (props.buttonType) {
     case "primary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "pr-16", "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, rightPadding, "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "secondary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, "pr-16", "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, rightPadding, "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "tertiary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, padding, "pr-16", "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, padding, rightPadding, "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
         break;
       }
 
@@ -2419,6 +2420,7 @@ function MainContent(props) {
       buttonType: "primary",
       text: "Get started",
       padding: "p-6",
+      rightPadding: "pr-24",
       textSize: "text-3xl"
     })]
   });
