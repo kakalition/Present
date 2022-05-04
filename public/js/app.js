@@ -2360,9 +2360,9 @@ function WelcomePage(props) {
       className: "col-start-1 col-end-7 row-start-2 row-end-6 self-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_MainContent__WEBPACK_IMPORTED_MODULE_2__.MainContent, {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "relative -right-72 bottom-4 col-start-7 col-end-13 row-start-2 row-end-6 self-center",
+      className: "relative -right-72 bottom-2 col-start-7 col-end-13 row-start-2 row-end-6 self-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        className: "scale-[1.4]",
+        className: "scale-[1.3]",
         src: props.publicpath + "/illustrations/meditation.svg",
         alt: "jkdsnfkjdfs"
       })

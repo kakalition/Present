@@ -13,9 +13,9 @@ export default function WelcomePage(props) {
             <div className="col-start-1 col-end-7 row-start-2 row-end-6 self-center">
                 <MainContent />
             </div>
-            <div className="relative -right-72 bottom-4 col-start-7 col-end-13 row-start-2 row-end-6 self-center">
+            <div className="relative -right-72 bottom-2 col-start-7 col-end-13 row-start-2 row-end-6 self-center">
                 <img
-                    className="scale-[1.4]"
+                    className="scale-[1.3]"
                     src={props.publicpath + "/illustrations/meditation.svg"}
                     alt="jkdsnfkjdfs"
                 />
