@@ -424,6 +424,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.col-start-5 {
+  grid-column-start: 5;
+}
 .col-end-12 {
   grid-column-end: 12;
 }
@@ -438,6 +441,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-screen {
   width: 100vw;
+}
+.place-self-end {
+  place-self: end;
+}
+.self-end {
+  align-self: flex-end;
+}
+.justify-self-end {
+  justify-self: end;
 }
 .border-2 {
   border-width: 2px;
@@ -471,6 +483,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-\[6rem\] {
   padding: 6rem;
 }
+.p-2 {
+  padding: 0.5rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
 .px-\[6rem\] {
   padding-left: 6rem;
   padding-right: 6rem;
@@ -478,6 +499,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-\[3rem\] {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .pr-12 {
   padding-right: 3rem;
@@ -487,6 +524,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-\[3rem\] {
   padding-top: 3rem;
+}
+.pr-16 {
+  padding-right: 4rem;
 }
 .font-ibm-plex-sans {
   font-family: IBM Plex Sans, sans-serif;
@@ -517,9 +557,48 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.duration-75 {
+  transition-duration: 75ms;
+}
+.duration-100 {
+  transition-duration: 100ms;
+}
+.hover\:bg-primary-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 80 230 / var(--tw-bg-opacity));
+}
+.hover\:bg-slate-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+.hover\:bg-slate-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .hover\:brightness-\[90\%\]:hover {
   --tw-brightness: brightness(90%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.focus\:outline-offset-4:focus {
+  outline-offset: 4px;
+}
+.focus\:outline-white:focus {
+  outline-color: #fff;
+}
+.focus\:outline-black:focus {
+  outline-color: #000;
 }
 @media (min-width: 1024px) {
 

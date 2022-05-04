@@ -2218,6 +2218,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  *
  * @param {string} props.buttonType
+ * @param {string} props.text
+ * @param {callback} props.onClickCallback
  * @returns
  */
 
@@ -2228,25 +2230,25 @@ var CommonButton = function CommonButton(props) {
   switch (props.buttonType) {
     case "primary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-12", "bg-primary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-16", "bg-primary-button", "text-white", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "secondary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-12", "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-16", "bg-secondary-button", "text-white", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "tertiary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-12", "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-16", "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
         break;
       }
 
     case "ghost":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "text-primary", "font-ibm-plex-sans");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "px-5", "py-3", "text-primary-button", "text-lg", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
         break;
       }
   }
@@ -2255,6 +2257,7 @@ var CommonButton = function CommonButton(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     className: className,
     type: "button",
+    onClick: props.onClickCallback,
     children: props.text
   });
 };
@@ -2343,12 +2346,12 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "h-screen w-screen bg-web-bg px-[3rem] pt-[3rem] grid lg:grid-cols-12",
+    className: "grid h-screen w-screen bg-web-bg px-[3rem] pt-[3rem] lg:grid-cols-12",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      className: "font-poppins text-black font-semibold text-3xl",
+      className: "font-poppins text-3xl font-semibold text-black",
       children: "Present"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "col-end-13",
+      className: "col-end-13 justify-self-end",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__.CommonButton, {
         buttonType: "tertiary",
         text: "Login"
