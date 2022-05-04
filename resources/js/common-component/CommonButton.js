@@ -15,6 +15,7 @@ export const CommonButton = (props) => {
                 "pr-12",
                 "bg-primary-button",
                 "text-white",
+                "font-ibm-plex-sans",
                 "hover:brightness-[90%]"
             );
             break;
@@ -25,6 +26,7 @@ export const CommonButton = (props) => {
                 "pr-12",
                 "bg-secondary-button",
                 "text-white",
+                "font-ibm-plex-sans",
                 "hover:brightness-[90%]"
             );
             break;
@@ -33,14 +35,16 @@ export const CommonButton = (props) => {
             className = ClassComposer(
                 className,
                 "pr-12",
-                "border-1 border-primary",
+                "border-2 border-primary-button",
                 "text-primary-button",
+                "text-lg",
+                "font-ibm-plex-sans",
                 "hover:brightness-[90%]"
             );
             break;
         }
         case "ghost": {
-            className = ClassComposer(className, "text-primary");
+            className = ClassComposer(className, "text-primary", "font-ibm-plex-sans",);
             break;
         }
     }

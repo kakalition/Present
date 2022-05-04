@@ -424,8 +424,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.flex {
-  display: flex;
+.col-end-12 {
+  grid-column-end: 12;
+}
+.col-end-13 {
+  grid-column-end: 13;
+}
+.grid {
+  display: grid;
 }
 .h-screen {
   height: 100vh;
@@ -433,19 +439,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-screen {
   width: 100vw;
 }
-.items-center {
-  align-items: center;
+.border-2 {
+  border-width: 2px;
 }
-.justify-center {
-  justify-content: center;
-}
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-.bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+.border-primary-button {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 80 230 / var(--tw-border-opacity));
 }
 .bg-primary-button {
   --tw-bg-opacity: 1;
@@ -455,17 +454,56 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(57 57 57 / var(--tw-bg-opacity));
 }
-.p-4 {
-  padding: 1rem;
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
-.p-2 {
-  padding: 0.5rem;
+.bg-web-bg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 253 255 / var(--tw-bg-opacity));
 }
 .p-3 {
   padding: 0.75rem;
 }
+.p-\[8rem\] {
+  padding: 8rem;
+}
+.p-\[6rem\] {
+  padding: 6rem;
+}
+.px-\[6rem\] {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.px-\[3rem\] {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
 .pr-12 {
   padding-right: 3rem;
+}
+.pt-\[2rem\] {
+  padding-top: 2rem;
+}
+.pt-\[3rem\] {
+  padding-top: 3rem;
+}
+.font-ibm-plex-sans {
+  font-family: IBM Plex Sans, sans-serif;
+}
+.font-poppins {
+  font-family: Poppins, sans-serif;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.font-semibold {
+  font-weight: 600;
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -475,11 +513,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(0 80 230 / var(--tw-text-opacity));
 }
-.hover\:brightness-75:hover {
-  --tw-brightness: brightness(.75);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .hover\:brightness-\[90\%\]:hover {
   --tw-brightness: brightness(90%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+@media (min-width: 1024px) {
+
+  .lg\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
 }
