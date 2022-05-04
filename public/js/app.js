@@ -2201,6 +2201,66 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/common-component/CommonButton.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/common-component/CommonButton.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CommonButton": () => (/* binding */ CommonButton)
+/* harmony export */ });
+/* harmony import */ var _utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/ClassComposer */ "./resources/js/utils/ClassComposer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+/**
+ *
+ * @param {string} props.buttonType
+ * @returns
+ */
+
+
+var CommonButton = function CommonButton(props) {
+  var className = "p-3";
+
+  switch (props.buttonType) {
+    case "primary":
+      {
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-12", "bg-primary-button", "text-white", "hover:brightness-[90%]");
+        break;
+      }
+
+    case "secondary":
+      {
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-12", "bg-secondary-button", "text-white", "hover:brightness-[90%]");
+        break;
+      }
+
+    case "tertiary":
+      {
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "pr-12", "border-1 border-primary", "text-primary-button", "hover:brightness-[90%]");
+        break;
+      }
+
+    case "ghost":
+      {
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, "text-primary");
+        break;
+      }
+  }
+
+  console.log(className);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    className: className,
+    type: "button",
+    children: props.text
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/play/Play.js":
 /*!***********************************!*\
   !*** ./resources/js/play/Play.js ***!
@@ -2237,6 +2297,29 @@ if (document.getElementById("test-view")) {
 
 /***/ }),
 
+/***/ "./resources/js/utils/ClassComposer.js":
+/*!*********************************************!*\
+  !*** ./resources/js/utils/ClassComposer.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ClassComposer": () => (/* binding */ ClassComposer)
+/* harmony export */ });
+var ClassComposer = function ClassComposer(initialClass) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  return args.reduce(function (previous, current) {
+    return previous + " " + current;
+  }, initialClass);
+};
+
+/***/ }),
+
 /***/ "./resources/js/welcome/WelcomePage.js":
 /*!*********************************************!*\
   !*** ./resources/js/welcome/WelcomePage.js ***!
@@ -2251,22 +2334,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common-component/CommonButton */ "./resources/js/common-component/CommonButton.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 function WelcomePage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "h-screen w-screen bg-slate-900"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "flex h-screen w-screen items-center justify-center bg-slate-900",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_2__.CommonButton, {
+        buttonType: "primary",
+        text: "Test"
+      })
     })
   });
 }
 
 if (document.getElementById("welcome-root")) {
-  (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById("welcome-root")).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(WelcomePage, {})
+  (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById("welcome-root")).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(WelcomePage, {})
   }));
 }
 

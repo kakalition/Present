@@ -4,7 +4,13 @@ module.exports = {
     "./resources/**/*.blade.php",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary-button": "#0050E6",
+        "secondary-button": "#393939",
+        "danger-button": "#DA1E28"
+      }
+    },
   },
   plugins: [],
 }
