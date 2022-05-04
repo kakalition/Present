@@ -2352,7 +2352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "grid h-screen w-screen overflow-x-hidden bg-web-bg px-[6rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4",
+    className: "grid h-screen w-screen overflow-hidden bg-web-bg px-[6rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "col-start-1 col-end-13",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_3__.WelcomeHeader, {})
@@ -2360,9 +2360,9 @@ function WelcomePage(props) {
       className: "col-start-1 col-end-7 row-start-2 row-end-6 self-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_MainContent__WEBPACK_IMPORTED_MODULE_2__.MainContent, {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "relative -right-72 col-start-7 col-end-13 row-start-2 row-end-6 self-center",
+      className: "relative -right-72 bottom-4 col-start-7 col-end-13 row-start-2 row-end-6 self-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        className: "scale-125",
+        className: "scale-[1.4]",
         src: props.publicpath + "/illustrations/meditation.svg",
         alt: "jkdsnfkjdfs"
       })

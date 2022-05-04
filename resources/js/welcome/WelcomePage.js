@@ -5,7 +5,7 @@ import { WelcomeHeader } from "./components/WelcomeHeader";
 
 export default function WelcomePage(props) {
     return (
-        <div className="grid h-screen w-screen overflow-x-hidden bg-web-bg px-[6rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4">
+        <div className="grid h-screen w-screen overflow-hidden bg-web-bg px-[6rem] pt-[3rem] lg:grid-cols-12 lg:grid-rows-6 lg:gap-4">
             <div className="col-start-1 col-end-13">
                 <WelcomeHeader />
             </div>
@@ -13,9 +13,9 @@ export default function WelcomePage(props) {
             <div className="col-start-1 col-end-7 row-start-2 row-end-6 self-center">
                 <MainContent />
             </div>
-            <div className="relative -right-72 col-start-7 col-end-13 row-start-2 row-end-6 self-center">
+            <div className="relative -right-72 bottom-4 col-start-7 col-end-13 row-start-2 row-end-6 self-center">
                 <img
-                    className="scale-125"
+                    className="scale-[1.4]"
                     src={props.publicpath + "/illustrations/meditation.svg"}
                     alt="jkdsnfkjdfs"
                 />

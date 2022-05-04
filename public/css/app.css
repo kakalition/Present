@@ -448,6 +448,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-right-72 {
   right: -18rem;
 }
+.-bottom-24 {
+  bottom: -6rem;
+}
+.bottom-24 {
+  bottom: 6rem;
+}
+.bottom-12 {
+  bottom: 3rem;
+}
+.bottom-8 {
+  bottom: 2rem;
+}
+.bottom-6 {
+  bottom: 1.5rem;
+}
+.bottom-4 {
+  bottom: 1rem;
+}
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -528,6 +546,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-y: 1.25;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.scale-\[2\.0\] {
+  --tw-scale-x: 2.0;
+  --tw-scale-y: 2.0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-\[1\.5\] {
+  --tw-scale-x: 1.5;
+  --tw-scale-y: 1.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-\[1\.4\] {
+  --tw-scale-x: 1.4;
+  --tw-scale-y: 1.4;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .flex-row {
   flex-direction: row;
 }
@@ -557,6 +590,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-self-end {
   justify-self: end;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .overflow-x-hidden {
   overflow-x: hidden;
