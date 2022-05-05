@@ -9,9 +9,9 @@ import { ClassComposer } from "../utils/ClassComposer";
  */
 export const CommonButton = (props) => {
     let className = "";
-    const textSize = props.textSize ?? "text-lg";
-    const padding = props.padding ?? "p-3";
-    const rightPadding = props.rightPadding ?? "pr-16";
+    const textSize = props.textSize ?? "lg:text-lg md:text-base text-sm";
+    const padding = props.padding ?? "lg:p-3 p-2";
+    const rightPadding = props.rightPadding ?? "lg:pr-16 md:pr-12 pr-8";
 
     switch (props.buttonType) {
         case "primary": {
@@ -20,6 +20,7 @@ export const CommonButton = (props) => {
                 textSize,
                 padding,
                 rightPadding,
+                "whitespace-nowrap",
                 "bg-primary-button",
                 "text-white",
                 "font-semibold",
@@ -35,6 +36,7 @@ export const CommonButton = (props) => {
                 className,
                 textSize,
                 rightPadding,
+                "whitespace-nowrap",
                 "bg-secondary-button",
                 "text-white",
                 "font-ibm-plex-sans",
@@ -47,11 +49,12 @@ export const CommonButton = (props) => {
         case "tertiary": {
             className = ClassComposer(
                 className,
+                textSize,
                 padding,
                 rightPadding,
+                "whitespace-nowrap",
                 "border-2 border-primary-button",
                 "text-primary-button",
-                "text-lg",
                 "font-ibm-plex-sans",
                 "hover:brightness-[90%]",
                 "hover:text-white",
@@ -66,6 +69,7 @@ export const CommonButton = (props) => {
                 className,
                 textSize,
                 padding,
+                "whitespace-nowrap",
                 "px-5",
                 "py-3",
                 "text-primary-button",

@@ -2228,32 +2228,32 @@ var CommonButton = function CommonButton(props) {
   var _props$textSize, _props$padding, _props$rightPadding;
 
   var className = "";
-  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "text-lg";
-  var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "p-3";
-  var rightPadding = (_props$rightPadding = props.rightPadding) !== null && _props$rightPadding !== void 0 ? _props$rightPadding : "pr-16";
+  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "lg:text-lg md:text-base text-sm";
+  var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "lg:p-3 p-2";
+  var rightPadding = (_props$rightPadding = props.rightPadding) !== null && _props$rightPadding !== void 0 ? _props$rightPadding : "lg:pr-16 md:pr-12 pr-8";
 
   switch (props.buttonType) {
     case "primary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, rightPadding, "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, rightPadding, "whitespace-nowrap", "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "secondary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, rightPadding, "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, rightPadding, "whitespace-nowrap", "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "tertiary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, padding, rightPadding, "border-2 border-primary-button", "text-primary-button", "text-lg", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, rightPadding, "whitespace-nowrap", "border-2 border-primary-button", "text-primary-button", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
         break;
       }
 
     case "ghost":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "px-5", "py-3", "text-primary-button", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "whitespace-nowrap", "px-5", "py-3", "text-primary-button", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
         break;
       }
   }
@@ -2419,9 +2419,9 @@ function MainContent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__.CommonButton, {
       buttonType: "primary",
       text: "Get started",
-      padding: "p-6",
-      rightPadding: "pr-24",
-      textSize: "text-3xl"
+      padding: "p-2 md:p-4 lg:p-6",
+      rightPadding: "pr-12 md:pr-20 lg:pr-24",
+      textSize: "text-xl md:text-2xl lg:text-3xl"
     })]
   });
 }
@@ -2448,7 +2448,7 @@ function WelcomeHeader() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "flex w-full flex-row items-center justify-between",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-poppins text-3xl font-semibold text-black",
+      className: "font-poppins text-xl md:text-2xl lg:text-3xl font-semibold text-black",
       children: "Present"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "col-end-13 justify-self-end ",

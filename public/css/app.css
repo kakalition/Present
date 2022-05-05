@@ -623,6 +623,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-x-hidden {
   overflow-x: hidden;
 }
+.whitespace-nowrap {
+  white-space: nowrap;
+}
 .border-2 {
   border-width: 2px;
 }
@@ -672,6 +675,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-24 {
   padding: 6rem;
 }
+.p-1 {
+  padding: 0.25rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -720,6 +729,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-\[1rem\] {
   padding-top: 1rem;
+}
+.pr-8 {
+  padding-right: 2rem;
 }
 .font-ibm-plex-sans {
   font-family: IBM Plex Sans, sans-serif;
@@ -783,6 +795,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-\[calc\(0\.5rem\+1\.5vw\)\] {
   font-size: calc(0.5rem + 1.5vw);
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-semibold {
   font-weight: 600;
@@ -855,6 +871,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     gap: 0.75rem;
   }
 
+  .md\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
   .md\:px-\[4rem\] {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -862,6 +886,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:pt-\[2rem\] {
     padding-top: 2rem;
+  }
+
+  .md\:pr-12 {
+    padding-right: 3rem;
+  }
+
+  .md\:pr-20 {
+    padding-right: 5rem;
   }
 
   .md\:text-\[calc\(2rem\+2vw\)\] {
@@ -883,6 +915,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:text-\[calc\(0\.5rem\+1\.3vw\)\] {
     font-size: calc(0.5rem + 1.3vw);
   }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media (min-width: 1024px) {
 
@@ -896,6 +938,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:gap-4 {
     gap: 1rem;
+  }
+
+  .lg\:p-3 {
+    padding: 0.75rem;
+  }
+
+  .lg\:p-6 {
+    padding: 1.5rem;
   }
 
   .lg\:px-\[2rem\] {
@@ -916,7 +966,25 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 3rem;
   }
 
+  .lg\:pr-16 {
+    padding-right: 4rem;
+  }
+
+  .lg\:pr-24 {
+    padding-right: 6rem;
+  }
+
   .lg\:text-\[calc\(2rem\+2vw\)\] {
     font-size: calc(2rem + 2vw);
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
