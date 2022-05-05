@@ -1,26 +1,9 @@
 import { CommonButtonComponent } from "../../common-component/CommonButtonComponent";
 import { elementBinder } from "../../utils/ElementBinder";
 import SingleInputComponent from "../common/SingleInputComponent";
+import { RememberMeComponent } from "./components/RememberMeComponent";
 
-function RememberMeComponent(props) {
-    return (
-        <div className="flex items-center">
-            <input
-                className="h-5 w-5"
-                type="checkbox"
-                id="remember_me"
-                name="remember_me"
-                value="true"
-            />
-            <div className="w-2" />
-            <label className="font-ibm-plex-sans text-lg" htmlFor="remember_me">
-                Remember me?
-            </label>
-        </div>
-    );
-}
-
-export default function RegisterPage(props) {
+export default function LoginPage(props) {
     const arrowIcon = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -105,4 +88,4 @@ export default function RegisterPage(props) {
     );
 }
 
-elementBinder("register-view", <RegisterPage />);
+elementBinder("login-view", <LoginPage />);
