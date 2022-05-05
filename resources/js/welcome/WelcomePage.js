@@ -17,14 +17,14 @@ export default function WelcomePage(props) {
             lg:grid-cols-12 lg:gap-4 lg:px-[6rem] lg:pt-[3rem]"
             >
                 <div className="col-start-1 col-end-13">
-                    <WelcomeHeader buttonCallback={navigateToRegister} />
+                    <WelcomeHeader buttonCallback={navigateToLogin} />
                 </div>
 
                 <div
                     className="col-start-1 col-end-13 row-start-2 row-end-4 self-center
             lg:col-start-1 lg:col-end-7 lg:row-start-2 lg:row-end-6"
                 >
-                    <MainContent buttonCallback={navigateToLogin} />
+                    <MainContent buttonCallback={navigateToRegister} />
                 </div>
 
                 <div

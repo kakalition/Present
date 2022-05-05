@@ -51,7 +51,11 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::registerView(function() {
-            return view('auth.register');
+            $public_path = asset('storage/');
+
+            return view('auth.register')
+            ->with('public_path', $public_path);
+;
         });
     }
 }

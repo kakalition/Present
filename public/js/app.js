@@ -2164,9 +2164,59 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./play/Play */ "./resources/js/play/Play.js");
-
 __webpack_require__(/*! ./welcome/WelcomePage */ "./resources/js/welcome/WelcomePage.js");
+
+__webpack_require__(/*! ./auth/register/RegisterPage */ "./resources/js/auth/register/RegisterPage.js");
+
+/***/ }),
+
+/***/ "./resources/js/auth/register/RegisterPage.js":
+/*!****************************************************!*\
+  !*** ./resources/js/auth/register/RegisterPage.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RegisterPage)
+/* harmony export */ });
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function RegisterPage(props) {
+  var bgClass = "bg-[".concat(props.publicpath + "/bg.png", "]");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "flex min-h-screen w-screen items-center justify-center bg-cover bg-center",
+    style: {
+      backgroundImage: "url(".concat(props.publicpath + "/bg.png", ")")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "w-[50%] bg-white",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+        className: "ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black",
+        children: "Log in"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "h-4"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+        className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
+        children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
+          children: "Create new account"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "h-12"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "border-t-2 border-t-slate-300 mx-8"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "h-12"
+      })]
+    })
+  });
+}
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__.elementBinder)("register-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RegisterPage, {}));
 
 /***/ }),
 
@@ -2265,42 +2315,6 @@ var CommonButton = function CommonButton(props) {
     children: props.text
   });
 };
-
-/***/ }),
-
-/***/ "./resources/js/play/Play.js":
-/*!***********************************!*\
-  !*** ./resources/js/play/Play.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Play)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-function Play(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "h-screen w-screen bg-slate-800",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-      className: "text-white",
-      children: "slkdfjklsdjfldsjlfsjdfljdslfkj"
-    })
-  });
-}
-
-if (document.getElementById("test-view")) {
-  (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById('test-view')).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Play, {})
-  }));
-}
 
 /***/ }),
 
@@ -2413,12 +2427,12 @@ function WelcomePage(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-start-1 col-end-13",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_5__.WelcomeHeader, {
-          buttonCallback: navigateToRegister
+          buttonCallback: navigateToLogin
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "col-start-1 col-end-13 row-start-2 row-end-4 self-center lg:col-start-1 lg:col-end-7 lg:row-start-2 lg:row-end-6",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_MainContent__WEBPACK_IMPORTED_MODULE_4__.MainContent, {
-          buttonCallback: navigateToLogin
+          buttonCallback: navigateToRegister
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "relative -right-36 bottom-8 col-start-1 col-end-5 row-start-4 row-end-7 self-center  md:-right-36 md:bottom-8 md:col-start-4 md:col-end-8 md:row-start-4 md:row-end-7  lg:-right-72 lg:bottom-2 lg:col-start-7 lg:col-end-13 lg:row-start-2 lg:row-end-6",
