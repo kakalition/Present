@@ -2352,7 +2352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "grid h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-hidden bg-web-bg px-[6rem] pt-[3rem] md:grid-cols-8 md:gap-3 lg:grid-cols-12 lg:gap-4",
+    className: "grid h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-hidden bg-web-bg px-[2rem] pt-[1rem] md:grid-cols-8 md:gap-3 md:px-[4rem] md:pt-[2rem] lg:grid-cols-12 lg:gap-4 lg:px-[6rem] lg:pt-[3rem]",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "col-start-1 col-end-13",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_3__.WelcomeHeader, {})
@@ -2401,7 +2401,7 @@ function MainContent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "w-full",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h1", {
-      className: "font-poppins text-7xl font-semibold leading-tight",
+      className: "font-poppins text-[calc(1rem+2vw)] font-semibold leading-tight md:text-[calc(2rem+2vw)]",
       children: ["Bring ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
         className: "text-sky-400",
         children: "calmness"
@@ -2412,7 +2412,7 @@ function MainContent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: hspace
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
-      className: "col-start-1 col-end-9 font-poppins text-2xl font-light leading-tight",
+      className: "col-start-1 col-end-9 font-poppins text-[calc(0.5rem+1.5vw)] font-light leading-tight md:text-[calc(0.5rem+1.3vw)] ",
       children: ["Habitual meditation can help reduce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "anxiety and improve stress reactivity."]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: hspace

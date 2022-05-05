@@ -5,7 +5,7 @@ export function MainContent(props) {
 
     return (
         <div className="w-full">
-            <h1 className="font-poppins text-7xl font-semibold leading-tight">
+            <h1 className="font-poppins text-[calc(1rem+2vw)] font-semibold leading-tight md:text-[calc(2rem+2vw)]">
                 Bring <span className="text-sky-400">calmness</span>
                 <br />
                 to your <span className="text-orange-300">mind</span>.
@@ -13,7 +13,7 @@ export function MainContent(props) {
 
             <div className={hspace} />
 
-            <h2 className="col-start-1 col-end-9 font-poppins text-2xl font-light leading-tight">
+            <h2 className="col-start-1 col-end-9 font-poppins text-[calc(0.5rem+1.5vw)] font-light leading-tight md:text-[calc(0.5rem+1.3vw)] ">
                 Habitual meditation can help reduce
                 <br />
                 anxiety and improve stress reactivity.

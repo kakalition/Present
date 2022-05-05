@@ -6,9 +6,9 @@ import { WelcomeHeader } from "./components/WelcomeHeader";
 export default function WelcomePage(props) {
     return (
         <div
-            className="grid h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-hidden bg-web-bg px-[6rem] pt-[3rem]
-            md:grid-cols-8 md:gap-3
-            lg:grid-cols-12 lg:gap-4"
+            className="grid h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-hidden bg-web-bg px-[2rem] pt-[1rem]
+            md:grid-cols-8 md:gap-3 md:px-[4rem] md:pt-[2rem]
+            lg:grid-cols-12 lg:gap-4 lg:px-[6rem] lg:pt-[3rem]"
         >
             <div className="col-start-1 col-end-13">
                 <WelcomeHeader />
