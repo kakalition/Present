@@ -22,6 +22,7 @@ export function MainContent(props) {
             <div className={hspace} />
 
             <CommonButton
+                onClickCallback={props.buttonCallback}
                 buttonType="primary"
                 text="Get started"
                 padding="p-3 md:p-4 lg:p-6"
