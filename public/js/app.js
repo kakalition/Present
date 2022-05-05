@@ -2248,7 +2248,10 @@ function RegisterPage(props) {
         className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
         children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
-          children: "Create new account"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            href: "",
+            children: "Create new account"
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "h-8"
@@ -2270,6 +2273,13 @@ function RegisterPage(props) {
           id: "test1",
           label: "Password",
           placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "bg-red-400 w-full h-24"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "bg-sky-400 w-full h-24"
         })]
       })]
     })
@@ -2310,30 +2320,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/common-component/CommonButton.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/common-component/CommonButton.js ***!
-  \*******************************************************/
+/***/ "./resources/js/common-component/CommonButtonComponent.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/common-component/CommonButtonComponent.js ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CommonButton": () => (/* binding */ CommonButton)
+/* harmony export */   "CommonButtonComponent": () => (/* binding */ CommonButtonComponent)
 /* harmony export */ });
 /* harmony import */ var _utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/ClassComposer */ "./resources/js/utils/ClassComposer.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 /**
- *
- * @param {string} props.buttonType
- * @param {string} props.text
- * @param {callback} props.onClickCallback
- * @returns
+ * @param {{textSize: TailwindClass_, padding: TailwindClass_, rightPadding: TailwindClass_, onClickCallback: () => void, text: string}} props
  */
 
 
-var CommonButton = function CommonButton(props) {
+function CommonButtonComponent(props) {
   var _props$textSize, _props$padding, _props$rightPadding;
 
   var className = "";
@@ -2373,7 +2379,8 @@ var CommonButton = function CommonButton(props) {
     onClick: props.onClickCallback,
     children: props.text
   });
-};
+}
+;
 
 /***/ }),
 
@@ -2519,7 +2526,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MainContent": () => (/* binding */ MainContent)
 /* harmony export */ });
-/* harmony import */ var _common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButton */ "./resources/js/common-component/CommonButton.js");
+/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -2544,7 +2551,7 @@ function MainContent(props) {
       children: ["Habitual meditation can help reduce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "anxiety and improve stress reactivity."]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: hspace
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__.CommonButton, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
       onClickCallback: props.buttonCallback,
       buttonType: "primary",
       text: "Get started",
@@ -2568,7 +2575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "WelcomeHeader": () => (/* binding */ WelcomeHeader)
 /* harmony export */ });
-/* harmony import */ var _common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButton */ "./resources/js/common-component/CommonButton.js");
+/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -2581,7 +2588,7 @@ function WelcomeHeader(props) {
       children: "Present"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "col-end-13 justify-self-end ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__.CommonButton, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
         buttonType: "tertiary",
         text: "Login",
         onClickCallback: props.buttonCallback

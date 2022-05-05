@@ -1,13 +1,9 @@
 import { ClassComposer } from "../utils/ClassComposer";
 
 /**
- *
- * @param {string} props.buttonType
- * @param {string} props.text
- * @param {callback} props.onClickCallback
- * @returns
+ * @param {{textSize: TailwindClass_, padding: TailwindClass_, rightPadding: TailwindClass_, onClickCallback: () => void, text: string}} props
  */
-export const CommonButton = (props) => {
+export function CommonButtonComponent(props) {
     let className = "";
     const textSize = props.textSize ?? "lg:text-lg md:text-base text-sm";
     const padding = props.padding ?? "lg:p-3 p-2";

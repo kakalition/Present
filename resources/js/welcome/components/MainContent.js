@@ -1,4 +1,4 @@
-import { CommonButton } from "../../common-component/CommonButton";
+import { CommonButtonComponent } from "../../common-component/CommonButtonComponent";
 
 export function MainContent(props) {
     const hspace = "h-4 md:h-6 lg:h-8";
@@ -21,7 +21,7 @@ export function MainContent(props) {
 
             <div className={hspace} />
 
-            <CommonButton
+            <CommonButtonComponent
                 onClickCallback={props.buttonCallback}
                 buttonType="primary"
                 text="Get started"

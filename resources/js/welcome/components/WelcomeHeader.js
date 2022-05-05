@@ -1,4 +1,4 @@
-import { CommonButton } from "../../common-component/CommonButton";
+import { CommonButtonComponent } from "../../common-component/CommonButtonComponent";
 
 export function WelcomeHeader(props) {
     return (
@@ -7,7 +7,7 @@ export function WelcomeHeader(props) {
                 Present
             </p>
             <div className="col-end-13 justify-self-end ">
-                <CommonButton buttonType="tertiary" text="Login" onClickCallback={props.buttonCallback}/>
+                <CommonButtonComponent buttonType="tertiary" text="Login" onClickCallback={props.buttonCallback}/>
             </div>
         </div>
     );

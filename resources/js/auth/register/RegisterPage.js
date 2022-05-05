@@ -17,7 +17,7 @@ export default function RegisterPage(props) {
                 <h2 className="ml-8 font-ibm-plex-sans text-xl font-normal text-black">
                     Don't have an account?{" "}
                     <span className="font-ibm-plex-sans text-sky-500 underline underline-offset-2">
-                        Create new account
+                        <a href="">Create new account</a>
                     </span>
                 </h2>
 
@@ -39,6 +39,11 @@ export default function RegisterPage(props) {
                         label="Password"
                         placeholder="••••••••"
                     />
+                </div>
+
+                <div className="flex w-full">
+                    <div className="bg-red-400 w-full h-24"></div>
+                    <div className="bg-sky-400 w-full h-24"></div>
                 </div>
             </div>
         </div>
