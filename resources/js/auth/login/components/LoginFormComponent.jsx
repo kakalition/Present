@@ -3,7 +3,7 @@ import RememberMeComponent from "./RememberMeComponent";
 
 export default function LoginFormComponent() {
     const inlineComponent = (
-        <span className="font-ibm-plex-sans text-xl text-sky-500 underline underline-offset-2">
+        <span className="font-ibm-plex-sans text-lg text-sky-500 underline underline-offset-2">
             <a href={""}>Forgot password?</a>
         </span>
     );

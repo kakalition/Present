@@ -9,7 +9,7 @@ export default function SingleInputComponent(props) {
             <div className="flex w-full items-center justify-between">
                 <label
                     htmlFor={id}
-                    className="font-ibm-plex-sans text-xl text-black"
+                    className="font-ibm-plex-sans text-lg text-black"
                 >
                     {label}
                 </label>
@@ -20,7 +20,7 @@ export default function SingleInputComponent(props) {
             <div className="h-2" />
 
             <input
-                className="h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans  
+                className="h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans text-base 
                 focus:border-2 focus:border-primary-button focus:outline-none"
                 type={type}
                 id={id}

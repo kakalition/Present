@@ -18,7 +18,7 @@ function FormDialogHeaderBuilder(text) {
  */
 function FormDialogBodyBuilder(text, hrefText, href) {
     return (
-        <h2 className="ml-8 font-ibm-plex-sans text-xl font-normal text-black">
+        <h2 className="ml-8 font-ibm-plex-sans text-2xl font-normal text-black">
             {text + " "}
             <span className="font-ibm-plex-sans text-sky-500 underline underline-offset-2">
                 <a href={href}>{hrefText}</a>

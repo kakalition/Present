@@ -2252,7 +2252,7 @@ function FormDialogHeaderBuilder(text) {
 
 function FormDialogBodyBuilder(text, hrefText, href) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
-    className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
+    className: "ml-8 font-ibm-plex-sans text-2xl font-normal text-black",
     children: [text + " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
       className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -2333,13 +2333,13 @@ function SingleInputComponent(props) {
       className: "flex w-full items-center justify-between",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
         htmlFor: id,
-        className: "font-ibm-plex-sans text-xl text-black",
+        className: "font-ibm-plex-sans text-lg text-black",
         children: label
       }), inlineComponent]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "h-2"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-      className: "h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans   focus:border-2 focus:border-primary-button focus:outline-none",
+      className: "h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans text-base  focus:border-2 focus:border-primary-button focus:outline-none",
       type: type,
       id: id,
       name: id,
@@ -2419,7 +2419,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function LoginFormComponent() {
   var inlineComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-    className: "font-ibm-plex-sans text-xl text-sky-500 underline underline-offset-2",
+    className: "font-ibm-plex-sans text-lg text-sky-500 underline underline-offset-2",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
       href: "",
       children: "Forgot password?"
