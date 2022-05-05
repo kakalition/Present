@@ -2323,22 +2323,27 @@ __webpack_require__.r(__webpack_exports__);
  * @param {{type: string, id: string, label: string, placeholder: string, inlineComponent: JSX.Element}} props
  */
 function SingleInputComponent(props) {
+  var type = props.type,
+      id = props.id,
+      label = props.label,
+      placeholder = props.placeholder,
+      inlineComponent = props.inlineComponent;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "flex w-full items-center justify-between",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
-        htmlFor: props.id,
+        htmlFor: id,
         className: "font-ibm-plex-sans text-xl text-black",
-        children: props.label
-      }), props.inlineAction]
+        children: label
+      }), inlineComponent]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "h-2"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
       className: "h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans   focus:border-2 focus:border-primary-button focus:outline-none",
-      type: props.type,
-      id: props.id,
-      name: props.id,
-      placeholder: props.placeholder,
+      type: type,
+      id: id,
+      name: id,
+      placeholder: placeholder,
       required: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {})]
   });
@@ -2413,6 +2418,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function LoginFormComponent() {
+  var inlineComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+    className: "font-ibm-plex-sans text-xl text-sky-500 underline underline-offset-2",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+      href: "",
+      children: "Forgot password?"
+    })
+  });
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
       type: "text",
@@ -2425,7 +2438,8 @@ function LoginFormComponent() {
       type: "text",
       id: "test1",
       label: "Password",
-      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+      inlineComponent: inlineComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_RememberMeComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})]

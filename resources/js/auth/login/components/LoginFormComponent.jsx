@@ -2,6 +2,11 @@ import SingleInputComponent from "../../common/SingleInputComponent";
 import RememberMeComponent from "./RememberMeComponent";
 
 export default function LoginFormComponent() {
+    const inlineComponent = (
+        <span className="font-ibm-plex-sans text-xl text-sky-500 underline underline-offset-2">
+            <a href={""}>Forgot password?</a>
+        </span>
+    );
     return (
         <form>
             <SingleInputComponent
@@ -16,6 +21,7 @@ export default function LoginFormComponent() {
                 id="test1"
                 label="Password"
                 placeholder="••••••••"
+                inlineComponent={inlineComponent}
             />
             <div className="h-4" />
             <RememberMeComponent />
