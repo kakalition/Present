@@ -9,5 +9,7 @@ export default function Play(props) {
     );
 }
 
-createRoot(document.getElementById('test-view'))
-    .render(<StrictMode><Play/></StrictMode>)
+if (document.getElementById("test-view")) {
+    createRoot(document.getElementById('test-view'))
+        .render(<StrictMode><Play/></StrictMode>)
+}
