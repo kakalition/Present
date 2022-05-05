@@ -2170,10 +2170,143 @@ __webpack_require__(/*! ./auth/login/LoginPage */ "./resources/js/auth/login/Log
 
 /***/ }),
 
-/***/ "./resources/js/auth/common/SingleInputComponent.js":
+/***/ "./resources/js/auth/common/FormDialogComponent.jsx":
 /*!**********************************************************!*\
-  !*** ./resources/js/auth/common/SingleInputComponent.js ***!
+  !*** ./resources/js/auth/common/FormDialogComponent.jsx ***!
   \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FormDialogComponent)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+/**
+ * @param {{header:JSX.Element, body:JSX.Element, formComponent:JSX.Element, buttonComponent:JSX.Element}} props
+ */
+function FormDialogComponent(props) {
+  var header = props.header,
+      body = props.body,
+      formComponent = props.formComponent,
+      buttonComponent = props.buttonComponent;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "w-[50%] bg-white",
+    children: [header, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "h-4"
+    }), body, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "h-8"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "mx-8 border-t-2 border-t-slate-300"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "h-8"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "mx-8",
+      children: formComponent
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "h-12"
+    }), buttonComponent]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/auth/common/FormDialogUtils.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/auth/common/FormDialogUtils.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FormDialogBodyBuilder": () => (/* binding */ FormDialogBodyBuilder),
+/* harmony export */   "FormDialogButtonBuilder": () => (/* binding */ FormDialogButtonBuilder),
+/* harmony export */   "FormDialogHeaderBuilder": () => (/* binding */ FormDialogHeaderBuilder)
+/* harmony export */ });
+/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+/**
+ * @param {string} text
+ */
+
+
+
+
+function FormDialogHeaderBuilder(text) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    className: "ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black",
+    children: text
+  });
+}
+/**
+ * @param {string} text
+ * @param {string} hrefText
+ * @param {string} href
+ */
+
+
+function FormDialogBodyBuilder(text, hrefText, href) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+    className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
+    children: [text + " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+        href: href,
+        children: hrefText
+      })
+    })]
+  });
+}
+/**
+ *
+ * @param {string} negativeText
+ * @param {() => void} negativeCallback
+ * @param {string} positiveText
+ * @param {() => void} positiveCallback
+ * @param {svg} positiveIcon
+ * @returns
+ */
+
+
+function FormDialogButtonBuilder(negativeText, negativeCallback, positiveText, positiveCallback, positiveIcon) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex h-20 w-full",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "w-full",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
+        onClickCallback: negativeCallback,
+        fillSpace: true,
+        buttonType: "ghost",
+        padding: "px-8",
+        text: negativeText
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "w-full",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
+        onClickCallback: positiveCallback,
+        fillSpace: true,
+        buttonType: "primary",
+        padding: "px-8",
+        text: positiveText,
+        icon: positiveIcon
+      })
+    })]
+  });
+}
+
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/common/SingleInputComponent.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/auth/common/SingleInputComponent.jsx ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2224,138 +2357,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ LoginPage)
 /* harmony export */ });
-/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.js");
+/* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.js");
-/* harmony import */ var _components_RememberMeComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/RememberMeComponent */ "./resources/js/auth/login/components/RememberMeComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
- // TODO: Abstract away FormDialogComponent
+/* harmony import */ var _common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/FormDialogComponent */ "./resources/js/auth/common/FormDialogComponent.jsx");
+/* harmony import */ var _common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/FormDialogUtils */ "./resources/js/auth/common/FormDialogUtils.js");
+/* harmony import */ var _components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LoginFormComponent */ "./resources/js/auth/login/components/LoginFormComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
-function LoginFormComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      type: "text",
-      id: "test",
-      label: "Email address",
-      placeholder: "yourname@gmail.com"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-4"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      type: "text",
-      id: "test1",
-      label: "Password",
-      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-4"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_RememberMeComponent__WEBPACK_IMPORTED_MODULE_3__.RememberMeComponent, {})]
-  });
-}
 
-function FormDialogButtonComponent(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "flex h-20 w-full",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "w-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
-        fillSpace: true,
-        buttonType: "ghost",
-        padding: "px-8",
-        text: "Go back"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "w-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
-        fillSpace: true,
-        buttonType: "primary",
-        padding: "px-8",
-        text: "Log in",
-        icon: props.icon
-      })
-    })]
-  });
-}
-/**
- * @param {{}} props 
- */
-
-
-function FormDialogComponent(props) {
-  var arrowIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    className: "h-6 w-6",
-    fill: "none",
-    viewBox: "0 0 24 24",
-    stroke: "currentColor",
-    strokeWidth: 2,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      d: "M14 5l7 7m0 0l-7 7m7-7H3"
-    })
-  });
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "w-[50%] bg-white",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-      className: "ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black",
-      children: "Log in"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-4"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h2", {
-      className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
-      children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-        className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-          href: "",
-          children: "Create new account"
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "mx-8 border-t-2 border-t-slate-300"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "mx-8",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LoginFormComponent, {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-12"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(FormDialogButtonComponent, {
-      icon: arrowIcon
-    })]
-  });
-}
 
 function LoginPage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  var publicpath = props.publicpath;
+  var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogHeaderBuilder)("Log in");
+  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)("Don't have an account?", "Create new account", "");
+
+  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {});
+
+  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)("Go back", function () {}, "Log in", function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "flex min-h-screen w-screen items-center justify-center bg-cover bg-center",
     style: {
-      backgroundImage: "url(".concat(props.publicpath + "/bg.png", ")")
+      backgroundImage: "url(".concat(publicpath + "/bg.png", ")")
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(FormDialogComponent, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      header: formDialogHeader,
+      body: formDialogBody,
+      formComponent: formComponent,
+      buttonComponent: buttonComponent
+    })
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)("login-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LoginPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)("login-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(LoginPage, {}));
 
 /***/ }),
 
-/***/ "./resources/js/auth/login/components/RememberMeComponent.js":
+/***/ "./resources/js/auth/login/components/LoginFormComponent.jsx":
 /*!*******************************************************************!*\
-  !*** ./resources/js/auth/login/components/RememberMeComponent.js ***!
+  !*** ./resources/js/auth/login/components/LoginFormComponent.jsx ***!
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "RememberMeComponent": () => (/* binding */ RememberMeComponent)
+/* harmony export */   "default": () => (/* binding */ LoginFormComponent)
+/* harmony export */ });
+/* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.jsx");
+/* harmony import */ var _RememberMeComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RememberMeComponent */ "./resources/js/auth/login/components/RememberMeComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function LoginFormComponent() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      type: "text",
+      id: "test",
+      label: "Email address",
+      placeholder: "yourname@gmail.com"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      type: "text",
+      id: "test1",
+      label: "Password",
+      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_RememberMeComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/auth/login/components/RememberMeComponent.jsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/auth/login/components/RememberMeComponent.jsx ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RememberMeComponent)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -2477,6 +2565,37 @@ function CommonButtonComponent(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex items-center justify-between",
       children: [props.text, " ", props.icon]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/common-component/icons/RightArrrowIcon.jsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/common-component/icons/RightArrrowIcon.jsx ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ rightArrowIcon)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function rightArrowIcon() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "h-6 w-6",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "M14 5l7 7m0 0l-7 7m7-7H3"
     })
   });
 }

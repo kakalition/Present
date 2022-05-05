@@ -1,4 +1,4 @@
-export function RememberMeComponent(props) {
+export default function RememberMeComponent(props) {
     return (
         <div className="flex items-center">
             <input
