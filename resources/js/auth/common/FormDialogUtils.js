@@ -5,7 +5,10 @@ import { CommonButtonComponent } from "../../common-component/CommonButtonCompon
  */
 function FormDialogHeaderBuilder(text) {
     return (
-        <h1 className="ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black">
+        <h1
+            className="ml-8 mt-8 font-ibm-plex-sans text-3xl font-semibold text-black
+            md:text-4xl lg:text-5xl"
+        >
             {text}
         </h1>
     );
@@ -18,7 +21,10 @@ function FormDialogHeaderBuilder(text) {
  */
 function FormDialogBodyBuilder(text, hrefText, href) {
     return (
-        <h2 className="ml-8 font-ibm-plex-sans text-2xl font-normal text-black">
+        <h2
+            className="ml-8 font-ibm-plex-sans text-lg font-normal text-black
+            md:text-xl lg:text-2xl"
+        >
             {text + " "}
             <span className="font-ibm-plex-sans text-sky-500 underline underline-offset-2">
                 <a href={href}>{hrefText}</a>

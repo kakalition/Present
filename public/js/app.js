@@ -2239,7 +2239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function FormDialogHeaderBuilder(text) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-    className: "ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black",
+    className: "ml-8 mt-8 font-ibm-plex-sans text-3xl font-semibold text-black md:text-4xl lg:text-5xl",
     children: text
   });
 }
@@ -2252,7 +2252,7 @@ function FormDialogHeaderBuilder(text) {
 
 function FormDialogBodyBuilder(text, hrefText, href) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
-    className: "ml-8 font-ibm-plex-sans text-2xl font-normal text-black",
+    className: "ml-8 font-ibm-plex-sans text-lg font-normal text-black md:text-xl lg:text-2xl",
     children: [text + " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
       className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
