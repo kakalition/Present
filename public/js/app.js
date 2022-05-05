@@ -2170,6 +2170,49 @@ __webpack_require__(/*! ./auth/register/RegisterPage */ "./resources/js/auth/reg
 
 /***/ }),
 
+/***/ "./resources/js/auth/common/SingleInputComponent.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/auth/common/SingleInputComponent.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SingleInputComponent)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+/**
+ * @param {{type: string, id: string, label: string, placeholder: string, inlineComponent: JSX.Element}} props
+ */
+function SingleInputComponent(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "flex w-full items-center justify-between",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
+        htmlFor: props.id,
+        className: "font-ibm-plex-sans text-xl text-black",
+        children: props.label
+      }), props.inlineAction]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
+      className: "h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans   focus:border-2 focus:border-primary-button focus:outline-none",
+      type: props.type,
+      id: props.id,
+      name: props.id,
+      placeholder: props.placeholder,
+      required: true
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {})]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/auth/register/RegisterPage.js":
 /*!****************************************************!*\
   !*** ./resources/js/auth/register/RegisterPage.js ***!
@@ -2179,74 +2222,60 @@ __webpack_require__(/*! ./auth/register/RegisterPage */ "./resources/js/auth/reg
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "SingleForm": () => (/* binding */ SingleForm),
 /* harmony export */   "default": () => (/* binding */ RegisterPage)
 /* harmony export */ });
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
-function SingleForm(type, id, label, placeholder, inlineAction) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "flex w-full items-center justify-between",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-        htmlFor: id,
-        className: "font-ibm-plex-sans text-xl text-black",
-        children: label
-      }), inlineAction]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-      className: "h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans   focus:border-2 focus:border-primary-button focus:outline-none",
-      type: type,
-      id: id,
-      name: id,
-      placeholder: placeholder,
-      required: true
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {})]
-  });
-}
 function RegisterPage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "flex min-h-screen w-screen items-center justify-center bg-cover bg-center",
     style: {
       backgroundImage: "url(".concat(props.publicpath + "/bg.png", ")")
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "w-[50%] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
         className: "ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black",
         children: "Log in"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "h-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h2", {
         className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
-        children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
           children: "Create new account"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "mx-8 border-t-2 border-t-slate-300"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "my-2 w-full px-8",
-        children: SingleForm("text", "test", "Email address", "yourname@provider.com")
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "h-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "my-2 w-full px-8",
-        children: SingleForm("password", "test1", "Password", "••••••••")
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "mx-8",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          type: "text",
+          id: "test",
+          label: "Email address",
+          placeholder: "yourname@gmail.com"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "h-4"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          type: "text",
+          id: "test1",
+          label: "Password",
+          placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+        })]
       })]
     })
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__.elementBinder)("register-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RegisterPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__.elementBinder)("register-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(RegisterPage, {}));
 
 /***/ }),
 

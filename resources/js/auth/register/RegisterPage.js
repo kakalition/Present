@@ -1,34 +1,5 @@
 import { elementBinder } from "../../utils/ElementBinder";
-
-export function SingleForm(type, id, label, placeholder, inlineAction) {
-    return (
-        <>
-            <div className="flex w-full items-center justify-between">
-                <label
-                    htmlFor={id}
-                    className="font-ibm-plex-sans text-xl text-black"
-                >
-                    {label}
-                </label>
-
-                {inlineAction}
-            </div>
-
-            <div className="h-2" />
-
-            <input
-                className="h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans  
-                focus:border-2 focus:border-primary-button focus:outline-none"
-                type={type}
-                id={id}
-                name={id}
-                placeholder={placeholder}
-                required
-            />
-            <br />
-        </>
-    );
-}
+import SingleInputComponent from "../common/SingleInputComponent";
 
 export default function RegisterPage(props) {
     return (
@@ -54,19 +25,20 @@ export default function RegisterPage(props) {
                 <div className="mx-8 border-t-2 border-t-slate-300" />
                 <div className="h-8" />
 
-                <div className="my-2 w-full px-8">
-                    {SingleForm(
-                        "text",
-                        "test",
-                        "Email address",
-                        "yourname@provider.com"
-                    )}
-                </div>
-
-                <div className="h-4" />
-
-                <div className="my-2 w-full px-8">
-                    {SingleForm("password", "test1", "Password", "••••••••")}
+                <div className="mx-8">
+                    <SingleInputComponent
+                        type="text"
+                        id="test"
+                        label="Email address"
+                        placeholder="yourname@gmail.com"
+                    />
+                    <div className="h-4" />
+                    <SingleInputComponent
+                        type="text"
+                        id="test1"
+                        label="Password"
+                        placeholder="••••••••"
+                    />
                 </div>
             </div>
         </div>
