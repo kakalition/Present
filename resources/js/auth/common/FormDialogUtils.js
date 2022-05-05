@@ -6,8 +6,8 @@ import { CommonButtonComponent } from "../../common-component/CommonButtonCompon
 function FormDialogHeaderBuilder(text) {
     return (
         <h1
-            className="ml-8 mt-8 font-ibm-plex-sans text-3xl font-semibold text-black
-            md:text-4xl lg:text-5xl"
+            className="ml-8 mt-8 font-ibm-plex-sans text-4xl font-semibold text-black
+            lg:text-5xl"
         >
             {text}
         </h1>

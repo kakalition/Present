@@ -2194,7 +2194,7 @@ function FormDialogComponent(props) {
       formComponent = props.formComponent,
       buttonComponent = props.buttonComponent;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "w-[50%] bg-white",
+    className: "w-full bg-white md:w-[75%] lg:w-[55%]",
     children: [header, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "h-4"
     }), body, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
@@ -2239,7 +2239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function FormDialogHeaderBuilder(text) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-    className: "ml-8 mt-8 font-ibm-plex-sans text-3xl font-semibold text-black md:text-4xl lg:text-5xl",
+    className: "ml-8 mt-8 font-ibm-plex-sans text-4xl font-semibold text-black lg:text-5xl",
     children: text
   });
 }
@@ -2333,13 +2333,13 @@ function SingleInputComponent(props) {
       className: "flex w-full items-center justify-between",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
         htmlFor: id,
-        className: "font-ibm-plex-sans text-lg text-black",
+        className: "font-ibm-plex-sans text-base text-black md:text-lg ",
         children: label
       }), inlineComponent]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "h-2"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-      className: "h-14 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans text-base  focus:border-2 focus:border-primary-button focus:outline-none",
+      className: "h-12 w-full border-2 border-x-transparent border-t-transparent border-b-slate-400 bg-slate-100 px-4 font-ibm-plex-sans text-base  focus:border-2 focus:border-primary-button focus:outline-none md:h-14",
       type: type,
       id: id,
       name: id,
@@ -2383,7 +2383,7 @@ function LoginPage(props) {
 
   var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)("Go back", function () {}, "Log in", function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    className: "flex min-h-screen w-screen items-center justify-center bg-cover bg-center",
+    className: "flex min-h-screen w-screen items-end justify-center bg-cover bg-center md:items-center",
     style: {
       backgroundImage: "url(".concat(publicpath + "/bg.png", ")")
     },
@@ -2419,7 +2419,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function LoginFormComponent() {
   var inlineComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-    className: "font-ibm-plex-sans text-lg text-sky-500 underline underline-offset-2",
+    className: "font-ibm-plex-sans text-base text-sky-500 underline underline-offset-2 md:text-lg",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
       href: "",
       children: "Forgot password?"
@@ -2543,7 +2543,7 @@ function CommonButtonComponent(props) {
     className += " w-full";
   }
 
-  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "lg:text-lg md:text-base text-sm ";
+  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "lg:text-xl text-lg";
   var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8";
 
   switch (props.buttonType) {

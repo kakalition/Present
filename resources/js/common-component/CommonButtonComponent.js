@@ -10,7 +10,7 @@ export function CommonButtonComponent(props) {
         className += " w-full"
     }
 
-    const textSize = props.textSize ?? "lg:text-lg md:text-base text-sm ";
+    const textSize = props.textSize ?? "lg:text-xl text-lg";
     const padding = props.padding ?? "lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8";
 
     switch (props.buttonType) {

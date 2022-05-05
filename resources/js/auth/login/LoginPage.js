@@ -28,7 +28,7 @@ export default function LoginPage(props) {
 
     return (
         <div
-            className={`flex min-h-screen w-screen items-center justify-center bg-cover bg-center`}
+            className="flex min-h-screen w-screen items-end justify-center bg-cover bg-center md:items-center"
             style={{ backgroundImage: `url(${publicpath + "/bg.png"})` }}
         >
             <FormDialogComponent

@@ -5,7 +5,7 @@ export default function FormDialogComponent(props) {
     const { header, body, formComponent, buttonComponent } = props;
 
     return (
-        <div className="w-[50%] bg-white">
+        <div className="w-full bg-white md:w-[75%] lg:w-[55%]">
             {header}
             <div className="h-4" />
             {body}
