@@ -25,8 +25,7 @@ export function MainContent(props) {
                 onClickCallback={props.buttonCallback}
                 buttonType="primary"
                 text="Get started"
-                padding="p-3 md:p-4 lg:p-6"
-                rightPadding="pr-12 md:pr-20 lg:pr-24"
+                padding="p-3 pr-12 md:p-4 md:pr-20 lg:p-6 lg:pr-24"
                 textSize="text-xl md:text-2xl lg:text-3xl"
             />
         </div>

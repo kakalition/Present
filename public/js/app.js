@@ -2224,68 +2224,97 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ RegisterPage)
 /* harmony export */ });
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.js");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 function RegisterPage(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  var arrowIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "h-6 w-6",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "M14 5l7 7m0 0l-7 7m7-7H3"
+    })
+  });
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "flex min-h-screen w-screen items-center justify-center bg-cover bg-center",
     style: {
       backgroundImage: "url(".concat(props.publicpath + "/bg.png", ")")
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "w-[50%] bg-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         className: "ml-8 mt-8 font-ibm-plex-sans text-5xl font-semibold text-black",
         children: "Log in"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "h-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h2", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
         className: "ml-8 font-ibm-plex-sans text-xl font-normal text-black",
-        children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: ["Don't have an account?", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           className: "font-ibm-plex-sans text-sky-500 underline underline-offset-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
             href: "",
             children: "Create new account"
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "mx-8 border-t-2 border-t-slate-300"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "mx-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
           type: "text",
           id: "test",
           label: "Email address",
           placeholder: "yourname@gmail.com"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "h-4"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
           type: "text",
           id: "test1",
           label: "Password",
           placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flex w-full",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "bg-red-400 w-full h-24"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "bg-sky-400 w-full h-24"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "h-20"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex h-24 w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "w-full",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
+            buttonType: "ghost",
+            padding: "px-8",
+            text: "Go back"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "w-full",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
+            buttonType: "primary",
+            padding: "px-8",
+            text: "Log in",
+            icon: arrowIcon
+          })
         })]
       })]
     })
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_0__.elementBinder)("register-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(RegisterPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)("register-view", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(RegisterPage, {}));
 
 /***/ }),
 
@@ -2335,40 +2364,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 /**
- * @param {{textSize: TailwindClass_, padding: TailwindClass_, rightPadding: TailwindClass_, onClickCallback: () => void, text: string}} props
+ * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void, icon: svg}} props
  */
 
 
-function CommonButtonComponent(props) {
-  var _props$textSize, _props$padding, _props$rightPadding;
 
-  var className = "";
-  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "lg:text-lg md:text-base text-sm";
-  var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "lg:p-3 p-2";
-  var rightPadding = (_props$rightPadding = props.rightPadding) !== null && _props$rightPadding !== void 0 ? _props$rightPadding : "lg:pr-16 md:pr-12 pr-8";
+function CommonButtonComponent(props) {
+  var _props$textSize, _props$padding;
+
+  var className = "w-full h-full text-left";
+  var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "lg:text-lg md:text-base text-sm ";
+  var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8";
 
   switch (props.buttonType) {
     case "primary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, rightPadding, "whitespace-nowrap", "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "whitespace-nowrap", "bg-primary-button", "text-white", "font-semibold", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "secondary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, rightPadding, "whitespace-nowrap", "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, "whitespace-nowrap", "bg-secondary-button", "text-white", "font-ibm-plex-sans", "hover:brightness-[90%]", "transition-all", "duration-100");
         break;
       }
 
     case "tertiary":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, rightPadding, "whitespace-nowrap", "border-2 border-primary-button", "text-primary-button", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "whitespace-nowrap", "border-2 border-primary-button", "text-primary-button", "font-ibm-plex-sans", "hover:brightness-[90%]", "hover:text-white", "hover:bg-primary-button", "transition-all", "duration-100");
         break;
       }
 
     case "ghost":
       {
-        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "whitespace-nowrap", "px-5", "py-3", "text-primary-button", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
+        className = (0,_utils_ClassComposer__WEBPACK_IMPORTED_MODULE_0__.ClassComposer)(className, textSize, padding, "whitespace-nowrap", "text-primary-button", "font-ibm-plex-sans", "transition-all", "duration-100", "hover:bg-slate-200");
         break;
       }
   }
@@ -2377,10 +2406,12 @@ function CommonButtonComponent(props) {
     className: className,
     type: "button",
     onClick: props.onClickCallback,
-    children: props.text
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex items-center justify-between",
+      children: [props.text, " ", props.icon]
+    })
   });
 }
-;
 
 /***/ }),
 
@@ -2555,8 +2586,7 @@ function MainContent(props) {
       onClickCallback: props.buttonCallback,
       buttonType: "primary",
       text: "Get started",
-      padding: "p-3 md:p-4 lg:p-6",
-      rightPadding: "pr-12 md:pr-20 lg:pr-24",
+      padding: "p-3 pr-12 md:p-4 md:pr-20 lg:p-6 lg:pr-24",
       textSize: "text-xl md:text-2xl lg:text-3xl"
     })]
   });
@@ -2587,7 +2617,7 @@ function WelcomeHeader(props) {
       className: "font-poppins text-xl md:text-2xl lg:text-3xl font-semibold text-black",
       children: "Present"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "col-end-13 justify-self-end ",
+      className: "col-end-13 justify-self-end",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
         buttonType: "tertiary",
         text: "Login",

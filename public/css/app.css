@@ -462,6 +462,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .row-end-7 {
   grid-row-end: 7;
 }
+.m-8 {
+  margin: 2rem;
+}
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -503,6 +506,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-24 {
   height: 6rem;
 }
+.h-full {
+  height: 100%;
+}
+.h-36 {
+  height: 9rem;
+}
+.h-20 {
+  height: 5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -514,6 +526,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[50\%\] {
   width: 50%;
+}
+.w-6 {
+  width: 1.5rem;
 }
 .scale-\[1\.4\] {
   --tw-scale-x: 1.4;
@@ -618,6 +633,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-3 {
   padding: 0.75rem;
 }
+.p-8 {
+  padding: 2rem;
+}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -646,6 +664,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-12 {
   padding-right: 3rem;
+}
+.pl-8 {
+  padding-left: 2rem;
+}
+.text-left {
+  text-align: left;
 }
 .font-ibm-plex-sans {
   font-family: IBM Plex Sans, sans-serif;

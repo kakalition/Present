@@ -1,7 +1,25 @@
+import { CommonButtonComponent } from "../../common-component/CommonButtonComponent";
 import { elementBinder } from "../../utils/ElementBinder";
 import SingleInputComponent from "../common/SingleInputComponent";
 
 export default function RegisterPage(props) {
+    const arrowIcon = (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+        </svg>
+    );
+
     return (
         <div
             className={`flex min-h-screen w-screen items-center justify-center bg-cover bg-center`}
@@ -41,9 +59,24 @@ export default function RegisterPage(props) {
                     />
                 </div>
 
-                <div className="flex w-full">
-                    <div className="bg-red-400 w-full h-24"></div>
-                    <div className="bg-sky-400 w-full h-24"></div>
+                <div className="h-20" />
+
+                <div className="flex h-24 w-full">
+                    <div className="w-full">
+                        <CommonButtonComponent
+                            buttonType="ghost"
+                            padding="px-8"
+                            text="Go back"
+                        />
+                    </div>
+                    <div className="w-full">
+                        <CommonButtonComponent
+                            buttonType="primary"
+                            padding="px-8"
+                            text="Log in"
+                            icon={arrowIcon}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

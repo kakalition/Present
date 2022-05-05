@@ -1,13 +1,12 @@
 import { ClassComposer } from "../utils/ClassComposer";
 
 /**
- * @param {{textSize: TailwindClass_, padding: TailwindClass_, rightPadding: TailwindClass_, onClickCallback: () => void, text: string}} props
+ * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void, icon: svg}} props
  */
 export function CommonButtonComponent(props) {
-    let className = "";
-    const textSize = props.textSize ?? "lg:text-lg md:text-base text-sm";
-    const padding = props.padding ?? "lg:p-3 p-2";
-    const rightPadding = props.rightPadding ?? "lg:pr-16 md:pr-12 pr-8";
+    let className = "w-full h-full text-left";
+    const textSize = props.textSize ?? "lg:text-lg md:text-base text-sm ";
+    const padding = props.padding ?? "lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8";
 
     switch (props.buttonType) {
         case "primary": {
@@ -15,7 +14,6 @@ export function CommonButtonComponent(props) {
                 className,
                 textSize,
                 padding,
-                rightPadding,
                 "whitespace-nowrap",
                 "bg-primary-button",
                 "text-white",
@@ -31,7 +29,6 @@ export function CommonButtonComponent(props) {
             className = ClassComposer(
                 className,
                 textSize,
-                rightPadding,
                 "whitespace-nowrap",
                 "bg-secondary-button",
                 "text-white",
@@ -47,7 +44,6 @@ export function CommonButtonComponent(props) {
                 className,
                 textSize,
                 padding,
-                rightPadding,
                 "whitespace-nowrap",
                 "border-2 border-primary-button",
                 "text-primary-button",
@@ -66,8 +62,6 @@ export function CommonButtonComponent(props) {
                 textSize,
                 padding,
                 "whitespace-nowrap",
-                "px-5",
-                "py-3",
                 "text-primary-button",
                 "font-ibm-plex-sans",
                 "transition-all",
@@ -84,7 +78,9 @@ export function CommonButtonComponent(props) {
             type="button"
             onClick={props.onClickCallback}
         >
-            {props.text}
+            <div className="flex items-center justify-between">
+                {props.text} {props.icon}
+            </div>
         </button>
     );
-};
+}
