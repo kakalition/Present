@@ -2352,17 +2352,17 @@ __webpack_require__.r(__webpack_exports__);
 
 function WelcomePage(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "grid h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-hidden bg-web-bg px-[2rem] pt-[1rem] md:grid-cols-8 md:gap-3 md:px-[4rem] md:pt-[2rem] lg:grid-cols-12 lg:gap-4 lg:px-[6rem] lg:pt-[3rem]",
+    className: "grid min-h-screen w-screen grid-cols-4 grid-rows-6 gap-2 overflow-x-hidden bg-web-bg px-[2rem] pt-[1rem] md:grid-cols-8 md:gap-3 md:px-[4rem] md:pt-[2rem] lg:grid-cols-12 lg:gap-4 lg:px-[6rem] lg:pt-[3rem]",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "col-start-1 col-end-13",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_WelcomeHeader__WEBPACK_IMPORTED_MODULE_3__.WelcomeHeader, {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "col-start-1 col-end-7 row-start-2 row-end-6 self-center",
+      className: "col-start-1 col-end-13 row-start-2 row-end-4 self-center lg:col-start-1 lg:col-end-7 lg:row-start-2 lg:row-end-6",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_MainContent__WEBPACK_IMPORTED_MODULE_2__.MainContent, {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "relative -right-72 bottom-2 col-start-7 col-end-13 row-start-2 row-end-6 self-center",
+      className: "relative -right-36 bottom-8 col-start-1 col-end-5 row-start-4 row-end-7 self-center  md:-right-36 md:bottom-8 md:col-start-4 md:col-end-8 md:row-start-4 md:row-end-7  lg:-right-72 lg:bottom-2 lg:col-start-7 lg:col-end-13 lg:row-start-2 lg:row-end-6",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        className: "scale-[1.3]",
+        className: "scale-[1.4] sm:scale-[1] md:scale-[1.7] lg:scale-[1.3]",
         src: props.publicpath + "/illustrations/meditation.svg",
         alt: "jkdsnfkjdfs"
       })
@@ -2397,11 +2397,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function MainContent(props) {
-  var hspace = "h-8";
+  var hspace = "h-4 md:h-6 lg:h-8";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "w-full",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h1", {
-      className: "font-poppins text-[calc(1rem+2vw)] font-semibold leading-tight md:text-[calc(2rem+2vw)]",
+      className: "font-poppins text-[calc(1.5rem+2vw)] font-semibold leading-tight",
       children: ["Bring ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
         className: "text-sky-400",
         children: "calmness"
@@ -2412,14 +2412,14 @@ function MainContent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: hspace
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
-      className: "col-start-1 col-end-9 font-poppins text-[calc(0.5rem+1.5vw)] font-light leading-tight md:text-[calc(0.5rem+1.3vw)] ",
+      className: "col-start-1 col-end-9 font-poppins text-[calc(0.4rem+1.5vw)] font-light leading-tight",
       children: ["Habitual meditation can help reduce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "anxiety and improve stress reactivity."]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: hspace
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_CommonButton__WEBPACK_IMPORTED_MODULE_0__.CommonButton, {
       buttonType: "primary",
       text: "Get started",
-      padding: "p-2 md:p-4 lg:p-6",
+      padding: "p-3 md:p-4 lg:p-6",
       rightPadding: "pr-12 md:pr-20 lg:pr-24",
       textSize: "text-xl md:text-2xl lg:text-3xl"
     })]
