@@ -515,6 +515,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-20 {
   height: 5rem;
 }
+.h-5 {
+  height: 1.25rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -529,6 +532,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-6 {
   width: 1.5rem;
+}
+.w-2 {
+  width: 0.5rem;
+}
+.w-4 {
+  width: 1rem;
+}
+.w-5 {
+  width: 1.25rem;
 }
 .scale-\[1\.4\] {
   --tw-scale-x: 1.4;
@@ -694,6 +706,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-\[calc\(0\.4rem\+1\.5vw\)\] {
   font-size: calc(0.4rem + 1.5vw);
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 .font-semibold {
   font-weight: 600;

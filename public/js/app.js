@@ -2233,6 +2233,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+function RememberMeComponent(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "flex items-center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+      className: "h-5 w-5",
+      type: "checkbox",
+      id: "remember_me",
+      name: "remember_me",
+      value: "true"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "w-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+      className: "font-ibm-plex-sans text-lg",
+      htmlFor: "remember_me",
+      children: "Remember me?"
+    })]
+  });
+}
+
 function RegisterPage(props) {
   var arrowIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -2289,7 +2309,9 @@ function RegisterPage(props) {
           id: "test1",
           label: "Password",
           placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
-        })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "h-4"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(RememberMeComponent, {})]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "h-20"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
