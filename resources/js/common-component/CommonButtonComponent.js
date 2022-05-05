@@ -1,10 +1,15 @@
 import { ClassComposer } from "../utils/ClassComposer";
 
 /**
- * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void, icon: svg}} props
+ * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void, icon: svg, fillSpace: boolean}} props
  */
 export function CommonButtonComponent(props) {
-    let className = "w-full h-full text-left";
+    let className = "h-full text-left";
+
+    if (props.fillSpace) {
+        className += " w-full"
+    }
+
     const textSize = props.textSize ?? "lg:text-lg md:text-base text-sm ";
     const padding = props.padding ?? "lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8";
 

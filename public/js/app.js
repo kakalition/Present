@@ -2313,12 +2313,13 @@ function RegisterPage(props) {
           className: "h-4"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(RememberMeComponent, {})]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "h-20"
+        className: "h-12"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex h-24 w-full",
+        className: "flex h-20 w-full",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "w-full",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
+            fillSpace: true,
             buttonType: "ghost",
             padding: "px-8",
             text: "Go back"
@@ -2326,6 +2327,7 @@ function RegisterPage(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "w-full",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__.CommonButtonComponent, {
+            fillSpace: true,
             buttonType: "primary",
             padding: "px-8",
             text: "Log in",
@@ -2386,7 +2388,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 /**
- * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void, icon: svg}} props
+ * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void, icon: svg, fillSpace: boolean}} props
  */
 
 
@@ -2394,7 +2396,12 @@ __webpack_require__.r(__webpack_exports__);
 function CommonButtonComponent(props) {
   var _props$textSize, _props$padding;
 
-  var className = "w-full h-full text-left";
+  var className = "h-full text-left";
+
+  if (props.fillSpace) {
+    className += " w-full";
+  }
+
   var textSize = (_props$textSize = props.textSize) !== null && _props$textSize !== void 0 ? _props$textSize : "lg:text-lg md:text-base text-sm ";
   var padding = (_props$padding = props.padding) !== null && _props$padding !== void 0 ? _props$padding : "lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8";
 

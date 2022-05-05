@@ -3,11 +3,21 @@ import { elementBinder } from "../../utils/ElementBinder";
 import SingleInputComponent from "../common/SingleInputComponent";
 
 function RememberMeComponent(props) {
-    return <div className="flex items-center">
-        <input className="h-5 w-5" type="checkbox" id="remember_me" name="remember_me" value="true"/>
-        <div className="w-2"/>
-        <label className="font-ibm-plex-sans text-lg" htmlFor="remember_me">Remember me?</label>
-    </div>
+    return (
+        <div className="flex items-center">
+            <input
+                className="h-5 w-5"
+                type="checkbox"
+                id="remember_me"
+                name="remember_me"
+                value="true"
+            />
+            <div className="w-2" />
+            <label className="font-ibm-plex-sans text-lg" htmlFor="remember_me">
+                Remember me?
+            </label>
+        </div>
+    );
 }
 
 export default function RegisterPage(props) {
@@ -66,15 +76,15 @@ export default function RegisterPage(props) {
                         placeholder="••••••••"
                     />
                     <div className="h-4" />
-                    <RememberMeComponent/>
+                    <RememberMeComponent />
                 </div>
 
+                <div className="h-12" />
 
-                <div className="h-20" />
-
-                <div className="flex h-24 w-full">
+                <div className="flex h-20 w-full">
                     <div className="w-full">
                         <CommonButtonComponent
+                            fillSpace={true}
                             buttonType="ghost"
                             padding="px-8"
                             text="Go back"
@@ -82,6 +92,7 @@ export default function RegisterPage(props) {
                     </div>
                     <div className="w-full">
                         <CommonButtonComponent
+                            fillSpace={true}
                             buttonType="primary"
                             padding="px-8"
                             text="Log in"
