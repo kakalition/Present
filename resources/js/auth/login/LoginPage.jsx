@@ -1,3 +1,4 @@
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import RightArrrowIcon from '../../common-component/icons/RightArrrowIcon';
 import { elementBinder } from '../../utils/ElementBinder';
@@ -8,6 +9,23 @@ import {
   FormDialogHeaderBuilder,
 } from '../common/FormDialogUtils';
 import LoginFormComponent from './components/LoginFormComponent';
+
+function loginCallback(e) {
+  e.preventDefault();
+
+  const formData = new FormData(document.getElementById('register-form'));
+  const config = {
+    headers: {
+      'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
+    },
+  };
+
+  axios
+    .post('/login', formData, config)
+    .then((response) => {
+      if (response.status === 200) { window.location.assign('/home'); }
+    });
+}
 
 export default function LoginPage(props) {
   const { publicpath } = props;
@@ -23,7 +41,7 @@ export default function LoginPage(props) {
     'Go back',
     () => { window.location.assign('/'); },
     'Log in',
-    () => {},
+    () => { loginCallback(); },
     <RightArrrowIcon />,
   );
 

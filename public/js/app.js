@@ -2386,37 +2386,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ LoginPage)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/FormDialogComponent */ "./resources/js/auth/common/FormDialogComponent.jsx");
-/* harmony import */ var _common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/FormDialogUtils */ "./resources/js/auth/common/FormDialogUtils.js");
-/* harmony import */ var _components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LoginFormComponent */ "./resources/js/auth/login/components/LoginFormComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/FormDialogComponent */ "./resources/js/auth/common/FormDialogComponent.jsx");
+/* harmony import */ var _common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/FormDialogUtils */ "./resources/js/auth/common/FormDialogUtils.js");
+/* harmony import */ var _components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/LoginFormComponent */ "./resources/js/auth/login/components/LoginFormComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 
+
+
+
+function loginCallback(e) {
+  e.preventDefault();
+  var formData = new FormData(document.getElementById('register-form'));
+  var config = {
+    headers: {
+      'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content
+    }
+  };
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/login', formData, config).then(function (response) {
+    if (response.status === 200) {
+      window.location.assign('/home');
+    }
+  });
+}
 
 function LoginPage(props) {
   var publicpath = props.publicpath;
-  var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogHeaderBuilder)('Log in');
-  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)("Don't have an account?", 'Create new account', '/register');
+  var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogHeaderBuilder)('Log in');
+  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogBodyBuilder)("Don't have an account?", 'Create new account', '/register');
 
-  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {});
+  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {});
 
-  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {
+  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogButtonBuilder)('Go back', function () {
     window.location.assign('/');
-  }, 'Log in', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  }, 'Log in', function () {
+    loginCallback();
+  }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
     className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {
       backgroundImage: "url(".concat("".concat(publicpath, "/bg.png"), ")")
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
       header: formDialogHeader,
       body: formDialogBody,
       formComponent: formComponent,
@@ -2425,9 +2446,9 @@ function LoginPage(props) {
   });
 }
 LoginPage.propTypes = {
-  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
+  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string.isRequired)
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)('login-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(LoginPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('login-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(LoginPage, {}));
 
 /***/ }),
 
