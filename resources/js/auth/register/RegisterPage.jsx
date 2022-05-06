@@ -33,7 +33,7 @@ export default function RegisterPage(props) {
     'Go back',
     () => { window.location.assign('/'); },
     'Sign up',
-    () => { registerCallback(); },
+    registerCallback,
     <RightArrrowIcon />,
   );
 
@@ -53,7 +53,11 @@ export default function RegisterPage(props) {
 }
 
 RegisterPage.propTypes = {
-  publicpath: PropTypes.string.isRequired,
+  publicpath: PropTypes.string,
+};
+
+RegisterPage.defaultProps = {
+  publicpath: '',
 };
 
 elementBinder('register-view', <RegisterPage />);

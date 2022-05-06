@@ -2370,7 +2370,10 @@ SingleInputComponent.propTypes = {
   id: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
   label: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
   placeholder: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  inlineComponent: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().element.isRequired)
+  inlineComponent: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().element)
+};
+SingleInputComponent.defaultProps = {
+  inlineComponent: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {})
 };
 
 /***/ }),
@@ -2429,9 +2432,7 @@ function LoginPage(props) {
 
   var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogButtonBuilder)('Go back', function () {
     window.location.assign('/');
-  }, 'Log in', function () {
-    loginCallback();
-  }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+  }, 'Log in', loginCallback, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
     className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {
@@ -2446,7 +2447,10 @@ function LoginPage(props) {
   });
 }
 LoginPage.propTypes = {
-  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string.isRequired)
+  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string)
+};
+LoginPage.defaultProps = {
+  publicpath: ''
 };
 (0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('login-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(LoginPage, {}));
 
@@ -2587,9 +2591,7 @@ function RegisterPage(props) {
 
   var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogButtonBuilder)('Go back', function () {
     window.location.assign('/');
-  }, 'Sign up', function () {
-    registerCallback();
-  }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+  }, 'Sign up', registerCallback, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
     className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {
@@ -2604,7 +2606,10 @@ function RegisterPage(props) {
   });
 }
 RegisterPage.propTypes = {
-  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string.isRequired)
+  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string)
+};
+RegisterPage.defaultProps = {
+  publicpath: ''
 };
 (0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('register-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RegisterPage, {}));
 
@@ -2968,7 +2973,10 @@ function WelcomePage(props) {
   });
 }
 WelcomePage.propTypes = {
-  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
+  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string)
+};
+WelcomePage.defaultProps = {
+  publicpath: ''
 };
 (0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)('welcome-root', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(WelcomePage, {}));
 

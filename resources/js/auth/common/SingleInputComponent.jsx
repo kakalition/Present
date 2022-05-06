@@ -45,5 +45,9 @@ SingleInputComponent.propTypes = {
   id: PropType.string.isRequired,
   label: PropType.string.isRequired,
   placeholder: PropType.string.isRequired,
-  inlineComponent: PropType.element.isRequired,
+  inlineComponent: PropType.element,
+};
+
+SingleInputComponent.defaultProps = {
+  inlineComponent: <div />,
 };

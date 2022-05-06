@@ -45,7 +45,11 @@ export default function WelcomePage(props) {
 }
 
 WelcomePage.propTypes = {
-  publicpath: PropTypes.string.isRequired,
+  publicpath: PropTypes.string,
+};
+
+WelcomePage.defaultProps = {
+  publicpath: '',
 };
 
 elementBinder('welcome-root', <WelcomePage />);

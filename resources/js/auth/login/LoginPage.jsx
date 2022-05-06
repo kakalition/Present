@@ -41,7 +41,7 @@ export default function LoginPage(props) {
     'Go back',
     () => { window.location.assign('/'); },
     'Log in',
-    () => { loginCallback(); },
+    loginCallback,
     <RightArrrowIcon />,
   );
 
@@ -61,7 +61,11 @@ export default function LoginPage(props) {
 }
 
 LoginPage.propTypes = {
-  publicpath: PropTypes.string.isRequired,
+  publicpath: PropTypes.string,
+};
+
+LoginPage.defaultProps = {
+  publicpath: '',
 };
 
 elementBinder('login-view', <LoginPage />);
