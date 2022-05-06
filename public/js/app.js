@@ -2166,6 +2166,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./welcome/WelcomePage */ "./resources/js/welcome/WelcomePage.jsx");
 
+__webpack_require__(/*! ./auth/register/RegisterPage */ "./resources/js/auth/register/RegisterPage.jsx");
+
 __webpack_require__(/*! ./auth/login/LoginPage */ "./resources/js/auth/login/LoginPage.jsx");
 
 /***/ }),
@@ -2503,6 +2505,119 @@ function RememberMeComponent() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "w-2"
     }), "Remember me?"]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/auth/register/RegisterPage.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/auth/register/RegisterPage.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RegisterPage)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/FormDialogComponent */ "./resources/js/auth/common/FormDialogComponent.jsx");
+/* harmony import */ var _common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/FormDialogUtils */ "./resources/js/auth/common/FormDialogUtils.js");
+/* harmony import */ var _components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/RegisterFormComponent */ "./resources/js/auth/register/components/RegisterFormComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+function RegisterPage(props) {
+  var publicpath = props.publicpath;
+  var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogHeaderBuilder)('Sign up');
+  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)('Already have an account?', 'Login', '');
+
+  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {});
+
+  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {}, 'Sign up', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
+    style: {
+      backgroundImage: "url(".concat("".concat(publicpath, "/bg.png"), ")")
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      header: formDialogHeader,
+      body: formDialogBody,
+      formComponent: formComponent,
+      buttonComponent: buttonComponent
+    })
+  });
+}
+RegisterPage.propTypes = {
+  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
+};
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)('register-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(RegisterPage, {}));
+
+/***/ }),
+
+/***/ "./resources/js/auth/register/components/RegisterFormComponent.jsx":
+/*!*************************************************************************!*\
+  !*** ./resources/js/auth/register/components/RegisterFormComponent.jsx ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RegisterFormComponent)
+/* harmony export */ });
+/* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function RegisterFormComponent() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex flex-row justify-between items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          type: "string",
+          id: "firstname",
+          label: "First name",
+          placeholder: "Joseph"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-16"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          type: "string",
+          id: "lastname",
+          label: "Last name",
+          placeholder: "Joestar"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      type: "email",
+      id: "email",
+      label: "Email address",
+      placeholder: "yourname@provider.com"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      type: "password",
+      id: "password",
+      label: "Password",
+      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+    })]
   });
 }
 
