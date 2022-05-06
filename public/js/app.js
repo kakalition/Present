@@ -3907,7 +3907,7 @@ function LoginPage(props) {
       formComponent: formComponent,
       buttonComponent: buttonComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      className: "overflow-hidden absolute top-0 p-8 w-full lg:bottom-0",
+      className: "overflow-hidden absolute bottom-0 p-8 w-full",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         shouldAnimate: shouldAnimate,
         errorMessage: errorMessage
@@ -4149,7 +4149,7 @@ function RegisterPage(props) {
       formComponent: formComponent,
       buttonComponent: buttonComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      className: "overflow-hidden absolute top-0 p-8 w-full lg:bottom-0",
+      className: "overflow-hidden absolute bottom-0 p-8 w-full",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         shouldAnimate: shouldAnimate,
         errorMessage: errorMessage
