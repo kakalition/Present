@@ -2333,7 +2333,7 @@ function SingleInputComponent(props) {
       className: "flex w-full items-center justify-between",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
         htmlFor: id,
-        className: "font-ibm-plex-sans text-base text-black md:text-lg ",
+        className: "font-ibm-plex-sans text-base text-black md:text-lg",
         children: label
       }), inlineComponent]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {

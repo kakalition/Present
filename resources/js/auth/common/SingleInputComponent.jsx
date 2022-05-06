@@ -10,7 +10,7 @@ export default function SingleInputComponent(props) {
                 <label
                     htmlFor={id}
                     className="font-ibm-plex-sans text-base text-black
-                    md:text-lg "
+                    md:text-lg"
                 >
                     {label}
                 </label>
