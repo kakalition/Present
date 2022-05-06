@@ -2404,11 +2404,13 @@ __webpack_require__.r(__webpack_exports__);
 function LoginPage(props) {
   var publicpath = props.publicpath;
   var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogHeaderBuilder)('Log in');
-  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)("Don't have an account?", 'Create new account', '');
+  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)("Don't have an account?", 'Create new account', '/register');
 
   var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {});
 
-  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {}, 'Log in', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
+  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {
+    window.location.assign('/');
+  }, 'Log in', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {
@@ -2539,11 +2541,13 @@ __webpack_require__.r(__webpack_exports__);
 function RegisterPage(props) {
   var publicpath = props.publicpath;
   var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogHeaderBuilder)('Sign up');
-  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)('Already have an account?', 'Login', '');
+  var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogBodyBuilder)('Already have an account?', 'Login', '/login');
 
   var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {});
 
-  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {}, 'Sign up', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
+  var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {
+    window.location.assign('/');
+  }, 'Sign up', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {

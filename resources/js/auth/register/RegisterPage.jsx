@@ -9,11 +9,11 @@ export default function RegisterPage(props) {
   const { publicpath } = props;
 
   const formDialogHeader = FormDialogHeaderBuilder('Sign up');
-  const formDialogBody = FormDialogBodyBuilder('Already have an account?', 'Login', '');
+  const formDialogBody = FormDialogBodyBuilder('Already have an account?', 'Login', '/login');
   const formComponent = <RegisterFormComponent />;
   const buttonComponent = FormDialogButtonBuilder(
     'Go back',
-    () => {},
+    () => { window.location.assign('/'); },
     'Sign up',
     () => {},
     <RightArrrowIcon />,

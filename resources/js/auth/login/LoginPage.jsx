@@ -16,12 +16,12 @@ export default function LoginPage(props) {
   const formDialogBody = FormDialogBodyBuilder(
     "Don't have an account?",
     'Create new account',
-    '',
+    '/register',
   );
   const formComponent = <LoginFormComponent />;
   const buttonComponent = FormDialogButtonBuilder(
     'Go back',
-    () => {},
+    () => { window.location.assign('/'); },
     'Log in',
     () => {},
     <RightArrrowIcon />,
