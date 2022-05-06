@@ -1,5 +1,2 @@
-export const ClassComposer = (initialClass, ...args) => {
-    return args.reduce((previous, current) => {
-        return previous + " " + current;
-    }, initialClass);
-};
+/* eslint-disable import/prefer-default-export */
+export const ClassComposer = (initialClass, ...args) => args.reduce((previous, current) => `${previous} ${current}`, initialClass);
