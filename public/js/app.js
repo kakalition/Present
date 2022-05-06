@@ -2386,7 +2386,7 @@ function LoginPage(props) {
 
   var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_3__.FormDialogButtonBuilder)('Go back', function () {}, 'Log in', function () {}, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    className: "flex min-h-screen w-screen items-end justify-center bg-cover bg-center md:items-center",
+    className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {
       backgroundImage: "url(".concat("".concat(publicpath, "/bg.png"), ")")
     },
