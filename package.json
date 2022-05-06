@@ -13,7 +13,6 @@
         "@babel/preset-react": "^7.16.7",
         "@reduxjs/toolkit": "^1.8.1",
         "autoprefixer": "^10.4.7",
-        "axios": "^0.25",
         "eslint": "^8.14.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-plugin-import": "^2.26.0",
@@ -22,10 +21,11 @@
         "eslint-plugin-react-hooks": "^4.5.0",
         "eslint-plugin-tailwindcss": "^3.5.0",
         "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
         "postcss": "^8.4.13"
     },
     "dependencies": {
+        "axios": "^0.25",
+        "lodash": "^4.17.19",
         "prop-types": "^15.8.1",
         "react": "^18.1.0",
         "react-dom": "^18.1.0",

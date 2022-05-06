@@ -2,7 +2,7 @@ import SingleInputComponent from '../../common/SingleInputComponent';
 
 export default function RegisterFormComponent() {
   return (
-    <form>
+    <form id="register-form">
       <div className="flex flex-row justify-between items-center">
         <div className="w-full">
           <SingleInputComponent type="string" id="firstname" label="First name" placeholder="Joseph" />
