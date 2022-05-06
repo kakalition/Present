@@ -2569,14 +2569,18 @@ __webpack_require__.r(__webpack_exports__);
 
 function registerCallback(e) {
   e.preventDefault();
-  var formData = new FormData(document.getElementById('register-form'));
+  var formData = new FormData();
+  formData.append('name', "".concat(document.getElementById('firstname').value, " ").concat(document.getElementById('lastname').value));
+  formData.append('email', document.getElementById('email').value);
+  formData.append('password', document.getElementById('password').value);
+  formData.append('password_confirmation', document.getElementById('password').value);
   var config = {
     headers: {
       'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content
     }
   };
   axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', formData, config).then(function (response) {
-    if (response.status === 200) {
+    if (response.status === 201) {
       window.location.assign('/home');
     }
   });

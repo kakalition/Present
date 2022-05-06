@@ -19,6 +19,6 @@ Route::get('/', function () {
         ->with('public_path', $public_path);
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/home', function () {
+    return view('home');
 });

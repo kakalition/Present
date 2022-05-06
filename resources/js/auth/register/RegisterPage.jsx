@@ -9,7 +9,12 @@ import RegisterFormComponent from './components/RegisterFormComponent';
 function registerCallback(e) {
   e.preventDefault();
 
-  const formData = new FormData(document.getElementById('register-form'));
+  const formData = new FormData();
+  formData.append('name', `${document.getElementById('firstname').value} ${document.getElementById('lastname').value}`);
+  formData.append('email', document.getElementById('email').value);
+  formData.append('password', document.getElementById('password').value);
+  formData.append('password_confirmation', document.getElementById('password').value);
+
   const config = {
     headers: {
       'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
@@ -19,7 +24,7 @@ function registerCallback(e) {
   axios
     .post('/register', formData, config)
     .then((response) => {
-      if (response.status === 200) { window.location.assign('/home'); }
+      if (response.status === 201) { window.location.assign('/home'); }
     });
 }
 
