@@ -3654,9 +3654,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ SingleInputComponent)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/LoginAnimation */ "./resources/js/auth/common/utils/LoginAnimation.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 /**
  * @param {{type: string, id: string, label: string,
@@ -3671,36 +3673,48 @@ function SingleInputComponent(props) {
       id = props.id,
       label = props.label,
       placeholder = props.placeholder,
+      isError = props.isError,
       inlineComponent = props.inlineComponent;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  var className = 'px-4 w-full h-12 font-ibm-plex-sans text-base bg-slate-100 border-2' + ' focus:border-primary-button focus:outline-none md:h-14';
+
+  if (isError) {
+    className += ' border-red-500';
+    (0,_utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_0__.shakeInputAnimation)(id);
+  } else {
+    className += ' border-x-transparent border-t-transparent border-b-slate-400';
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex justify-between items-center w-full",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
         htmlFor: id,
         className: "font-ibm-plex-sans text-base text-black md:text-lg",
         children: label
       }), inlineComponent]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-      className: "px-4 w-full h-12 font-ibm-plex-sans text-base bg-slate-100 border-2 focus:border-2 focus:border-primary-button border-x-transparent border-t-transparent border-b-slate-400 focus:outline-none md:h-14",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: className,
       type: type,
       id: id,
       name: id,
       placeholder: placeholder,
       required: true
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {})]
   });
 }
 SingleInputComponent.propTypes = {
-  type: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  id: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  label: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  placeholder: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  inlineComponent: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().element)
+  type: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  id: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  label: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  placeholder: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  isError: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool),
+  inlineComponent: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().element)
 };
 SingleInputComponent.defaultProps = {
-  inlineComponent: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {})
+  isError: false,
+  inlineComponent: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {})
 };
 
 /***/ }),
@@ -3759,6 +3773,7 @@ SnackbarComponent.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "hideSnackbarAnimation": () => (/* binding */ hideSnackbarAnimation),
+/* harmony export */   "shakeInputAnimation": () => (/* binding */ shakeInputAnimation),
 /* harmony export */   "showSnackbarAnimation": () => (/* binding */ showSnackbarAnimation)
 /* harmony export */ });
 /* harmony import */ var animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs/lib/anime.es */ "./node_modules/animejs/lib/anime.es.js");
@@ -3779,6 +3794,22 @@ function hideSnackbarAnimation() {
     opacity: 0,
     easing: 'easeOutSine',
     duration: 200
+  });
+}
+function shakeInputAnimation(id) {
+  (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    targets: "#".concat(id),
+    translateX: [{
+      value: '10px',
+      duration: 50
+    }, {
+      value: '-10px',
+      duration: 50
+    }, {
+      value: '0px',
+      duration: 50
+    }],
+    easing: 'easeOutSine'
   });
 }
 
@@ -3831,7 +3862,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function LoginPage(props) {
-  var publicpath = props.publicpath;
+  var publicpath = props.publicpath; // Snackbar State
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -3841,12 +3872,20 @@ function LoginPage(props) {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
       errorMessage = _useState4[0],
-      setErrorMessage = _useState4[1];
+      setErrorMessage = _useState4[1]; // Form State
+
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      errorList = _useState6[0],
+      setErrorList = _useState6[1];
 
   var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogHeaderBuilder)('Log in');
   var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogBodyBuilder)("Don't have an account?", 'Create new account', '/register');
 
-  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {});
+  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_LoginFormComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    errorList: errorList
+  });
 
   var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogButtonBuilder)('Go back', function () {
     window.location.assign('/');
@@ -3854,6 +3893,8 @@ function LoginPage(props) {
     return setShouldAnimate(value);
   }, function (message) {
     return setErrorMessage(message);
+  }, function (errList) {
+    return setErrorList(errList);
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "flex overflow-hidden flex-col justify-center items-end w-screen h-screen bg-center bg-cover md:items-center",
@@ -3895,6 +3936,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ LoginFormComponent)
 /* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.jsx");
 /* harmony import */ var _RememberMeComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RememberMeComponent */ "./resources/js/auth/login/components/RememberMeComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -3902,7 +3945,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function LoginFormComponent() {
+
+function LoginFormComponent(props) {
+  var errorList = props.errorList;
+
   var inlineComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
     className: "font-ibm-plex-sans text-base text-sky-500 underline underline-offset-2 md:text-lg",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
@@ -3917,7 +3963,8 @@ function LoginFormComponent() {
       type: "email",
       id: "email",
       label: "Email address",
-      placeholder: "yourname@gmail.com"
+      placeholder: "yourname@gmail.com",
+      isError: errorList.includes('email')
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
@@ -3925,12 +3972,16 @@ function LoginFormComponent() {
       id: "password",
       label: "Password",
       placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+      isError: errorList.includes('password'),
       inlineComponent: inlineComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_RememberMeComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
   });
 }
+LoginFormComponent.propTypes = {
+  errorList: prop_types__WEBPACK_IMPORTED_MODULE_3___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_3___default().string)).isRequired
+};
 
 /***/ }),
 
@@ -3979,8 +4030,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+ // eslint-disable-next-line max-len
 
-function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter) {
+function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter, errorListSetter) {
   return function (e) {
     e.preventDefault();
     var formData = new FormData(document.getElementById('login-form'));
@@ -3999,9 +4051,10 @@ function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter) {
     var onRejected = function onRejected(reason) {
       isAnimatedSetter(true);
       errorMessageSetter(reason.response.data.message);
+      errorListSetter(Object.keys(reason.response.data.errors));
       setTimeout(function () {
         return isAnimatedSetter(false);
-      }, 2000);
+      }, 5000);
     };
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().post('/login', formData, config).then(onFulfilled, onRejected)["catch"]();

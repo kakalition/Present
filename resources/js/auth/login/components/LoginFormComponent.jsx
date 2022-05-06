@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import SingleInputComponent from '../../common/SingleInputComponent';
 import RememberMeComponent from './RememberMeComponent';
 
-export default function LoginFormComponent() {
+export default function LoginFormComponent(props) {
+  const { errorList } = props;
+
   const inlineComponent = (
     <span
       className="font-ibm-plex-sans text-base text-sky-500 underline underline-offset-2
@@ -18,6 +21,7 @@ export default function LoginFormComponent() {
         id="email"
         label="Email address"
         placeholder="yourname@gmail.com"
+        isError={errorList.includes('email')}
       />
       <div className="h-4" />
       <SingleInputComponent
@@ -25,6 +29,7 @@ export default function LoginFormComponent() {
         id="password"
         label="Password"
         placeholder="••••••••"
+        isError={errorList.includes('password')}
         inlineComponent={inlineComponent}
       />
       <div className="h-4" />
@@ -32,3 +37,7 @@ export default function LoginFormComponent() {
     </form>
   );
 }
+
+LoginFormComponent.propTypes = {
+  errorList: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

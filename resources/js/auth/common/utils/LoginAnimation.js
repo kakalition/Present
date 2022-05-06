@@ -19,3 +19,15 @@ export function hideSnackbarAnimation() {
     duration: 200,
   });
 }
+
+export function shakeInputAnimation(id) {
+  anime({
+    targets: `#${id}`,
+    translateX: [
+      { value: '10px', duration: 50 },
+      { value: '-10px', duration: 50 },
+      { value: '0px', duration: 50 },
+    ],
+    easing: 'easeOutSine',
+  });
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export default function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter) {
+// eslint-disable-next-line max-len
+export default function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter, errorListSetter) {
   return (e) => {
     e.preventDefault();
 
@@ -20,8 +21,9 @@ export default function loginCallbackBuilder(isAnimatedSetter, errorMessageSette
     const onRejected = (reason) => {
       isAnimatedSetter(true);
       errorMessageSetter(reason.response.data.message);
+      errorListSetter(Object.keys(reason.response.data.errors));
 
-      setTimeout(() => isAnimatedSetter(false), 2000);
+      setTimeout(() => isAnimatedSetter(false), 5000);
     };
 
     axios

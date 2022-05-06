@@ -15,8 +15,12 @@ import loginCallbackBuilder from './utils/LoginCallbackBuilder';
 export default function LoginPage(props) {
   const { publicpath } = props;
 
+  // Snackbar State
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  // Form State
+  const [errorList, setErrorList] = useState([]);
 
   const formDialogHeader = FormDialogHeaderBuilder('Log in');
   const formDialogBody = FormDialogBodyBuilder(
@@ -24,12 +28,16 @@ export default function LoginPage(props) {
     'Create new account',
     '/register',
   );
-  const formComponent = <LoginFormComponent />;
+  const formComponent = <LoginFormComponent errorList={errorList} />;
   const buttonComponent = FormDialogButtonBuilder(
     'Go back',
     () => { window.location.assign('/'); },
     'Log in',
-    loginCallbackBuilder((value) => setShouldAnimate(value), (message) => setErrorMessage(message)),
+    loginCallbackBuilder(
+      (value) => setShouldAnimate(value),
+      (message) => setErrorMessage(message),
+      (errList) => setErrorList(errList),
+    ),
     <RightArrrowIcon />,
   );
 

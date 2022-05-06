@@ -1,4 +1,5 @@
 import PropType from 'prop-types';
+import { shakeInputAnimation } from './utils/LoginAnimation';
 
 /**
  * @param {{type: string, id: string, label: string,
@@ -6,8 +7,18 @@ import PropType from 'prop-types';
  */
 export default function SingleInputComponent(props) {
   const {
-    type, id, label, placeholder, inlineComponent,
+    type, id, label, placeholder, isError, inlineComponent,
   } = props;
+
+  let className = 'px-4 w-full h-12 font-ibm-plex-sans text-base bg-slate-100 border-2'
+  + ' focus:border-primary-button focus:outline-none md:h-14';
+
+  if (isError) {
+    className += ' border-red-500';
+    shakeInputAnimation(id);
+  } else {
+    className += ' border-x-transparent border-t-transparent border-b-slate-400';
+  }
 
   return (
     <>
@@ -26,9 +37,7 @@ export default function SingleInputComponent(props) {
       <div className="h-2" />
 
       <input
-        className="px-4 w-full h-12 font-ibm-plex-sans text-base bg-slate-100 border-2 focus:border-2 focus:border-primary-button border-x-transparent
-        border-t-transparent border-b-slate-400 focus:outline-none
-        md:h-14"
+        className={className}
         type={type}
         id={id}
         name={id}
@@ -45,9 +54,11 @@ SingleInputComponent.propTypes = {
   id: PropType.string.isRequired,
   label: PropType.string.isRequired,
   placeholder: PropType.string.isRequired,
+  isError: PropType.bool,
   inlineComponent: PropType.element,
 };
 
 SingleInputComponent.defaultProps = {
+  isError: false,
   inlineComponent: <div />,
 };
