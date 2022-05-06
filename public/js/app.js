@@ -3897,7 +3897,7 @@ function LoginPage(props) {
     return setErrorList(errList);
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-    className: "flex overflow-hidden flex-col justify-center items-end w-screen h-screen bg-center bg-cover md:items-center",
+    className: "flex justify-center items-end w-screen h-screen bg-center bg-cover md:items-center",
     style: {
       backgroundImage: "url(".concat("".concat(publicpath, "/bg.png"), ")")
     },
@@ -3907,7 +3907,7 @@ function LoginPage(props) {
       formComponent: formComponent,
       buttonComponent: buttonComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      className: "overflow-hidden absolute bottom-0 p-8 w-full",
+      className: "overflow-hidden absolute top-0 p-8 w-full lg:bottom-0",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         shouldAnimate: shouldAnimate,
         errorMessage: errorMessage
@@ -4149,7 +4149,7 @@ function RegisterPage(props) {
       formComponent: formComponent,
       buttonComponent: buttonComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      className: "overflow-hidden absolute bottom-0 p-8 w-full",
+      className: "overflow-hidden absolute top-0 p-8 w-full lg:bottom-0",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         shouldAnimate: shouldAnimate,
         errorMessage: errorMessage

@@ -447,6 +447,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-0 {
   bottom: 0px;
 }
+.top-0 {
+  top: 0px;
+}
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -974,6 +977,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:bottom-2 {
     bottom: 0.5rem;
+  }
+
+  .lg\:bottom-0 {
+    bottom: 0px;
   }
 
   .lg\:col-start-1 {

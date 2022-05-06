@@ -43,7 +43,7 @@ export default function LoginPage(props) {
 
   return (
     <div
-      className="flex overflow-hidden flex-col justify-center items-end w-screen h-screen bg-center bg-cover md:items-center"
+      className="flex justify-center items-end w-screen h-screen bg-center bg-cover md:items-center"
       style={{ backgroundImage: `url(${`${publicpath}/bg.png`})` }}
     >
       <FormDialogComponent
@@ -53,7 +53,7 @@ export default function LoginPage(props) {
         buttonComponent={buttonComponent}
       />
 
-      <div className="overflow-hidden absolute bottom-0 p-8 w-full">
+      <div className="overflow-hidden absolute top-0 p-8 w-full lg:bottom-0">
         <SnackbarComponent shouldAnimate={shouldAnimate} errorMessage={errorMessage} />
       </div>
     </div>
