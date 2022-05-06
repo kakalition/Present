@@ -1,5 +1,5 @@
 import PropType from 'prop-types';
-import { shakeInputAnimation } from './utils/LoginAnimation';
+import { shakeInputAnimation } from './utils/AuthAnimation';
 
 /**
  * @param {{type: string, id: string, label: string,

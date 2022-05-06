@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { hideSnackbarAnimation, showSnackbarAnimation } from './utils/LoginAnimation';
+import { hideSnackbarAnimation, showSnackbarAnimation } from './utils/AuthAnimation';
 
 export default function SnackbarComponent(props) {
   const { shouldAnimate, errorMessage } = props;

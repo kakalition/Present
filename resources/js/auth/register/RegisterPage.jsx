@@ -1,44 +1,31 @@
-import axios from 'axios';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import RightArrrowIcon from '../../common-component/icons/RightArrrowIcon';
 import { elementBinder } from '../../utils/ElementBinder';
 import FormDialogComponent from '../common/FormDialogComponent';
 import { FormDialogBodyBuilder, FormDialogButtonBuilder, FormDialogHeaderBuilder } from '../common/FormDialogUtils';
+import SnackbarComponent from '../common/SnackbarComponent';
 import RegisterFormComponent from './components/RegisterFormComponent';
-
-function registerCallback(e) {
-  e.preventDefault();
-
-  const formData = new FormData();
-  formData.append('name', `${document.getElementById('firstname').value} ${document.getElementById('lastname').value}`);
-  formData.append('email', document.getElementById('email').value);
-  formData.append('password', document.getElementById('password').value);
-  formData.append('password_confirmation', document.getElementById('password').value);
-
-  const config = {
-    headers: {
-      'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
-    },
-  };
-
-  axios
-    .post('/register', formData, config)
-    .then((response) => {
-      if (response.status === 201) { window.location.assign('/home'); }
-    });
-}
+import registerCallbackBuilder from './utils/RegisterCallbackBuilder';
 
 export default function RegisterPage(props) {
   const { publicpath } = props;
 
+  // Snackbar State
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Form State
+  const [errorList, setErrorList] = useState([]);
+
   const formDialogHeader = FormDialogHeaderBuilder('Sign up');
   const formDialogBody = FormDialogBodyBuilder('Already have an account?', 'Login', '/login');
-  const formComponent = <RegisterFormComponent />;
+  const formComponent = <RegisterFormComponent errorList={errorList} />;
   const buttonComponent = FormDialogButtonBuilder(
     'Go back',
     () => { window.location.assign('/'); },
     'Sign up',
-    registerCallback,
+    registerCallbackBuilder(setShouldAnimate, setErrorMessage, setErrorList),
     <RightArrrowIcon />,
   );
 
@@ -53,6 +40,10 @@ export default function RegisterPage(props) {
         formComponent={formComponent}
         buttonComponent={buttonComponent}
       />
+
+      <div className="overflow-hidden absolute bottom-0 p-8 w-full">
+        <SnackbarComponent shouldAnimate={shouldAnimate} errorMessage={errorMessage} />
+      </div>
     </div>
   );
 }

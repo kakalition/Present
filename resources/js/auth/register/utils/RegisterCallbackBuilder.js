@@ -1,11 +1,16 @@
 import axios from 'axios';
 
 // eslint-disable-next-line max-len
-export default function loginCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorListSetter) {
+export default function registerCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorListSetter) {
   return (e) => {
     e.preventDefault();
 
-    const formData = new FormData(document.getElementById('login-form'));
+    const formData = new FormData();
+    formData.append('name', `${document.getElementById('firstname').value} ${document.getElementById('lastname').value}`);
+    formData.append('email', document.getElementById('email').value);
+    formData.append('password', document.getElementById('password').value);
+    formData.append('password_confirmation', document.getElementById('password').value);
+
     const config = {
       headers: {
         'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
@@ -27,7 +32,7 @@ export default function loginCallbackBuilder(shouldAnimateSetter, errorMessageSe
     };
 
     axios
-      .post('/login', formData, config)
+      .post('/register', formData, config)
       .then(onFulfilled, onRejected);
   };
 }

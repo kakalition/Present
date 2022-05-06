@@ -3656,7 +3656,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/LoginAnimation */ "./resources/js/auth/common/utils/LoginAnimation.js");
+/* harmony import */ var _utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/AuthAnimation */ "./resources/js/auth/common/utils/AuthAnimation.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -3679,7 +3679,7 @@ function SingleInputComponent(props) {
 
   if (isError) {
     className += ' border-red-500';
-    (0,_utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_0__.shakeInputAnimation)(id);
+    (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_0__.shakeInputAnimation)(id);
   } else {
     className += ' border-x-transparent border-t-transparent border-b-slate-400';
   }
@@ -3734,7 +3734,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/LoginAnimation */ "./resources/js/auth/common/utils/LoginAnimation.js");
+/* harmony import */ var _utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/AuthAnimation */ "./resources/js/auth/common/utils/AuthAnimation.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -3744,7 +3744,7 @@ function SnackbarComponent(props) {
   var shouldAnimate = props.shouldAnimate,
       errorMessage = props.errorMessage;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (shouldAnimate) (0,_utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_1__.showSnackbarAnimation)();else (0,_utils_LoginAnimation__WEBPACK_IMPORTED_MODULE_1__.hideSnackbarAnimation)();
+    if (shouldAnimate) (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__.showSnackbarAnimation)();else (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__.hideSnackbarAnimation)();
   }, [shouldAnimate]);
   var className = 'p-4 w-full bg-error-bg translate-y-4 opacity-0';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -3763,10 +3763,10 @@ SnackbarComponent.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/auth/common/utils/LoginAnimation.js":
-/*!**********************************************************!*\
-  !*** ./resources/js/auth/common/utils/LoginAnimation.js ***!
-  \**********************************************************/
+/***/ "./resources/js/auth/common/utils/AuthAnimation.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/auth/common/utils/AuthAnimation.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4032,7 +4032,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
  // eslint-disable-next-line max-len
 
-function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter, errorListSetter) {
+function loginCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorListSetter) {
   return function (e) {
     e.preventDefault();
     var formData = new FormData(document.getElementById('login-form'));
@@ -4049,15 +4049,15 @@ function loginCallbackBuilder(isAnimatedSetter, errorMessageSetter, errorListSet
     };
 
     var onRejected = function onRejected(reason) {
-      isAnimatedSetter(true);
+      shouldAnimateSetter(true);
       errorMessageSetter(reason.response.data.message);
       errorListSetter(Object.keys(reason.response.data.errors));
       setTimeout(function () {
-        return isAnimatedSetter(false);
+        return shouldAnimateSetter(false);
       }, 5000);
     };
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/login', formData, config).then(onFulfilled, onRejected)["catch"]();
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/login', formData, config).then(onFulfilled, onRejected);
   };
 }
 
@@ -4074,16 +4074,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ RegisterPage)
 /* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
 /* harmony import */ var _common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/FormDialogComponent */ "./resources/js/auth/common/FormDialogComponent.jsx");
 /* harmony import */ var _common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/FormDialogUtils */ "./resources/js/auth/common/FormDialogUtils.js");
-/* harmony import */ var _components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/RegisterFormComponent */ "./resources/js/auth/register/components/RegisterFormComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/SnackbarComponent */ "./resources/js/auth/common/SnackbarComponent.jsx");
+/* harmony import */ var _components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/RegisterFormComponent */ "./resources/js/auth/register/components/RegisterFormComponent.jsx");
+/* harmony import */ var _utils_RegisterCallbackBuilder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/RegisterCallbackBuilder */ "./resources/js/auth/register/utils/RegisterCallbackBuilder.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -4093,55 +4106,64 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function registerCallback(e) {
-  e.preventDefault();
-  var formData = new FormData();
-  formData.append('name', "".concat(document.getElementById('firstname').value, " ").concat(document.getElementById('lastname').value));
-  formData.append('email', document.getElementById('email').value);
-  formData.append('password', document.getElementById('password').value);
-  formData.append('password_confirmation', document.getElementById('password').value);
-  var config = {
-    headers: {
-      'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content
-    }
-  };
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', formData, config).then(function (response) {
-    if (response.status === 201) {
-      window.location.assign('/home');
-    }
-  });
-}
+
+
 
 function RegisterPage(props) {
-  var publicpath = props.publicpath;
+  var publicpath = props.publicpath; // Snackbar State
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      shouldAnimate = _useState2[0],
+      setShouldAnimate = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errorMessage = _useState4[0],
+      setErrorMessage = _useState4[1]; // Form State
+
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      errorList = _useState6[0],
+      setErrorList = _useState6[1];
+
   var formDialogHeader = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogHeaderBuilder)('Sign up');
   var formDialogBody = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogBodyBuilder)('Already have an account?', 'Login', '/login');
 
-  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {});
+  var formComponent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_RegisterFormComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    errorList: errorList
+  });
 
   var buttonComponent = (0,_common_FormDialogUtils__WEBPACK_IMPORTED_MODULE_4__.FormDialogButtonBuilder)('Go back', function () {
     window.location.assign('/');
-  }, 'Sign up', registerCallback, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+  }, 'Sign up', (0,_utils_RegisterCallbackBuilder__WEBPACK_IMPORTED_MODULE_7__["default"])(setShouldAnimate, setErrorMessage, setErrorList), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center",
     style: {
       backgroundImage: "url(".concat("".concat(publicpath, "/bg.png"), ")")
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_FormDialogComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
       header: formDialogHeader,
       body: formDialogBody,
       formComponent: formComponent,
       buttonComponent: buttonComponent
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "overflow-hidden absolute bottom-0 p-8 w-full",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        shouldAnimate: shouldAnimate,
+        errorMessage: errorMessage
+      })
+    })]
   });
 }
 RegisterPage.propTypes = {
-  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string)
+  publicpath: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().string)
 };
 RegisterPage.defaultProps = {
   publicpath: ''
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('register-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RegisterPage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('register-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(RegisterPage, {}));
 
 /***/ }),
 
@@ -4156,12 +4178,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ RegisterFormComponent)
 /* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/SingleInputComponent */ "./resources/js/auth/common/SingleInputComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
-function RegisterFormComponent() {
+
+function RegisterFormComponent(props) {
+  var errorList = props.errorList;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
     id: "register-form",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -4172,7 +4198,8 @@ function RegisterFormComponent() {
           type: "string",
           id: "firstname",
           label: "First name",
-          placeholder: "Joseph"
+          placeholder: "Joseph",
+          isError: errorList.includes('name')
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "w-16"
@@ -4182,7 +4209,8 @@ function RegisterFormComponent() {
           type: "string",
           id: "lastname",
           label: "Last name",
-          placeholder: "Joestar"
+          placeholder: "Joestar",
+          isError: errorList.includes('name')
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -4191,16 +4219,71 @@ function RegisterFormComponent() {
       type: "email",
       id: "email",
       label: "Email address",
-      placeholder: "yourname@provider.com"
+      placeholder: "yourname@provider.com",
+      isError: errorList.includes('email')
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
       type: "password",
       id: "password",
       label: "Password",
-      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+      placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+      isError: errorList.includes('password')
     })]
   });
+}
+RegisterFormComponent.propTypes = {
+  errorList: prop_types__WEBPACK_IMPORTED_MODULE_2___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)).isRequired
+};
+
+/***/ }),
+
+/***/ "./resources/js/auth/register/utils/RegisterCallbackBuilder.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/auth/register/utils/RegisterCallbackBuilder.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ registerCallbackBuilder)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+ // eslint-disable-next-line max-len
+
+function registerCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorListSetter) {
+  return function (e) {
+    e.preventDefault();
+    var formData = new FormData();
+    formData.append('name', "".concat(document.getElementById('firstname').value, " ").concat(document.getElementById('lastname').value));
+    formData.append('email', document.getElementById('email').value);
+    formData.append('password', document.getElementById('password').value);
+    formData.append('password_confirmation', document.getElementById('password').value);
+    var config = {
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content
+      }
+    };
+
+    var onFulfilled = function onFulfilled(response) {
+      if (response.status === 200) {
+        window.location.assign('/home');
+      }
+    };
+
+    var onRejected = function onRejected(reason) {
+      shouldAnimateSetter(true);
+      errorMessageSetter(reason.response.data.message);
+      errorListSetter(Object.keys(reason.response.data.errors));
+      setTimeout(function () {
+        return shouldAnimateSetter(false);
+      }, 5000);
+    };
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', formData, config).then(onFulfilled, onRejected);
+  };
 }
 
 /***/ }),
