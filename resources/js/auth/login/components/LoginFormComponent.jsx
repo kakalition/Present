@@ -10,18 +10,19 @@ export default function LoginFormComponent() {
       <a href="/forgot-password">Forgot password?</a>
     </span>
   );
+
   return (
     <form>
       <SingleInputComponent
         type="text"
-        id="test"
+        id="email"
         label="Email address"
         placeholder="yourname@gmail.com"
       />
       <div className="h-4" />
       <SingleInputComponent
         type="text"
-        id="test1"
+        id="password"
         label="Password"
         placeholder="••••••••"
         inlineComponent={inlineComponent}

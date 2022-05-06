@@ -3,6 +3,7 @@ import RightArrrowIcon from '../../common-component/icons/RightArrrowIcon';
 import { elementBinder } from '../../utils/ElementBinder';
 import FormDialogComponent from '../common/FormDialogComponent';
 import { FormDialogBodyBuilder, FormDialogButtonBuilder, FormDialogHeaderBuilder } from '../common/FormDialogUtils';
+import RegisterFormComponent from './components/RegisterFormComponent';
 
 export default function RegisterPage(props) {
   const { publicpath } = props;

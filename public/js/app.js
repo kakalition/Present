@@ -2457,14 +2457,14 @@ function LoginFormComponent() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
       type: "text",
-      id: "test",
+      id: "email",
       label: "Email address",
       placeholder: "yourname@gmail.com"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
       type: "text",
-      id: "test1",
+      id: "password",
       label: "Password",
       placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
       inlineComponent: inlineComponent
