@@ -11,11 +11,13 @@ export default function CommonButtonComponent(props) {
     buttonType, textSize, padding, text, onClickCallback, icon, fillSpace,
   } = props;
 
-  let className = 'h-full text-left';
+  let className = 'text-left';
 
   if (fillSpace) {
-    className += ' w-full';
+    className += ' h-full w-full';
   }
+
+  console.log(className);
 
   switch (buttonType) {
     case 'primary': {
