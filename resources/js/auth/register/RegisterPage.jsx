@@ -24,9 +24,6 @@ function registerCallback(e) {
   axios
     .post('/register', formData, config)
     .then((response) => {
-      console.log(response);
-      console.log(response.data);
-      console.log(response.request);
       if (response.status === 201) { window.location.assign('/home'); }
     });
 }

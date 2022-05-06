@@ -17,8 +17,6 @@ export default function CommonButtonComponent(props) {
     className += ' h-full w-full';
   }
 
-  console.log(className);
-
   switch (buttonType) {
     case 'primary': {
       className = ClassComposer(

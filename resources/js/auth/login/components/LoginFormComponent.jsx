@@ -12,16 +12,16 @@ export default function LoginFormComponent() {
   );
 
   return (
-    <form>
+    <form id="login-form">
       <SingleInputComponent
-        type="text"
+        type="email"
         id="email"
         label="Email address"
         placeholder="yourname@gmail.com"
       />
       <div className="h-4" />
       <SingleInputComponent
-        type="text"
+        type="password"
         id="password"
         label="Password"
         placeholder="••••••••"

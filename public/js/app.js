@@ -2412,7 +2412,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function loginCallback(e) {
   e.preventDefault();
-  var formData = new FormData(document.getElementById('register-form'));
+  var formData = new FormData(document.getElementById('login-form'));
   var config = {
     headers: {
       'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content
@@ -2486,15 +2486,16 @@ function LoginFormComponent() {
   });
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+    id: "login-form",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      type: "text",
+      type: "email",
       id: "email",
       label: "Email address",
       placeholder: "yourname@gmail.com"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_SingleInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      type: "text",
+      type: "password",
       id: "password",
       label: "Password",
       placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
@@ -2582,10 +2583,6 @@ function registerCallback(e) {
     }
   };
   axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', formData, config).then(function (response) {
-    console.log(response);
-    console.log(response.data);
-    console.log(response.request);
-
     if (response.status === 201) {
       window.location.assign('/home');
     }
@@ -2754,8 +2751,6 @@ function CommonButtonComponent(props) {
   if (fillSpace) {
     className += ' h-full w-full';
   }
-
-  console.log(className);
 
   switch (buttonType) {
     case 'primary':

@@ -13,7 +13,7 @@ import LoginFormComponent from './components/LoginFormComponent';
 function loginCallback(e) {
   e.preventDefault();
 
-  const formData = new FormData(document.getElementById('register-form'));
+  const formData = new FormData(document.getElementById('login-form'));
   const config = {
     headers: {
       'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
