@@ -1,5 +1,5 @@
-import axios from 'axios';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import RightArrrowIcon from '../../common-component/icons/RightArrrowIcon';
 import { elementBinder } from '../../utils/ElementBinder';
 import FormDialogComponent from '../common/FormDialogComponent';
@@ -8,27 +8,15 @@ import {
   FormDialogButtonBuilder,
   FormDialogHeaderBuilder,
 } from '../common/FormDialogUtils';
+import SnackbarComponent from '../common/SnackbarComponent';
 import LoginFormComponent from './components/LoginFormComponent';
-
-function loginCallback(e) {
-  e.preventDefault();
-
-  const formData = new FormData(document.getElementById('login-form'));
-  const config = {
-    headers: {
-      'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
-    },
-  };
-
-  axios
-    .post('/login', formData, config)
-    .then((response) => {
-      if (response.status === 200) { window.location.assign('/home'); }
-    });
-}
+import loginCallbackBuilder from './utils/LoginCallbackBuilder';
 
 export default function LoginPage(props) {
   const { publicpath } = props;
+
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const formDialogHeader = FormDialogHeaderBuilder('Log in');
   const formDialogBody = FormDialogBodyBuilder(
@@ -41,13 +29,13 @@ export default function LoginPage(props) {
     'Go back',
     () => { window.location.assign('/'); },
     'Log in',
-    loginCallback,
+    loginCallbackBuilder((value) => setShouldAnimate(value), (message) => setErrorMessage(message)),
     <RightArrrowIcon />,
   );
 
   return (
     <div
-      className="flex justify-center items-end w-screen min-h-screen bg-center bg-cover md:items-center"
+      className="flex overflow-hidden flex-col justify-center items-end w-screen h-screen bg-center bg-cover md:items-center"
       style={{ backgroundImage: `url(${`${publicpath}/bg.png`})` }}
     >
       <FormDialogComponent
@@ -56,6 +44,10 @@ export default function LoginPage(props) {
         formComponent={formComponent}
         buttonComponent={buttonComponent}
       />
+
+      <div className="overflow-hidden absolute bottom-0 p-8 w-full">
+        <SnackbarComponent shouldAnimate={shouldAnimate} errorMessage={errorMessage} />
+      </div>
     </div>
   );
 }
