@@ -11,8 +11,11 @@ export default function RegisterFormComponent() {
         <div className="w-full">
           <SingleInputComponent type="string" id="lastname" label="Last name" placeholder="Joestar" />
         </div>
+
       </div>
+
       <div className="h-4" />
+
       <SingleInputComponent type="email" id="email" label="Email address" placeholder="yourname@provider.com" />
       <div className="h-4" />
       <SingleInputComponent type="password" id="password" label="Password" placeholder="••••••••" />
