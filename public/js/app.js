@@ -4164,7 +4164,7 @@ function RegisterPage(props) {
       formComponent: formComponent,
       buttonComponent: buttonComponent
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      className: "overflow-hidden absolute bottom-0 p-8 w-full",
+      className: "overflow-hidden absolute top-0 bottom-auto p-8 w-full md:top-auto md:bottom-0",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         shouldAnimate: shouldAnimate,
         errorMessage: errorMessage
@@ -4294,7 +4294,7 @@ function registerCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorL
       errorListSetter(Object.keys(reason.response.data.errors));
       setTimeout(function () {
         return shouldAnimateSetter(false);
-      }, 5000);
+      }, 5400);
     };
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().post('/register', formData, config).then(onFulfilled, onRejected);

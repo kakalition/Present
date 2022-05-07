@@ -41,7 +41,7 @@ export default function RegisterPage(props) {
         buttonComponent={buttonComponent}
       />
 
-      <div className="overflow-hidden absolute bottom-0 p-8 w-full">
+      <div className="overflow-hidden absolute top-0 bottom-auto p-8 w-full md:top-auto md:bottom-0">
         <SnackbarComponent shouldAnimate={shouldAnimate} errorMessage={errorMessage} />
       </div>
     </div>

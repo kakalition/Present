@@ -7,7 +7,6 @@ function showSnackbar() {
   if (val) showSnackbarAnimation('1rem');
   else showSnackbarAnimation('-1rem');
 }
-
 export default function SnackbarComponent(props) {
   const { shouldAnimate, errorMessage } = props;
   useEffect(() => {

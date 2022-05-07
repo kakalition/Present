@@ -28,7 +28,7 @@ export default function registerCallbackBuilder(shouldAnimateSetter, errorMessag
       errorMessageSetter(reason.response.data.message);
       errorListSetter(Object.keys(reason.response.data.errors));
 
-      setTimeout(() => shouldAnimateSetter(false), 5000);
+      setTimeout(() => shouldAnimateSetter(false), 5400);
     };
 
     axios
