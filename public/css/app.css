@@ -424,6 +424,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -433,23 +436,35 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-8 {
   bottom: 2rem;
 }
+.bottom-0 {
+  bottom: 0px;
+}
+.top-0 {
+  top: 0px;
+}
+.left-0 {
+  left: 0px;
+}
+.top-10 {
+  top: 2.5rem;
+}
+.top-1 {
+  top: 0.25rem;
+}
+.bottom-auto {
+  bottom: auto;
+}
 .col-start-1 {
   grid-column-start: 1;
-}
-.col-start-7 {
-  grid-column-start: 7;
 }
 .col-end-13 {
   grid-column-end: 13;
 }
-.col-end-7 {
-  grid-column-end: 7;
+.col-end-5 {
+  grid-column-end: 5;
 }
 .col-end-9 {
   grid-column-end: 9;
-}
-.col-end-5 {
-  grid-column-end: 5;
 }
 .row-start-2 {
   grid-row-start: 2;
@@ -457,14 +472,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .row-start-4 {
   grid-row-start: 4;
 }
-.row-end-6 {
-  grid-row-end: 6;
-}
 .row-end-4 {
   grid-row-end: 4;
 }
 .row-end-7 {
   grid-row-end: 7;
+}
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.ml-8 {
+  margin-left: 2rem;
 }
 .flex {
   display: flex;
@@ -472,34 +494,56 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid {
   display: grid;
 }
+.h-full {
+  height: 100%;
+}
 .h-screen {
   height: 100vh;
 }
 .h-4 {
   height: 1rem;
 }
+.h-8 {
+  height: 2rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-2 {
+  height: 0.5rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-5 {
+  height: 1.25rem;
+}
 .min-h-screen {
   min-height: 100vh;
-}
-.w-screen {
-  width: 100vw;
 }
 .w-full {
   width: 100%;
 }
-.scale-\[3\] {
-  --tw-scale-x: 3;
-  --tw-scale-y: 3;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.w-screen {
+  width: 100vw;
 }
-.scale-\[2\] {
-  --tw-scale-x: 2;
-  --tw-scale-y: 2;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.w-6 {
+  width: 1.5rem;
 }
-.scale-\[1\.5\] {
-  --tw-scale-x: 1.5;
-  --tw-scale-y: 1.5;
+.w-5 {
+  width: 1.25rem;
+}
+.w-2 {
+  width: 0.5rem;
+}
+.w-16 {
+  width: 4rem;
+}
+.translate-y-4 {
+  --tw-translate-y: 1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-\[1\.4\] {
@@ -516,8 +560,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-row {
   flex-direction: row;
 }
+.items-end {
+  align-items: flex-end;
+}
 .items-center {
   align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 .justify-between {
   justify-content: space-between;
@@ -543,9 +593,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-2 {
   border-width: 2px;
 }
+.border-t-2 {
+  border-top-width: 2px;
+}
 .border-primary-button {
   --tw-border-opacity: 1;
   border-color: rgb(27 171 252 / var(--tw-border-opacity));
+}
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+.border-x-transparent {
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.border-t-slate-300 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+.border-t-transparent {
+  border-top-color: transparent;
+}
+.border-b-slate-400 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(148 163 184 / var(--tw-border-opacity));
 }
 .bg-primary-button {
   --tw-bg-opacity: 1;
@@ -555,34 +627,64 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(57 57 57 / var(--tw-bg-opacity));
 }
-.bg-slate-800 {
+.bg-slate-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 .bg-web-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(249 253 255 / var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+.bg-error-bg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 77 77 / var(--tw-bg-opacity));
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
+}
 .p-2 {
   padding: 0.5rem;
 }
+.p-12 {
+  padding: 3rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-8 {
+  padding: 2rem;
+}
 .p-3 {
   padding: 0.75rem;
-}
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 .px-\[2rem\] {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .pr-8 {
   padding-right: 2rem;
+}
+.pr-32 {
+  padding-right: 8rem;
 }
 .pt-\[1rem\] {
   padding-top: 1rem;
@@ -590,49 +692,49 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-12 {
   padding-right: 3rem;
 }
+.text-left {
+  text-align: left;
+}
 .font-ibm-plex-sans {
   font-family: IBM Plex Sans, sans-serif;
 }
 .font-poppins {
   font-family: Poppins, sans-serif;
 }
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
-.text-\[calc\(1rem\+2vw\)\] {
-  font-size: calc(1rem + 2vw);
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
-.text-\[calc\(0\.5rem\+1\.5vw\)\] {
-  font-size: calc(0.5rem + 1.5vw);
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-\[calc\(1\.5rem\+2vw\)\] {
+  font-size: calc(1.5rem + 2vw);
+}
+.text-\[calc\(0\.4rem\+1\.5vw\)\] {
+  font-size: calc(0.4rem + 1.5vw);
 }
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-\[calc\(2rem\+2vw\)\] {
-  font-size: calc(2rem + 2vw);
-}
-.text-\[calc\(1\.8rem\+2vw\)\] {
-  font-size: calc(1.8rem + 2vw);
-}
-.text-\[calc\(1\.5rem\+2vw\)\] {
-  font-size: calc(1.5rem + 2vw);
-}
-.text-\[calc\(0\.7rem\+1\.5vw\)\] {
-  font-size: calc(0.7rem + 1.5vw);
-}
-.text-\[calc\(0\.3rem\+1\.8vw\)\] {
-  font-size: calc(0.3rem + 1.8vw);
-}
-.text-\[calc\(0\.4rem\+1\.8vw\)\] {
-  font-size: calc(0.4rem + 1.8vw);
-}
-.text-\[calc\(0\.4rem\+1\.5vw\)\] {
-  font-size: calc(0.4rem + 1.5vw);
-}
 .font-semibold {
   font-weight: 600;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
 }
 .font-light {
   font-weight: 300;
@@ -648,6 +750,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(27 171 252 / var(--tw-text-opacity));
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-sky-500 {
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
+}
 .text-sky-400 {
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity));
@@ -656,9 +766,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(253 186 116 / var(--tw-text-opacity));
 }
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+.opacity-0 {
+  opacity: 0;
 }
 .transition-all {
   transition-property: all;
@@ -668,29 +784,38 @@ Ensure the default browser behavior of the `hidden` attribute.
 .duration-100 {
   transition-duration: 100ms;
 }
+
 .hover\:bg-primary-button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(27 171 252 / var(--tw-bg-opacity));
 }
+
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
 .hover\:brightness-\[90\%\]:hover {
   --tw-brightness: brightness(90%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
-@media (min-width: 640px) {
 
-  .sm\:scale-\[1\.2\] {
-    --tw-scale-x: 1.2;
-    --tw-scale-y: 1.2;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
+.focus\:border-primary-button:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(27 171 252 / var(--tw-border-opacity));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
 
   .sm\:scale-\[1\] {
     --tw-scale-x: 1;
@@ -698,6 +823,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
+
 @media (min-width: 768px) {
 
   .md\:-right-36 {
@@ -708,46 +834,48 @@ Ensure the default browser behavior of the `hidden` attribute.
     bottom: 2rem;
   }
 
-  .md\:col-start-1 {
-    grid-column-start: 1;
+  .md\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .md\:top-0 {
+    top: 0px;
+  }
+
+  .md\:bottom-64 {
+    bottom: 16rem;
+  }
+
+  .md\:top-auto {
+    top: auto;
   }
 
   .md\:col-start-4 {
     grid-column-start: 4;
   }
 
-  .md\:col-end-7 {
-    grid-column-end: 7;
-  }
-
   .md\:col-end-8 {
     grid-column-end: 8;
-  }
-
-  .md\:row-start-2 {
-    grid-row-start: 2;
   }
 
   .md\:row-start-4 {
     grid-row-start: 4;
   }
 
-  .md\:row-end-4 {
-    grid-row-end: 4;
-  }
-
   .md\:row-end-7 {
     grid-row-end: 7;
+  }
+
+  .md\:h-14 {
+    height: 3.5rem;
   }
 
   .md\:h-6 {
     height: 1.5rem;
   }
 
-  .md\:scale-\[2\] {
-    --tw-scale-x: 2;
-    --tw-scale-y: 2;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  .md\:w-\[75\%\] {
+    width: 75%;
   }
 
   .md\:scale-\[1\.7\] {
@@ -760,8 +888,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 
+  .md\:items-center {
+    align-items: center;
+  }
+
   .md\:gap-3 {
     gap: 0.75rem;
+  }
+
+  .md\:self-start {
+    align-self: flex-start;
   }
 
   .md\:p-4 {
@@ -785,17 +921,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 5rem;
   }
 
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
-  .md\:text-\[calc\(2rem\+2vw\)\] {
-    font-size: calc(2rem + 2vw);
-  }
-
-  .md\:text-\[calc\(0\.5rem\+1\.3vw\)\] {
-    font-size: calc(0.5rem + 1.3vw);
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .md\:text-2xl {
@@ -803,6 +936,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:-right-72 {
@@ -839,6 +973,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:h-8 {
     height: 2rem;
+  }
+
+  .lg\:w-\[55\%\] {
+    width: 55%;
   }
 
   .lg\:scale-\[1\.3\] {
@@ -880,9 +1018,19 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 6rem;
   }
 
-  .lg\:text-lg {
-    font-size: 1.125rem;
+  .lg\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-3xl {

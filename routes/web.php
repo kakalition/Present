@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $public_path = asset('storage/');
-    return view('welcome')->with('public_path', $public_path);
+    return view('welcome')
+        ->with('public_path', $public_path);
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/home', function () {
+    return view('home');
 });

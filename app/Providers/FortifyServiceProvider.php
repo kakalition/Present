@@ -39,7 +39,7 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
 
-            return Limit::perMinute(5)->by($email.$request->ip());
+            return Limit::perMinute(10)->by($email.$request->ip());
         });
 
         RateLimiter::for('two-factor', function (Request $request) {
@@ -47,11 +47,17 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::loginView(function() {
-            return view('auth.login');
+            $public_path = asset('storage/');
+
+            return view('auth.login')
+            ->with('public_path', $public_path);
         });
 
         Fortify::registerView(function() {
-            return view('auth.register');
+            $public_path = asset('storage/');
+
+            return view('auth.register')
+            ->with('public_path', $public_path);
         });
     }
 }
