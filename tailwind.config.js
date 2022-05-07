@@ -12,6 +12,7 @@ module.exports = {
         'secondary-button': '#393939',
         'danger-button': '#DA1E28',
         'error-bg': '#EB4D4D',
+        'ui-shell': '#232323',
       },
       fontFamily: {
         'playfair-display': ['Playfair Display', 'sans-serif'],
