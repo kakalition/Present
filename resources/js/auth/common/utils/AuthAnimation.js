@@ -1,20 +1,18 @@
 import anime from 'animejs/lib/anime.es';
 
-export function showSnackbarAnimation() {
+export function showSnackbarAnimation(fromY, duration = 5000) {
   anime({
     targets: '#snackbar',
-    translateY: '0rem',
-    opacity: 1,
-    easing: 'easeOutSine',
-    duration: 200,
-  });
-}
-
-export function hideSnackbarAnimation() {
-  anime({
-    targets: '#snackbar',
-    translateY: '1rem',
-    opacity: 0,
+    translateY: [
+      { value: fromY },
+      { value: '0rem', duration: 200 },
+      { value: fromY, delay: duration, duration: 200 },
+    ],
+    opacity: [
+      { value: 0 },
+      { value: 1, duration: 200 },
+      { value: 0, delay: duration, duration: 200 },
+    ],
     easing: 'easeOutSine',
     duration: 200,
   });

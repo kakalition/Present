@@ -3740,13 +3740,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+function showSnackbar() {
+  var val = window.matchMedia('(min-width: 768px)').matches;
+  if (val) (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__.showSnackbarAnimation)('1rem');else (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__.showSnackbarAnimation)('-1rem');
+}
+
 function SnackbarComponent(props) {
   var shouldAnimate = props.shouldAnimate,
       errorMessage = props.errorMessage;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (shouldAnimate) (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__.showSnackbarAnimation)();else (0,_utils_AuthAnimation__WEBPACK_IMPORTED_MODULE_1__.hideSnackbarAnimation)();
+    if (shouldAnimate) showSnackbar();
   }, [shouldAnimate]);
-  var className = 'p-4 w-full bg-error-bg translate-y-4 opacity-0';
+  var className = 'p-4 w-full bg-error-bg opacity-0';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     id: "snackbar",
     className: className,
@@ -3772,26 +3778,35 @@ SnackbarComponent.propTypes = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "hideSnackbarAnimation": () => (/* binding */ hideSnackbarAnimation),
 /* harmony export */   "shakeInputAnimation": () => (/* binding */ shakeInputAnimation),
 /* harmony export */   "showSnackbarAnimation": () => (/* binding */ showSnackbarAnimation)
 /* harmony export */ });
 /* harmony import */ var animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs/lib/anime.es */ "./node_modules/animejs/lib/anime.es.js");
 
-function showSnackbarAnimation() {
+function showSnackbarAnimation(fromY) {
+  var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
   (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: '#snackbar',
-    translateY: '0rem',
-    opacity: 1,
-    easing: 'easeOutSine',
-    duration: 200
-  });
-}
-function hideSnackbarAnimation() {
-  (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    targets: '#snackbar',
-    translateY: '1rem',
-    opacity: 0,
+    translateY: [{
+      value: fromY
+    }, {
+      value: '0rem',
+      duration: 200
+    }, {
+      value: fromY,
+      delay: duration,
+      duration: 200
+    }],
+    opacity: [{
+      value: 0
+    }, {
+      value: 1,
+      duration: 200
+    }, {
+      value: 0,
+      delay: duration,
+      duration: 200
+    }],
     easing: 'easeOutSine',
     duration: 200
   });
@@ -4054,7 +4069,7 @@ function loginCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorList
       errorListSetter(Object.keys(reason.response.data.errors));
       setTimeout(function () {
         return shouldAnimateSetter(false);
-      }, 5000);
+      }, 5400);
     };
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().post('/login', formData, config).then(onFulfilled, onRejected);

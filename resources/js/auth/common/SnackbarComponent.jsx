@@ -1,15 +1,20 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { hideSnackbarAnimation, showSnackbarAnimation } from './utils/AuthAnimation';
+import { showSnackbarAnimation } from './utils/AuthAnimation';
+
+function showSnackbar() {
+  const val = window.matchMedia('(min-width: 768px)').matches;
+  if (val) showSnackbarAnimation('1rem');
+  else showSnackbarAnimation('-1rem');
+}
 
 export default function SnackbarComponent(props) {
   const { shouldAnimate, errorMessage } = props;
   useEffect(() => {
-    if (shouldAnimate) showSnackbarAnimation();
-    else hideSnackbarAnimation();
+    if (shouldAnimate) showSnackbar();
   }, [shouldAnimate]);
 
-  const className = 'p-4 w-full bg-error-bg translate-y-4 opacity-0';
+  const className = 'p-4 w-full bg-error-bg opacity-0';
 
   return (
     <div id="snackbar" className={className}>
