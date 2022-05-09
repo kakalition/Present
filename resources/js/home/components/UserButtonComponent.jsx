@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import UserIcon from './icons/UserIcon';
+import UserIcon from '../../common-component/icons/UserIcon';
 
 /**
  * @param {{padding: TailwindClass}} props

@@ -1,9 +1,9 @@
 import anime from 'animejs/lib/anime.es';
 
 const HomeAnimation = {
-  showUserPopupAnimation: () => {
+  showUserPopupAnimation: (id) => () => {
     anime({
-      targets: '#userPopup',
+      targets: id,
       translateY: [
         { value: '-1rem', duration: 0 },
         { value: '0rem', duration: 200 },
@@ -14,9 +14,9 @@ const HomeAnimation = {
       easing: 'easeOutSine',
     });
   },
-  hideUserPopupAnimation: () => {
+  hideUserPopupAnimation: (id) => () => {
     anime({
-      targets: '#userPopup',
+      targets: id,
       translateY: [
         { value: '0rem', duration: 0 },
         { value: '-1rem', duration: 200 },

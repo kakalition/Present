@@ -4449,24 +4449,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/components/UserPopupComponent */ "./resources/js/home/components/UserPopupComponent.jsx");
-/* harmony import */ var _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/utils/HomeAnimation */ "./resources/js/home/utils/HomeAnimation.js");
-/* harmony import */ var _UserButtonComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UserButtonComponent */ "./resources/js/common-component/UserButtonComponent.jsx");
+/* harmony import */ var _home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../home/components/UserPopupComponent */ "./resources/js/home/components/UserPopupComponent.jsx");
+/* harmony import */ var _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/utils/HomeAnimation */ "./resources/js/home/utils/HomeAnimation.js");
+/* harmony import */ var _home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/components/UserButtonComponent */ "./resources/js/home/components/UserButtonComponent.jsx");
+/* harmony import */ var _home_components_IconWithPopupBuilder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../home/components/IconWithPopupBuilder */ "./resources/js/home/components/IconWithPopupBuilder.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -4497,34 +4484,17 @@ function UIShellComponent(props) {
 
   var brandClass = 'font-ibm-plex-sans text-xl text-white font-semibold';
   var currentPageClass = 'font-ibm-plex-sans text-lg text-white';
-  var notCurrentPageClass = 'font-ibm-plex-sans text-lg text-slate-400'; // State
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      showUserPopup = _useState2[0],
-      setUserPopup = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('none'),
-      _useState4 = _slicedToArray(_useState3, 2),
-      popupVisibility = _useState4[0],
-      setPopupVisibility = _useState4[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if (showUserPopup) {
-      setPopupVisibility('block');
-      _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_3__["default"].showUserPopupAnimation();
-    } else {
-      setTimeout(function () {
-        return setPopupVisibility('none');
-      }, 200);
-      _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_3__["default"].hideUserPopupAnimation();
-    }
-  }, [showUserPopup]); // TODO: Issue, when reentering popup debounce happens rapidly
-
-  var handlePopup = lodash__WEBPACK_IMPORTED_MODULE_0___default().debounce(function (value) {
-    return setUserPopup(value);
-  }, 200);
-
+  var notCurrentPageClass = 'font-ibm-plex-sans text-lg text-slate-400';
+  var te = (0,_home_components_IconWithPopupBuilder__WEBPACK_IMPORTED_MODULE_4__["default"])({
+    popupId: '#userPopup',
+    showAnimation: _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_2__["default"].showUserPopupAnimation('#userPopup'),
+    hideAnimation: _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_2__["default"].hideUserPopupAnimation('#userPopup')
+  }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    size: "w-16 h-16",
+    padding: "p-4"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    username: username
+  }));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "flex relative justify-between items-center px-16 w-full bg-ui-shell",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -4567,86 +4537,11 @@ function UIShellComponent(props) {
           children: "History"
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "relative",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        id: "userButton",
-        className: "",
-        onMouseEnter: function onMouseEnter() {
-          return handlePopup(1);
-        },
-        onMouseLeave: function onMouseLeave() {
-          return handlePopup(0);
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          size: "w-16 h-16",
-          padding: "p-4"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        id: "userPopup",
-        className: "relative",
-        style: {
-          right: 150,
-          display: popupVisibility
-        },
-        onMouseEnter: function onMouseEnter() {
-          return handlePopup(1);
-        },
-        onMouseLeave: function onMouseLeave() {
-          return handlePopup(0);
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          username: username
-        })
-      })]
-    })]
+    }), te]
   });
 }
 UIShellComponent.propTypes = {
   username: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
-};
-
-/***/ }),
-
-/***/ "./resources/js/common-component/UserButtonComponent.jsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/common-component/UserButtonComponent.jsx ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ UserButtonComponent)
-/* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _icons_UserIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons/UserIcon */ "./resources/js/common-component/icons/UserIcon.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-/**
- * @param {{padding: TailwindClass}} props
- */
-
-
-function UserButtonComponent(props) {
-  var size = props.size,
-      padding = props.padding;
-  var className = "flex justify-center items-center ".concat(size, " ").concat(padding);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-    className: className,
-    type: "button",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_icons_UserIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
-  });
-}
-UserButtonComponent.propTypes = {
-  size: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
-  padding: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)
-};
-UserButtonComponent.defaultProps = {
-  size: 'w-16 h-16',
-  padding: 'p-2'
 };
 
 /***/ }),
@@ -4874,6 +4769,152 @@ AddButtonComponent.defaultProps = {
 
 /***/ }),
 
+/***/ "./resources/js/home/components/IconWithPopupBuilder.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/home/components/IconWithPopupBuilder.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconWithPopupBuilder)
+/* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/* eslint-disable react/jsx-filename-extension */
+
+ // eslint-disable-next-line max-len
+
+/**
+ * @param {{ popupId:string, showAnimation: animejs, hideAnimation: animejs }} popupAnimationObject
+ * @param {JSX.Element} iconComponent
+ * @param {JSX.Element} popupComponent
+ * @returns
+ */
+
+
+
+function IconWithPopupBuilder(popupAnimationObject, iconComponent, popupComponent) {
+  var popupId = popupAnimationObject.popupId,
+      showAnimation = popupAnimationObject.showAnimation,
+      hideAnimation = popupAnimationObject.hideAnimation;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      showPopup = _useState2[0],
+      setShowPopup = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('none'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      popupVisibility = _useState4[0],
+      setPopupVisibility = _useState4[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (showPopup) {
+      showAnimation();
+      setPopupVisibility('block');
+    } else {
+      hideAnimation();
+      setTimeout(function () {
+        return setPopupVisibility('none');
+      }, 200);
+    }
+  }, [showPopup]); // TODO: Issue, when reentering popup debounce happens rapidly
+
+  var handlePopup = lodash__WEBPACK_IMPORTED_MODULE_0___default().debounce(function (value) {
+    return setShowPopup(value);
+  }, 200);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "relative",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      id: "userButton",
+      onMouseEnter: function onMouseEnter() {
+        return handlePopup(1);
+      },
+      onMouseLeave: function onMouseLeave() {
+        return handlePopup(0);
+      },
+      children: iconComponent
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      id: popupId.replace('#', ''),
+      className: "relative",
+      style: {
+        right: 150,
+        display: popupVisibility
+      },
+      onMouseEnter: function onMouseEnter() {
+        return handlePopup(1);
+      },
+      onMouseLeave: function onMouseLeave() {
+        return handlePopup(0);
+      },
+      children: popupComponent
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/home/components/UserButtonComponent.jsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/home/components/UserButtonComponent.jsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ UserButtonComponent)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_component_icons_UserIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/icons/UserIcon */ "./resources/js/common-component/icons/UserIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+/**
+ * @param {{padding: TailwindClass}} props
+ */
+
+
+function UserButtonComponent(props) {
+  var size = props.size,
+      padding = props.padding;
+  var className = "flex justify-center items-center ".concat(size, " ").concat(padding);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    className: className,
+    type: "button",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_icons_UserIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+  });
+}
+UserButtonComponent.propTypes = {
+  size: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
+  padding: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)
+};
+UserButtonComponent.defaultProps = {
+  size: 'w-16 h-16',
+  padding: 'p-2'
+};
+
+/***/ }),
+
 /***/ "./resources/js/home/components/UserPopupComponent.jsx":
 /*!*************************************************************!*\
   !*** ./resources/js/home/components/UserPopupComponent.jsx ***!
@@ -4941,39 +4982,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs/lib/anime.es */ "./node_modules/animejs/lib/anime.es.js");
 
 var HomeAnimation = {
-  showUserPopupAnimation: function showUserPopupAnimation() {
-    (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      targets: '#userPopup',
-      translateY: [{
-        value: '-1rem',
-        duration: 0
-      }, {
-        value: '0rem',
-        duration: 200
-      }],
-      opacity: [{
-        value: 1,
-        duration: 200
-      }],
-      easing: 'easeOutSine'
-    });
+  showUserPopupAnimation: function showUserPopupAnimation(id) {
+    return function () {
+      (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        targets: id,
+        translateY: [{
+          value: '-1rem',
+          duration: 0
+        }, {
+          value: '0rem',
+          duration: 200
+        }],
+        opacity: [{
+          value: 1,
+          duration: 200
+        }],
+        easing: 'easeOutSine'
+      });
+    };
   },
-  hideUserPopupAnimation: function hideUserPopupAnimation() {
-    (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      targets: '#userPopup',
-      translateY: [{
-        value: '0rem',
-        duration: 0
-      }, {
-        value: '-1rem',
-        duration: 200
-      }],
-      opacity: [{
-        value: 0,
-        duration: 200
-      }],
-      easing: 'easeOutSine'
-    });
+  hideUserPopupAnimation: function hideUserPopupAnimation(id) {
+    return function () {
+      (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        targets: id,
+        translateY: [{
+          value: '0rem',
+          duration: 0
+        }, {
+          value: '-1rem',
+          duration: 200
+        }],
+        opacity: [{
+          value: 0,
+          duration: 200
+        }],
+        easing: 'easeOutSine'
+      });
+    };
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeAnimation);

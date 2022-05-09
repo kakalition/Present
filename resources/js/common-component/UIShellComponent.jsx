@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import UserPopupComponent from '../home/components/UserPopupComponent';
 import HomeAnimation from '../home/utils/HomeAnimation';
-import UserButtonComponent from './UserButtonComponent';
+import UserButtonComponent from '../home/components/UserButtonComponent';
+import IconWithPopupBuilder from '../home/components/IconWithPopupBuilder';
 
 /**
  * @param {{username:string}} props
@@ -21,21 +21,15 @@ export default function UIShellComponent(props) {
   const currentPageClass = 'font-ibm-plex-sans text-lg text-white';
   const notCurrentPageClass = 'font-ibm-plex-sans text-lg text-slate-400';
 
-  // State
-  const [showUserPopup, setUserPopup] = useState(false);
-  const [popupVisibility, setPopupVisibility] = useState('none');
-  useEffect(() => {
-    if (showUserPopup) {
-      setPopupVisibility('block');
-      HomeAnimation.showUserPopupAnimation();
-    } else {
-      setTimeout(() => setPopupVisibility('none'), 200);
-      HomeAnimation.hideUserPopupAnimation();
-    }
-  }, [showUserPopup]);
-
-  // TODO: Issue, when reentering popup debounce happens rapidly
-  const handlePopup = _.debounce((value) => setUserPopup(value), 200);
+  const te = IconWithPopupBuilder(
+    {
+      popupId: '#userPopup',
+      showAnimation: HomeAnimation.showUserPopupAnimation('#userPopup'),
+      hideAnimation: HomeAnimation.hideUserPopupAnimation('#userPopup'),
+    },
+    <UserButtonComponent size="w-16 h-16" padding="p-4" />,
+    <UserPopupComponent username={username} />,
+  );
 
   return (
     <div className="flex relative justify-between items-center px-16 w-full bg-ui-shell">
@@ -63,18 +57,8 @@ export default function UIShellComponent(props) {
         <button type="button" onClick={onHistoryClicked}>
           <p className={notCurrentPageClass}>History</p>
         </button>
-
       </div>
-      <div className="relative">
-        <div id="userButton" className="" onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
-          <UserButtonComponent size="w-16 h-16" padding="p-4" />
-        </div>
-        <div id="userPopup" className="relative" style={{ right: 150, display: popupVisibility }} onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
-          <UserPopupComponent
-            username={username}
-          />
-        </div>
-      </div>
+      {te}
     </div>
   );
 }
