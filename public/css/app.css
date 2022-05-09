@@ -526,6 +526,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-24 {
   height: 6rem;
 }
+.h-\[20\%\] {
+  height: 20%;
+}
+.h-\[10\%\] {
+  height: 10%;
+}
+.h-\[8\%\] {
+  height: 8%;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -630,11 +639,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-col {
   flex-direction: column;
 }
+.items-start {
+  align-items: flex-start;
+}
 .items-end {
   align-items: flex-end;
 }
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
 }
 .justify-center {
   justify-content: center;
@@ -688,6 +703,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-left-color: transparent;
   border-right-color: transparent;
 }
+.border-x-slate-200 {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(226 232 240 / var(--tw-border-opacity));
+  border-right-color: rgb(226 232 240 / var(--tw-border-opacity));
+}
+.border-x-slate-100 {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(241 245 249 / var(--tw-border-opacity));
+  border-right-color: rgb(241 245 249 / var(--tw-border-opacity));
+}
 .border-r-slate-500 {
   --tw-border-opacity: 1;
   border-right-color: rgb(100 116 139 / var(--tw-border-opacity));
@@ -710,6 +735,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b-slate-300 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+.border-t-slate-200 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(226 232 240 / var(--tw-border-opacity));
+}
+.border-t-slate-100 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(241 245 249 / var(--tw-border-opacity));
 }
 .bg-primary-button {
   --tw-bg-opacity: 1;
