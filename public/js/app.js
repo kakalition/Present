@@ -4605,6 +4605,36 @@ function RightArrowIcon() {
 
 /***/ }),
 
+/***/ "./resources/js/common-component/icons/SearchIcon.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/common-component/icons/SearchIcon.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SearchIcon)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function SearchIcon() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/common-component/icons/UserIcon.jsx":
 /*!**********************************************************!*\
   !*** ./resources/js/common-component/icons/UserIcon.jsx ***!
@@ -4659,7 +4689,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
 /* harmony import */ var _components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AddButtonComponent */ "./resources/js/home/components/AddButtonComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_SearchBarComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/SearchBarComponent */ "./resources/js/home/components/SearchBarComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -4671,32 +4703,43 @@ __webpack_require__.r(__webpack_exports__);
 function HomePage(props) {
   var transformedusername = props.transformedusername;
   var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "flex flex-col items-center w-screen h-screen ",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
       username: username
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "flex justify-center items-center w-full h-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "flex flex-row w-[80%]",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          text: "New Meditation",
-          background: "bg-gradient-to-bl from-blue-700 to-sky-400",
-          clickCallback: function clickCallback() {},
-          fillSpace: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "flex flex-row items-center w-[90%]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "basis-1/2",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_SearchBarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "w-8"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          text: "New Breathing Exercise",
-          background: "bg-gradient-to-bl from-orange-600 to-orange-300",
-          clickCallback: function clickCallback() {},
-          fillSpace: true
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "basis-1/4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            text: "New Meditation",
+            background: "bg-gradient-to-bl from-blue-700 to-sky-400",
+            clickCallback: function clickCallback() {},
+            fillSpace: true
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "w-8"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "basis-1/4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            text: "New Breathing Exercise",
+            background: "bg-gradient-to-bl from-orange-600 to-orange-300",
+            clickCallback: function clickCallback() {},
+            fillSpace: true
+          })
         })]
       })
     })]
   });
 }
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -4856,6 +4899,40 @@ function IconWithPopupBuilder(popupAnimationObject, iconComponent, popupComponen
         return handlePopup(0);
       },
       children: popupComponent
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/home/components/SearchBarComponent.jsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/home/components/SearchBarComponent.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SearchBarComponent)
+/* harmony export */ });
+/* harmony import */ var _common_component_icons_SearchIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/icons/SearchIcon */ "./resources/js/common-component/icons/SearchIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function SearchBarComponent() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex items-center border-b-2 border-b-slate-300 shadow-md",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "m-4 w-8 h-8 stroke-black",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_icons_SearchIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "w-full font-ibm-plex-sans text-base focus:outline-none ",
+      type: "text",
+      id: "query",
+      name: "query",
+      placeholder: "Search prompt"
     })]
   });
 }
