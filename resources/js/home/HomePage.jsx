@@ -5,13 +5,9 @@ import UIShellComponent from '../common-component/UIShellComponent';
 import { elementBinder } from '../utils/ElementBinder';
 import AddButtonComponent from './components/AddButtonComponent';
 
-function logout() {
-  axios.post('/logout').then(() => window.location.assign('/'));
-}
-
 export default function HomePage(props) {
   const { transformedusername } = props;
-  const username = transformedusername.replace(/[/]/, '').replace(/[+]/, ' ');
+  const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
 
   return (
     <div className="flex flex-col items-center w-screen h-screen ">

@@ -4445,16 +4445,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ UIShellComponent)
 /* harmony export */ });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../home/components/UserPopupComponent */ "./resources/js/home/components/UserPopupComponent.jsx");
-/* harmony import */ var _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/utils/HomeAnimation */ "./resources/js/home/utils/HomeAnimation.js");
-/* harmony import */ var _home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/components/UserButtonComponent */ "./resources/js/home/components/UserButtonComponent.jsx");
-/* harmony import */ var _home_components_IconWithPopupBuilder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../home/components/IconWithPopupBuilder */ "./resources/js/home/components/IconWithPopupBuilder.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../home/components/UserPopupComponent */ "./resources/js/home/components/UserPopupComponent.jsx");
+/* harmony import */ var _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../home/utils/HomeAnimation */ "./resources/js/home/utils/HomeAnimation.js");
+/* harmony import */ var _home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/components/UserButtonComponent */ "./resources/js/home/components/UserButtonComponent.jsx");
+/* harmony import */ var _home_components_IconWithPopupBuilder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/components/IconWithPopupBuilder */ "./resources/js/home/components/IconWithPopupBuilder.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -4485,54 +4482,54 @@ function UIShellComponent(props) {
   var brandClass = 'font-ibm-plex-sans text-xl text-white font-semibold';
   var currentPageClass = 'font-ibm-plex-sans text-lg text-white';
   var notCurrentPageClass = 'font-ibm-plex-sans text-lg text-slate-400';
-  var te = (0,_home_components_IconWithPopupBuilder__WEBPACK_IMPORTED_MODULE_4__["default"])({
+  var te = (0,_home_components_IconWithPopupBuilder__WEBPACK_IMPORTED_MODULE_3__["default"])({
     popupId: '#userPopup',
-    showAnimation: _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_2__["default"].showUserPopupAnimation('#userPopup'),
-    hideAnimation: _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_2__["default"].hideUserPopupAnimation('#userPopup')
-  }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    showAnimation: _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_1__["default"].showUserPopupAnimation('#userPopup'),
+    hideAnimation: _home_utils_HomeAnimation__WEBPACK_IMPORTED_MODULE_1__["default"].hideUserPopupAnimation('#userPopup')
+  }, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
     size: "w-16 h-16",
     padding: "p-4"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
     username: username
   }));
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "flex relative justify-between items-center px-16 w-full bg-ui-shell",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "flex items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         type: "button",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: brandClass,
           children: "Present"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "w-12"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "h-8 border-r-2 border-r-slate-500"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "w-12"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         type: "button",
         onClick: onHomeClicked,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: currentPageClass,
           children: "Home"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "w-12"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         type: "button",
         onClick: onMarketplaceClicked,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: notCurrentPageClass,
           children: "Marketplace"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "w-12"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         type: "button",
         onClick: onHistoryClicked,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: notCurrentPageClass,
           children: "History"
         })
@@ -4541,7 +4538,7 @@ function UIShellComponent(props) {
   });
 }
 UIShellComponent.propTypes = {
-  username: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
+  username: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string.isRequired)
 };
 
 /***/ }),
@@ -4671,16 +4668,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-function logout() {
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/logout').then(function () {
-    return window.location.assign('/');
-  });
-}
-
 function HomePage(props) {
   var transformedusername = props.transformedusername;
-  var username = transformedusername.replace(/[/]/, '').replace(/[+]/, ' ');
+  var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "flex flex-col items-center w-screen h-screen ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -4856,7 +4846,7 @@ function IconWithPopupBuilder(popupAnimationObject, iconComponent, popupComponen
       id: popupId.replace('#', ''),
       className: "relative",
       style: {
-        right: 150,
+        right: 200,
         display: popupVisibility
       },
       onMouseEnter: function onMouseEnter() {
@@ -4926,11 +4916,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ UserPopupComponent)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.jsx");
-/* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.jsx");
+/* harmony import */ var _common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common-component/icons/RightArrrowIcon */ "./resources/js/common-component/icons/RightArrrowIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -4938,32 +4931,39 @@ __webpack_require__.r(__webpack_exports__);
 
 function UserPopupComponent(props) {
   var username = props.username;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+
+  var logout = function logout() {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/logout').then(function () {
+      return window.location.assign('/');
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "flex absolute flex-col",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-4 bg-transparent"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex flex-col p-4 bg-ui-shell",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "font-ibm-plex-sans text-2xl font-semibold text-white ",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex flex-col p-4 min-w-[12rem] bg-ui-shell",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-ibm-plex-sans text-2xl font-semibold text-white whitespace-nowrap",
         children: username
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "h-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "w-48",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
           buttonType: "white-tertiary",
           text: "Log out",
-          icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {}),
-          padding: "px-6 py-4",
-          fillSpace: true
+          icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {}),
+          padding: "px-5 py-3 w-[70%]",
+          onClickCallback: logout
         })
       })]
     })]
   });
 }
 UserPopupComponent.propTypes = {
-  username: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string.isRequired)
+  username: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string.isRequired)
 };
 
 /***/ }),

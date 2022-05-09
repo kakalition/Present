@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 import UserPopupComponent from '../home/components/UserPopupComponent';
 import HomeAnimation from '../home/utils/HomeAnimation';

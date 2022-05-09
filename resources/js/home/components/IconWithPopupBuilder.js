@@ -32,7 +32,7 @@ export default function IconWithPopupBuilder(popupAnimationObject, iconComponent
       <div id="userButton" onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
         {iconComponent}
       </div>
-      <div id={popupId.replace('#', '')} className="relative" style={{ right: 150, display: popupVisibility }} onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
+      <div id={popupId.replace('#', '')} className="relative" style={{ right: 200, display: popupVisibility }} onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
         {popupComponent}
       </div>
     </div>
