@@ -1,25 +1,9 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import UserPopupComponent from '../home/components/UserPopupComponent';
 import HomeAnimation from '../home/utils/HomeAnimation';
-import CommonButtonComponent from './CommonButtonComponent';
 import UserButtonComponent from './UserButtonComponent';
-
-function UserPopupComponent(props) {
-  const { username, callbackOne, callbackTwo } = props;
-
-  return (
-    <div
-      className="flex absolute flex-col"
-    >
-      <div className="h-8 bg-transparent" onMouseEnter={callbackOne} />
-      <div className="flex flex-col bg-ui-shell" onMouseEnter={callbackOne} onMouseLeave={callbackTwo}>
-        <p className="text-red-500">{username}</p>
-        <CommonButtonComponent buttonType="primary" text="Log out" />
-      </div>
-    </div>
-  );
-}
 
 /**
  * @param {{username:string}} props
@@ -48,15 +32,10 @@ export default function UIShellComponent(props) {
       setTimeout(() => setPopupVisibility('none'), 200);
       HomeAnimation.hideUserPopupAnimation();
     }
-  }, [showUserPopup, popupVisibility]);
+  }, [showUserPopup]);
 
-  const [xOffset, setXOffset] = useState(0);
-  useEffect(() => {
-    setXOffset(document.getElementById('userPopup').offsetWidth);
-  });
-
-  const handlePopup = _.debounce((value) => setUserPopup(value), 300);
-
+  // TODO: Issue, when reentering popup debounce happens rapidly
+  const handlePopup = _.debounce((value) => setUserPopup(value), 200);
 
   return (
     <div className="flex relative justify-between items-center px-16 w-full bg-ui-shell">
@@ -90,11 +69,9 @@ export default function UIShellComponent(props) {
         <div id="userButton" className="" onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
           <UserButtonComponent size="w-16 h-16" padding="p-4" />
         </div>
-        <div id="userPopup" className="relative" style={{ right: 0, display: popupVisibility }}>
+        <div id="userPopup" className="relative" style={{ right: 150, display: popupVisibility }} onMouseEnter={() => handlePopup(1)} onMouseLeave={() => handlePopup(0)}>
           <UserPopupComponent
             username={username}
-            callbackOne={() => handlePopup(1)}
-            callbackTwo={() => handlePopup(0)}
           />
         </div>
       </div>

@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { ClassComposer } from '../utils/ClassComposer';
 
 /**
- * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_,
- * padding: TailwindClass_, text: string, onClickCallback: () => void,
+ * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost" | "white-tertiary",
+ * textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void,
  * icon: svg, fillSpace: boolean}} props
  */
 export default function CommonButtonComponent(props) {
@@ -68,6 +68,23 @@ export default function CommonButtonComponent(props) {
       break;
     }
 
+    case 'white-tertiary': {
+      className = ClassComposer(
+        className,
+        textSize,
+        padding,
+        'whitespace-nowrap',
+        'border-2 border-white',
+        'text-white',
+        'font-ibm-plex-sans',
+        'hover:text-black',
+        'hover:bg-white',
+        'transition-all',
+        'duration-100',
+      );
+      break;
+    }
+
     case 'ghost': {
       className = ClassComposer(
         className,
@@ -94,7 +111,6 @@ export default function CommonButtonComponent(props) {
     >
       <div className="flex justify-between items-center">
         {text}
-        {' '}
         {icon}
       </div>
     </button>
