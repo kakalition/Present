@@ -24,10 +24,14 @@ function ChipGroup(props) {
   } = props;
 
   return (
-    <div className="flex flex-row self-start ml-16">
-      <ChipComponent text="Breathing exercise" isActive={breathingFilter} onClickCallback={toggleBreathing} />
-      <div className="w-4" />
-      <ChipComponent text="Meditation" isActive={meditationFilter} onClickCallback={toggleMeditation} />
+    <div className="flex flex-col self-start p-6 ml-16 border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300 shadow-md">
+      <p className="font-ibm-plex-sans text-base text-black">Categories</p>
+      <div className="h-4" />
+      <div className="flex flex-row">
+        <ChipComponent text="Breathing exercise" isActive={breathingFilter} onClickCallback={toggleBreathing} />
+        <div className="w-4" />
+        <ChipComponent text="Meditation" isActive={meditationFilter} onClickCallback={toggleMeditation} />
+      </div>
     </div>
   );
 }

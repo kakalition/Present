@@ -4780,17 +4780,25 @@ function ChipGroup(props) {
       toggleBreathing = props.toggleBreathing,
       toggleMeditation = props.toggleMeditation;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "flex flex-row self-start ml-16",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      text: "Breathing exercise",
-      isActive: breathingFilter,
-      onClickCallback: toggleBreathing
+    className: "flex flex-col self-start p-6 ml-16 border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300 shadow-md",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+      className: "font-ibm-plex-sans text-base text-black",
+      children: "Categories"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "w-4"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      text: "Meditation",
-      isActive: meditationFilter,
-      onClickCallback: toggleMeditation
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "flex flex-row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        text: "Breathing exercise",
+        isActive: breathingFilter,
+        onClickCallback: toggleBreathing
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "w-4"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        text: "Meditation",
+        isActive: meditationFilter,
+        onClickCallback: toggleMeditation
+      })]
     })]
   });
 }
