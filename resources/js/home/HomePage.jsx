@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import UIShellComponent from '../common-component/UIShellComponent';
 import { elementBinder } from '../utils/ElementBinder';
 import AddButtonComponent from './components/AddButtonComponent';
@@ -21,6 +22,10 @@ export default function HomePage(props) {
   const { transformedusername } = props;
   const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
 
+  // For Development Only
+  const [breathingFilter, setBreathingFilter] = useState(false);
+  const [meditationFilter, setMeditationFilter] = useState(false);
+
   return (
     <div className="flex flex-col items-center w-screen h-screen ">
       <UIShellComponent username={username} />
@@ -28,10 +33,10 @@ export default function HomePage(props) {
         <div className="h-8" />
         <TopOne />
         <div className="h-8" />
-        <div className="flex flex-row">
-          <ChipComponent text="Breathing exercise" isActive={false} />
+        <div className="flex flex-row self-start ml-16">
+          <ChipComponent text="Breathing exercise" isActive={breathingFilter} onClickCallback={() => setBreathingFilter(!breathingFilter)} />
           <div className="w-4" />
-          <ChipComponent text="Meditation" isActive />
+          <ChipComponent text="Meditation" isActive={meditationFilter} onClickCallback={() => setMeditationFilter(!meditationFilter)} />
         </div>
       </div>
     </div>

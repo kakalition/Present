@@ -4,7 +4,7 @@ import CheckIcon from '../../common-component/icons/CheckIcon';
 export default function ChipComponent(props) {
   const { text, isActive, onClickCallback } = props;
 
-  let className = 'flex flex-row py-2 px-6 rounded-full items-center';
+  let className = 'flex flex-row py-2 px-6 rounded-full items-center transition-all';
 
   let iconComponent;
   if (isActive) {
