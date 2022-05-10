@@ -5,6 +5,7 @@ import { elementBinder } from '../utils/ElementBinder';
 import AddButtonComponent from './components/AddButtonComponent';
 import ChipComponent from './components/ChipComponent';
 import SearchBarComponent from './components/SearchBarComponent';
+import FilterButtonComponent from './components/FilterButtonComponent';
 
 function TopOne() {
   return (
@@ -57,6 +58,8 @@ export default function HomePage(props) {
           toggleBreathing={() => setBreathingFilter(!breathingFilter)}
           toggleMeditation={() => setMeditationFilter(!meditationFilter)}
         />
+        <div className="h-8" />
+        <FilterButtonComponent />
       </div>
     </div>
   );
