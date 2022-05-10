@@ -130,7 +130,7 @@ CommonButtonComponent.propTypes = {
 
 CommonButtonComponent.defaultProps = {
   textSize: 'lg:text-xl text-lg',
-  padding: 'lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8',
+  padding: 'lg:p-3 lg:pr-12 md:pr-8 p-2 pr-8',
   icon: <div />,
   fillSpace: false,
 };

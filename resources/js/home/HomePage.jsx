@@ -6,6 +6,7 @@ import AddButtonComponent from './components/AddButtonComponent';
 import ChipComponent from './components/ChipComponent';
 import SearchBarComponent from './components/SearchBarComponent';
 import FilterButtonComponent from './components/FilterButtonComponent';
+import ItemTileComponent from './components/ItemTileComponent';
 
 function TopOne() {
   return (
@@ -25,7 +26,7 @@ function ChipGroup(props) {
   } = props;
 
   return (
-    <div className="flex flex-col self-start p-6 ml-16 border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300 shadow-md">
+    <div className="flex flex-col p-6 bg-white border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300 shadow-md">
       <p className="font-ibm-plex-sans text-base text-black">Categories</p>
       <div className="h-4" />
       <div className="flex flex-row">
@@ -46,20 +47,54 @@ export default function HomePage(props) {
   const [meditationFilter, setMeditationFilter] = useState(false);
 
   return (
-    <div className="flex flex-col items-center w-screen h-screen ">
+    <div className="flex flex-col items-center w-screen h-screen bg-web-bg">
       <UIShellComponent username={username} />
       <div className="flex flex-col justify-start items-center w-full h-full">
         <div className="h-8" />
         <TopOne />
         <div className="h-8" />
-        <ChipGroup
-          breathingFilter={breathingFilter}
-          meditationFilter={meditationFilter}
-          toggleBreathing={() => setBreathingFilter(!breathingFilter)}
-          toggleMeditation={() => setMeditationFilter(!meditationFilter)}
-        />
+        <div className="flex flex-row items-start self-start ml-16">
+          <ChipGroup
+            breathingFilter={breathingFilter}
+            meditationFilter={meditationFilter}
+            toggleBreathing={() => setBreathingFilter(!breathingFilter)}
+            toggleMeditation={() => setMeditationFilter(!meditationFilter)}
+          />
+          <div className="w-8" />
+          <FilterButtonComponent />
+        </div>
         <div className="h-8" />
-        <FilterButtonComponent />
+        <div className="flex flex-row justify-evenly items-center px-16 w-full">
+          <ItemTileComponent
+            title="Calmness"
+            tag="Meditation"
+            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+          <div className="w-16" />
+          <ItemTileComponent
+            title="Calmness"
+            tag="Meditation"
+            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+          <div className="w-16" />
+          <ItemTileComponent
+            title="Calmness"
+            tag="Meditation"
+            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+          <div className="w-16" />
+          <ItemTileComponent
+            title="Calmness"
+            tag="Meditation"
+            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+          <div className="w-16" />
+          <ItemTileComponent
+            title="Calmness"
+            tag="Meditation"
+            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+        </div>
       </div>
     </div>
   );
