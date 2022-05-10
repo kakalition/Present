@@ -12,7 +12,7 @@ export default function ItemTileComponent(props) {
       <div className="h-4" />
       <CarbonChipComponent text={tag} />
       <div className="h-6" />
-      <p className="font-ibm-plex-sans text-lg text-slate-500 leading-tight">{shortDescription}</p>
+      <p className="font-ibm-plex-sans text-lg leading-tight text-slate-500">{shortDescription}</p>
       <div className="h-6" />
       <CommonButtonComponent buttonType="tertiary" text="Start session" icon={<RightArrowIcon />} padding="p-3" fillSpace />
     </div>

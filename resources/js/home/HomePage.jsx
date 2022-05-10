@@ -7,6 +7,7 @@ import ChipComponent from './components/ChipComponent';
 import SearchBarComponent from './components/SearchBarComponent';
 import FilterButtonComponent from './components/FilterButtonComponent';
 import ItemTileComponent from './components/ItemTileComponent';
+import ResultTextComponent from './components/ResultTextComponent';
 
 function TopOne() {
   return (
@@ -38,6 +39,36 @@ function ChipGroup(props) {
   );
 }
 
+function Content() {
+  return (
+    <div className="flex flex-row justify-evenly items-center px-16 w-full">
+      <ItemTileComponent
+        title="Calmness"
+        tag="Meditation"
+        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+      <div className="w-16" />
+      <ItemTileComponent
+        title="Calmness"
+        tag="Meditation"
+        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+      <div className="w-16" />
+      <ItemTileComponent
+        title="Calmness"
+        tag="Meditation"
+        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+      <div className="w-16" />
+      <ItemTileComponent
+        title="Calmness"
+        tag="Meditation"
+        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+    </div>
+  );
+}
+
 export default function HomePage(props) {
   const { transformedusername } = props;
   const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
@@ -62,39 +93,11 @@ export default function HomePage(props) {
           />
           <div className="w-8" />
           <FilterButtonComponent />
+          <div className="w-8" />
+          <ResultTextComponent itemName='meditations' total={12} />
         </div>
         <div className="h-8" />
-        <div className="flex flex-row justify-evenly items-center px-16 w-full">
-          <ItemTileComponent
-            title="Calmness"
-            tag="Meditation"
-            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-          <div className="w-16" />
-          <ItemTileComponent
-            title="Calmness"
-            tag="Meditation"
-            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-          <div className="w-16" />
-          <ItemTileComponent
-            title="Calmness"
-            tag="Meditation"
-            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-          <div className="w-16" />
-          <ItemTileComponent
-            title="Calmness"
-            tag="Meditation"
-            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-          <div className="w-16" />
-          <ItemTileComponent
-            title="Calmness"
-            tag="Meditation"
-            shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-        </div>
+        <Content />
       </div>
     </div>
   );

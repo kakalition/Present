@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'web-bg': '#F6F6F6',
-        'primary-button': '#1BABFC',
+        'primary-button': '#0F62FE',
         'secondary-button': '#393939',
         'danger-button': '#DA1E28',
         'error-bg': '#EB4D4D',
