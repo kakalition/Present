@@ -18,6 +18,20 @@ function TopOne() {
   );
 }
 
+function ChipGroup(props) {
+  const {
+    breathingFilter, meditationFilter, toggleBreathing, toggleMeditation,
+  } = props;
+
+  return (
+    <div className="flex flex-row self-start ml-16">
+      <ChipComponent text="Breathing exercise" isActive={breathingFilter} onClickCallback={toggleBreathing} />
+      <div className="w-4" />
+      <ChipComponent text="Meditation" isActive={meditationFilter} onClickCallback={toggleMeditation} />
+    </div>
+  );
+}
+
 export default function HomePage(props) {
   const { transformedusername } = props;
   const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
@@ -33,11 +47,12 @@ export default function HomePage(props) {
         <div className="h-8" />
         <TopOne />
         <div className="h-8" />
-        <div className="flex flex-row self-start ml-16">
-          <ChipComponent text="Breathing exercise" isActive={breathingFilter} onClickCallback={() => setBreathingFilter(!breathingFilter)} />
-          <div className="w-4" />
-          <ChipComponent text="Meditation" isActive={meditationFilter} onClickCallback={() => setMeditationFilter(!meditationFilter)} />
-        </div>
+        <ChipGroup
+          breathingFilter={breathingFilter}
+          meditationFilter={meditationFilter}
+          toggleBreathing={() => setBreathingFilter(!breathingFilter)}
+          toggleMeditation={() => setMeditationFilter(!meditationFilter)}
+        />
       </div>
     </div>
   );

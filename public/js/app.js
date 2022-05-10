@@ -4774,6 +4774,27 @@ function TopOne() {
   });
 }
 
+function ChipGroup(props) {
+  var breathingFilter = props.breathingFilter,
+      meditationFilter = props.meditationFilter,
+      toggleBreathing = props.toggleBreathing,
+      toggleMeditation = props.toggleMeditation;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    className: "flex flex-row self-start ml-16",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      text: "Breathing exercise",
+      isActive: breathingFilter,
+      onClickCallback: toggleBreathing
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "w-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      text: "Meditation",
+      isActive: meditationFilter,
+      onClickCallback: toggleMeditation
+    })]
+  });
+}
+
 function HomePage(props) {
   var transformedusername = props.transformedusername;
   var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' '); // For Development Only
@@ -4798,23 +4819,15 @@ function HomePage(props) {
         className: "h-8"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TopOne, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "flex flex-row self-start ml-16",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          text: "Breathing exercise",
-          isActive: breathingFilter,
-          onClickCallback: function onClickCallback() {
-            return setBreathingFilter(!breathingFilter);
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "w-4"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          text: "Meditation",
-          isActive: meditationFilter,
-          onClickCallback: function onClickCallback() {
-            return setMeditationFilter(!meditationFilter);
-          }
-        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ChipGroup, {
+        breathingFilter: breathingFilter,
+        meditationFilter: meditationFilter,
+        toggleBreathing: function toggleBreathing() {
+          return setBreathingFilter(!breathingFilter);
+        },
+        toggleMeditation: function toggleMeditation() {
+          return setMeditationFilter(!meditationFilter);
+        }
       })]
     })]
   });
