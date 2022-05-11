@@ -8,6 +8,7 @@ import SearchBarComponent from './components/SearchBarComponent';
 import FilterButtonComponent from './components/FilterButtonComponent';
 import ItemTileComponent from './components/ItemTileComponent';
 import ResultTextComponent from './components/ResultTextComponent';
+import SortByComponent from './components/SortByComponent';
 
 function TopOne() {
   return (
@@ -94,7 +95,11 @@ export default function HomePage(props) {
           <div className="w-8" />
           <FilterButtonComponent />
           <div className="w-8" />
-          <ResultTextComponent itemName='meditations' total={12} />
+          <div className="flex flex-col">
+            <ResultTextComponent itemName="meditations" total={12} />
+            <div className="w-8" />
+            <SortByComponent currentSort="frequently used" />
+          </div>
         </div>
         <div className="h-8" />
         <Content />
