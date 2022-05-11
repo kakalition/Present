@@ -6,4 +6,38 @@
     .borderize {
         @apply border-4 border-red-600
     }
+
+    .carbon-radio-button-label {
+      @apply flex flex-row items-center font-ibm-plex-sans text-lg
+    }
+
+    .carbon-radio-button-radio {
+      @apply grid w-5 h-5 appearance-none m-0 border-2 rounded-full border-slate-600 content-center place-content-center
+    }
+
+    .carbon-radio-button-radio:checked {
+      @apply border-slate-800
+    }
+
+    .carbon-radio-button-radio::before {
+      @apply content-[''] w-2 h-2 bg-slate-800 rounded-full scale-0 transition duration-75
+    }
+
+    .carbon-radio-button-radio:checked::before {
+      @apply scale-100 
+    }
+
+    .carbon-checkbox {
+      @apply grid w-5 h-5 appearance-none m-0 border-2 border-slate-600 content-center place-content-center
+    }
+
+    .carbon-checkbox::before {
+      @apply content-[''] w-5 h-5 bg-slate-800 scale-0 
+    }
+
+
+    .carbon-checkbox:checked::before {
+      @apply bg-slate-800 scale-100
+    }
+
 }

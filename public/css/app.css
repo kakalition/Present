@@ -424,6 +424,87 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.carbon-radio-button-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.carbon-radio-button-radio {
+  margin: 0px;
+  display: grid;
+  height: 1.25rem;
+  width: 1.25rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  place-content: center;
+  align-content: center;
+  border-radius: 9999px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+.carbon-radio-button-radio:checked {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 41 59 / var(--tw-border-opacity));
+}
+.carbon-radio-button-radio::before {
+  height: 0.5rem;
+  width: 0.5rem;
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 75ms;
+  --tw-content: '';
+  content: var(--tw-content);
+}
+.carbon-radio-button-radio:checked::before {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.carbon-checkbox {
+  margin: 0px;
+  display: grid;
+  height: 1.25rem;
+  width: 1.25rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  place-content: center;
+  align-content: center;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+.carbon-checkbox::before {
+  height: 1.25rem;
+  width: 1.25rem;
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  --tw-content: '';
+  content: var(--tw-content);
+}
+.carbon-checkbox:checked::before {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
 .absolute {
   position: absolute;
 }
@@ -527,6 +608,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-screen {
   min-height: 100vh;
 }
+.w-2 {
+  width: 0.5rem;
+}
 .w-full {
   width: 100%;
 }
@@ -547,9 +631,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-6 {
   width: 1.5rem;
-}
-.w-2 {
-  width: 0.5rem;
 }
 .w-\[70\%\] {
   width: 70%;
@@ -636,6 +717,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-t-2 {
   border-top-width: 2px;
+}
+.border-b-2 {
+  border-bottom-width: 2px;
 }
 .border-primary-button {
   --tw-border-opacity: 1;
@@ -752,15 +836,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .stroke-black {
   stroke: #000;
-}
-.stroke-slate-600 {
-  stroke: #475569;
-}
-.stroke-red-600 {
-  stroke: #dc2626;
-}
-.stroke-slate-200 {
-  stroke: #e2e8f0;
 }
 .stroke-slate-400 {
   stroke: #94a3b8;

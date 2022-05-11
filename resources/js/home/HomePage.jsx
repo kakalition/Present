@@ -9,6 +9,7 @@ import FilterButtonComponent from './components/FilterButtonComponent';
 import ItemTileComponent from './components/ItemTileComponent';
 import ResultTextComponent from './components/ResultTextComponent';
 import SortByComponent from './components/SortByComponent';
+import SortByPopupComponent from './components/SortByPopupComponent';
 
 function TopOne() {
   return (
@@ -77,6 +78,7 @@ export default function HomePage(props) {
   // For Development Only
   const [breathingFilter, setBreathingFilter] = useState(false);
   const [meditationFilter, setMeditationFilter] = useState(false);
+  const [currentSort, setCurrentSort] = useState('frequently-used');
 
   return (
     <div className="flex flex-col items-center w-screen h-screen bg-web-bg">
@@ -98,8 +100,10 @@ export default function HomePage(props) {
           <div className="flex flex-col">
             <ResultTextComponent itemName="meditations" total={12} />
             <div className="w-8" />
-            <SortByComponent currentSort="frequently used" />
+            <SortByComponent currentSort={currentSort} />
           </div>
+          <div className="w-8" />
+          <SortByPopupComponent />
         </div>
         <div className="h-8" />
         <Content />

@@ -4371,6 +4371,57 @@ CarbonChipComponent.defaultProps = {
 
 /***/ }),
 
+/***/ "./resources/js/common-component/CarbonRadioButton.jsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/common-component/CarbonRadioButton.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CarbonRadioButton)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function CarbonRadioButton(props) {
+  var inputId = props.inputId,
+      inputName = props.inputName,
+      inputValue = props.inputValue,
+      label = props.label,
+      isChecked = props.isChecked;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+    className: "carbon-radio-button-label",
+    htmlFor: inputId,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "carbon-radio-button-radio",
+      type: "radio",
+      id: inputId,
+      name: inputName,
+      value: inputValue,
+      checked: isChecked
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "w-2"
+    }), label]
+  });
+}
+CarbonRadioButton.propTypes = {
+  inputId: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  inputName: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  inputValue: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  label: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  isChecked: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool.isRequired)
+};
+
+/***/ }),
+
 /***/ "./resources/js/common-component/CardWrapper.js":
 /*!******************************************************!*\
   !*** ./resources/js/common-component/CardWrapper.js ***!
@@ -4857,8 +4908,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
@@ -4870,7 +4921,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ItemTileComponent */ "./resources/js/home/components/ItemTileComponent.jsx");
 /* harmony import */ var _components_ResultTextComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/ResultTextComponent */ "./resources/js/home/components/ResultTextComponent.jsx");
 /* harmony import */ var _components_SortByComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/SortByComponent */ "./resources/js/home/components/SortByComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_SortByPopupComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/SortByPopupComponent */ "./resources/js/home/components/SortByPopupComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4897,27 +4949,28 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function TopOne() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "flex flex-row items-center px-16 w-full h-[8%]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "basis-1/2 h-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_SearchBarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_SearchBarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "w-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "basis-1/4 h-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
         text: "New Meditation",
         background: "bg-gradient-to-bl from-blue-700 to-sky-400",
         clickCallback: function clickCallback() {},
         fillSpace: true
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "w-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "basis-1/4 h-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AddButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
         text: "New Breathing Exercise",
         background: "bg-gradient-to-bl from-orange-600 to-orange-300",
         clickCallback: function clickCallback() {},
@@ -4932,22 +4985,22 @@ function ChipGroup(props) {
       meditationFilter = props.meditationFilter,
       toggleBreathing = props.toggleBreathing,
       toggleMeditation = props.toggleMeditation;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "flex flex-col p-6 bg-white border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300 shadow-md",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
       className: "font-ibm-plex-sans text-base text-black",
       children: "Categories"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "h-4"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
       className: "flex flex-row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
         text: "Breathing exercise",
         isActive: breathingFilter,
         onClickCallback: toggleBreathing
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "w-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ChipComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
         text: "Meditation",
         isActive: meditationFilter,
         onClickCallback: toggleMeditation
@@ -4957,27 +5010,27 @@ function ChipGroup(props) {
 }
 
 function Content() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "flex flex-row justify-evenly items-center px-16 w-full",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
       title: "Calmness",
       tag: "Meditation",
       shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "w-16"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
       title: "Calmness",
       tag: "Meditation",
       shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "w-16"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
       title: "Calmness",
       tag: "Meditation",
       shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "w-16"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
       title: "Calmness",
       tag: "Meditation",
       shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -4999,19 +5052,24 @@ function HomePage(props) {
       meditationFilter = _useState4[0],
       setMeditationFilter = _useState4[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('frequently-used'),
+      _useState6 = _slicedToArray(_useState5, 2),
+      currentSort = _useState6[0],
+      setCurrentSort = _useState6[1];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "flex flex-col items-center w-screen h-screen bg-web-bg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
       username: username
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
       className: "flex flex-col justify-start items-center w-full h-full",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(TopOne, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(TopOne, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "flex flex-row items-start self-start ml-16",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(ChipGroup, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(ChipGroup, {
           breathingFilter: breathingFilter,
           meditationFilter: meditationFilter,
           toggleBreathing: function toggleBreathing() {
@@ -5020,31 +5078,33 @@ function HomePage(props) {
           toggleMeditation: function toggleMeditation() {
             return setMeditationFilter(!meditationFilter);
           }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "w-8"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_FilterButtonComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_FilterButtonComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "w-8"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "flex flex-col",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ResultTextComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ResultTextComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
             itemName: "meditations",
             total: 12
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-8"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_SortByComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
-            currentSort: "frequently used"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_SortByComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            currentSort: currentSort
           })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+          className: "w-8"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_SortByPopupComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(Content, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(Content, {})]
     })]
   });
 }
 HomePage.propTypes = {
-  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_11___default().string.isRequired)
+  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_12___default().string.isRequired)
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(HomePage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -5487,6 +5547,92 @@ function SortByComponent(props) {
 }
 SortByComponent.propTypes = {
   currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired)
+};
+
+/***/ }),
+
+/***/ "./resources/js/home/components/SortByPopupComponent.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/home/components/SortByPopupComponent.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SortByPopupComponent)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CarbonRadioButton */ "./resources/js/common-component/CarbonRadioButton.jsx");
+/* harmony import */ var _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/CardWrapper */ "./resources/js/common-component/CardWrapper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function SortByPopupComponent(props) {
+  var currentSort = props.currentSort;
+
+  var element = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    id: "sort-by",
+    className: "p-6 bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      inputId: "frequently-used",
+      inputName: "sortby",
+      inputValue: "frequently-used",
+      label: "Frequently used",
+      isChecked: currentSort === 'frequently-used'
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      inputId: "name",
+      inputName: "sortby",
+      inputValue: "name",
+      label: "Name",
+      isChecked: currentSort === 'name'
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      inputId: "duration",
+      inputName: "sortby",
+      inputValue: "duration",
+      label: "Duration",
+      isChecked: currentSort === 'duration'
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      inputId: "date-added",
+      inputName: "sortby",
+      inputValue: "date-added",
+      label: "Date added",
+      isChecked: currentSort === 'date-added'
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-2 border-b-2 border-b-slate-300"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+      className: "flex flex-row items-center",
+      htmlFor: "descending",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        className: "carbon-checkbox",
+        name: "descending",
+        id: "descending",
+        type: "checkbox",
+        value: "true"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "w-2"
+      }), "Descending"]
+    })]
+  });
+
+  return _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_1__["default"].medium(element);
+}
+SortByPopupComponent.propTypes = {
+  currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func.isRequired)
 };
 
 /***/ }),
