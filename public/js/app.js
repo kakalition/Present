@@ -5513,40 +5513,105 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ SortByComponent)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _common_component_icons_ChevronDownIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/icons/ChevronDownIcon */ "./resources/js/common-component/icons/ChevronDownIcon.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_component_icons_ChevronDownIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common-component/icons/ChevronDownIcon */ "./resources/js/common-component/icons/ChevronDownIcon.jsx");
+/* harmony import */ var _SortByPopupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SortByPopupComponent */ "./resources/js/home/components/SortByPopupComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
 
 
 
 
 function SortByComponent(props) {
   var currentSort = props.currentSort;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-    className: "flex flex-row items-center",
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      showPopup = _useState2[0],
+      setShowPopup = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      showAnimation = _useState4[0],
+      setShowAnimation = _useState4[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (showAnimation) {
+      (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        targets: '#popup',
+        begin: function begin() {
+          return setShowPopup(true);
+        },
+        bottom: '-15rem',
+        opacity: 1,
+        duration: 200,
+        easing: 'easeOutSine'
+      });
+    } else {
+      (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        targets: '#popup',
+        complete: function complete() {
+          return setShowPopup(false);
+        },
+        bottom: '-14.5rem',
+        opacity: 0,
+        duration: 200,
+        easing: 'easeOutSine'
+      });
+    }
+  }, [showAnimation]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
+    className: "flex relative flex-row items-center borderize",
     type: "button",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+    onClick: function onClick() {
+      return setShowAnimation(!showAnimation);
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
       className: "font-ibm-plex-sans text-lg",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
         className: "text-slate-600",
         children: "Sort by: "
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
         className: "font-semibold text-black underline decoration-2 underline-offset-1",
         children: currentSort
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "w-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "w-6 h-6",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_icons_ChevronDownIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_icons_ChevronDownIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
         className: "stroke-slate-400"
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      id: "popup",
+      className: "absolute ".concat(showPopup ? 'inline' : 'hidden'),
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SortByPopupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {})
     })]
   });
 }
 SortByComponent.propTypes = {
-  currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired)
+  currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string.isRequired)
 };
 
 /***/ }),

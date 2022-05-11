@@ -424,6 +424,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.borderize {
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity));
+}
 .carbon-radio-button-label {
   display: flex;
   flex-direction: row;
@@ -523,6 +528,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-auto {
   bottom: auto;
 }
+.bottom-10 {
+  bottom: 2.5rem;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.bottom-48 {
+  bottom: 12rem;
+}
+.-bottom-48 {
+  bottom: -12rem;
+}
+.-bottom-64 {
+  bottom: -16rem;
+}
+.-bottom-60 {
+  bottom: -15rem;
+}
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -566,11 +589,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .block {
   display: block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
 .grid {
   display: grid;
+}
+.hidden {
+  display: none;
 }
 .h-full {
   height: 100%;
@@ -604,6 +633,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-5 {
   height: 1.25rem;
+}
+.h-0 {
+  height: 0px;
 }
 .min-h-screen {
   min-height: 100vh;
