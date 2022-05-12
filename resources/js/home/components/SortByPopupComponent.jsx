@@ -6,7 +6,7 @@ export default function SortByPopupComponent(props) {
   const { currentSort } = props;
 
   const element = (
-    <div id="sort-by" className="p-6 bg-white">
+    <div id="sort-by" className="p-6 whitespace-nowrap bg-white">
       <CarbonRadioButton inputId="frequently-used" inputName="sortby" inputValue="frequently-used" label="Frequently used" isChecked={currentSort === 'frequently-used'} />
       <div className="h-2" />
       <CarbonRadioButton inputId="name" inputName="sortby" inputValue="name" label="Name" isChecked={currentSort === 'name'} />

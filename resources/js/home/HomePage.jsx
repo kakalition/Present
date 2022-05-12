@@ -10,6 +10,7 @@ import ItemTileComponent from './components/ItemTileComponent';
 import ResultTextComponent from './components/ResultTextComponent';
 import SortByComponent from './components/SortByComponent';
 import SortByPopupComponent from './components/SortByPopupComponent';
+import usePopupAddon from '../common-component/hooks/usePopupAddon';
 
 function TopOne() {
   return (
@@ -75,6 +76,8 @@ export default function HomePage(props) {
   const { transformedusername } = props;
   const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
 
+  const { animationCallback, popupClass } = usePopupAddon('filterPopup', '4rem', '3.5rem');
+
   // For Development Only
   const [breathingFilter, setBreathingFilter] = useState(false);
   const [meditationFilter, setMeditationFilter] = useState(false);
@@ -95,7 +98,14 @@ export default function HomePage(props) {
             toggleMeditation={() => setMeditationFilter(!meditationFilter)}
           />
           <div className="w-8" />
-          <FilterButtonComponent />
+
+          <div className="flex relative flex-col items-start">
+            <FilterButtonComponent onClickCallback={animationCallback} />
+            <div id="filterPopup" className={popupClass}>
+              <SortByPopupComponent />
+            </div>
+          </div>
+
           <div className="w-8" />
           <div className="flex flex-col">
             <ResultTextComponent itemName="meditations" total={12} />
