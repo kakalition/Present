@@ -8,9 +8,8 @@ import SearchBarComponent from './components/SearchBarComponent';
 import FilterButtonComponent from './components/FilterButtonComponent';
 import ItemTileComponent from './components/ItemTileComponent';
 import ResultTextComponent from './components/ResultTextComponent';
-import SortByComponent from './components/SortByComponent';
-import SortByPopupComponent from './components/SortByPopupComponent';
 import usePopupAddon from '../common-component/hooks/usePopupAddon';
+import FilterPopupComponent from './components/FilterPopupComponent';
 
 function TopOne() {
   return (
@@ -20,24 +19,6 @@ function TopOne() {
       <div className="basis-1/4 h-full"><AddButtonComponent text="New Meditation" background="bg-gradient-to-bl from-blue-700 to-sky-400" clickCallback={() => {}} fillSpace /></div>
       <div className="w-8" />
       <div className="basis-1/4 h-full"><AddButtonComponent text="New Breathing Exercise" background="bg-gradient-to-bl from-orange-600 to-orange-300" clickCallback={() => {}} fillSpace /></div>
-    </div>
-  );
-}
-
-function ChipGroup(props) {
-  const {
-    breathingFilter, meditationFilter, toggleBreathing, toggleMeditation,
-  } = props;
-
-  return (
-    <div className="flex flex-col p-6 bg-white border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300 shadow-md">
-      <p className="font-ibm-plex-sans text-base text-black">Categories</p>
-      <div className="h-4" />
-      <div className="flex flex-row">
-        <ChipComponent text="Breathing exercise" isActive={breathingFilter} onClickCallback={toggleBreathing} />
-        <div className="w-4" />
-        <ChipComponent text="Meditation" isActive={meditationFilter} onClickCallback={toggleMeditation} />
-      </div>
     </div>
   );
 }
@@ -91,29 +72,19 @@ export default function HomePage(props) {
         <TopOne />
         <div className="h-8" />
         <div className="flex flex-row items-start self-start ml-16">
-          <ChipGroup
-            breathingFilter={breathingFilter}
-            meditationFilter={meditationFilter}
-            toggleBreathing={() => setBreathingFilter(!breathingFilter)}
-            toggleMeditation={() => setMeditationFilter(!meditationFilter)}
-          />
-          <div className="w-8" />
-
           <div className="flex relative flex-col items-start">
             <FilterButtonComponent onClickCallback={animationCallback} />
             <div id="filterPopup" className={popupClass}>
-              <SortByPopupComponent />
+              <FilterPopupComponent />
             </div>
           </div>
 
-          <div className="w-8" />
+          <div className="w-24" />
           <div className="flex flex-col">
             <ResultTextComponent itemName="meditations" total={12} />
             <div className="w-8" />
-            <SortByComponent currentSort={currentSort} />
+            <FilterPopupComponent currentSort={currentSort} />
           </div>
-          <div className="w-8" />
-          <SortByPopupComponent />
         </div>
         <div className="h-8" />
         <Content />

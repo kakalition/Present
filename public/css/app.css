@@ -644,6 +644,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-5 {
   width: 1.25rem;
 }
+.w-24 {
+  width: 6rem;
+}
 .min-w-\[12rem\] {
   min-width: 12rem;
 }

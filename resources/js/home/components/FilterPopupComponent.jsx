@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import CarbonRadioButton from '../../common-component/CarbonRadioButton';
 import CardWrapper from '../../common-component/CardWrapper';
 
-export default function SortByPopupComponent(props) {
+export default function FilterPopupComponent(props) {
   const { currentSort } = props;
 
   const element = (
@@ -28,6 +28,6 @@ export default function SortByPopupComponent(props) {
   return CardWrapper.medium(element);
 }
 
-SortByPopupComponent.propTypes = {
+FilterPopupComponent.propTypes = {
   currentSort: PropTypes.func.isRequired,
 };
