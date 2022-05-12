@@ -10,21 +10,18 @@ export default function UserPopupComponent(props) {
 
   return (
     <div
-      className="flex flex-col"
+      className="flex flex-col p-4 pr-16 min-w-[12rem] bg-ui-shell"
     >
-      <div className="h-4 bg-transparent" />
-      <div className="flex flex-col p-4 min-w-[12rem] bg-ui-shell">
-        <p className="font-ibm-plex-sans text-2xl font-semibold text-white whitespace-nowrap">{username}</p>
-        <div className="h-4" />
-        <div className="">
-          <CommonButtonComponent
-            buttonType="white-tertiary"
-            text="Log out"
-            icon={<RightArrowIcon />}
-            padding="px-5 py-3 w-[70%]"
-            onClickCallback={logout}
-          />
-        </div>
+      <p className="font-ibm-plex-sans text-2xl font-semibold text-white whitespace-nowrap">{username}</p>
+      <div className="h-4" />
+      <div className="">
+        <CommonButtonComponent
+          buttonType="white-tertiary"
+          text="Log out"
+          icon={<RightArrowIcon />}
+          padding="px-5 py-3 w-[70%]"
+          onClickCallback={logout}
+        />
       </div>
     </div>
   );

@@ -4605,7 +4605,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function UIShellComponent(props) {
   var username = props.username;
 
-  var _usePopupAddon = (0,_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_2__["default"])('filterPopup', '4rem', '3.5rem'),
+  var _usePopupAddon = (0,_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_2__["default"])('filterPopup', '5rem', '4.5rem'),
       _usePopupAddon2 = _slicedToArray(_usePopupAddon, 2),
       animationCallback = _usePopupAddon2[0],
       popupClass = _usePopupAddon2[1]; // Property
@@ -5741,26 +5741,21 @@ function UserPopupComponent(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "flex flex-col",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "h-4 bg-transparent"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "flex flex-col p-4 min-w-[12rem] bg-ui-shell",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-        className: "font-ibm-plex-sans text-2xl font-semibold text-white whitespace-nowrap",
-        children: username
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "h-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          buttonType: "white-tertiary",
-          text: "Log out",
-          icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {}),
-          padding: "px-5 py-3 w-[70%]",
-          onClickCallback: logout
-        })
-      })]
+    className: "flex flex-col p-4 pr-16 min-w-[12rem] bg-ui-shell",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "font-ibm-plex-sans text-2xl font-semibold text-white whitespace-nowrap",
+      children: username
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        buttonType: "white-tertiary",
+        text: "Log out",
+        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_icons_RightArrrowIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {}),
+        padding: "px-5 py-3 w-[70%]",
+        onClickCallback: logout
+      })
     })]
   });
 }

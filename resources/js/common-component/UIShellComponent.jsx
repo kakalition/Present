@@ -9,7 +9,7 @@ import usePopupAddon from './hooks/usePopupAddon';
  */
 export default function UIShellComponent(props) {
   const { username } = props;
-  const [animationCallback, popupClass] = usePopupAddon('filterPopup', '4rem', '3.5rem');
+  const [animationCallback, popupClass] = usePopupAddon('filterPopup', '5rem', '4.5rem');
 
   // Property
   const onHomeClicked = () => window.location.assign('/home');
