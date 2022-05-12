@@ -4656,14 +4656,14 @@ function UIShellComponent(props) {
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "flex relative flex-col",
+      className: "flex relative flex-col items-end",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
         size: "w-16 h-16",
         padding: "p-4",
         onClickCallback: animationCallback
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         id: "filterPopup",
-        className: "".concat(popupClass, " -translate-x-52"),
+        className: popupClass,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
           username: username
         })
