@@ -9,7 +9,7 @@ export default function usePopupAddon(targetId, fromY, toY) {
       anime({
         targets: `#${targetId}`,
         begin: () => setShowPopup(true),
-        bottom: fromY,
+        top: fromY,
         opacity: 1,
         duration: 200,
         easing: 'easeOutSine',
@@ -18,7 +18,7 @@ export default function usePopupAddon(targetId, fromY, toY) {
       anime({
         targets: `#${targetId}`,
         complete: () => setShowPopup(false),
-        bottom: toY,
+        top: toY,
         opacity: 0,
         duration: 200,
         easing: 'easeOutSine',

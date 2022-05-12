@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import UserPopupComponent from '../home/components/UserPopupComponent';
-import HomeAnimation from '../home/utils/HomeAnimation';
 import UserButtonComponent from '../home/components/UserButtonComponent';
-import IconWithPopupBuilder from '../home/components/IconWithPopupBuilder';
+import usePopupAddon from './hooks/usePopupAddon';
 
 /**
  * @param {{username:string}} props
@@ -10,6 +9,7 @@ import IconWithPopupBuilder from '../home/components/IconWithPopupBuilder';
  */
 export default function UIShellComponent(props) {
   const { username } = props;
+  const { animationCallback, popupClass } = usePopupAddon('filterPopup', '4rem', '3.5rem');
 
   // Property
   const onHomeClicked = () => window.location.assign('/home');
@@ -20,18 +20,9 @@ export default function UIShellComponent(props) {
   const currentPageClass = 'font-ibm-plex-sans text-lg text-white';
   const notCurrentPageClass = 'font-ibm-plex-sans text-lg text-slate-400';
 
-  const te = IconWithPopupBuilder(
-    {
-      popupId: '#userPopup',
-      showAnimation: HomeAnimation.showUserPopupAnimation('#userPopup'),
-      hideAnimation: HomeAnimation.hideUserPopupAnimation('#userPopup'),
-    },
-    <UserButtonComponent size="w-16 h-16" padding="p-4" />,
-    <UserPopupComponent username={username} />,
-  );
-
   return (
     <div className="flex relative justify-between items-center px-16 w-full bg-ui-shell">
+
       <div className="flex items-center">
         <button type="button">
           <p className={brandClass}>Present</p>
@@ -57,7 +48,14 @@ export default function UIShellComponent(props) {
           <p className={notCurrentPageClass}>History</p>
         </button>
       </div>
-      {te}
+
+      <div className="flex relative flex-col">
+        <UserButtonComponent size="w-16 h-16" padding="p-4" onClickCallback={animationCallback} />
+        <div id="filterPopup" className={`${popupClass} -translate-x-52`}>
+          <UserPopupComponent username={username} />
+        </div>
+      </div>
+
     </div>
   );
 }

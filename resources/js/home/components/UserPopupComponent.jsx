@@ -10,7 +10,7 @@ export default function UserPopupComponent(props) {
 
   return (
     <div
-      className="flex absolute flex-col"
+      className="flex flex-col"
     >
       <div className="h-4 bg-transparent" />
       <div className="flex flex-col p-4 min-w-[12rem] bg-ui-shell">

@@ -5,13 +5,14 @@ import UserIcon from '../../common-component/icons/UserIcon';
  * @param {{padding: TailwindClass}} props
  */
 export default function UserButtonComponent(props) {
-  const { size, padding } = props;
+  const { size, padding, onClickCallback } = props;
   const className = `flex justify-center items-center ${size} ${padding}`;
 
   return (
     <button
       className={className}
       type="button"
+      onClick={onClickCallback}
     >
       <UserIcon />
     </button>
@@ -21,6 +22,7 @@ export default function UserButtonComponent(props) {
 UserButtonComponent.propTypes = {
   size: PropTypes.string,
   padding: PropTypes.string,
+  onClickCallback: PropTypes.func.isRequired,
 };
 
 UserButtonComponent.defaultProps = {
