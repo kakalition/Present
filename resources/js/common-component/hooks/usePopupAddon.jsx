@@ -26,8 +26,8 @@ export default function usePopupAddon(targetId, fromY, toY) {
     }
   }, [showAnimation]);
 
-  return {
-    animationCallback: () => setShowAnimation(!showAnimation),
-    popupClass: `absolute ${showPopup ? 'inline' : 'hidden'}`,
-  };
+  return [
+    () => setShowAnimation(!showAnimation),
+    `absolute ${showPopup ? 'inline' : 'hidden'}`,
+  ];
 }

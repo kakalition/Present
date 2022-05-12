@@ -76,7 +76,7 @@ export default function HomePage(props) {
   const { transformedusername } = props;
   const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
 
-  const { animationCallback, popupClass } = usePopupAddon('filterPopup', '4rem', '3.5rem');
+  const [animationCallback, popupClass] = usePopupAddon('filterPopup', '4rem', '3.5rem');
 
   // For Development Only
   const [breathingFilter, setBreathingFilter] = useState(false);
