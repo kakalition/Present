@@ -424,11 +424,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.borderize {
-  border-width: 4px;
-  --tw-border-opacity: 1;
-  border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
 .carbon-radio-button-label {
   display: flex;
   flex-direction: row;
@@ -528,24 +523,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-auto {
   bottom: auto;
 }
-.bottom-10 {
-  bottom: 2.5rem;
-}
-.bottom-0 {
-  bottom: 0px;
-}
-.bottom-48 {
-  bottom: 12rem;
-}
-.-bottom-48 {
-  bottom: -12rem;
-}
-.-bottom-64 {
-  bottom: -16rem;
-}
-.-bottom-60 {
-  bottom: -15rem;
-}
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -633,9 +610,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-5 {
   height: 1.25rem;
-}
-.h-0 {
-  height: 0px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1058,59 +1032,48 @@ Ensure the default browser behavior of the `hidden` attribute.
 .duration-100 {
   transition-duration: 100ms;
 }
-
 .hover\:scale-\[1\.005\]:hover {
   --tw-scale-x: 1.005;
   --tw-scale-y: 1.005;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:bg-primary-button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(15 98 254 / var(--tw-bg-opacity));
 }
-
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
-
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-
 .hover\:shadow-xl:hover {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
 .hover\:brightness-\[90\%\]:hover {
   --tw-brightness: brightness(90%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
-
 .focus\:border-primary-button:focus {
   --tw-border-opacity: 1;
   border-color: rgb(15 98 254 / var(--tw-border-opacity));
 }
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 @media (min-width: 640px) {
 
   .sm\:scale-\[1\] {
@@ -1119,7 +1082,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
-
 @media (min-width: 768px) {
 
   .md\:-right-36 {
@@ -1220,7 +1182,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2rem;
   }
 }
-
 @media (min-width: 1024px) {
 
   .lg\:-right-72 {
