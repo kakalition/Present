@@ -50,7 +50,7 @@ export default function UIShellComponent(props) {
       </div>
 
       <div className="flex relative flex-col items-end">
-        <UserButtonComponent size="w-16 h-16" padding="p-4" onClickCallback={animationCallback} />
+        <UserButtonComponent size="w-12 h-12" adjustmentClass="p-2 m-3 bg-ui-shell hover:brightness-200" onClickCallback={animationCallback} />
         <div id="filterPopup" className={popupClass}>
           <UserPopupComponent username={username} />
         </div>

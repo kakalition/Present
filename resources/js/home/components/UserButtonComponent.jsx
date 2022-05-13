@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
 import UserIcon from '../../common-component/icons/UserIcon';
 
-/**
- * @param {{padding: TailwindClass}} props
- */
 export default function UserButtonComponent(props) {
-  const { size, padding, onClickCallback } = props;
-  const className = `flex justify-center items-center ${size} ${padding}`;
+  const { size, adjustmentClass, onClickCallback } = props;
+  const className = `flex justify-center items-center rounded-full ${size} ${adjustmentClass}`;
 
   return (
     <button
@@ -21,11 +18,11 @@ export default function UserButtonComponent(props) {
 
 UserButtonComponent.propTypes = {
   size: PropTypes.string,
-  padding: PropTypes.string,
+  adjustmentClass: PropTypes.string,
   onClickCallback: PropTypes.func.isRequired,
 };
 
 UserButtonComponent.defaultProps = {
   size: 'w-16 h-16',
-  padding: 'p-2',
+  adjustmentClass: 'p-2',
 };

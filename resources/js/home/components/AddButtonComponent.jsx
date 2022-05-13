@@ -17,7 +17,7 @@ export default function AddButtonComponent(props) {
   return (
     <button className={className} type="button" onClick={clickCallback}>
       <p className="font-ibm-plex-sans text-2xl font-semibold text-white transition">{text}</p>
-      <div className="w-8 h-8"><PlusIcon /></div>
+      <div className="w-8 h-8 stroke-white stroke-2"><PlusIcon /></div>
     </button>
   );
 }

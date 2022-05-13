@@ -3,7 +3,6 @@ import { useState } from 'react';
 import UIShellComponent from '../common-component/UIShellComponent';
 import { elementBinder } from '../utils/ElementBinder';
 import AddButtonComponent from './components/AddButtonComponent';
-import ChipComponent from './components/ChipComponent';
 import SearchBarComponent from './components/SearchBarComponent';
 import FilterButtonComponent from './components/FilterButtonComponent';
 import ItemTileComponent from './components/ItemTileComponent';
