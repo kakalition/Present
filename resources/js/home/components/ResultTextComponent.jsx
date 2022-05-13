@@ -4,7 +4,7 @@ export default function ResultTextComponent(props) {
   const { total, itemName } = props;
 
   return (
-    <h3 className="font-ibm-plex-sans text-lg text-black">
+    <h3 className="font-ibm-plex-sans text-base text-black">
       Showing
       {' '}
       {total}

@@ -8,6 +8,7 @@ import usePopupAddon from '../common-component/hooks/usePopupAddon';
 import FilterPopupComponent from './components/FilterPopupComponent';
 import CarbonChipComponent from '../common-component/CarbonChipComponent';
 import HomeActionGroupComponent from './components/component-group/HomeActionGroupComponent';
+import FilterGroupComponent from './components/component-group/FilterGroupComponent';
 
 export default function HomePage(props) {
   const { transformedusername } = props;
@@ -51,7 +52,8 @@ export default function HomePage(props) {
       <UIShellComponent username={username} />
       <div className="h-8" />
       <HomeActionGroupComponent />
-
+      <div className="h-12" />
+      <FilterGroupComponent itemName="Meditation" totalFound={18} />
     </div>
   );
 }

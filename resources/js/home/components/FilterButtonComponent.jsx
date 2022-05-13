@@ -4,7 +4,7 @@ import CardWrapper from '../../common-component/CardWrapper';
 import FilterIcon from '../../common-component/icons/FilterIcon';
 
 export default function FilterButtonComponent(props) {
-  const { isActive, onClickCallback } = props;
+  const { onClickCallback } = props;
   const component = (
     <button className="flex flex-row items-center py-3 px-6 bg-white" type="button" onClick={onClickCallback}>
       <div className="w-6 h-6 stroke-black"><FilterIcon /></div>
@@ -17,6 +17,5 @@ export default function FilterButtonComponent(props) {
 }
 
 FilterButtonComponent.propTypes = {
-  isActive: PropTypes.bool.isRequired,
   onClickCallback: PropTypes.func.isRequired,
 };
