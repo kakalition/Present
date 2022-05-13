@@ -563,6 +563,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-8 {
   margin-left: 2rem;
 }
+.ml-1 {
+  margin-left: 0.25rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.ml-0 {
+  margin-left: 0px;
+}
 .block {
   display: block;
 }
@@ -611,6 +620,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-5 {
   height: 1.25rem;
 }
+.h-1 {
+  height: 0.25rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-10 {
+  height: 2.5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -646,6 +664,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-24 {
   width: 6rem;
+}
+.w-1 {
+  width: 0.25rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-10 {
+  width: 2.5rem;
 }
 .min-w-\[12rem\] {
   min-width: 12rem;
@@ -817,6 +844,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-transparent {
   background-color: transparent;
 }
+.bg-sky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+.bg-sky-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-bl {
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
@@ -849,6 +884,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .stroke-slate-400 {
   stroke: #94a3b8;
 }
+.stroke-2 {
+  stroke-width: 2;
+}
 .p-2 {
   padding: 0.5rem;
 }
@@ -863,6 +901,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-3 {
   padding: 0.75rem;
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.p-\[100\%\] {
+  padding: 100%;
+}
+.p-\[0\.4rem\] {
+  padding: 0.4rem;
+}
+.p-\[0\.3rem\] {
+  padding: 0.3rem;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -904,6 +954,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .pr-8 {
   padding-right: 2rem;
 }
@@ -915,6 +973,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-16 {
   padding-right: 4rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pr-2 {
+  padding-right: 0.5rem;
 }
 .text-left {
   text-align: left;
@@ -1023,6 +1090,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.brightness-50 {
+  --tw-brightness: brightness(.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1078,6 +1149,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:brightness-\[90\%\]:hover {
   --tw-brightness: brightness(90%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.hover\:brightness-90:hover {
+  --tw-brightness: brightness(.9);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 

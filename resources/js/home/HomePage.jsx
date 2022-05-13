@@ -10,6 +10,7 @@ import ItemTileComponent from './components/ItemTileComponent';
 import ResultTextComponent from './components/ResultTextComponent';
 import usePopupAddon from '../common-component/hooks/usePopupAddon';
 import FilterPopupComponent from './components/FilterPopupComponent';
+import CarbonChipComponent from '../common-component/CarbonChipComponent';
 
 function TopOne() {
   return (
@@ -85,6 +86,10 @@ export default function HomePage(props) {
             <div className="w-8" />
             <FilterPopupComponent currentSort={currentSort} />
           </div>
+
+          <div className="w-24" />
+
+          <CarbonChipComponent bgClass="bg-sky-200" text="Test Chip" isFilter />
         </div>
         <div className="h-8" />
         <Content />
