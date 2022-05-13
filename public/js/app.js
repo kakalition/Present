@@ -5461,12 +5461,12 @@ __webpack_require__.r(__webpack_exports__);
 
 function SearchBarComponent() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "flex items-center h-full bg-white border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300",
+    className: "flex items-center w-full h-full bg-white border-2 border-x-slate-100 border-t-slate-100 border-b-slate-300",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "m-4 w-8 h-8 stroke-black",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_icons_SearchIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-      className: "w-full font-ibm-plex-sans text-base focus:outline-none ",
+      className: "w-full h-full font-ibm-plex-sans text-base focus:outline-none",
       type: "text",
       id: "query",
       name: "query",
