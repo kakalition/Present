@@ -4334,65 +4334,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/common-component/CarbonChipComponent.jsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/common-component/CarbonChipComponent.jsx ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ CarbonChipComponent)
-/* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _icons_XIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons/XIcon */ "./resources/js/common-component/icons/XIcon.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function CarbonChipComponent(props) {
-  var text = props.text,
-      bgClass = props.bgClass,
-      isFilter = props.isFilter,
-      onXClicked = props.onXClicked;
-
-  var deselectPart = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-    className: "".concat(bgClass, " hover:brightness-90 flex items-center justify-center rounded-full ml-0 h-full w-full p-2"),
-    onClick: onXClicked,
-    type: "button",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "w-4 h-4 stroke-black stroke-2",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_icons_XIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
-    })
-  });
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "flex flex-row justify-center items-center pl-3 rounded-full ".concat(isFilter ? '' : 'py-1', " ").concat(bgClass),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-ibm-plex-sans text-base text-black whitespace-nowrap",
-      children: text
-    }), isFilter ? deselectPart : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "w-3"
-    })]
-  });
-}
-CarbonChipComponent.propTypes = {
-  text: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
-  bgClass: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
-  isFilter: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool),
-  onXClicked: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func)
-};
-CarbonChipComponent.defaultProps = {
-  bgClass: 'bg-green-200',
-  isFilter: false,
-  onXClicked: function onXClicked() {}
-};
-
-/***/ }),
-
 /***/ "./resources/js/common-component/CarbonRadioButton.jsx":
 /*!*************************************************************!*\
   !*** ./resources/js/common-component/CarbonRadioButton.jsx ***!
@@ -4595,11 +4536,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ComponentWithPopupBuilder)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
-/* harmony import */ var _hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4614,36 +4552,50 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /* eslint-disable react/jsx-filename-extension */
 
-
+/**
+ * @typedef {object} ComponentWithPopupParams
+ * @property {string} id
+ * @property {(animationCallback) => JSX.Component} mainComponent
+ * @property {() => JSX.Component} popupComponent
+ * @property {TailwindClass} alignClass
+ * @property {TailwindClass} fromY
+ * @property {TailwindClass} toY
+ */
 
 /**
- * @param {(animationCallback) => JSX.Component} mainComponent
- * @param {() => JSX.Component} popupComponent
- * @param {TailwindClass} fromY
- * @param {TailwindClass} toY
+ * @param {ComponentWithPopupParams} params
  */
 
 
 
-function ComponentWithPopupBuilder(mainComponent, popupComponent, fromY, toY) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])()),
-      _useState2 = _slicedToArray(_useState, 1),
-      id = _useState2[0];
+function ComponentWithPopupBuilder(params) {
+  var mainComponent = params.mainComponent,
+      popupComponent = params.popupComponent,
+      alignClass = params.alignClass,
+      fromY = params.fromY,
+      toY = params.toY,
+      id = params.id;
 
-  var _usePopupAddon = (0,_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_1__["default"])(id, fromY, toY),
+  var _usePopupAddon = (0,_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_0__["default"])(id, fromY, toY),
       _usePopupAddon2 = _slicedToArray(_usePopupAddon, 2),
       animationCallback = _usePopupAddon2[0],
       popupClass = _usePopupAddon2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "flex relative flex-col items-start",
-    children: [mainComponent(animationCallback), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex relative flex-col ".concat(alignClass),
+    children: [mainComponent(animationCallback), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       id: id,
       className: popupClass,
       children: popupComponent()
     })]
   });
 }
+/**
+ * @param {{mainComponent: (animationCallback) => JSX.Component,
+ * popupComponent: () => JSX.Component, alignClass: TailwindClass
+ * fromY: TailwindClass, toY: TailwindClass, id: string
+ * }} objec
+ */
 
 /***/ }),
 
@@ -5001,35 +4953,6 @@ function UserIcon() {
 
 /***/ }),
 
-/***/ "./resources/js/common-component/icons/XIcon.jsx":
-/*!*******************************************************!*\
-  !*** ./resources/js/common-component/icons/XIcon.jsx ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ XIcon)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-function XIcon() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    fill: "none",
-    viewBox: "0 0 24 24",
-    stroke: "currentColor",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      d: "M6 18L18 6M6 6l12 12"
-    })
-  });
-}
-
-/***/ }),
-
 /***/ "./resources/js/home/HomePage.jsx":
 /*!****************************************!*\
   !*** ./resources/js/home/HomePage.jsx ***!
@@ -5041,21 +4964,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _components_FilterButtonComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/FilterButtonComponent */ "./resources/js/home/components/FilterButtonComponent.jsx");
-/* harmony import */ var _components_ResultTextComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ResultTextComponent */ "./resources/js/home/components/ResultTextComponent.jsx");
-/* harmony import */ var _common_component_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common-component/hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.jsx");
-/* harmony import */ var _components_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/FilterPopupComponent */ "./resources/js/home/components/FilterPopupComponent.jsx");
-/* harmony import */ var _common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common-component/CarbonChipComponent */ "./resources/js/common-component/CarbonChipComponent.jsx");
-/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
-/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
-/* harmony import */ var _common_component_ComponentWithPopupBuilder__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../common-component/ComponentWithPopupBuilder */ "./resources/js/common-component/ComponentWithPopupBuilder.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
+/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5076,16 +4993,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-
-
-
-
 function HomePage(props) {
   var transformedusername = props.transformedusername;
-  var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' '); // const [animationCallback, popupClass] = usePopupAddon('filterPopup', '4rem', '3.5rem');
-  // For Development Only
+  var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' '); // For Development Only
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -5101,56 +5011,25 @@ function HomePage(props) {
       _useState6 = _slicedToArray(_useState5, 2),
       currentSort = _useState6[0],
       setCurrentSort = _useState6[1];
-  /*   const tempHolder = (
-    <div className="flex flex-col justify-start items-center w-full h-full">
-      <div className="h-8" />
-      <div className="flex flex-row items-start self-start ml-16">
-        <div className="flex relative flex-col items-start">
-          <FilterButtonComponent onClickCallback={animationCallback} />
-          <div id="filterPopup" className={popupClass}>
-            <FilterPopupComponent />
-          </div>
-        </div>
-         <div className="w-24" />
-        <div className="flex flex-col">
-          <ResultTextComponent itemName="meditations" total={12} />
-          <div className="w-8" />
-          <FilterPopupComponent currentSort={currentSort} />
-        </div>
-         <div className="w-24" />
-         <CarbonChipComponent bgClass="bg-sky-200" text="Test Chip" isFilter />
-      </div>
-      <div className="h-8" />
-    </div>
-  ); */
 
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "flex flex-col items-center w-screen min-h-screen bg-web-bg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
       username: username
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "h-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "h-12"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
       itemName: "Meditation",
       totalFound: 18
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-      className: "h-12"
-    }), (0,_common_component_ComponentWithPopupBuilder__WEBPACK_IMPORTED_MODULE_10__["default"])(function (animationCallback) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_FilterButtonComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        onClickCallback: animationCallback
-      });
-    }, function () {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {});
-    }, '4rem', '3.5rem')]
+    })]
   });
 }
 HomePage.propTypes = {
-  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_12___default().string.isRequired)
+  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(HomePage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -5523,11 +5402,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FilterGroupComponent)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _FilterButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FilterButtonComponent */ "./resources/js/home/components/FilterButtonComponent.jsx");
-/* harmony import */ var _ResultTextComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ResultTextComponent */ "./resources/js/home/components/ResultTextComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_component_ComponentWithPopupBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common-component/ComponentWithPopupBuilder */ "./resources/js/common-component/ComponentWithPopupBuilder.js");
+/* harmony import */ var _FilterButtonComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilterButtonComponent */ "./resources/js/home/components/FilterButtonComponent.jsx");
+/* harmony import */ var _FilterPopupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilterPopupComponent */ "./resources/js/home/components/FilterPopupComponent.jsx");
+/* harmony import */ var _ResultTextComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ResultTextComponent */ "./resources/js/home/components/ResultTextComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -5536,17 +5422,31 @@ __webpack_require__.r(__webpack_exports__);
 function FilterGroupComponent(props) {
   var itemName = props.itemName,
       totalFound = props.totalFound;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "flex flex-row justify-between items-center px-16 w-full borderize",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ResultTextComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  var popupComponent = (0,_common_component_ComponentWithPopupBuilder__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    id: 'filter-popup',
+    alignClass: 'items-end',
+    mainComponent: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (animationCallback) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FilterButtonComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        onClickCallback: animationCallback
+      });
+    }, []),
+    popupComponent: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {});
+    }, []),
+    fromY: '4rem',
+    toY: '3.5rem'
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: "flex flex-row justify-between items-center px-16 w-full",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ResultTextComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
       itemName: itemName,
       total: totalFound
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FilterButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {})]
+    }), popupComponent]
   });
 }
 FilterGroupComponent.propTypes = {
-  itemName: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string.isRequired),
-  totalFound: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().number.isRequired)
+  itemName: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired),
+  totalFound: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().number.isRequired)
 };
 
 /***/ }),
@@ -58986,161 +58886,6 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/uuid/dist/esm-browser/regex.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/uuid/dist/esm-browser/regex.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
-
-/***/ }),
-
-/***/ "./node_modules/uuid/dist/esm-browser/rng.js":
-/*!***************************************************!*\
-  !*** ./node_modules/uuid/dist/esm-browser/rng.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ rng)
-/* harmony export */ });
-// Unique ID creation requires a high quality random # generator. In the browser we therefore
-// require the crypto API and do not support built-in fallback to lower quality random number
-// generators (like Math.random()).
-var getRandomValues;
-var rnds8 = new Uint8Array(16);
-function rng() {
-  // lazy load so that environments that need to polyfill have a chance to do so
-  if (!getRandomValues) {
-    // getRandomValues needs to be invoked in a context where "this" is a Crypto implementation. Also,
-    // find the complete implementation of crypto (msCrypto) on IE11.
-    getRandomValues = typeof crypto !== 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto) || typeof msCrypto !== 'undefined' && typeof msCrypto.getRandomValues === 'function' && msCrypto.getRandomValues.bind(msCrypto);
-
-    if (!getRandomValues) {
-      throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
-    }
-  }
-
-  return getRandomValues(rnds8);
-}
-
-/***/ }),
-
-/***/ "./node_modules/uuid/dist/esm-browser/stringify.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/uuid/dist/esm-browser/stringify.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./validate.js */ "./node_modules/uuid/dist/esm-browser/validate.js");
-
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */
-
-var byteToHex = [];
-
-for (var i = 0; i < 256; ++i) {
-  byteToHex.push((i + 0x100).toString(16).substr(1));
-}
-
-function stringify(arr) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-  // Note: Be careful editing this code!  It's been tuned for performance
-  // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
-  var uuid = (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase(); // Consistency check for valid UUID.  If this throws, it's likely due to one
-  // of the following:
-  // - One or more input array values don't map to a hex octet (leading to
-  // "undefined" in the uuid)
-  // - Invalid input values for the RFC `version` or `variant` fields
-
-  if (!(0,_validate_js__WEBPACK_IMPORTED_MODULE_0__["default"])(uuid)) {
-    throw TypeError('Stringified UUID is invalid');
-  }
-
-  return uuid;
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stringify);
-
-/***/ }),
-
-/***/ "./node_modules/uuid/dist/esm-browser/v4.js":
-/*!**************************************************!*\
-  !*** ./node_modules/uuid/dist/esm-browser/v4.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _rng_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rng.js */ "./node_modules/uuid/dist/esm-browser/rng.js");
-/* harmony import */ var _stringify_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stringify.js */ "./node_modules/uuid/dist/esm-browser/stringify.js");
-
-
-
-function v4(options, buf, offset) {
-  options = options || {};
-  var rnds = options.random || (options.rng || _rng_js__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-
-  rnds[6] = rnds[6] & 0x0f | 0x40;
-  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
-
-  if (buf) {
-    offset = offset || 0;
-
-    for (var i = 0; i < 16; ++i) {
-      buf[offset + i] = rnds[i];
-    }
-
-    return buf;
-  }
-
-  return (0,_stringify_js__WEBPACK_IMPORTED_MODULE_1__["default"])(rnds);
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (v4);
-
-/***/ }),
-
-/***/ "./node_modules/uuid/dist/esm-browser/validate.js":
-/*!********************************************************!*\
-  !*** ./node_modules/uuid/dist/esm-browser/validate.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _regex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./regex.js */ "./node_modules/uuid/dist/esm-browser/regex.js");
-
-
-function validate(uuid) {
-  return typeof uuid === 'string' && _regex_js__WEBPACK_IMPORTED_MODULE_0__["default"].test(uuid);
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (validate);
 
 /***/ })
 
