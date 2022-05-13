@@ -9,14 +9,14 @@ export default function AddButtonComponent(props) {
     background, text, clickCallback, fillSpace,
   } = props;
 
-  let className = `flex items-center justify-between shadow-md hover:shadow-xl scale-1 hover:scale-[1.005] transition p-6 ${background}`;
+  let className = `flex items-center justify-between shadow-md hover:shadow-xl scale-1 hover:scale-[1.005] transition px-6 py-5 ${background}`;
   if (fillSpace) {
     className += ' w-full h-full';
   }
 
   return (
     <button className={className} type="button" onClick={clickCallback}>
-      <p className="font-ibm-plex-sans text-2xl font-semibold text-white transition">{text}</p>
+      <p className="font-ibm-plex-sans text-xl font-medium text-white transition">{text}</p>
       <div className="w-8 h-8 stroke-white stroke-2"><PlusIcon /></div>
     </button>
   );
