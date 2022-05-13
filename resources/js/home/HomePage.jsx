@@ -10,48 +10,7 @@ import ResultTextComponent from './components/ResultTextComponent';
 import usePopupAddon from '../common-component/hooks/usePopupAddon';
 import FilterPopupComponent from './components/FilterPopupComponent';
 import CarbonChipComponent from '../common-component/CarbonChipComponent';
-
-function TopOne() {
-  return (
-    <div className="flex flex-row items-center px-16 w-full h-[8%]">
-      <div className="basis-1/2 h-full"><SearchBarComponent /></div>
-      <div className="w-8" />
-      <div className="basis-1/4 h-full"><AddButtonComponent text="New Meditation" background="bg-gradient-to-bl from-blue-700 to-sky-400" clickCallback={() => {}} fillSpace /></div>
-      <div className="w-8" />
-      <div className="basis-1/4 h-full"><AddButtonComponent text="New Breathing Exercise" background="bg-gradient-to-bl from-orange-600 to-orange-300" clickCallback={() => {}} fillSpace /></div>
-    </div>
-  );
-}
-
-function Content() {
-  return (
-    <div className="flex flex-row justify-evenly items-center px-16 w-full">
-      <ItemTileComponent
-        title="Calmness"
-        tag="Meditation"
-        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <div className="w-16" />
-      <ItemTileComponent
-        title="Calmness"
-        tag="Meditation"
-        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <div className="w-16" />
-      <ItemTileComponent
-        title="Calmness"
-        tag="Meditation"
-        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <div className="w-16" />
-      <ItemTileComponent
-        title="Calmness"
-        tag="Meditation"
-        shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-    </div>
-  );
-}
+import HomeActionGroupComponent from './components/ComponentGroup/HomeActionGroupComponent';
 
 export default function HomePage(props) {
   const { transformedusername } = props;
@@ -65,11 +24,11 @@ export default function HomePage(props) {
   const [currentSort, setCurrentSort] = useState('frequently-used');
 
   return (
-    <div className="flex flex-col items-center w-screen h-screen bg-web-bg">
+    <div className="flex flex-col items-center w-screen min-h-screen bg-web-bg">
       <UIShellComponent username={username} />
       <div className="flex flex-col justify-start items-center w-full h-full">
         <div className="h-8" />
-        <TopOne />
+        <HomeActionGroupComponent />
         <div className="h-8" />
         <div className="flex flex-row items-start self-start ml-16">
           <div className="flex relative flex-col items-start">
@@ -91,7 +50,6 @@ export default function HomePage(props) {
           <CarbonChipComponent bgClass="bg-sky-200" text="Test Chip" isFilter />
         </div>
         <div className="h-8" />
-        <Content />
       </div>
     </div>
   );
