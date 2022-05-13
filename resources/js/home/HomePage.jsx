@@ -9,19 +9,20 @@ import FilterPopupComponent from './components/FilterPopupComponent';
 import CarbonChipComponent from '../common-component/CarbonChipComponent';
 import HomeActionGroupComponent from './components/component-group/HomeActionGroupComponent';
 import FilterGroupComponent from './components/component-group/FilterGroupComponent';
+import ComponentWithPopupBuilder from '../common-component/ComponentWithPopupBuilder';
 
 export default function HomePage(props) {
   const { transformedusername } = props;
   const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
 
-  const [animationCallback, popupClass] = usePopupAddon('filterPopup', '4rem', '3.5rem');
+  // const [animationCallback, popupClass] = usePopupAddon('filterPopup', '4rem', '3.5rem');
 
   // For Development Only
   const [breathingFilter, setBreathingFilter] = useState(false);
   const [meditationFilter, setMeditationFilter] = useState(false);
   const [currentSort, setCurrentSort] = useState('frequently-used');
 
-  const tempHolder = (
+  /*   const tempHolder = (
     <div className="flex flex-col justify-start items-center w-full h-full">
       <div className="h-8" />
       <div className="flex flex-row items-start self-start ml-16">
@@ -45,7 +46,7 @@ export default function HomePage(props) {
       </div>
       <div className="h-8" />
     </div>
-  );
+  ); */
 
   return (
     <div className="flex flex-col items-center w-screen min-h-screen bg-web-bg">
@@ -54,6 +55,13 @@ export default function HomePage(props) {
       <HomeActionGroupComponent />
       <div className="h-12" />
       <FilterGroupComponent itemName="Meditation" totalFound={18} />
+      <div className="h-12" />
+      {ComponentWithPopupBuilder(
+        (animationCallback) => <FilterButtonComponent onClickCallback={animationCallback} />,
+        () => <FilterPopupComponent />,
+        '4rem',
+        '3.5rem',
+      )}
     </div>
   );
 }
