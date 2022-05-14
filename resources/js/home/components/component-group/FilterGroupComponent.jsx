@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {
-  useCallback, useMemo, useState,
+  useCallback, useEffect, useMemo, useState,
 } from 'react';
 import ComponentWithPopupBuilder from '../../../common-component/ComponentWithPopupBuilder';
 import FilterButtonComponent from '../FilterButtonComponent';
@@ -17,23 +17,38 @@ export default function FilterGroupComponent(props) {
   const [isDescending, setIsDescending] = useState(false);
   const [currentSort, setCurrentSort] = useState('frequently-used');
 
-  const filterPopupComponentState = useMemo(() => ({
-    meditationFilter, breathingFilter, currentSort, isDescending,
-  }), [meditationFilter, breathingFilter, currentSort, isDescending]);
-
-  const filterPopupComponentAction = useMemo(() => ({
-    onToggleBreathing: (value) => setBreathingFilter(value),
-    onToggleMeditation: (value) => setMeditationFilter(value),
-    onRadioChange: (e) => setCurrentSort(e.currentTarget.value),
-    onToggleDescending: (value) => setIsDescending(value),
-  }), []);
-
   const params = useMemo(() => ({
     meditationFilter,
     breathingFilter,
     sortby: currentSort,
     isDescending,
   }), [meditationFilter, breathingFilter, isDescending, currentSort]);
+
+  // Initial Fetch
+  useEffect(() => {
+    onSubmitFilter(params);
+  }, []);
+
+  const filterPopupComponentState = useMemo(() => ({
+    meditationFilter, breathingFilter, currentSort, isDescending,
+  }), [meditationFilter, breathingFilter, currentSort, isDescending]);
+
+  // Could be optimized
+  const filterPopupComponentAction = useMemo(() => ({
+    onToggleBreathing: (value) => {
+      setBreathingFilter(value);
+      onSubmitFilter({ ...params, breathingFilter: value });
+    },
+    onToggleMeditation: (value) => {
+      setMeditationFilter(value);
+      onSubmitFilter({ ...params, meditationFilter: value });
+    },
+    onRadioChange: (e) => setCurrentSort(e.currentTarget.value),
+    onToggleDescending: (value) => {
+      setIsDescending(value);
+      onSubmitFilter({ ...params, isDescending: value });
+    },
+  }), [params]);
 
   const popupComponent = ComponentWithPopupBuilder({
     id: 'filter-popup',
@@ -53,7 +68,6 @@ export default function FilterGroupComponent(props) {
     ),
     fromY: '4rem',
     toY: '3.5rem',
-    afterHideCallback: () => onSubmitFilter(params),
   });
 
   return (

@@ -5677,6 +5677,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FilterPopupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilterPopupComponent */ "./resources/js/home/components/FilterPopupComponent.jsx");
 /* harmony import */ var _ResultTextComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ResultTextComponent */ "./resources/js/home/components/ResultTextComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5722,30 +5728,6 @@ function FilterGroupComponent(props) {
       currentSort = _useState8[0],
       setCurrentSort = _useState8[1];
 
-  var filterPopupComponentState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      meditationFilter: meditationFilter,
-      breathingFilter: breathingFilter,
-      currentSort: currentSort,
-      isDescending: isDescending
-    };
-  }, [meditationFilter, breathingFilter, currentSort, isDescending]);
-  var filterPopupComponentAction = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    return {
-      onToggleBreathing: function onToggleBreathing(value) {
-        return setBreathingFilter(value);
-      },
-      onToggleMeditation: function onToggleMeditation(value) {
-        return setMeditationFilter(value);
-      },
-      onRadioChange: function onRadioChange(e) {
-        return setCurrentSort(e.currentTarget.value);
-      },
-      onToggleDescending: function onToggleDescending(value) {
-        return setIsDescending(value);
-      }
-    };
-  }, []);
   var params = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
     return {
       meditationFilter: meditationFilter,
@@ -5753,7 +5735,45 @@ function FilterGroupComponent(props) {
       sortby: currentSort,
       isDescending: isDescending
     };
-  }, [meditationFilter, breathingFilter, isDescending, currentSort]);
+  }, [meditationFilter, breathingFilter, isDescending, currentSort]); // Initial Fetch
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    onSubmitFilter(params);
+  }, []);
+  var filterPopupComponentState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      meditationFilter: meditationFilter,
+      breathingFilter: breathingFilter,
+      currentSort: currentSort,
+      isDescending: isDescending
+    };
+  }, [meditationFilter, breathingFilter, currentSort, isDescending]); // Could be optimized
+
+  var filterPopupComponentAction = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      onToggleBreathing: function onToggleBreathing(value) {
+        setBreathingFilter(value);
+        onSubmitFilter(_objectSpread(_objectSpread({}, params), {}, {
+          breathingFilter: value
+        }));
+      },
+      onToggleMeditation: function onToggleMeditation(value) {
+        setMeditationFilter(value);
+        onSubmitFilter(_objectSpread(_objectSpread({}, params), {}, {
+          meditationFilter: value
+        }));
+      },
+      onRadioChange: function onRadioChange(e) {
+        return setCurrentSort(e.currentTarget.value);
+      },
+      onToggleDescending: function onToggleDescending(value) {
+        setIsDescending(value);
+        onSubmitFilter(_objectSpread(_objectSpread({}, params), {}, {
+          isDescending: value
+        }));
+      }
+    };
+  }, [params]);
   var popupComponent = (0,_common_component_ComponentWithPopupBuilder__WEBPACK_IMPORTED_MODULE_1__["default"])({
     id: 'filter-popup',
     alignClass: 'items-end',
@@ -5769,10 +5789,7 @@ function FilterGroupComponent(props) {
       });
     }, [filterPopupComponentState]),
     fromY: '4rem',
-    toY: '3.5rem',
-    afterHideCallback: function afterHideCallback() {
-      return onSubmitFilter(params);
-    }
+    toY: '3.5rem'
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "flex flex-row justify-between items-center px-16 w-full",
