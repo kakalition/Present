@@ -7,7 +7,6 @@ export function elementBinder(rootId, jsx) {
     const element = document.getElementById(rootId);
     const props = { ...element.dataset };
     const root = cloneElement(jsx, props);
-
     createRoot(element).render(root);
   }
 }

@@ -2,19 +2,23 @@ import PropTypes from 'prop-types';
 import { ClassComposer } from '../utils/ClassComposer';
 
 /**
- * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost", textSize: TailwindClass_,
- * padding: TailwindClass_, text: string, onClickCallback: () => void,
+ * @param {{buttonType: "primary" | "secondary" | "tertiary" | "ghost" | "white-tertiary",
+ * textSize: TailwindClass_, padding: TailwindClass_, text: string, onClickCallback: () => void,
  * icon: svg, fillSpace: boolean}} props
  */
 export default function CommonButtonComponent(props) {
   const {
-    buttonType, textSize, padding, text, onClickCallback, icon, fillSpace,
+    buttonType, textSize, padding, text, onClickCallback, icon, fillSpace, fillX
   } = props;
 
   let className = 'text-left';
 
   if (fillSpace) {
     className += ' h-full w-full';
+  }
+
+  if (fillX) {
+    className += ' w-full';
   }
 
   switch (buttonType) {
@@ -68,6 +72,23 @@ export default function CommonButtonComponent(props) {
       break;
     }
 
+    case 'white-tertiary': {
+      className = ClassComposer(
+        className,
+        textSize,
+        padding,
+        'whitespace-nowrap',
+        'border-2 border-white',
+        'text-white',
+        'font-ibm-plex-sans',
+        'hover:text-black',
+        'hover:bg-white',
+        'transition-all',
+        'duration-100',
+      );
+      break;
+    }
+
     case 'ghost': {
       className = ClassComposer(
         className,
@@ -94,7 +115,6 @@ export default function CommonButtonComponent(props) {
     >
       <div className="flex justify-between items-center">
         {text}
-        {' '}
         {icon}
       </div>
     </button>
@@ -102,19 +122,20 @@ export default function CommonButtonComponent(props) {
 }
 
 CommonButtonComponent.propTypes = {
-  buttonType: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'ghost']).isRequired,
+  buttonType: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'white-tertiary', 'ghost']).isRequired,
   textSize: PropTypes.string,
   padding: PropTypes.string,
   text: PropTypes.string.isRequired,
   onClickCallback: PropTypes.func.isRequired,
   icon: PropTypes.element,
   fillSpace: PropTypes.bool,
-
+  fillX: PropTypes.bool,
 };
 
 CommonButtonComponent.defaultProps = {
   textSize: 'lg:text-xl text-lg',
-  padding: 'lg:p-3 lg:pr-16 md:pr-12 p-2 pr-8',
+  padding: 'lg:p-3 lg:pr-12 md:pr-8 p-2 pr-8',
   icon: <div />,
   fillSpace: false,
+  fillX: false,
 };

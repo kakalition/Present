@@ -1,8 +1,7 @@
-export default function RightArrowIcon() {
+export default function CheckIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -11,7 +10,7 @@ export default function RightArrowIcon() {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M14 5l7 7m0 0l-7 7m7-7H3"
+        d="M5 13l4 4L19 7"
       />
     </svg>
   );
