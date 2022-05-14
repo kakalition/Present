@@ -5074,21 +5074,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
-/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
-/* harmony import */ var _components_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/FilterPopupComponent */ "./resources/js/home/components/FilterPopupComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
+/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -5105,27 +5097,27 @@ function HomePage(props) {
     return console.log('submit');
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "flex flex-col items-center w-screen min-h-screen bg-web-bg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
       username: username
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-12"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
       itemName: "Meditation",
       totalFound: 18,
       onSubmitFilter: onSubmitFilter
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-24"
     })]
   });
 }
 HomePage.propTypes = {
-  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().string.isRequired)
+  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string.isRequired)
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(HomePage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_1__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -5247,12 +5239,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FilterPopupComponent)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CarbonChipComponent */ "./resources/js/common-component/CarbonChipComponent.jsx");
-/* harmony import */ var _common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/CarbonRadioButton */ "./resources/js/common-component/CarbonRadioButton.jsx");
-/* harmony import */ var _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common-component/CardWrapper */ "./resources/js/common-component/CardWrapper.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/CarbonChipComponent */ "./resources/js/common-component/CarbonChipComponent.jsx");
+/* harmony import */ var _common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common-component/CarbonRadioButton */ "./resources/js/common-component/CarbonRadioButton.jsx");
+/* harmony import */ var _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../common-component/CardWrapper */ "./resources/js/common-component/CardWrapper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -5263,109 +5258,121 @@ function FilterPopupComponent(props) {
   var state = props.state,
       action = props.action;
 
-  var element = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+  var element = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
     id: "sort-by",
     className: "p-4 whitespace-nowrap bg-white",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       className: "font-ibm-plex-sans text-base font-medium",
       children: "Categories:"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "flex flex-row items-start",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
         bgClass: "bg-[#A3FFE9]",
         text: "Meditation",
         isFilter: true,
         isFilterActive: state.meditationFilter,
-        onClick: action.onSelectMeditation,
-        onXClick: action.onDeselectMeditation
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        onClick: function onClick() {
+          return action.onToggleMeditation(true);
+        },
+        onXClick: function onXClick() {
+          return action.onToggleMeditation(false);
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "w-3"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
         bgClass: "bg-[#B9D5FF]",
         text: "Breathing",
         isFilter: true,
         isFilterActive: state.breathingFilter,
-        onClick: action.onSelectBreathing,
-        onXClick: action.onDeselectBreathing
+        onClick: function onClick() {
+          return action.onToggleBreathing(true);
+        },
+        onXClick: function onXClick() {
+          return action.onToggleBreathing(false);
+        }
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-4"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       className: "font-ibm-plex-sans text-base font-medium",
       children: "Sort By:"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       inputId: "name",
       inputName: "sortby",
       inputValue: "name",
       label: "Name",
       isChecked: state.currentSort === 'name',
       onRadioChange: action.onRadioChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       inputId: "duration",
       inputName: "sortby",
       inputValue: "duration",
       label: "Duration",
       isChecked: state.currentSort === 'duration',
       onRadioChange: action.onRadioChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       inputId: "date-added",
       inputName: "sortby",
       inputValue: "date-added",
       label: "Date added",
       isChecked: state.currentSort === 'date-added',
       onRadioChange: action.onRadioChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       inputId: "frequently-used",
       inputName: "sortby",
       inputValue: "frequently-used",
       label: "Frequently used",
       isChecked: state.currentSort === 'frequently-used',
       onRadioChange: action.onRadioChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2 border-b-2 border-b-slate-300"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
       className: "flex flex-row items-center font-ibm-plex-sans text-base",
       htmlFor: "descending",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
         className: "carbon-checkbox",
         name: "descending",
         id: "descending",
         type: "checkbox",
-        value: "true"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        value: "true",
+        checked: state.isDescending,
+        onChange: function onChange() {
+          return action.onToggleDescending(!state.isDescending);
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "w-2"
       }), "Descending"]
     })]
   });
 
-  return _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].medium(element);
+  return _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_3__["default"].medium(element);
 }
 FilterPopupComponent.propTypes = {
-  state: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
-    meditationFilter: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool.isRequired),
-    breathingFilter: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool.isRequired),
-    currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string.isRequired)
+  state: prop_types__WEBPACK_IMPORTED_MODULE_5___default().shape({
+    meditationFilter: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool.isRequired),
+    breathingFilter: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool.isRequired),
+    currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string.isRequired),
+    isDescending: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool.isRequired)
   }),
-  action: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
-    onSelectBreathing: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
-    onDeselectBreathing: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
-    onSelectMeditation: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
-    onDeselectMeditation: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
-    onRadioChange: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired)
+  action: prop_types__WEBPACK_IMPORTED_MODULE_5___default().shape({
+    onToggleMeditation: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func.isRequired),
+    onToggleBreathing: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func.isRequired),
+    onRadioChange: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func.isRequired),
+    onToggleDescending: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func.isRequired)
   })
 };
 
@@ -5591,34 +5598,37 @@ function FilterGroupComponent(props) {
       breathingFilter = _useState4[0],
       setBreathingFilter = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('frequently-used'),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      currentSort = _useState6[0],
-      setCurrentSort = _useState6[1];
+      isDescending = _useState6[0],
+      setIsDescending = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('frequently-used'),
+      _useState8 = _slicedToArray(_useState7, 2),
+      currentSort = _useState8[0],
+      setCurrentSort = _useState8[1];
 
   var filterPopupComponentState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
     return {
       meditationFilter: meditationFilter,
       breathingFilter: breathingFilter,
-      currentSort: currentSort
+      currentSort: currentSort,
+      isDescending: isDescending
     };
-  }, [meditationFilter, breathingFilter, currentSort]);
+  }, [meditationFilter, breathingFilter, currentSort, isDescending]);
   var filterPopupComponentAction = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
     return {
-      onSelectMeditation: function onSelectMeditation() {
-        return setMeditationFilter(true);
+      onToggleBreathing: function onToggleBreathing(value) {
+        return setBreathingFilter(value);
       },
-      onDeselectMeditation: function onDeselectMeditation() {
-        return setMeditationFilter(false);
-      },
-      onSelectBreathing: function onSelectBreathing() {
-        return setBreathingFilter(true);
-      },
-      onDeselectBreathing: function onDeselectBreathing() {
-        return setBreathingFilter(false);
+      onToggleMeditation: function onToggleMeditation(value) {
+        return setMeditationFilter(value);
       },
       onRadioChange: function onRadioChange(e) {
         return setCurrentSort(e.currentTarget.value);
+      },
+      onToggleDescending: function onToggleDescending(value) {
+        return setIsDescending(value);
       }
     };
   }, []);

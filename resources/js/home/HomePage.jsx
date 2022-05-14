@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import axios from 'axios';
 import UIShellComponent from '../common-component/UIShellComponent';
 import { elementBinder } from '../utils/ElementBinder';
 import HomeActionGroupComponent from './components/component-group/HomeActionGroupComponent';
 import FilterGroupComponent from './components/component-group/FilterGroupComponent';
-import FilterPopupComponent from './components/FilterPopupComponent';
 
 // CHECKPOINT, PASS STATE AND ITS CHANGE FUNCTION TO FILTERPOPUPCOMPONENT
 export default function HomePage(props) {

@@ -14,18 +14,18 @@ export default function FilterGroupComponent(props) {
 
   const [meditationFilter, setMeditationFilter] = useState(true);
   const [breathingFilter, setBreathingFilter] = useState(true);
+  const [isDescending, setIsDescending] = useState(false);
   const [currentSort, setCurrentSort] = useState('frequently-used');
 
   const filterPopupComponentState = useMemo(() => ({
-    meditationFilter, breathingFilter, currentSort,
-  }), [meditationFilter, breathingFilter, currentSort]);
+    meditationFilter, breathingFilter, currentSort, isDescending,
+  }), [meditationFilter, breathingFilter, currentSort, isDescending]);
 
   const filterPopupComponentAction = useMemo(() => ({
-    onSelectMeditation: () => setMeditationFilter(true),
-    onDeselectMeditation: () => setMeditationFilter(false),
-    onSelectBreathing: () => setBreathingFilter(true),
-    onDeselectBreathing: () => setBreathingFilter(false),
+    onToggleBreathing: (value) => setBreathingFilter(value),
+    onToggleMeditation: (value) => setMeditationFilter(value),
     onRadioChange: (e) => setCurrentSort(e.currentTarget.value),
+    onToggleDescending: (value) => setIsDescending(value),
   }), []);
 
   const popupComponent = ComponentWithPopupBuilder({

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import CarbonChipComponent from '../../common-component/CarbonChipComponent';
 import CarbonRadioButton from '../../common-component/CarbonRadioButton';
 import CardWrapper from '../../common-component/CardWrapper';
@@ -16,8 +17,8 @@ export default function FilterPopupComponent(props) {
           text="Meditation"
           isFilter
           isFilterActive={state.meditationFilter}
-          onClick={action.onSelectMeditation}
-          onXClick={action.onDeselectMeditation}
+          onClick={() => action.onToggleMeditation(true)}
+          onXClick={() => action.onToggleMeditation(false)}
         />
         <div className="w-3" />
         <CarbonChipComponent
@@ -25,8 +26,8 @@ export default function FilterPopupComponent(props) {
           text="Breathing"
           isFilter
           isFilterActive={state.breathingFilter}
-          onClick={action.onSelectBreathing}
-          onXClick={action.onDeselectBreathing}
+          onClick={() => action.onToggleBreathing(true)}
+          onXClick={() => action.onToggleBreathing(false)}
         />
       </div>
       <div className="h-4" />
@@ -73,7 +74,15 @@ export default function FilterPopupComponent(props) {
       <div className="h-2" />
 
       <label className="flex flex-row items-center font-ibm-plex-sans text-base" htmlFor="descending">
-        <input className="carbon-checkbox" name="descending" id="descending" type="checkbox" value="true" />
+        <input
+          className="carbon-checkbox"
+          name="descending"
+          id="descending"
+          type="checkbox"
+          value="true"
+          checked={state.isDescending}
+          onChange={() => action.onToggleDescending(!state.isDescending)}
+        />
         <div className="w-2" />
         Descending
       </label>
@@ -88,12 +97,12 @@ FilterPopupComponent.propTypes = {
     meditationFilter: PropTypes.bool.isRequired,
     breathingFilter: PropTypes.bool.isRequired,
     currentSort: PropTypes.string.isRequired,
+    isDescending: PropTypes.bool.isRequired,
   }),
   action: PropTypes.shape({
-    onSelectBreathing: PropTypes.func.isRequired,
-    onDeselectBreathing: PropTypes.func.isRequired,
-    onSelectMeditation: PropTypes.func.isRequired,
-    onDeselectMeditation: PropTypes.func.isRequired,
+    onToggleMeditation: PropTypes.func.isRequired,
+    onToggleBreathing: PropTypes.func.isRequired,
     onRadioChange: PropTypes.func.isRequired,
+    onToggleDescending: PropTypes.func.isRequired,
   }),
 };
