@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $public_path = asset('storage/');
-    return view('welcome')
-        ->with('public_path', $public_path);
+  $public_path = asset('storage/');
+  return view('welcome')
+    ->with('public_path', $public_path);
 });
 
 Route::get('/home', function () {
-    $transformedUsername = str_replace(' ', '+', Auth::user()->name);
-    return view('home')
-      ->with('transformedUsername', $transformedUsername);
+  $transformedUsername = str_replace(' ', '+', Auth::user()->name);
+  return view('home')
+    ->with('transformedUsername', $transformedUsername);
 });
+
+Route::get('/stubget', [HomeController::class, 'stub']);

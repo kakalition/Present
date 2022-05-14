@@ -8,13 +8,17 @@ import { ClassComposer } from '../utils/ClassComposer';
  */
 export default function CommonButtonComponent(props) {
   const {
-    buttonType, textSize, padding, text, onClickCallback, icon, fillSpace,
+    buttonType, textSize, padding, text, onClickCallback, icon, fillSpace, fillX
   } = props;
 
   let className = 'text-left';
 
   if (fillSpace) {
     className += ' h-full w-full';
+  }
+
+  if (fillX) {
+    className += ' w-full';
   }
 
   switch (buttonType) {
@@ -125,7 +129,7 @@ CommonButtonComponent.propTypes = {
   onClickCallback: PropTypes.func.isRequired,
   icon: PropTypes.element,
   fillSpace: PropTypes.bool,
-
+  fillX: PropTypes.bool,
 };
 
 CommonButtonComponent.defaultProps = {
@@ -133,4 +137,5 @@ CommonButtonComponent.defaultProps = {
   padding: 'lg:p-3 lg:pr-12 md:pr-8 p-2 pr-8',
   icon: <div />,
   fillSpace: false,
+  fillX: false,
 };

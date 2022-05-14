@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {
-  useCallback, useEffect, useMemo, useState,
+  useCallback, useMemo, useState,
 } from 'react';
 import ComponentWithPopupBuilder from '../../../common-component/ComponentWithPopupBuilder';
 import FilterButtonComponent from '../FilterButtonComponent';
@@ -28,6 +28,13 @@ export default function FilterGroupComponent(props) {
     onToggleDescending: (value) => setIsDescending(value),
   }), []);
 
+  const params = useMemo(() => ({
+    meditationFilter,
+    breathingFilter,
+    sortby: currentSort,
+    isDescending,
+  }), [meditationFilter, breathingFilter, isDescending, currentSort]);
+
   const popupComponent = ComponentWithPopupBuilder({
     id: 'filter-popup',
     alignClass: 'items-end',
@@ -46,7 +53,7 @@ export default function FilterGroupComponent(props) {
     ),
     fromY: '4rem',
     toY: '3.5rem',
-    afterHideCallback: onSubmitFilter,
+    afterHideCallback: () => onSubmitFilter(params),
   });
 
   return (

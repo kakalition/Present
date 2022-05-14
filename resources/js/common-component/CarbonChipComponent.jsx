@@ -21,8 +21,8 @@ export default function CarbonChipComponent(props) {
 
   return (
     <button type="button" onClick={onClick} disabled={!isFilter || isFilterActive}>
-      <div className={`flex flex-row justify-center items-center pl-3 rounded-full ${isFilterActive ? '' : 'py-1'} ${bgClass}`}>
-        <p className="font-ibm-plex-sans text-base text-black whitespace-nowrap">{text}</p>
+      <div className={`flex flex-row justify-center items-center pl-2 rounded-full ${isFilterActive ? '' : 'py-1'} ${bgClass}`}>
+        <p className="font-ibm-plex-sans text-sm text-black whitespace-nowrap">{text}</p>
         {isFilterActive ? deselectPart : <div className="w-3" />}
       </div>
     </button>

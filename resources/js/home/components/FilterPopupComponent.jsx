@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import CarbonChipComponent from '../../common-component/CarbonChipComponent';
 import CarbonRadioButton from '../../common-component/CarbonRadioButton';
 import CardWrapper from '../../common-component/CardWrapper';
