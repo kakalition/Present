@@ -4334,6 +4334,79 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/common-component/CarbonChipComponent.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/common-component/CarbonChipComponent.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CarbonChipComponent)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _icons_XIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons/XIcon */ "./resources/js/common-component/icons/XIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function CarbonChipComponent(props) {
+  var text = props.text,
+      bgClass = props.bgClass,
+      isFilter = props.isFilter,
+      isFilterActive = props.isFilterActive,
+      onClick = props.onClick,
+      onXClick = props.onXClick;
+
+  var deselectPart = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    className: "".concat(bgClass, " hover:brightness-90 flex items-center justify-center rounded-full ml-0 h-full w-full p-2"),
+    onClick: function onClick(e) {
+      e.stopPropagation();
+      onXClick();
+    },
+    type: "button",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "w-4 h-4 stroke-black stroke-2",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_icons_XIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+    })
+  });
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    type: "button",
+    onClick: onClick,
+    disabled: !isFilter || isFilterActive,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex flex-row justify-center items-center pl-3 rounded-full ".concat(isFilterActive ? '' : 'py-1', " ").concat(bgClass),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-ibm-plex-sans text-base text-black whitespace-nowrap",
+        children: text
+      }), isFilterActive ? deselectPart : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-3"
+      })]
+    })
+  });
+}
+CarbonChipComponent.propTypes = {
+  text: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  bgClass: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
+  isFilter: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool),
+  isFilterActive: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool),
+  onClick: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func),
+  onXClick: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func)
+};
+CarbonChipComponent.defaultProps = {
+  bgClass: 'bg-green-200',
+  isFilter: false,
+  isFilterActive: false,
+  onClick: function onClick() {},
+  onXClick: function onXClick() {}
+};
+
+/***/ }),
+
 /***/ "./resources/js/common-component/CarbonRadioButton.jsx":
 /*!*************************************************************!*\
   !*** ./resources/js/common-component/CarbonRadioButton.jsx ***!
@@ -4359,7 +4432,8 @@ function CarbonRadioButton(props) {
       inputName = props.inputName,
       inputValue = props.inputValue,
       label = props.label,
-      isChecked = props.isChecked;
+      isChecked = props.isChecked,
+      onRadioChange = props.onRadioChange;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
     className: "carbon-radio-button-label",
     htmlFor: inputId,
@@ -4369,7 +4443,8 @@ function CarbonRadioButton(props) {
       id: inputId,
       name: inputName,
       value: inputValue,
-      checked: isChecked
+      checked: isChecked,
+      onChange: onRadioChange
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "w-2"
     }), label]
@@ -4380,7 +4455,8 @@ CarbonRadioButton.propTypes = {
   inputName: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
   inputValue: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
   label: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
-  isChecked: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool.isRequired)
+  isChecked: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool.isRequired),
+  onRadioChange: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func.isRequired)
 };
 
 /***/ }),
@@ -4508,7 +4584,7 @@ function CommonButtonComponent(props) {
   });
 }
 CommonButtonComponent.propTypes = {
-  buttonType: prop_types__WEBPACK_IMPORTED_MODULE_2___default().oneOf(['primary', 'secondary', 'tertiary', 'ghost']).isRequired,
+  buttonType: prop_types__WEBPACK_IMPORTED_MODULE_2___default().oneOf(['primary', 'secondary', 'tertiary', 'white-tertiary', 'ghost']).isRequired,
   textSize: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
   padding: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
   text: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
@@ -4536,7 +4612,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ComponentWithPopupBuilder)
 /* harmony export */ });
-/* harmony import */ var _hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.jsx");
+/* harmony import */ var _hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -4560,6 +4636,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @property {TailwindClass} alignClass
  * @property {TailwindClass} fromY
  * @property {TailwindClass} toY
+ * @property {() => void} afterHideCallback
  */
 
 /**
@@ -4569,14 +4646,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function ComponentWithPopupBuilder(params) {
-  var mainComponent = params.mainComponent,
+  var id = params.id,
+      mainComponent = params.mainComponent,
       popupComponent = params.popupComponent,
       alignClass = params.alignClass,
       fromY = params.fromY,
       toY = params.toY,
-      id = params.id;
+      afterHideCallback = params.afterHideCallback;
 
-  var _usePopupAddon = (0,_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_0__["default"])(id, fromY, toY),
+  var _usePopupAddon = (0,_hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_0__["default"])(id, fromY, toY, afterHideCallback),
       _usePopupAddon2 = _slicedToArray(_usePopupAddon, 2),
       animationCallback = _usePopupAddon2[0],
       popupClass = _usePopupAddon2[1];
@@ -4614,7 +4692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _home_components_UserPopupComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../home/components/UserPopupComponent */ "./resources/js/home/components/UserPopupComponent.jsx");
 /* harmony import */ var _home_components_UserButtonComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../home/components/UserButtonComponent */ "./resources/js/home/components/UserButtonComponent.jsx");
-/* harmony import */ var _hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.jsx");
+/* harmony import */ var _hooks_usePopupAddon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hooks/usePopupAddon */ "./resources/js/common-component/hooks/usePopupAddon.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -4727,10 +4805,10 @@ UIShellComponent.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/common-component/hooks/usePopupAddon.jsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/common-component/hooks/usePopupAddon.jsx ***!
-  \***************************************************************/
+/***/ "./resources/js/common-component/hooks/usePopupAddon.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/common-component/hooks/usePopupAddon.js ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4756,6 +4834,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function usePopupAddon(targetId, fromY, toY) {
+  var afterHideCallback = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : function () {};
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       showPopup = _useState2[0],
@@ -4782,7 +4862,8 @@ function usePopupAddon(targetId, fromY, toY) {
       (0,animejs_lib_anime_es__WEBPACK_IMPORTED_MODULE_0__["default"])({
         targets: "#".concat(targetId),
         complete: function complete() {
-          return setShowPopup(false);
+          setShowPopup(false);
+          afterHideCallback();
         },
         top: toY,
         opacity: 0,
@@ -4953,6 +5034,35 @@ function UserIcon() {
 
 /***/ }),
 
+/***/ "./resources/js/common-component/icons/XIcon.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/common-component/icons/XIcon.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ XIcon)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function XIcon() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "M6 18L18 6M6 6l12 12"
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/home/HomePage.jsx":
 /*!****************************************!*\
   !*** ./resources/js/home/HomePage.jsx ***!
@@ -4964,32 +5074,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
-/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
-/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
+/* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
+/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
+/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
+/* harmony import */ var _components_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/FilterPopupComponent */ "./resources/js/home/components/FilterPopupComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 
+
+ // CHECKPOINT, PASS STATE AND ITS CHANGE FUNCTION TO FILTERPOPUPCOMPONENT
 
 
 
@@ -4997,39 +5101,31 @@ function HomePage(props) {
   var transformedusername = props.transformedusername;
   var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' '); // For Development Only
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      breathingFilter = _useState2[0],
-      setBreathingFilter = _useState2[1];
+  var onSubmitFilter = function onSubmitFilter() {
+    return console.log('submit');
+  };
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      meditationFilter = _useState4[0],
-      setMeditationFilter = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('frequently-used'),
-      _useState6 = _slicedToArray(_useState5, 2),
-      currentSort = _useState6[0],
-      setCurrentSort = _useState6[1];
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "flex flex-col items-center w-screen min-h-screen bg-web-bg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
       username: username
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "h-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "h-12"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
       itemName: "Meditation",
-      totalFound: 18
+      totalFound: 18,
+      onSubmitFilter: onSubmitFilter
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "h-24"
     })]
   });
 }
 HomePage.propTypes = {
-  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired)
+  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().string.isRequired)
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_2__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -5151,77 +5247,126 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FilterPopupComponent)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CarbonRadioButton */ "./resources/js/common-component/CarbonRadioButton.jsx");
-/* harmony import */ var _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/CardWrapper */ "./resources/js/common-component/CardWrapper.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common-component/CarbonChipComponent */ "./resources/js/common-component/CarbonChipComponent.jsx");
+/* harmony import */ var _common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-component/CarbonRadioButton */ "./resources/js/common-component/CarbonRadioButton.jsx");
+/* harmony import */ var _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common-component/CardWrapper */ "./resources/js/common-component/CardWrapper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 
 function FilterPopupComponent(props) {
-  var currentSort = props.currentSort;
+  var state = props.state,
+      action = props.action;
 
-  var element = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  var element = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
     id: "sort-by",
-    className: "p-6 whitespace-nowrap bg-white",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      inputId: "frequently-used",
-      inputName: "sortby",
-      inputValue: "frequently-used",
-      label: "Frequently used",
-      isChecked: currentSort === 'frequently-used'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "p-4 whitespace-nowrap bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "font-ibm-plex-sans text-base font-medium",
+      children: "Categories:"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex flex-row items-start",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        bgClass: "bg-[#A3FFE9]",
+        text: "Meditation",
+        isFilter: true,
+        isFilterActive: state.meditationFilter,
+        onClick: action.onSelectMeditation,
+        onXClick: action.onDeselectMeditation
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "w-3"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        bgClass: "bg-[#B9D5FF]",
+        text: "Breathing",
+        isFilter: true,
+        isFilterActive: state.breathingFilter,
+        onClick: action.onSelectBreathing,
+        onXClick: action.onDeselectBreathing
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "h-4"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "font-ibm-plex-sans text-base font-medium",
+      children: "Sort By:"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
       inputId: "name",
       inputName: "sortby",
       inputValue: "name",
       label: "Name",
-      isChecked: currentSort === 'name'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      isChecked: state.currentSort === 'name',
+      onRadioChange: action.onRadioChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
       inputId: "duration",
       inputName: "sortby",
       inputValue: "duration",
       label: "Duration",
-      isChecked: currentSort === 'duration'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      isChecked: state.currentSort === 'duration',
+      onRadioChange: action.onRadioChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
       inputId: "date-added",
       inputName: "sortby",
       inputValue: "date-added",
       label: "Date added",
-      isChecked: currentSort === 'date-added'
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      isChecked: state.currentSort === 'date-added',
+      onRadioChange: action.onRadioChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonRadioButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      inputId: "frequently-used",
+      inputName: "sortby",
+      inputValue: "frequently-used",
+      label: "Frequently used",
+      isChecked: state.currentSort === 'frequently-used',
+      onRadioChange: action.onRadioChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-2 border-b-2 border-b-slate-300"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "h-2"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
-      className: "flex flex-row items-center",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      className: "flex flex-row items-center font-ibm-plex-sans text-base",
       htmlFor: "descending",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
         className: "carbon-checkbox",
         name: "descending",
         id: "descending",
         type: "checkbox",
         value: "true"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "w-2"
       }), "Descending"]
     })]
   });
 
-  return _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_1__["default"].medium(element);
+  return _common_component_CardWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].medium(element);
 }
 FilterPopupComponent.propTypes = {
-  currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func.isRequired)
+  state: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
+    meditationFilter: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool.isRequired),
+    breathingFilter: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool.isRequired),
+    currentSort: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string.isRequired)
+  }),
+  action: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
+    onSelectBreathing: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
+    onDeselectBreathing: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
+    onSelectMeditation: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
+    onDeselectMeditation: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
+    onRadioChange: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired)
+  })
 };
 
 /***/ }),
@@ -5411,6 +5556,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FilterPopupComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilterPopupComponent */ "./resources/js/home/components/FilterPopupComponent.jsx");
 /* harmony import */ var _ResultTextComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ResultTextComponent */ "./resources/js/home/components/ResultTextComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -5421,7 +5578,50 @@ __webpack_require__.r(__webpack_exports__);
 
 function FilterGroupComponent(props) {
   var itemName = props.itemName,
-      totalFound = props.totalFound;
+      totalFound = props.totalFound,
+      onSubmitFilter = props.onSubmitFilter;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      meditationFilter = _useState2[0],
+      setMeditationFilter = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      breathingFilter = _useState4[0],
+      setBreathingFilter = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('frequently-used'),
+      _useState6 = _slicedToArray(_useState5, 2),
+      currentSort = _useState6[0],
+      setCurrentSort = _useState6[1];
+
+  var filterPopupComponentState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      meditationFilter: meditationFilter,
+      breathingFilter: breathingFilter,
+      currentSort: currentSort
+    };
+  }, [meditationFilter, breathingFilter, currentSort]);
+  var filterPopupComponentAction = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      onSelectMeditation: function onSelectMeditation() {
+        return setMeditationFilter(true);
+      },
+      onDeselectMeditation: function onDeselectMeditation() {
+        return setMeditationFilter(false);
+      },
+      onSelectBreathing: function onSelectBreathing() {
+        return setBreathingFilter(true);
+      },
+      onDeselectBreathing: function onDeselectBreathing() {
+        return setBreathingFilter(false);
+      },
+      onRadioChange: function onRadioChange(e) {
+        return setCurrentSort(e.currentTarget.value);
+      }
+    };
+  }, []);
   var popupComponent = (0,_common_component_ComponentWithPopupBuilder__WEBPACK_IMPORTED_MODULE_1__["default"])({
     id: 'filter-popup',
     alignClass: 'items-end',
@@ -5431,10 +5631,14 @@ function FilterGroupComponent(props) {
       });
     }, []),
     popupComponent: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {});
-    }, []),
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FilterPopupComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        state: filterPopupComponentState,
+        action: filterPopupComponentAction
+      });
+    }, [filterPopupComponentState]),
     fromY: '4rem',
-    toY: '3.5rem'
+    toY: '3.5rem',
+    afterHideCallback: onSubmitFilter
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "flex flex-row justify-between items-center px-16 w-full",
@@ -5446,7 +5650,8 @@ function FilterGroupComponent(props) {
 }
 FilterGroupComponent.propTypes = {
   itemName: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().string.isRequired),
-  totalFound: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().number.isRequired)
+  totalFound: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().number.isRequired),
+  onSubmitFilter: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().func.isRequired)
 };
 
 /***/ }),

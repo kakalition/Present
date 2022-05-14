@@ -10,6 +10,7 @@ import usePopupAddon from './hooks/usePopupAddon';
  * @property {TailwindClass} alignClass
  * @property {TailwindClass} fromY
  * @property {TailwindClass} toY
+ * @property {() => void} afterHideCallback
  */
 
 /**
@@ -17,9 +18,10 @@ import usePopupAddon from './hooks/usePopupAddon';
  */
 export default function ComponentWithPopupBuilder(params) {
   const {
-    mainComponent, popupComponent, alignClass, fromY, toY, id,
+    id, mainComponent, popupComponent, alignClass, fromY, toY, afterHideCallback,
   } = params;
-  const [animationCallback, popupClass] = usePopupAddon(id, fromY, toY);
+
+  const [animationCallback, popupClass] = usePopupAddon(id, fromY, toY, afterHideCallback);
 
   return (
     <div className={`flex relative flex-col ${alignClass}`}>

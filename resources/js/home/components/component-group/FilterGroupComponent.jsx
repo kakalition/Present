@@ -1,12 +1,33 @@
 import PropTypes from 'prop-types';
-import { useCallback } from 'react';
+import {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import ComponentWithPopupBuilder from '../../../common-component/ComponentWithPopupBuilder';
 import FilterButtonComponent from '../FilterButtonComponent';
 import FilterPopupComponent from '../FilterPopupComponent';
 import ResultTextComponent from '../ResultTextComponent';
 
 export default function FilterGroupComponent(props) {
-  const { itemName, totalFound } = props;
+  const {
+    itemName, totalFound, onSubmitFilter,
+  } = props;
+
+  const [meditationFilter, setMeditationFilter] = useState(true);
+  const [breathingFilter, setBreathingFilter] = useState(true);
+  const [currentSort, setCurrentSort] = useState('frequently-used');
+
+  const filterPopupComponentState = useMemo(() => ({
+    meditationFilter, breathingFilter, currentSort,
+  }), [meditationFilter, breathingFilter, currentSort]);
+
+  const filterPopupComponentAction = useMemo(() => ({
+    onSelectMeditation: () => setMeditationFilter(true),
+    onDeselectMeditation: () => setMeditationFilter(false),
+    onSelectBreathing: () => setBreathingFilter(true),
+    onDeselectBreathing: () => setBreathingFilter(false),
+    onRadioChange: (e) => setCurrentSort(e.currentTarget.value),
+  }), []);
+
   const popupComponent = ComponentWithPopupBuilder({
     id: 'filter-popup',
     alignClass: 'items-end',
@@ -14,9 +35,18 @@ export default function FilterGroupComponent(props) {
       (animationCallback) => <FilterButtonComponent onClickCallback={animationCallback} />,
       [],
     ),
-    popupComponent: useCallback(() => <FilterPopupComponent />, []),
+    popupComponent: useCallback(
+      () => (
+        <FilterPopupComponent
+          state={filterPopupComponentState}
+          action={filterPopupComponentAction}
+        />
+      ),
+      [filterPopupComponentState],
+    ),
     fromY: '4rem',
     toY: '3.5rem',
+    afterHideCallback: onSubmitFilter,
   });
 
   return (
@@ -30,4 +60,5 @@ export default function FilterGroupComponent(props) {
 FilterGroupComponent.propTypes = {
   itemName: PropTypes.string.isRequired,
   totalFound: PropTypes.number.isRequired,
+  onSubmitFilter: PropTypes.func.isRequired,
 };

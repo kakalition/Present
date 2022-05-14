@@ -424,18 +424,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.borderize {
-  border-width: 4px;
-  --tw-border-opacity: 1;
-  border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
 .carbon-radio-button-label {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-family: IBM Plex Sans, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .carbon-radio-button-radio {
   margin: 0px;
@@ -565,9 +560,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-0 {
   margin-left: 0px;
 }
-.ml-16 {
-  margin-left: 4rem;
-}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -597,6 +589,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-12 {
   height: 3rem;
+}
+.h-24 {
+  height: 6rem;
 }
 .h-20 {
   height: 5rem;
@@ -634,17 +629,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-12 {
   width: 3rem;
 }
-.w-24 {
-  width: 6rem;
-}
-.w-8 {
-  width: 2rem;
-}
 .w-screen {
   width: 100vw;
 }
 .w-6 {
   width: 1.5rem;
+}
+.w-8 {
+  width: 2rem;
 }
 .w-16 {
   width: 4rem;
@@ -693,9 +685,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .items-center {
   align-items: center;
 }
-.justify-start {
-  justify-content: flex-start;
-}
 .justify-center {
   justify-content: center;
 }
@@ -704,9 +693,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-2 {
   gap: 0.5rem;
-}
-.self-start {
-  align-self: flex-start;
 }
 .self-center {
   align-self: center;
@@ -798,10 +784,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(35 35 35 / var(--tw-bg-opacity));
 }
-.bg-sky-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
-}
 .bg-web-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(246 246 246 / var(--tw-bg-opacity));
@@ -825,6 +807,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-green-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
+.bg-\[\#A3FFE9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(163 255 233 / var(--tw-bg-opacity));
+}
+.bg-\[\#B9D5FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 213 255 / var(--tw-bg-opacity));
 }
 .bg-gradient-to-bl {
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
@@ -1024,6 +1014,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .transition-all {
   transition-property: all;

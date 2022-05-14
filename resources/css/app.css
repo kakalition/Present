@@ -8,7 +8,7 @@
     }
 
     .carbon-radio-button-label {
-      @apply flex flex-row items-center font-ibm-plex-sans text-lg
+      @apply flex flex-row items-center font-ibm-plex-sans text-base
     }
 
     .carbon-radio-button-radio {

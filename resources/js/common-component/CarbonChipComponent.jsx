@@ -3,13 +3,16 @@ import XIcon from './icons/XIcon';
 
 export default function CarbonChipComponent(props) {
   const {
-    text, bgClass, isFilter, onXClicked,
+    text, bgClass, isFilter, isFilterActive, onClick, onXClick,
   } = props;
 
   const deselectPart = (
     <button
       className={`${bgClass} hover:brightness-90 flex items-center justify-center rounded-full ml-0 h-full w-full p-2`}
-      onClick={onXClicked}
+      onClick={(e) => {
+        e.stopPropagation();
+        onXClick();
+      }}
       type="button"
     >
       <div className="w-4 h-4 stroke-black stroke-2"><XIcon /></div>
@@ -17,10 +20,12 @@ export default function CarbonChipComponent(props) {
   );
 
   return (
-    <div className={`flex flex-row justify-center items-center pl-3 rounded-full ${isFilter ? '' : 'py-1'} ${bgClass}`}>
-      <p className="font-ibm-plex-sans text-base text-black whitespace-nowrap">{text}</p>
-      {isFilter ? deselectPart : <div className="w-3" />}
-    </div>
+    <button type="button" onClick={onClick} disabled={!isFilter || isFilterActive}>
+      <div className={`flex flex-row justify-center items-center pl-3 rounded-full ${isFilterActive ? '' : 'py-1'} ${bgClass}`}>
+        <p className="font-ibm-plex-sans text-base text-black whitespace-nowrap">{text}</p>
+        {isFilterActive ? deselectPart : <div className="w-3" />}
+      </div>
+    </button>
   );
 }
 
@@ -28,11 +33,15 @@ CarbonChipComponent.propTypes = {
   text: PropTypes.string.isRequired,
   bgClass: PropTypes.string,
   isFilter: PropTypes.bool,
-  onXClicked: PropTypes.func,
+  isFilterActive: PropTypes.bool,
+  onClick: PropTypes.func,
+  onXClick: PropTypes.func,
 };
 
 CarbonChipComponent.defaultProps = {
   bgClass: 'bg-green-200',
   isFilter: false,
-  onXClicked: () => {},
+  isFilterActive: false,
+  onClick: () => {},
+  onXClick: () => {},
 };

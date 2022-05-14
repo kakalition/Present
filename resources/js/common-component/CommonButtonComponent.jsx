@@ -118,7 +118,7 @@ export default function CommonButtonComponent(props) {
 }
 
 CommonButtonComponent.propTypes = {
-  buttonType: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'ghost']).isRequired,
+  buttonType: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'white-tertiary', 'ghost']).isRequired,
   textSize: PropTypes.string,
   padding: PropTypes.string,
   text: PropTypes.string.isRequired,

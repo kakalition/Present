@@ -1,9 +1,10 @@
 import anime from 'animejs/lib/anime.es';
 import { useEffect, useState } from 'react';
 
-export default function usePopupAddon(targetId, fromY, toY) {
+export default function usePopupAddon(targetId, fromY, toY, afterHideCallback = () => {}) {
   const [showPopup, setShowPopup] = useState(false);
   const [showAnimation, setShowAnimation] = useState(false);
+
   useEffect(() => {
     if (showAnimation) {
       anime({
@@ -17,7 +18,10 @@ export default function usePopupAddon(targetId, fromY, toY) {
     } else {
       anime({
         targets: `#${targetId}`,
-        complete: () => setShowPopup(false),
+        complete: () => {
+          setShowPopup(false);
+          afterHideCallback();
+        },
         top: toY,
         opacity: 0,
         duration: 200,
