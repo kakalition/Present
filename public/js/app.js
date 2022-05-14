@@ -5090,7 +5090,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
 /* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
 /* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
-/* harmony import */ var _components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ItemTileComponent */ "./resources/js/home/components/ItemTileComponent.jsx");
+/* harmony import */ var _components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/HomeContentComponent */ "./resources/js/home/components/HomeContentComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -5114,36 +5114,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function Content(props) {
-  var content = props.retri.map(function (element) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ItemTileComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      title: element.title,
-      tag: element.tag,
-      shortDescription: element.shortDescription
-    }, element.shortDescription);
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-    className: "grid grid-cols-4 gap-4 px-16 w-full",
-    children: content
-  });
-}
-
 function HomePage(props) {
   var transformedusername = props.transformedusername;
   var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      retri = _useState2[0],
-      setRetri = _useState2[1]; // For Development Only
-
+      receivedData = _useState2[0],
+      setReceivedData = _useState2[1];
 
   var onSubmitFilter = function onSubmitFilter(params) {
     axios__WEBPACK_IMPORTED_MODULE_1___default().get('/stubget', {
       params: params
     }).then(function (response) {
-      return setRetri(Object.values(response.data));
+      return setReceivedData(Object.values(response.data));
     });
   };
 
@@ -5161,8 +5145,8 @@ function HomePage(props) {
       onSubmitFilter: onSubmitFilter
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "h-6"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Content, {
-      retri: retri
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      receivedData: receivedData
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "h-12"
     })]
@@ -5425,6 +5409,44 @@ FilterPopupComponent.propTypes = {
     onRadioChange: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired),
     onToggleDescending: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func.isRequired)
   })
+};
+
+/***/ }),
+
+/***/ "./resources/js/home/components/HomeContentComponent.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/home/components/HomeContentComponent.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HomeContentComponent)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ItemTileComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ItemTileComponent */ "./resources/js/home/components/ItemTileComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function HomeContentComponent(props) {
+  var receivedData = props.receivedData;
+  var content = receivedData.map(function (element) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ItemTileComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      title: element.title,
+      tag: element.tag,
+      shortDescription: element.shortDescription
+    }, element.shortDescription);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "grid grid-cols-4 gap-4 px-16 w-full",
+    children: content
+  });
+}
+HomeContentComponent.propTypes = {
+  receivedData: prop_types__WEBPACK_IMPORTED_MODULE_2___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_2___default().element)).isRequired
 };
 
 /***/ }),
