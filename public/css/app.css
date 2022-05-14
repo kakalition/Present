@@ -714,6 +714,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-4 {
   gap: 1rem;
 }
+.place-self-end {
+  place-self: end;
+}
+.self-end {
+  align-self: flex-end;
+}
 .self-center {
   align-self: center;
 }
@@ -870,6 +876,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .stroke-2 {
   stroke-width: 2;
+}
+.stroke-1 {
+  stroke-width: 1;
+}
+.stroke-\[1\.5\] {
+  stroke-width: 1.5;
+}
+.stroke-\[1\.5px\] {
+  stroke-width: 1.5px;
+}
+.stroke-\[1\.3px\] {
+  stroke-width: 1.3px;
+}
+.stroke-\[1\.2px\] {
+  stroke-width: 1.2px;
 }
 .p-2 {
   padding: 0.5rem;

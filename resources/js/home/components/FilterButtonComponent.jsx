@@ -6,10 +6,10 @@ import FilterIcon from '../../common-component/icons/FilterIcon';
 export default function FilterButtonComponent(props) {
   const { onClickCallback } = props;
   const component = (
-    <button className="flex flex-row items-center py-3 px-6 bg-white" type="button" onClick={onClickCallback}>
-      <div className="w-6 h-6 stroke-black"><FilterIcon /></div>
+    <button className="flex flex-row items-center py-2 px-4 bg-white" type="button" onClick={onClickCallback}>
+      <div className="w-5 h-5 stroke-black stroke-[1.2px]"><FilterIcon /></div>
       <div className="w-2" />
-      <p className="font-ibm-plex-sans text-lg text-black">Filter</p>
+      <p className="font-ibm-plex-sans text-base text-black">Filter</p>
     </button>
   );
 

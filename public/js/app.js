@@ -4905,7 +4905,6 @@ function FilterIcon() {
     fill: "none",
     viewBox: "0 0 24 24",
     stroke: "currentColor",
-    strokeWidth: 2,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
       strokeLinecap: "round",
       strokeLinejoin: "round",
@@ -5261,16 +5260,16 @@ function FilterButtonComponent(props) {
   var onClickCallback = props.onClickCallback;
 
   var component = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
-    className: "flex flex-row items-center py-3 px-6 bg-white",
+    className: "flex flex-row items-center py-2 px-4 bg-white",
     type: "button",
     onClick: onClickCallback,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "w-6 h-6 stroke-black",
+      className: "w-5 h-5 stroke-black stroke-[1.2px]",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_common_component_icons_FilterIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "w-2"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      className: "font-ibm-plex-sans text-lg text-black",
+      className: "font-ibm-plex-sans text-base text-black",
       children: "Filter"
     })]
   });
@@ -5458,21 +5457,23 @@ function ItemTileComponent(props) {
       tag = props.tag,
       shortDescription = props.shortDescription;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "flex flex-col items-start p-8 bg-white",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-      className: "font-ibm-plex-sans text-4xl font-semibold text-black",
-      children: title
+    className: "flex flex-col justify-between items-start p-8 w-full h-full bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+        className: "font-ibm-plex-sans text-4xl font-semibold text-black",
+        children: title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "h-3"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        text: tag
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "h-3"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-ibm-plex-sans text-base leading-tight text-slate-700",
+        children: shortDescription
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "h-3"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CarbonChipComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      text: tag
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "h-3"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      className: "font-ibm-plex-sans text-base leading-tight text-slate-700",
-      children: shortDescription
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "h-3"
+      className: "h-4"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
       buttonType: "tertiary",
       text: "Start session",
