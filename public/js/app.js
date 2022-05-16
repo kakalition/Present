@@ -5088,8 +5088,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common-component/UIShellComponent */ "./resources/js/common-component/UIShellComponent.jsx");
 /* harmony import */ var _utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ElementBinder */ "./resources/js/utils/ElementBinder.js");
-/* harmony import */ var _components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/component-group/HomeActionGroupComponent */ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx");
-/* harmony import */ var _components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/component-group/FilterGroupComponent */ "./resources/js/home/components/component-group/FilterGroupComponent.jsx");
+/* harmony import */ var _components_groups_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/groups/HomeActionGroupComponent */ "./resources/js/home/components/groups/HomeActionGroupComponent.jsx");
+/* harmony import */ var _components_groups_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/groups/FilterGroupComponent */ "./resources/js/home/components/groups/FilterGroupComponent.jsx");
 /* harmony import */ var _components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/HomeContentComponent */ "./resources/js/home/components/HomeContentComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -5123,6 +5123,33 @@ function HomePage(props) {
       receivedData = _useState2[0],
       setReceivedData = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      showMeditationModal = _useState4[0],
+      setShowMeditationModal = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      showBreathingModal = _useState6[0],
+      setShowBreathingModal = _useState6[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var escListener = function escListener(event) {
+      if (showMeditationModal || showBreathingModal) {
+        if (event.key === 'Escape') {
+          setShowBreathingModal(false);
+          setShowMeditationModal(false);
+        }
+      }
+    };
+
+    document.removeEventListener('keydown', escListener);
+    document.addEventListener('keydown', escListener);
+    return function () {
+      return window.removeEventListener('keydown', escListener);
+    };
+  }, [showMeditationModal, showBreathingModal]);
+
   var onSubmitFilter = function onSubmitFilter(params) {
     axios__WEBPACK_IMPORTED_MODULE_1___default().get('/stubget', {
       params: params
@@ -5132,23 +5159,39 @@ function HomePage(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    className: "flex overflow-x-clip flex-col items-center min-h-screen bg-web-bg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      username: username
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "h-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_component_group_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "h-12"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_component_group_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      itemName: "Meditation",
-      totalFound: 18,
-      onSubmitFilter: onSubmitFilter
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "h-6"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      receivedData: receivedData
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "h-12"
+    className: "relative min-w-full min-h-screen",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      id: "modal-overlay",
+      className: "absolute flex items-center justify-center z-10 w-full h-full bg-black/60 ".concat(showMeditationModal || showBreathingModal ? 'block' : 'hidden'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "z-20 w-1/2 h-1/2 bg-white"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex overflow-x-clip flex-col items-center w-full min-h-screen bg-web-bg",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        username: username
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "h-8"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_groups_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onMeditationClick: function onMeditationClick() {
+          return setShowMeditationModal(true);
+        },
+        onBreathingClick: function onBreathingClick() {
+          return setShowMeditationModal(true);
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "h-12"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_groups_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        itemName: "Meditation",
+        totalFound: 18,
+        onSubmitFilter: onSubmitFilter
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "h-6"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        receivedData: receivedData
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "h-12"
+      })]
     })]
   });
 }
@@ -5177,7 +5220,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * @param {{background: TailwindClass, text: string, clickCallback: () => void}} props
+ * @param {{background: TailwindClass, text: string, onClickCallback: () => void}} props
  */
 
 
@@ -5185,7 +5228,7 @@ __webpack_require__.r(__webpack_exports__);
 function AddButtonComponent(props) {
   var background = props.background,
       text = props.text,
-      clickCallback = props.clickCallback,
+      onClickCallback = props.onClickCallback,
       fillSpace = props.fillSpace;
   var className = "flex items-center justify-between shadow-md hover:shadow-xl scale-1 hover:scale-[1.005] transition px-6 py-5 ".concat(background);
 
@@ -5196,7 +5239,7 @@ function AddButtonComponent(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
     className: className,
     type: "button",
-    onClick: clickCallback,
+    onClick: onClickCallback,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
       className: "font-ibm-plex-sans text-xl font-medium text-white transition",
       children: text
@@ -5209,7 +5252,7 @@ function AddButtonComponent(props) {
 AddButtonComponent.propTypes = {
   background: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
   text: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
-  clickCallback: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func.isRequired),
+  onClickCallback: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func.isRequired),
   fillSpace: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().bool)
 };
 AddButtonComponent.defaultProps = {
@@ -5679,10 +5722,10 @@ UserPopupComponent.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/home/components/component-group/FilterGroupComponent.jsx":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/home/components/component-group/FilterGroupComponent.jsx ***!
-  \*******************************************************************************/
+/***/ "./resources/js/home/components/groups/FilterGroupComponent.jsx":
+/*!**********************************************************************!*\
+  !*** ./resources/js/home/components/groups/FilterGroupComponent.jsx ***!
+  \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5829,10 +5872,10 @@ FilterGroupComponent.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/home/components/component-group/HomeActionGroupComponent.jsx":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/home/components/component-group/HomeActionGroupComponent.jsx ***!
-  \***********************************************************************************/
+/***/ "./resources/js/home/components/groups/HomeActionGroupComponent.jsx":
+/*!**************************************************************************!*\
+  !*** ./resources/js/home/components/groups/HomeActionGroupComponent.jsx ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5840,6 +5883,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomeActionGroupComponent)
 /* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _AddButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../AddButtonComponent */ "./resources/js/home/components/AddButtonComponent.jsx");
 /* harmony import */ var _SearchBarComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../SearchBarComponent */ "./resources/js/home/components/SearchBarComponent.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -5847,7 +5892,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function HomeActionGroupComponent() {
+
+function HomeActionGroupComponent(props) {
+  var onMeditationClick = props.onMeditationClick,
+      onBreathingClick = props.onBreathingClick;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex flex-row items-center px-16 w-full h-16",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -5860,7 +5908,7 @@ function HomeActionGroupComponent() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_AddButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
         text: "New Meditation",
         background: "bg-gradient-to-bl from-blue-700 to-sky-400",
-        clickCallback: function clickCallback() {},
+        onClickCallback: onMeditationClick,
         fillSpace: true
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -5870,12 +5918,16 @@ function HomeActionGroupComponent() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_AddButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
         text: "New Breathing Exercise",
         background: "bg-gradient-to-bl from-orange-600 to-orange-300",
-        clickCallback: function clickCallback() {},
+        onClickCallback: onBreathingClick,
         fillSpace: true
       })
     })]
   });
 }
+HomeActionGroupComponent.propTypes = {
+  onMeditationClick: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func.isRequired),
+  onBreathingClick: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func.isRequired)
+};
 
 /***/ }),
 
