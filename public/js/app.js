@@ -5888,20 +5888,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function NewMeditationModalComponent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "flex z-20 flex-col items-start w-1/2 h-2/3 bg-white",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex z-20 flex-col items-start p-6 w-1/2 h-2/3 bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex flex-row justify-between items-center w-full",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-        className: "p-6 font-ibm-plex-sans text-3xl text-black",
+        className: "font-ibm-plex-sans text-3xl text-black",
         children: "Add New Meditation"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "p-4 m-2 w-16 h-16 stroke-black stroke-1",
+        className: "w-10 h-10 stroke-black stroke-1",
         type: "button",
         "aria-label": "close modal",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_icons_XIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "h-4"
+    })]
   });
 }
 NewMeditationModalComponent.propTypes = {};
