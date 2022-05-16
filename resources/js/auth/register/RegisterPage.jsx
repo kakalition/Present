@@ -4,7 +4,7 @@ import RightArrrowIcon from '../../common-component/icons/RightArrrowIcon';
 import { elementBinder } from '../../utils/ElementBinder';
 import FormDialogComponent from '../common/FormDialogComponent';
 import { FormDialogBodyBuilder, FormDialogButtonBuilder, FormDialogHeaderBuilder } from '../common/FormDialogUtils';
-import SnackbarComponent from '../common/SnackbarComponent';
+import SnackbarComponent from '../../common-component/SnackbarComponent';
 import RegisterFormComponent from './components/RegisterFormComponent';
 import registerCallbackBuilder from './utils/RegisterCallbackBuilder';
 

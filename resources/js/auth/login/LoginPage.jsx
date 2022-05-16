@@ -8,7 +8,7 @@ import {
   FormDialogButtonBuilder,
   FormDialogHeaderBuilder,
 } from '../common/FormDialogUtils';
-import SnackbarComponent from '../common/SnackbarComponent';
+import SnackbarComponent from '../../common-component/SnackbarComponent';
 import LoginFormComponent from './components/LoginFormComponent';
 import loginCallbackBuilder from './utils/LoginCallbackBuilder';
 
