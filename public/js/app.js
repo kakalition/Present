@@ -5159,10 +5159,10 @@ function HomePage(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    className: "relative min-w-full min-h-screen",
+    className: "relative min-w-full ".concat(showMeditationModal || showBreathingModal ? 'h-screen overflow-hidden' : 'min-h-screen'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       id: "modal-overlay",
-      className: "absolute flex items-center justify-center z-10 w-full h-full bg-black/60 ".concat(showMeditationModal || showBreathingModal ? 'block' : 'hidden'),
+      className: "absolute flex items-center justify-center z-10 w-full h-screen bg-black/70 ".concat(showMeditationModal || showBreathingModal ? 'block' : 'hidden'),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "z-20 w-1/2 h-1/2 bg-white"
       })

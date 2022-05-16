@@ -39,10 +39,10 @@ export default function HomePage(props) {
   };
 
   return (
-    <div className="relative min-w-full min-h-screen">
+    <div className={`relative min-w-full ${showMeditationModal || showBreathingModal ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
       <div
         id="modal-overlay"
-        className={`absolute flex items-center justify-center z-10 w-full h-full bg-black/60 ${showMeditationModal || showBreathingModal ? 'block' : 'hidden'}`}
+        className={`absolute flex items-center justify-center z-10 w-full h-screen bg-black/70 ${showMeditationModal || showBreathingModal ? 'block' : 'hidden'}`}
       >
         <div className="z-20 w-1/2 h-1/2 bg-white" />
       </div>
