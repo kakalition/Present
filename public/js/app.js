@@ -4825,6 +4825,34 @@ function usePopupAddon(targetId, fromY, toY) {
 
 /***/ }),
 
+/***/ "./resources/js/common-component/icons/CheckIcon.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/common-component/icons/CheckIcon.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CheckIcon)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function CheckIcon() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "M5 13l4 4L19 7"
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/common-component/icons/FilterIcon.jsx":
 /*!************************************************************!*\
   !*** ./resources/js/common-component/icons/FilterIcon.jsx ***!
@@ -5019,8 +5047,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -5031,7 +5059,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_groups_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/groups/FilterGroupComponent */ "./resources/js/home/components/groups/FilterGroupComponent.jsx");
 /* harmony import */ var _components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/HomeContentComponent */ "./resources/js/home/components/HomeContentComponent.jsx");
 /* harmony import */ var _components_modals_NewMeditationModalComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modals/NewMeditationModalComponent */ "./resources/js/home/components/modals/NewMeditationModalComponent.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_modals_NewBreathingModalComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/modals/NewBreathingModalComponent */ "./resources/js/home/components/modals/NewBreathingModalComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5055,6 +5084,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function HomePage(props) {
   var transformedusername = props.transformedusername;
   var username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
@@ -5064,7 +5094,7 @@ function HomePage(props) {
       receivedData = _useState2[0],
       setReceivedData = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
       showMeditationModal = _useState4[0],
       setShowMeditationModal = _useState4[1];
@@ -5099,45 +5129,61 @@ function HomePage(props) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  var modal = function () {
+    if (showMeditationModal) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_modals_NewMeditationModalComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {});
+    }
+
+    if (showBreathingModal) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_modals_NewBreathingModalComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        onCancel: function onCancel() {
+          return setShowBreathingModal(false);
+        }
+      });
+    }
+
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {});
+  }();
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "relative min-w-full ".concat(showMeditationModal || showBreathingModal ? 'h-screen overflow-hidden' : 'min-h-screen'),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       id: "modal-overlay",
       className: "absolute flex items-center justify-center z-10 w-full h-screen bg-black/70 ".concat(showMeditationModal || showBreathingModal ? 'block' : 'hidden'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_modals_NewMeditationModalComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      children: modal
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
       className: "flex overflow-x-clip flex-col items-center w-full min-h-screen bg-web-bg",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_common_component_UIShellComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
         username: username
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "h-8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_groups_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_groups_HomeActionGroupComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onMeditationClick: function onMeditationClick() {
           return setShowMeditationModal(true);
         },
         onBreathingClick: function onBreathingClick() {
-          return setShowMeditationModal(true);
+          return setShowBreathingModal(true);
         }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "h-12"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_groups_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_groups_FilterGroupComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         itemName: "Meditation",
         totalFound: 18,
         onSubmitFilter: onSubmitFilter
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "h-6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_HomeContentComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
         receivedData: receivedData
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "h-12"
       })]
     })]
   });
 }
 HomePage.propTypes = {
-  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().string.isRequired)
+  transformedusername: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().string.isRequired)
 };
-(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(HomePage, {}));
+(0,_utils_ElementBinder__WEBPACK_IMPORTED_MODULE_3__.elementBinder)('home-view', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(HomePage, {}));
 
 /***/ }),
 
@@ -5870,6 +5916,204 @@ HomeActionGroupComponent.propTypes = {
 
 /***/ }),
 
+/***/ "./resources/js/home/components/modals/NewBreathingModalComponent.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/home/components/modals/NewBreathingModalComponent.jsx ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NewBreathingModalComponent)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common-component/CommonButtonComponent */ "./resources/js/common-component/CommonButtonComponent.jsx");
+/* harmony import */ var _common_component_icons_XIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common-component/icons/XIcon */ "./resources/js/common-component/icons/XIcon.jsx");
+/* harmony import */ var _common_component_SingleInputComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common-component/SingleInputComponent */ "./resources/js/common-component/SingleInputComponent.jsx");
+/* harmony import */ var _common_SingleFormStepperComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common/SingleFormStepperComponent */ "./resources/js/home/components/modals/common/SingleFormStepperComponent.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function NewBreathingModalComponent(props) {
+  var onCancel = props.onCancel;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      pointer = _useState2[0],
+      setPointer = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('current'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      descriptionStatus = _useState4[0],
+      setDescriptionStatus = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('untouched'),
+      _useState6 = _slicedToArray(_useState5, 2),
+      intervalStatus = _useState6[0],
+      setIntervalStatus = _useState6[1];
+
+  var primaryAction = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    switch (pointer) {
+      case 0:
+        return function () {
+          setPointer(1);
+          setDescriptionStatus('filled');
+          setIntervalStatus('current');
+        };
+
+      case 1:
+        return function () {
+          return alert('Submitted');
+        };
+
+      default:
+        return function () {};
+    }
+  }, [pointer]);
+  var primaryText = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    switch (pointer) {
+      case 0:
+        return 'Proceed to interval';
+
+      case 1:
+        return 'Submit';
+
+      default:
+        return '';
+    }
+  }, [pointer]);
+  var secondaryAction = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    switch (pointer) {
+      case 0:
+        return function () {
+          return onCancel();
+        };
+
+      case 1:
+        return function () {
+          setPointer(0);
+          setDescriptionStatus('current');
+          setIntervalStatus('filled');
+        };
+
+      default:
+        return function () {};
+    }
+  }, [pointer]);
+  var secondaryText = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    switch (pointer) {
+      case 0:
+        return 'Cancel';
+
+      case 1:
+        return 'Back to description';
+
+      default:
+        return '';
+    }
+  }, [pointer]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: "flex z-20 flex-col items-start w-1/2 bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "p-6 w-full",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flex flex-row justify-between items-center w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "font-ibm-plex-sans text-3xl text-black",
+          children: "Add New Breathing Exercise"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          className: "w-10 h-10 stroke-black stroke-1",
+          type: "button",
+          "aria-label": "close modal",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_icons_XIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "h-8"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flex flex-row w-full",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_SingleFormStepperComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          description: "Description",
+          status: descriptionStatus
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_SingleFormStepperComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          description: "Interval",
+          status: intervalStatus
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+        className: "w-full h-fit",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          id: "description",
+          className: "".concat(pointer === 0 ? 'block' : 'hidden'),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_SingleInputComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            id: "test1",
+            label: "Test One",
+            placeholder: "Test One",
+            type: "text"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          id: "interval",
+          className: "".concat(pointer === 1 ? 'block' : 'hidden'),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_SingleInputComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            id: "test2",
+            label: "Test two",
+            placeholder: "Test Two",
+            type: "text"
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "flex flex-row w-full h-16",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "w-1/2 h-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          buttonType: "secondary",
+          text: secondaryText,
+          padding: "px-6",
+          textSize: "text-lg",
+          onClickCallback: secondaryAction,
+          fillSpace: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "w-1/2 h-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_component_CommonButtonComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          buttonType: "primary",
+          text: primaryText,
+          padding: "px-6",
+          textSize: "text-lg",
+          onClickCallback: primaryAction,
+          fillSpace: true
+        })
+      })]
+    })]
+  });
+}
+NewBreathingModalComponent.propTypes = {
+  onCancel: (prop_types__WEBPACK_IMPORTED_MODULE_6___default().func.isRequired)
+};
+
+/***/ }),
+
 /***/ "./resources/js/home/components/modals/NewMeditationModalComponent.jsx":
 /*!*****************************************************************************!*\
   !*** ./resources/js/home/components/modals/NewMeditationModalComponent.jsx ***!
@@ -6068,6 +6312,112 @@ function FormTextAreaComponent() {
     })]
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/home/components/modals/common/SingleFormStepperComponent.jsx":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/home/components/modals/common/SingleFormStepperComponent.jsx ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SingleFormStepperComponent)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_component_icons_CheckIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../common-component/icons/CheckIcon */ "./resources/js/common-component/icons/CheckIcon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function SingleFormStepperComponent(props) {
+  var description = props.description,
+      status = props.status;
+
+  var getStatusComponent = function getStatusComponent(stepperStatus) {
+    switch (stepperStatus) {
+      case 'current':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-5 h-5 bg-primary-button rounded-full"
+          });
+        }
+
+      case 'filled':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "flex justify-center items-center w-5 h-5 rounded-full border-2 border-primary-button stroke-primary-button stroke-[3px]",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_icons_CheckIcon__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+          });
+        }
+
+      case 'untouched':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-5 h-5 rounded-full border-2 border-slate-400"
+          });
+        }
+
+      default:
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {});
+        }
+    }
+  };
+
+  var getStatusLineComponent = function getStatusLineComponent(stepperStatus) {
+    switch (stepperStatus) {
+      case 'current':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-full h-1 bg-primary-button"
+          });
+        }
+
+      case 'filled':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-full h-1 bg-primary-button"
+          });
+        }
+
+      case 'untouched':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-full h-1 bg-slate-400"
+          });
+        }
+
+      default:
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {});
+        }
+    }
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-col items-start w-full",
+    children: [getStatusLineComponent(status), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "h-2"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex flex-row items-center",
+      children: [getStatusComponent(status), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-ibm-plex-sans text-base",
+        children: description
+      })]
+    })]
+  });
+}
+SingleFormStepperComponent.propTypes = {
+  description: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  status: prop_types__WEBPACK_IMPORTED_MODULE_2___default().oneOf(['current', 'filled', 'untouched']).isRequired
+};
 
 /***/ }),
 
