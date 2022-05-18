@@ -8,7 +8,7 @@ import { ClassComposer } from '../utils/ClassComposer';
  */
 export default function CommonButtonComponent(props) {
   const {
-    buttonType, textSize, padding, text, onClickCallback, icon, fillSpace, fillX
+    buttonType, textSize, padding, text, onClickCallback, icon, fillSpace, fillX,
   } = props;
 
   let className = 'text-left';
@@ -30,7 +30,6 @@ export default function CommonButtonComponent(props) {
         'whitespace-nowrap',
         'bg-primary-button',
         'text-white',
-        'font-semibold',
         'font-ibm-plex-sans',
         'hover:brightness-[90%]',
         'transition-all',
@@ -43,6 +42,7 @@ export default function CommonButtonComponent(props) {
       className = ClassComposer(
         className,
         textSize,
+        padding,
         'whitespace-nowrap',
         'bg-secondary-button',
         'text-white',

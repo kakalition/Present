@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { showSnackbarAnimation } from './utils/AuthAnimation';
+import CommonAnimation from '../utils/animations/CommonAnimation';
 
 function showSnackbar() {
   const val = window.matchMedia('(min-width: 768px)').matches;
-  if (val) showSnackbarAnimation('1rem');
-  else showSnackbarAnimation('-1rem');
+  if (val) CommonAnimation.showSnackbarAnimation('1rem');
+  else CommonAnimation.showSnackbarAnimation('-1rem');
 }
 export default function SnackbarComponent(props) {
   const { shouldAnimate, errorMessage } = props;

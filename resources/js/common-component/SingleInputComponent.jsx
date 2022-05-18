@@ -1,5 +1,5 @@
 import PropType from 'prop-types';
-import { shakeInputAnimation } from './utils/AuthAnimation';
+import CommonAnimation from '../utils/animations/CommonAnimation';
 
 /**
  * @param {{type: string, id: string, label: string,
@@ -15,7 +15,7 @@ export default function SingleInputComponent(props) {
 
   if (isError) {
     className += ' border-red-500';
-    shakeInputAnimation(id);
+    CommonAnimation.shakeAnimation(id);
   } else {
     className += ' border-x-transparent border-t-transparent border-b-slate-400';
   }

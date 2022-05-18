@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import SingleInputComponent from '../../common/SingleInputComponent';
+import SingleInputComponent from '../../../common-component/SingleInputComponent';
 import RememberMeComponent from './RememberMeComponent';
 
 export default function LoginFormComponent(props) {

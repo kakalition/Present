@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import SingleInputComponent from '../../common/SingleInputComponent';
+import SingleInputComponent from '../../../common-component/SingleInputComponent';
 
 export default function RegisterFormComponent(props) {
   const { errorList } = props;
