@@ -15,6 +15,9 @@ export default function SingleFormStepperComponent(props) {
       case 'untouched': {
         return <div className="w-5 h-5 rounded-full border-2 border-slate-400" />;
       }
+      case 'error': {
+        return <div className="w-5 h-5 rounded-full border-2 border-error-bg" />;
+      }
       default: {
         return <div />;
       }
@@ -31,6 +34,9 @@ export default function SingleFormStepperComponent(props) {
       }
       case 'untouched': {
         return <div className="w-full h-1 bg-slate-400" />;
+      }
+      case 'error': {
+        return <div className="w-full h-1 bg-error-bg" />;
       }
       default: {
         return <div />;

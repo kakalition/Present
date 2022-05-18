@@ -18,7 +18,10 @@ export default function NewBreathingModalComponent(props) {
     switch (pointer) {
       case 0: return () => {
         setPointer(1);
-        setDescriptionStatus('filled');
+        if (document.getElementById('title').value === '' || document.getElementById('description').value === '') {
+          setDescriptionStatus('error');
+        }
+        else setDescriptionStatus('filled');
         setIntervalStatus('current');
       };
       case 1: return () => {
@@ -74,10 +77,10 @@ export default function NewBreathingModalComponent(props) {
         <div className="h-8" />
 
         <form className="w-full h-fit" id="test-form">
-          <div id="description" className={`${pointer === 0 ? 'block' : 'hidden'}`}>
+          <div id="desc" className={`${pointer === 0 ? 'block' : 'hidden'}`}>
             <SingleInputComponent id="title" label="Title" placeholder="Stress Relief Meditation" type="text" />
             <div className="h-4" />
-            <FormTextAreaComponent />
+            <FormTextAreaComponent id="description" />
           </div>
 
           <div id="interval" className={`${pointer === 1 ? 'block' : 'hidden'}`}>

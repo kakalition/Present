@@ -6070,7 +6070,11 @@ function NewBreathingModalComponent(props) {
       case 0:
         return function () {
           setPointer(1);
-          setDescriptionStatus('filled');
+
+          if (document.getElementById('title').value === '' || document.getElementById('description').value === '') {
+            setDescriptionStatus('error');
+          } else setDescriptionStatus('filled');
+
           setIntervalStatus('current');
         };
 
@@ -6159,7 +6163,7 @@ function NewBreathingModalComponent(props) {
         className: "w-full h-fit",
         id: "test-form",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          id: "description",
+          id: "desc",
           className: "".concat(pointer === 0 ? 'block' : 'hidden'),
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_component_SingleInputComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
             id: "title",
@@ -6168,7 +6172,9 @@ function NewBreathingModalComponent(props) {
             type: "text"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "h-4"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_FormTextAreaComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_FormTextAreaComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            id: "description"
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           id: "interval",
           className: "".concat(pointer === 1 ? 'block' : 'hidden'),
@@ -6413,10 +6419,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FormTextAreaComponent)
 /* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-function FormTextAreaComponent() {
+
+function FormTextAreaComponent(_ref) {
+  var id = _ref.id;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", {
     htmlFor: "description",
     className: "flex flex-col items-start font-ibm-plex-sans text-base text-black md:text-lg",
@@ -6424,12 +6434,15 @@ function FormTextAreaComponent() {
       className: "h-2"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("textarea", {
       className: "p-4 w-full font-ibm-plex-sans text-base bg-slate-100 border-2 focus:border-primary-button border-x-transparent border-t-transparent border-b-slate-400 focus:outline-none resize-none",
-      id: "description",
-      name: "description",
+      id: id,
+      name: id,
       rows: 4
     })]
   });
 }
+FormTextAreaComponent.propTypes = {
+  id: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+};
 
 /***/ }),
 
@@ -6480,6 +6493,13 @@ function SingleFormStepperComponent(props) {
           });
         }
 
+      case 'error':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-5 h-5 rounded-full border-2 border-error-bg"
+          });
+        }
+
       default:
         {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {});
@@ -6507,6 +6527,13 @@ function SingleFormStepperComponent(props) {
         {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "w-full h-1 bg-slate-400"
+          });
+        }
+
+      case 'error':
+        {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-full h-1 bg-error-bg"
           });
         }
 

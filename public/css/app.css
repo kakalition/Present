@@ -818,6 +818,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(148 163 184 / var(--tw-border-opacity));
 }
+.border-error-bg {
+  --tw-border-opacity: 1;
+  border-color: rgb(235 77 77 / var(--tw-border-opacity));
+}
 .border-x-slate-100 {
   --tw-border-opacity: 1;
   border-left-color: rgb(241 245 249 / var(--tw-border-opacity));
