@@ -4630,6 +4630,7 @@ function SingleSliderComponent(props) {
         className: "w-2"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
         className: "w-[92%] h-1 bg-black appearance-none",
+        name: id,
         type: "range",
         min: "0",
         max: "60",
@@ -6075,13 +6076,15 @@ function NewBreathingModalComponent(props) {
 
       case 1:
         return function () {
-          return alert('Submitted');
+          var element = document.getElementById('test-form');
+          var form = new FormData(element);
+          console.log(form);
         };
 
       default:
         return function () {};
     }
-  }, [pointer]);
+  });
   var primaryText = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
     switch (pointer) {
       case 0:
@@ -6123,13 +6126,7 @@ function NewBreathingModalComponent(props) {
       default:
         return '';
     }
-  }, [pointer]); // Slider
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState8 = _slicedToArray(_useState7, 2),
-      teValue = _useState8[0],
-      setTeValue = _useState8[1];
-
+  }, [pointer]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "flex z-20 flex-col items-start w-1/2 bg-white",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -6160,6 +6157,7 @@ function NewBreathingModalComponent(props) {
         className: "h-8"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
         className: "w-full h-fit",
+        id: "test-form",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           id: "description",
           className: "".concat(pointer === 0 ? 'block' : 'hidden'),

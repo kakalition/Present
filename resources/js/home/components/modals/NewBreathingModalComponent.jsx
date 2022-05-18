@@ -21,10 +21,14 @@ export default function NewBreathingModalComponent(props) {
         setDescriptionStatus('filled');
         setIntervalStatus('current');
       };
-      case 1: return () => alert('Submitted');
+      case 1: return () => {
+        const element = document.getElementById('test-form');
+        const form = new FormData(element);
+        console.log(form);
+      };
       default: return () => {};
     }
-  }, [pointer]);
+  });
 
   const primaryText = useMemo(() => {
     switch (pointer) {
@@ -54,9 +58,6 @@ export default function NewBreathingModalComponent(props) {
     }
   }, [pointer]);
 
-  // Slider
-  const [teValue, setTeValue] = useState(0);
-
   return (
     <div className="flex z-20 flex-col items-start w-1/2 bg-white">
       <div className="p-6 w-full">
@@ -72,7 +73,7 @@ export default function NewBreathingModalComponent(props) {
         </div>
         <div className="h-8" />
 
-        <form className="w-full h-fit">
+        <form className="w-full h-fit" id="test-form">
           <div id="description" className={`${pointer === 0 ? 'block' : 'hidden'}`}>
             <SingleInputComponent id="title" label="Title" placeholder="Stress Relief Meditation" type="text" />
             <div className="h-4" />

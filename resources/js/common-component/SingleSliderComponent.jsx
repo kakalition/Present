@@ -23,6 +23,7 @@ export default function SingleSliderComponent(props) {
         <div className="w-2" />
         <input
           className="w-[92%] h-1 bg-black appearance-none"
+          name={id}
           type="range"
           min="0"
           max="60"
