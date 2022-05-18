@@ -3,6 +3,8 @@ import { useMemo, useState } from 'react';
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 import XIcon from '../../../common-component/icons/XIcon';
 import SingleInputComponent from '../../../common-component/SingleInputComponent';
+import SingleSliderComponent from '../../../common-component/SingleSliderComponent';
+import FormTextAreaComponent from './common/FormTextAreaComponent';
 import SingleFormStepperComponent from './common/SingleFormStepperComponent';
 
 export default function NewBreathingModalComponent(props) {
@@ -52,6 +54,9 @@ export default function NewBreathingModalComponent(props) {
     }
   }, [pointer]);
 
+  // Slider
+  const [teValue, setTeValue] = useState(0);
+
   return (
     <div className="flex z-20 flex-col items-start w-1/2 bg-white">
       <div className="p-6 w-full">
@@ -65,15 +70,28 @@ export default function NewBreathingModalComponent(props) {
           <SingleFormStepperComponent description="Description" status={descriptionStatus} />
           <SingleFormStepperComponent description="Interval" status={intervalStatus} />
         </div>
+        <div className="h-8" />
 
         <form className="w-full h-fit">
           <div id="description" className={`${pointer === 0 ? 'block' : 'hidden'}`}>
-            <SingleInputComponent id="test1" label="Test One" placeholder="Test One" type="text" />
+            <SingleInputComponent id="title" label="Title" placeholder="Stress Relief Meditation" type="text" />
+            <div className="h-4" />
+            <FormTextAreaComponent />
           </div>
+
           <div id="interval" className={`${pointer === 1 ? 'block' : 'hidden'}`}>
-            <SingleInputComponent id="test2" label="Test two" placeholder="Test Two" type="text" />
+            <SingleSliderComponent id="repetition" label="Interval repetition (times)" />
+            <div className="h-4" />
+            <SingleSliderComponent id="inhale" label="Inhale duration (secs)" />
+            <div className="h-4" />
+            <SingleSliderComponent id="holdinhale" label="Hold after inhale duration (secs)" />
+            <div className="h-4" />
+            <SingleSliderComponent id="exhale" label="Exhale duration (secs)" />
+            <div className="h-4" />
+            <SingleSliderComponent id="holdexhale" label="Hold after exhale duration (secs)" />
           </div>
         </form>
+        <div className="h-8" />
       </div>
 
       <div className="flex flex-row w-full h-16">

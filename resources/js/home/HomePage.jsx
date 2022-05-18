@@ -19,11 +19,9 @@ export default function HomePage(props) {
 
   useEffect(() => {
     const escListener = (event) => {
-      if (showMeditationModal || showBreathingModal) {
-        if (event.key === 'Escape') {
-          setShowBreathingModal(false);
-          setShowMeditationModal(false);
-        }
+      if ((showMeditationModal || showBreathingModal) && event.key === 'Escape') {
+        setShowBreathingModal(false);
+        setShowMeditationModal(false);
       }
     };
 
@@ -35,9 +33,7 @@ export default function HomePage(props) {
   const onSubmitFilter = (params) => {
     axios
       .get('/stubget', { params })
-      .then(
-        (response) => setReceivedData(Object.values(response.data)),
-      );
+      .then((response) => setReceivedData(Object.values(response.data)));
   };
 
   const modal = (() => {
