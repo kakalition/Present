@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import UIShellComponent from '../../common-component/UIShellComponent';
 import HomeActionGroupComponent from './components/groups/HomeActionGroupComponent';
@@ -7,11 +6,11 @@ import FilterGroupComponent from './components/groups/FilterGroupComponent';
 import HomeContentComponent from './components/HomeContentComponent';
 import NewMeditationModalComponent from './components/modals/NewMeditationModalComponent';
 import NewBreathingModalComponent from './components/modals/NewBreathingModalComponent';
+import useAuth from '../../common-component/hooks/useAuth';
+import AuthWrapper from '../../common-component/AuthWrapper';
 
-export default function HomePage(props) {
-  const { transformedusername } = props;
-  const username = transformedusername.replace(/[/]/g, '').replace(/[+]/g, ' ');
-
+export default function HomePage() {
+  const user = useAuth();
   const [receivedData, setReceivedData] = useState([]);
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
@@ -24,7 +23,6 @@ export default function HomePage(props) {
       }
     };
 
-    document.removeEventListener('keydown', escListener);
     document.addEventListener('keydown', escListener);
     return () => window.removeEventListener('keydown', escListener);
   }, [showMeditationModal, showBreathingModal]);
@@ -35,7 +33,7 @@ export default function HomePage(props) {
       .then((response) => setReceivedData(Object.values(response.data)));
   };
 
-  const modal = (() => {
+  const modal = useMemo(() => {
     if (showMeditationModal) {
       return <NewMeditationModalComponent />;
     }
@@ -43,9 +41,9 @@ export default function HomePage(props) {
       return <NewBreathingModalComponent onCancel={() => setShowBreathingModal(false)} />;
     }
     return <div />;
-  })();
+  }, [showMeditationModal, showBreathingModal]);
 
-  return (
+  const element = (
     <div className={`relative min-w-full ${showMeditationModal || showBreathingModal ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
       <div
         id="modal-overlay"
@@ -54,7 +52,7 @@ export default function HomePage(props) {
         {modal}
       </div>
       <div className="flex overflow-x-clip flex-col items-center w-full min-h-screen bg-web-bg">
-        <UIShellComponent username={username} />
+        <UIShellComponent username="da" />
         <div className="h-8" />
         <HomeActionGroupComponent
           onMeditationClick={() => setShowMeditationModal(true)}
@@ -72,8 +70,6 @@ export default function HomePage(props) {
       </div>
     </div>
   );
-}
 
-HomePage.propTypes = {
-  transformedusername: PropTypes.string.isRequired,
-};
+  return <AuthWrapper user={user} child={element} />;
+}

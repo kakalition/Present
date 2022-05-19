@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import UserIcon from '../../../common-component/icons/UserIcon';
+import UserIcon from './icons/UserIcon';
 
 export default function UserButtonComponent(props) {
   const { size, adjustmentClass, onClickCallback } = props;

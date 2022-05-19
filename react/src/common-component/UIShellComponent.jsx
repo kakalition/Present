@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import UserPopupComponent from '../home/components/UserPopupComponent';
-import UserButtonComponent from '../home/components/UserButtonComponent';
+import UserPopupComponent from './UserPopupComponent';
+import UserButtonComponent from './UserButtonComponent';
 import usePopupAddon from './hooks/usePopupAddon';
 
 /**

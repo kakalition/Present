@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
-import ComponentWithPopupBuilder from '../../../common-component/ComponentWithPopupBuilder';
+import ComponentWithPopupBuilder from '../../../../common-component/ComponentWithPopupBuilder';
 import FilterButtonComponent from '../FilterButtonComponent';
 import FilterPopupComponent from '../FilterPopupComponent';
 import ResultTextComponent from '../ResultTextComponent';

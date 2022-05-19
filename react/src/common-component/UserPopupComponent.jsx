@@ -1,7 +1,7 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import CommonButtonComponent from '../../common-component/CommonButtonComponent';
-import RightArrowIcon from '../../common-component/icons/RightArrrowIcon';
+import CommonButtonComponent from './CommonButtonComponent';
+import RightArrowIcon from './icons/RightArrrowIcon';
 
 export default function UserPopupComponent(props) {
   const { username } = props;
@@ -12,7 +12,7 @@ export default function UserPopupComponent(props) {
     <div
       className="flex flex-col p-4 pr-16 min-w-[12rem] bg-ui-shell"
     >
-      <p className="font-ibm-plex-sans text-2xl font-semibold text-white whitespace-nowrap">{username}</p>
+      <p className="text-2xl font-semibold text-white whitespace-nowrap font-ibm-plex-sans">{username}</p>
       <div className="h-4" />
       <div className="">
         <CommonButtonComponent
