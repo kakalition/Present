@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import RegisterPage from './features/auth/register/RegisterPage';
 import LoginPage from './features/auth/login/LoginPage';
 import WelcomePage from './features/welcome/WelcomePage';
 import HomePage from './features/home/HomePage';
 import './index.css';
+
+axios.defaults.baseURL = 'http://localhost';
+axios.defaults.withCredentials = true;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

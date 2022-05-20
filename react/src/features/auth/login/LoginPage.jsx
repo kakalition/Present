@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import RightArrrowIcon from '../../../common-component/icons/RightArrrowIcon';
 import FormDialogComponent from '../common/FormDialogComponent';
 import {
@@ -10,8 +11,11 @@ import SnackbarComponent from '../../../common-component/SnackbarComponent';
 import LoginFormComponent from './components/LoginFormComponent';
 import loginCallbackBuilder from './utils/LoginCallbackBuilder';
 import env from '../../../env';
+import useInitCsrf from '../../../common-component/hooks/useInitCsrf';
 
 export default function LoginPage() {
+  useInitCsrf();
+
   // Snackbar State
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');

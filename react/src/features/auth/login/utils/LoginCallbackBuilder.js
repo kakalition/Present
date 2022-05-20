@@ -4,7 +4,6 @@ import axios from 'axios';
 export default function loginCallbackBuilder(shouldAnimateSetter, errorMessageSetter, errorListSetter) {
   return (e) => {
     e.preventDefault();
-    console.log(document.querySelector('meta[name=\'csrf-token\''));
 
     const formData = new FormData(document.getElementById('login-form'));
 
@@ -22,11 +21,6 @@ export default function loginCallbackBuilder(shouldAnimateSetter, errorMessageSe
       setTimeout(() => shouldAnimateSetter(false), 5400);
     };
 
-    axios({
-      method: 'post',
-      url: 'http://localhost/login',
-      data: formData,
-      headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'') },
-    }).then(onFulfilled, onRejected);
+    axios.post('/login', formData).then(onFulfilled, onRejected);
   };
 }
