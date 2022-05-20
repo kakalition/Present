@@ -10,7 +10,7 @@ import AuthWrapper from '../../common-component/AuthWrapper';
 import useProtectedRoute from '../../common-component/hooks/useProtectedRoute';
 
 export default function HomePage() {
-  useProtectedRoute();
+  const user = useProtectedRoute();
 
   const [receivedData, setReceivedData] = useState([]);
   const [showMeditationModal, setShowMeditationModal] = useState(false);
@@ -30,7 +30,7 @@ export default function HomePage() {
 
   const onSubmitFilter = (params) => {
     axios
-      .get('/stubget', { params })
+      .get('/api/stubget', { params })
       .then((response) => setReceivedData(Object.values(response.data)));
   };
 

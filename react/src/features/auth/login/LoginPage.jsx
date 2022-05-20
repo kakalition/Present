@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import RightArrrowIcon from '../../../common-component/icons/RightArrrowIcon';
 import FormDialogComponent from '../common/FormDialogComponent';
 import {

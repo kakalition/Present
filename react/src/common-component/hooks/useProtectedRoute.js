@@ -1,18 +1,19 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function useProtectedRoute() {
-  const [user, setUser] = useState(null);
-  const navigateTo = useNavigate();
+  const [_user, _setUser] = useState(null);
+  const _navigateTo = useNavigate();
 
   useEffect(() => {
     axios.get('/api/getUser')
       .then((response) => {
-        if (response.data === null) navigateTo('/register');
-        setUser(response.data);
+        if (response.data === null) _navigateTo('/register');
+        _setUser(response.data);
       });
   }, []);
 
-  return user;
+  return _user;
 }

@@ -28,4 +28,3 @@ Route::get('/home', function () {
     ->with('transformedUsername', $transformedUsername);
 });
 
-Route::get('/stubget', [HomeController::class, 'stub']);
