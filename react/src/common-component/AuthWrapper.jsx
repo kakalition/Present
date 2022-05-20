@@ -13,7 +13,7 @@ export default function AuthWrapper(props) {
     </div>
   ), []);
 
-  return user === null ? loadingElement : child;
+  return user === {} ? loadingElement : child;
 }
 
 AuthWrapper.propTypes = {

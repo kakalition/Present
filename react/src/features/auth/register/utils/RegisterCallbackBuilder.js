@@ -11,14 +11,8 @@ export default function registerCallbackBuilder(shouldAnimateSetter, errorMessag
     formData.append('password', document.getElementById('password').value);
     formData.append('password_confirmation', document.getElementById('password').value);
 
-    const config = {
-      headers: {
-        'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\'').content,
-      },
-    };
-
     const onFulfilled = (response) => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         window.location.assign('/home');
       }
     };
@@ -28,11 +22,10 @@ export default function registerCallbackBuilder(shouldAnimateSetter, errorMessag
       errorMessageSetter(reason.response.data.message);
       errorListSetter(Object.keys(reason.response.data.errors));
 
-      setTimeout(() => shouldAnimateSetter(false), 5400);
+      shouldAnimateSetter(false);
     };
 
-    axios
-      .post('/register', formData, config)
+    axios.post('/register', formData)
       .then(onFulfilled, onRejected);
   };
 }

@@ -6,11 +6,12 @@ import FilterGroupComponent from './components/groups/FilterGroupComponent';
 import HomeContentComponent from './components/HomeContentComponent';
 import NewMeditationModalComponent from './components/modals/NewMeditationModalComponent';
 import NewBreathingModalComponent from './components/modals/NewBreathingModalComponent';
-import useAuth from '../../common-component/hooks/useAuth';
 import AuthWrapper from '../../common-component/AuthWrapper';
+import useProtectedRoute from '../../common-component/hooks/useProtectedRoute';
 
 export default function HomePage() {
-  const user = useAuth();
+  const user = useProtectedRoute();
+
   const [receivedData, setReceivedData] = useState([]);
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
@@ -29,7 +30,7 @@ export default function HomePage() {
 
   const onSubmitFilter = (params) => {
     axios
-      .get('/stubget', { params })
+      .get('/api/stubget', { params })
       .then((response) => setReceivedData(Object.values(response.data)));
   };
 
@@ -52,7 +53,7 @@ export default function HomePage() {
         {modal}
       </div>
       <div className="flex overflow-x-clip flex-col items-center w-full min-h-screen bg-web-bg">
-        <UIShellComponent username="da" />
+        <UIShellComponent username={user?.name ?? ''} />
         <div className="h-8" />
         <HomeActionGroupComponent
           onMeditationClick={() => setShowMeditationModal(true)}
