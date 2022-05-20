@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import anime from 'animejs';
 
 namespace Animation{
-  export function showSnackbar(id: string, fromY: string, duration: number = 5000) {
+  export function showSnackbar(id: string, fromY: string, duration = 5000) {
     anime({
       targets: `#${id}`,
       translateY: [
@@ -19,7 +20,7 @@ namespace Animation{
     });
   }
 
-  export function shakeElement(id: string, duration: number = 5000) {
+  export function shakeElement(id: string, duration = 5000) {
     anime({
       targets: `#${id}`,
       translateX: [
@@ -31,3 +32,5 @@ namespace Animation{
     });
   }
 }
+
+export default Animation;

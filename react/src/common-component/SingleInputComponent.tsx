@@ -1,14 +1,14 @@
 import React from 'react';
-import CommonAnimation from '../utils/animations/CommonAnimation';
+import Animation from 'src/utils/animations/CommonAnimation';
 
 type Props = {
   id: string,
-  inlineComponent: React.ReactElement,
+  inlineComponent?: React.ReactElement,
   inputType: string,
   isError: boolean,
   label: string,
   placeholder: string,
-}
+};
 
 export default function SingleInputComponent({
   id,
@@ -19,11 +19,11 @@ export default function SingleInputComponent({
   placeholder,
 }: Props) {
   let className = 'px-4 w-full h-12 font-ibm-plex-sans text-base bg-slate-100 border-2'
-  + ' focus:border-primary-button focus:outline-none md:h-14';
+    + ' focus:border-primary-button focus:outline-none md:h-14';
 
   if (isError) {
     className += ' border-red-500';
-    CommonAnimation.shakeAnimation(id);
+    Animation.shakeElement(id);
   } else {
     className += ' border-x-transparent border-t-transparent border-b-slate-400';
   }

@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import SingleInputComponent from '../../../../common-component/SingleInputComponent';
 import RememberMeComponent from './RememberMeComponent';
 
-export default function LoginFormComponent(props) {
-  const { errorList } = props;
-
+export default function LoginFormComponent({ errorList }: { errorList: string[] }) {
   const inlineComponent = (
     <span
       className="text-base text-sky-500 underline underline-offset-2 md:text-lg
@@ -17,7 +15,7 @@ export default function LoginFormComponent(props) {
   return (
     <form id="login-form">
       <SingleInputComponent
-        type="email"
+        inputType="email"
         id="email"
         label="Email address"
         placeholder="yourname@gmail.com"
@@ -25,7 +23,7 @@ export default function LoginFormComponent(props) {
       />
       <div className="h-4" />
       <SingleInputComponent
-        type="password"
+        inputType="password"
         id="password"
         label="Password"
         placeholder="••••••••"

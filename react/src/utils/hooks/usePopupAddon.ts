@@ -40,5 +40,5 @@ export default function usePopupAddon(
   return [
     () => setShowAnimation(!showAnimation),
     `absolute ${showPopup ? 'inline' : 'hidden'}`,
-  ];
+  ] as [() => void, string];
 }
