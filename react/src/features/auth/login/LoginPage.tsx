@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios, { AxiosResponse } from 'axios';
 
 import RightArrrowIcon from '../../../common-component/icons/RightArrrowIcon';
 import FormDialogComponent from '../common/FormDialogComponent';
@@ -9,10 +10,39 @@ import {
 } from '../common/FormDialogUtils';
 import SnackbarComponent from '../../../common-component/SnackbarComponent';
 import LoginFormComponent from './components/LoginFormComponent';
-import loginCallbackBuilder from './utils/LoginCallbackBuilder';
 import env from '../../../env';
 import useInitCsrf from '../../../utils/hooks/useInitCsrf';
 import usePublicExclusiveRoute from '../../../utils/hooks/usePublicExclusiveRoute';
+
+function loginCallbackBuilder(
+  shouldAnimateSetter: (value: boolean) => void,
+  errorMessageSetter: (value: string) => void,
+  errorListSetter: (value: string[]) => void,
+) {
+  const DURATION = 5400;
+
+  return (e: Event) => {
+    e.preventDefault();
+
+    const formData = new FormData(document.getElementById('login-form') as HTMLFormElement);
+
+    const onFulfilled = (response: AxiosResponse) => {
+      if (response.status === 200) {
+        window.location.assign('/home');
+      }
+    };
+
+    const onRejected = (reason: any) => {
+      shouldAnimateSetter(true);
+      errorMessageSetter(reason.response.data.message);
+      errorListSetter(Object.keys(reason.response.data.errors));
+
+      setTimeout(() => shouldAnimateSetter(false), DURATION);
+    };
+
+    axios.post('/login', formData).then(onFulfilled, onRejected);
+  };
+}
 
 export default function LoginPage() {
   usePublicExclusiveRoute();
@@ -23,7 +53,7 @@ export default function LoginPage() {
   const [errorMessage, setErrorMessage] = useState('');
 
   // Form State
-  const [errorList, setErrorList] = useState([]);
+  const [errorList, setErrorList] = useState<string[]>([]);
 
   const formDialogHeader = FormDialogHeaderBuilder('Log in');
   const formDialogBody = FormDialogBodyBuilder(
@@ -37,9 +67,9 @@ export default function LoginPage() {
     () => { window.location.assign('/'); },
     'Log in',
     loginCallbackBuilder(
-      (value) => setShouldAnimate(value),
-      (message) => setErrorMessage(message),
-      (errList) => setErrorList(errList),
+      (value: boolean) => setShouldAnimate(value),
+      (message: string) => setErrorMessage(message),
+      (errList: string[]) => setErrorList(errList),
     ),
     <RightArrrowIcon />,
   );

@@ -9,10 +9,13 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'airbnb',
+    'airbnb-typescript',
     'plugin:react/jsx-runtime',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: 'tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
@@ -28,7 +31,7 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.tsx', '.ts'] }],
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
-    'no-underscore-dangle': 'allow',
+    'no-underscore-dangle': 0,
   },
   settings: {
     'import/resolver': {

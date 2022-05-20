@@ -39,7 +39,7 @@ function FormDialogBodyBuilder(text, hrefText, href) {
  * @param {string} negativeText
  * @param {() => void} negativeCallback
  * @param {string} positiveText
- * @param {() => void} positiveCallback
+ * @param {(e: Event) => void} positiveCallback
  * @param {svg} positiveIcon
  * @returns
  */

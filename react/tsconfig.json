@@ -3,7 +3,7 @@
     "target": "ES2015",
     "jsx": "react-jsx",
     "declaration": false,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "moduleResolution": "Node",
     "allowJs": true,
     "outDir": "dist",
