@@ -6,11 +6,12 @@ import FilterGroupComponent from './components/groups/FilterGroupComponent';
 import HomeContentComponent from './components/HomeContentComponent';
 import NewMeditationModalComponent from './components/modals/NewMeditationModalComponent';
 import NewBreathingModalComponent from './components/modals/NewBreathingModalComponent';
-import useAuth from '../../common-component/hooks/useAuth';
 import AuthWrapper from '../../common-component/AuthWrapper';
+import useProtectedRoute from '../../common-component/hooks/useProtectedRoute';
 
 export default function HomePage() {
-  const user = useAuth();
+  useProtectedRoute();
+
   const [receivedData, setReceivedData] = useState([]);
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
