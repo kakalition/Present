@@ -1,7 +1,10 @@
-import PropTypes from 'prop-types';
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 
-export default function WelcomeHeader(props) {
+interface Props {
+  buttonCallback: () => void
+}
+
+export default function WelcomeHeader(props: Props) {
   const { buttonCallback } = props;
 
   return (
@@ -15,7 +18,3 @@ export default function WelcomeHeader(props) {
     </div>
   );
 }
-
-WelcomeHeader.propTypes = {
-  buttonCallback: PropTypes.func.isRequired,
-};
