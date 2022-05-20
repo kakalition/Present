@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
-export default function AuthWrapper(props) {
+interface Props {
+  user: unknown,
+  child: React.FunctionComponent
+}
+
+export default function AuthWrapper(props: Props) {
   const { user, child } = props;
 
   const loadingElement = useMemo(() => (
@@ -15,8 +19,3 @@ export default function AuthWrapper(props) {
 
   return user === {} ? loadingElement : child;
 }
-
-AuthWrapper.propTypes = {
-  user: PropTypes.object.isRequired,
-  child: PropTypes.element.isRequired,
-};

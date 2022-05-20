@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import CommonButtonComponent from './CommonButtonComponent';
 import RightArrowIcon from './icons/RightArrrowIcon';
 
-export default function UserPopupComponent(props) {
-  const { username } = props;
+type Props = { username: string }
 
+export default function UserPopupComponent({ username }: Props) {
   const logout = () => axios.post('/logout').then(() => window.location.assign('/'));
 
   return (
@@ -27,7 +27,3 @@ export default function UserPopupComponent(props) {
     </div>
   );
 }
-
-UserPopupComponent.propTypes = {
-  username: PropTypes.string.isRequired,
-};

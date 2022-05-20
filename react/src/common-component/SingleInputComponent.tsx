@@ -1,15 +1,23 @@
-import PropType from 'prop-types';
+import React from 'react';
 import CommonAnimation from '../utils/animations/CommonAnimation';
 
-/**
- * @param {{type: string, id: string, label: string,
- * placeholder: string, inlineComponent: JSX.Element}} props
- */
-export default function SingleInputComponent(props) {
-  const {
-    type, id, label, placeholder, isError, inlineComponent,
-  } = props;
+type Props = {
+  id: string,
+  inlineComponent: React.ReactElement,
+  inputType: string,
+  isError: boolean,
+  label: string,
+  placeholder: string,
+}
 
+export default function SingleInputComponent({
+  id,
+  inlineComponent = <div />,
+  inputType,
+  isError = false,
+  label,
+  placeholder,
+}: Props) {
   let className = 'px-4 w-full h-12 font-ibm-plex-sans text-base bg-slate-100 border-2'
   + ' focus:border-primary-button focus:outline-none md:h-14';
 
@@ -38,7 +46,7 @@ export default function SingleInputComponent(props) {
 
       <input
         className={className}
-        type={type}
+        type={inputType}
         id={id}
         name={id}
         placeholder={placeholder}
@@ -48,17 +56,3 @@ export default function SingleInputComponent(props) {
     </>
   );
 }
-
-SingleInputComponent.propTypes = {
-  type: PropType.string.isRequired,
-  id: PropType.string.isRequired,
-  label: PropType.string.isRequired,
-  placeholder: PropType.string.isRequired,
-  isError: PropType.bool,
-  inlineComponent: PropType.element,
-};
-
-SingleInputComponent.defaultProps = {
-  isError: false,
-  inlineComponent: <div />,
-};

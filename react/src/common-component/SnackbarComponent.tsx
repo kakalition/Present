@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import CommonAnimation from '../utils/animations/CommonAnimation';
+
+type Props = { shouldAnimate: boolean, errorMessage: string }
 
 function showSnackbar() {
   const val = window.matchMedia('(min-width: 768px)').matches;
   if (val) CommonAnimation.showSnackbarAnimation('1rem');
   else CommonAnimation.showSnackbarAnimation('-1rem');
 }
-export default function SnackbarComponent(props) {
-  const { shouldAnimate, errorMessage } = props;
+export default function SnackbarComponent({ shouldAnimate, errorMessage }: Props) {
   useEffect(() => {
     if (shouldAnimate) showSnackbar();
   }, [shouldAnimate]);
@@ -21,8 +21,3 @@ export default function SnackbarComponent(props) {
     </div>
   );
 }
-
-SnackbarComponent.propTypes = {
-  shouldAnimate: PropTypes.bool.isRequired,
-  errorMessage: PropTypes.string.isRequired,
-};

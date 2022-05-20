@@ -1,14 +1,10 @@
-import PropTypes from 'prop-types';
 import UserPopupComponent from './UserPopupComponent';
 import UserButtonComponent from './UserButtonComponent';
 import usePopupAddon from '../utils/hooks/usePopupAddon';
 
-/**
- * @param {{username:string}} props
- * @returns
- */
-export default function UIShellComponent(props) {
-  const { username } = props;
+type Props = { username: string }
+
+export default function UIShellComponent({ username }: Props) {
   const [animationCallback, popupClass] = usePopupAddon('filterPopup', '5rem', '4.5rem');
 
   // Property
@@ -59,7 +55,3 @@ export default function UIShellComponent(props) {
     </div>
   );
 }
-
-UIShellComponent.propTypes = {
-  username: PropTypes.string.isRequired,
-};

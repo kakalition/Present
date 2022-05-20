@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export default function SingleSliderComponent(props) {
-  const { id, label } = props;
+type Props = { id: string, label: string}
+
+export default function SingleSliderComponent({ id, label }: Props) {
   const [value, setValue] = useState(0);
 
   const onInputChange = (e) => {
@@ -28,7 +28,7 @@ export default function SingleSliderComponent(props) {
           min="0"
           max="60"
           value={value}
-          onChange={(event) => setValue(event.currentTarget.value)}
+          onChange={(event) => setValue(parseInt(event.currentTarget.value, 10))}
         />
         <div className="w-2" />
         <p>60</p>
@@ -45,8 +45,3 @@ export default function SingleSliderComponent(props) {
     </label>
   );
 }
-
-SingleSliderComponent.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-};

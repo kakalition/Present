@@ -26,5 +26,14 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.tsx', '.ts'] }],
+    'react/prop-types': 'off',
+    'react/require-default-props': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 };
