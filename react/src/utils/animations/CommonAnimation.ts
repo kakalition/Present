@@ -1,9 +1,9 @@
 import anime from 'animejs';
 
-const CommonAnimation = {
-  showSnackbarAnimation: (fromY, duration = 5000) => {
+namespace Animation{
+  export function showSnackbar(id: string, fromY: string, duration: number = 5000) {
     anime({
-      targets: '#snackbar',
+      targets: `#${id}`,
       translateY: [
         { value: fromY },
         { value: '0rem', duration: 200 },
@@ -17,9 +17,9 @@ const CommonAnimation = {
       easing: 'easeOutSine',
       duration: 200,
     });
-  },
+  }
 
-  shakeAnimation: (id) => {
+  export function shakeElement(id: string, duration: number = 5000) {
     anime({
       targets: `#${id}`,
       translateX: [
@@ -29,7 +29,5 @@ const CommonAnimation = {
       ],
       easing: 'easeOutSine',
     });
-  },
-};
-
-export default CommonAnimation;
+  }
+}

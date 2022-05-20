@@ -3,12 +3,12 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function usePublicExclusiveRoute() {
-  const navigateTo = useNavigate();
+  const _navigateTo = useNavigate();
 
   useEffect(() => {
     axios.get('/api/getUser')
       .then((response) => {
-        if (response.data !== '') navigateTo('/home');
+        if (response.data !== '') _navigateTo('/home');
       });
-  }, []);
+  }, [_navigateTo]);
 }

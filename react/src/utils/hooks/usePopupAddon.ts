@@ -1,7 +1,14 @@
-import anime from 'animejs/lib/anime.es';
+import anime from 'animejs';
 import { useEffect, useState } from 'react';
 
-export default function usePopupAddon(targetId, fromY, toY, afterHideCallback = () => {}) {
+type NullableCallback = () => void | null;
+
+export default function usePopupAddon(
+  targetId: string,
+  fromY: string,
+  toY: string,
+  afterHideCallback: NullableCallback,
+) {
   const [showPopup, setShowPopup] = useState(false);
   const [showAnimation, setShowAnimation] = useState(false);
 
@@ -28,7 +35,7 @@ export default function usePopupAddon(targetId, fromY, toY, afterHideCallback = 
         easing: 'easeOutSine',
       });
     }
-  }, [showAnimation]);
+  }, [targetId, fromY, toY, afterHideCallback, showAnimation]);
 
   return [
     () => setShowAnimation(!showAnimation),

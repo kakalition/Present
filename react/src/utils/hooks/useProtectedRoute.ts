@@ -13,7 +13,7 @@ export default function useProtectedRoute() {
         if (response.data === '') _navigateTo('/login');
         _setUser(response.data);
       });
-  }, []);
+  }, [_navigateTo]);
 
   return _user;
 }
