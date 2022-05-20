@@ -113,7 +113,7 @@ export default function CommonButtonComponent(props) {
       type="button"
       onClick={onClickCallback}
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center w-full">
         {text}
         {icon}
       </div>

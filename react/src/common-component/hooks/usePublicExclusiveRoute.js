@@ -8,7 +8,7 @@ export default function usePublicExclusiveRoute() {
   useEffect(() => {
     axios.get('/api/getUser')
       .then((response) => {
-        if (response.data !== null) navigateTo('/home');
+        if (response.data !== '') navigateTo('/home');
       });
   }, []);
 }
