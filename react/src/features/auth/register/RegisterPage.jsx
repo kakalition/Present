@@ -6,8 +6,8 @@ import { FormDialogBodyBuilder, FormDialogButtonBuilder, FormDialogHeaderBuilder
 import SnackbarComponent from '../../../common-component/SnackbarComponent';
 import RegisterFormComponent from './components/RegisterFormComponent';
 import registerCallbackBuilder from './utils/RegisterCallbackBuilder';
-import useInitCsrf from '../../../common-component/hooks/useInitCsrf';
-import usePublicExclusiveRoute from '../../../common-component/hooks/usePublicExclusiveRoute';
+import useInitCsrf from '../../../utils/hooks/useInitCsrf';
+import usePublicExclusiveRoute from '../../../utils/hooks/usePublicExclusiveRoute';
 
 export default function RegisterPage() {
   usePublicExclusiveRoute();

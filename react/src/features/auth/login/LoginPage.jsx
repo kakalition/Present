@@ -10,8 +10,8 @@ import SnackbarComponent from '../../../common-component/SnackbarComponent';
 import LoginFormComponent from './components/LoginFormComponent';
 import loginCallbackBuilder from './utils/LoginCallbackBuilder';
 import env from '../../../env';
-import useInitCsrf from '../../../common-component/hooks/useInitCsrf';
-import usePublicExclusiveRoute from '../../../common-component/hooks/usePublicExclusiveRoute';
+import useInitCsrf from '../../../utils/hooks/useInitCsrf';
+import usePublicExclusiveRoute from '../../../utils/hooks/usePublicExclusiveRoute';
 
 export default function LoginPage() {
   usePublicExclusiveRoute();

@@ -7,7 +7,7 @@ import HomeContentComponent from './components/HomeContentComponent';
 import NewMeditationModalComponent from './components/modals/NewMeditationModalComponent';
 import NewBreathingModalComponent from './components/modals/NewBreathingModalComponent';
 import AuthWrapper from '../../common-component/AuthWrapper';
-import useProtectedRoute from '../../common-component/hooks/useProtectedRoute';
+import useProtectedRoute from '../../utils/hooks/useProtectedRoute';
 
 export default function HomePage() {
   const user = useProtectedRoute();

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import UserPopupComponent from './UserPopupComponent';
 import UserButtonComponent from './UserButtonComponent';
-import usePopupAddon from './hooks/usePopupAddon';
+import usePopupAddon from '../utils/hooks/usePopupAddon';
 
 /**
  * @param {{username:string}} props
