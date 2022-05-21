@@ -4,10 +4,10 @@ type Props = {
   size: string,
   adjustmentClass: string,
   onClick: () => void,
-}
+};
 
 export default function UserButtonComponent({ size = 'w-16 h-16', adjustmentClass = 'p-2', onClick }: Props) {
-  const className = `flex justify-center items-center rounded-full ${size} ${adjustmentClass}`;
+  const className = `flex justify-center items-center rounded-full stroke-[1.5px] stroke-white ${size} ${adjustmentClass}`;
 
   return (
     <button

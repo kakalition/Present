@@ -5,7 +5,7 @@ export default function usePopupAddon(
   targetId: string,
   fromY: string,
   toY: string,
-  afterHideCallback: (() => void) | null,
+  afterHideCallback?: (() => void) | null,
 ) {
   const [showPopup, setShowPopup] = useState(false);
   const [showAnimation, setShowAnimation] = useState(false);

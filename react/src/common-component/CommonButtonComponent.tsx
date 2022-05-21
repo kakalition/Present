@@ -8,6 +8,7 @@ type Props = {
   fillX?: boolean,
   fillY?: boolean,
   icon?: JSX.Element,
+  iconAdjustment?: string,
   onClickCallback: (e: SyntheticEvent) => void,
   padding?: string,
   text: string,
@@ -20,6 +21,7 @@ export default function CommonButtonComponent({
   fillX = false,
   fillY = false,
   icon = <div />,
+  iconAdjustment = 'stroke-[1.5px] stroke-primary-button hover:stroke-white ',
   onClickCallback,
   padding = 'lg:p-3 lg:pr-12 md:pr-8 p-2 pr-8',
   text,
@@ -54,13 +56,13 @@ export default function CommonButtonComponent({
 
   return (
     <button
-      className={className}
+      className={`${className} ${iconAdjustment}`}
       type="button"
       onClick={onClickCallback}
     >
       <div className="flex justify-between items-center w-full">
         {text}
-        {icon}
+        <div className="w-6 h-6">{icon}</div>
       </div>
     </button>
   );

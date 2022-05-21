@@ -2,7 +2,7 @@ import UserPopupComponent from './UserPopupComponent';
 import UserButtonComponent from './UserButtonComponent';
 import usePopupAddon from '../utils/hooks/usePopupAddon';
 
-type Props = { username: string }
+type Props = { username: string };
 
 export default function UIShellComponent({ username }: Props) {
   const [animationCallback, popupClass] = usePopupAddon('filterPopup', '5rem', '4.5rem');
