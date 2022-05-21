@@ -7,7 +7,7 @@ type Props = {
   fillSpace?: boolean,
   fillX?: boolean,
   fillY?: boolean,
-  icon?: React.ReactNode,
+  icon?: JSX.Element,
   onClickCallback: (e: SyntheticEvent) => void,
   padding?: string,
   text: string,

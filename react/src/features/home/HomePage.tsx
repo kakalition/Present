@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
+
 import UIShellComponent from '../../common-component/UIShellComponent';
 import HomeActionGroupComponent from './components/groups/HomeActionGroupComponent';
 import FilterGroupComponent from './components/groups/FilterGroupComponent';
@@ -8,8 +9,9 @@ import NewMeditationModalComponent from './components/modals/NewMeditationModalC
 import NewBreathingModalComponent from './components/modals/NewBreathingModalComponent';
 import AuthWrapper from '../../common-component/AuthWrapper';
 import useProtectedRoute from '../../utils/hooks/useProtectedRoute';
+import { FilterPopupStates } from './typedef/FilterTypeDef';
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   const user = useProtectedRoute();
 
   const [receivedData, setReceivedData] = useState([]);
@@ -17,8 +19,8 @@ export default function HomePage() {
   const [showBreathingModal, setShowBreathingModal] = useState(false);
 
   useEffect(() => {
-    const escListener = (event) => {
-      if ((showMeditationModal || showBreathingModal) && event.key === 'Escape') {
+    const escListener = (e: KeyboardEvent) => {
+      if ((showMeditationModal || showBreathingModal) && e.key === 'Escape') {
         setShowBreathingModal(false);
         setShowMeditationModal(false);
       }
@@ -28,7 +30,7 @@ export default function HomePage() {
     return () => window.removeEventListener('keydown', escListener);
   }, [showMeditationModal, showBreathingModal]);
 
-  const onSubmitFilter = (params) => {
+  const onSubmitFilter = (params: FilterPopupStates) => {
     axios
       .get('/api/stubget', { params })
       .then((response) => setReceivedData(Object.values(response.data)));

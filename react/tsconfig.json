@@ -5,6 +5,7 @@
       "ES2017",
       "DOM"
     ],
+    "strictNullChecks": true,
     "jsx": "react-jsx",
     "declaration": false,
     "baseUrl": ".",

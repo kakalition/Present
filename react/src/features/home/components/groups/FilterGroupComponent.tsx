@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
@@ -6,12 +5,17 @@ import ComponentWithPopupBuilder from '../../../../common-component/ComponentWit
 import FilterButtonComponent from '../FilterButtonComponent';
 import FilterPopupComponent from '../FilterPopupComponent';
 import ResultTextComponent from '../ResultTextComponent';
+import { FilterPopupActions, FilterPopupStates } from '../../typedef/FilterTypeDef';
 
-export default function FilterGroupComponent(props) {
-  const {
-    itemName, totalFound, onSubmitFilter,
-  } = props;
+type Props = {
+  itemName: string,
+  totalFound: number,
+  onSubmitFilter: (value: FilterPopupStates) => void,
+};
 
+export default function FilterGroupComponent({
+  itemName, totalFound, onSubmitFilter,
+}: Props) {
   const [meditationFilter, setMeditationFilter] = useState(true);
   const [breathingFilter, setBreathingFilter] = useState(true);
   const [isDescending, setIsDescending] = useState(false);
@@ -20,14 +24,14 @@ export default function FilterGroupComponent(props) {
   const params = useMemo(() => ({
     meditationFilter,
     breathingFilter,
-    sortby: currentSort,
+    currentSort,
     isDescending,
-  }), [meditationFilter, breathingFilter, isDescending, currentSort]);
+  } as FilterPopupStates), [meditationFilter, breathingFilter, isDescending, currentSort]);
 
   // Initial Fetch
   useEffect(() => {
     onSubmitFilter(params);
-  }, []);
+  }, [onSubmitFilter, params]);
 
   const filterPopupComponentState = useMemo(() => ({
     meditationFilter, breathingFilter, currentSort, isDescending,
@@ -43,12 +47,13 @@ export default function FilterGroupComponent(props) {
       setMeditationFilter(value);
       onSubmitFilter({ ...params, meditationFilter: value });
     },
-    onRadioChange: (e) => setCurrentSort(e.currentTarget.value),
+    onRadioChange:
+      (e: React.ChangeEvent<HTMLInputElement>) => setCurrentSort(e.currentTarget.value),
     onToggleDescending: (value) => {
       setIsDescending(value);
       onSubmitFilter({ ...params, isDescending: value });
     },
-  }), [params]);
+  } as FilterPopupActions), [params, onSubmitFilter]);
 
   const popupComponent = ComponentWithPopupBuilder({
     id: 'filter-popup',
@@ -60,8 +65,8 @@ export default function FilterGroupComponent(props) {
     popupComponent: useCallback(
       () => (
         <FilterPopupComponent
-          state={filterPopupComponentState}
-          action={filterPopupComponentAction}
+          states={filterPopupComponentState}
+          actions={filterPopupComponentAction}
         />
       ),
       [filterPopupComponentState, filterPopupComponentAction],
@@ -79,7 +84,4 @@ export default function FilterGroupComponent(props) {
 }
 
 FilterGroupComponent.propTypes = {
-  itemName: PropTypes.string.isRequired,
-  totalFound: PropTypes.number.isRequired,
-  onSubmitFilter: PropTypes.func.isRequired,
 };

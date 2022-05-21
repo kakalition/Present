@@ -1,10 +1,10 @@
 import React from 'react';
 
 type Props = {
-  header: React.ReactNode,
-  body: React.ReactNode,
-  formComponent: React.ReactNode,
-  buttonComponent: React.ReactNode,
+  header: JSX.Element,
+  body: JSX.Element,
+  formComponent: JSX.Element,
+  buttonComponent: JSX.Element,
 };
 
 export default function FormDialogComponent({

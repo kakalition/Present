@@ -1,13 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 interface Props {
-  user: unknown,
-  child: React.FunctionComponent
+  user: any,
+  child: JSX.Element,
 }
 
-export default function AuthWrapper(props: Props) {
-  const { user, child } = props;
-
+export default function AuthWrapper({ user, child }: Props): JSX.Element {
   const loadingElement = useMemo(() => (
     <div className="flex justify-center items-center w-screen h-screen bg-slate-900">
       <span className="flex relative w-20 h-20">
@@ -17,5 +15,5 @@ export default function AuthWrapper(props: Props) {
     </div>
   ), []);
 
-  return user === {} ? loadingElement : child;
+  return JSON.stringify(user) === JSON.stringify({}) ? loadingElement : child;
 }

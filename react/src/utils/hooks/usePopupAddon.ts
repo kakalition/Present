@@ -1,13 +1,11 @@
 import anime from 'animejs';
 import { useEffect, useState } from 'react';
 
-type NullableCallback = () => void | null;
-
 export default function usePopupAddon(
   targetId: string,
   fromY: string,
   toY: string,
-  afterHideCallback: NullableCallback,
+  afterHideCallback: (() => void) | null,
 ) {
   const [showPopup, setShowPopup] = useState(false);
   const [showAnimation, setShowAnimation] = useState(false);
@@ -27,7 +25,7 @@ export default function usePopupAddon(
         targets: `#${targetId}`,
         complete: () => {
           setShowPopup(false);
-          afterHideCallback();
+          afterHideCallback?.();
         },
         top: toY,
         opacity: 0,

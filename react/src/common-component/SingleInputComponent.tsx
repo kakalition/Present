@@ -1,5 +1,5 @@
 import React from 'react';
-import Animation from 'src/utils/animations/CommonAnimation';
+import * as Animation from '../utils/animations/CommonAnimation';
 
 type Props = {
   id: string,

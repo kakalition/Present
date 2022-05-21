@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import CommonAnimation from '../utils/animations/CommonAnimation';
+import * as Animation from '../utils/animations/CommonAnimation';
 
-type Props = { shouldAnimate: boolean, errorMessage: string }
+type Props = { shouldAnimate: boolean, errorMessage: string };
 
 function showSnackbar() {
   const val = window.matchMedia('(min-width: 768px)').matches;
-  if (val) CommonAnimation.showSnackbarAnimation('1rem');
-  else CommonAnimation.showSnackbarAnimation('-1rem');
+  if (val) Animation.showSnackbar('#snackbar', '1rem');
+  else Animation.showSnackbar('#snackbar', '-1rem');
 }
 export default function SnackbarComponent({ shouldAnimate, errorMessage }: Props) {
   useEffect(() => {

@@ -1,9 +1,12 @@
-import PropTypes from 'prop-types';
-import CheckIcon from '../../common-component/icons/CheckIcon';
+import CheckIcon from '../../../common-component/icons/CheckIcon';
 
-export default function ChipComponent(props) {
-  const { text, isActive, onClickCallback } = props;
+type Props = {
+  text: string,
+  isActive: boolean,
+  onClickCallback: () => void,
+};
 
+export default function ChipComponent({ text, isActive, onClickCallback }: Props) {
   let className = 'flex flex-row py-2 px-6 rounded-full items-center transition-all';
 
   let iconComponent;
@@ -22,16 +25,10 @@ export default function ChipComponent(props) {
 
   return (
     <button type="button" className={className} onClick={onClickCallback}>
-      { iconComponent }
+      {iconComponent}
       <p className="font-ibm-plex-sans text-lg text-black">
         {text}
       </p>
     </button>
   );
 }
-
-ChipComponent.propTypes = {
-  text: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onClickCallback: PropTypes.func.isRequired,
-};

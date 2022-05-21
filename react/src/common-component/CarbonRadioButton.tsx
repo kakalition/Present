@@ -1,11 +1,13 @@
-interface Props {
+import React from 'react';
+
+type Props = {
   inputId: string,
   inputName: string,
   inputValue: string,
   label: string,
   isChecked: boolean,
-  onRadioChange: () => void,
-}
+  onRadioChange: React.ChangeEventHandler<HTMLInputElement>,
+};
 
 export default function CarbonRadioButton({
   inputId, inputName, inputValue, label, isChecked, onRadioChange,

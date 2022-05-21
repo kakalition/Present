@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 
-export default function ResultTextComponent(props) {
-  const { total, itemName } = props;
+type Props = {
+  itemName: string
+  total: number,
+};
 
+export default function ResultTextComponent({
+  total, itemName,
+}: Props) {
   return (
     <h3 className="text-base text-black font-ibm-plex-sans">
       Showing
-      {' '}
       {total}
       {' '}
       {itemName}

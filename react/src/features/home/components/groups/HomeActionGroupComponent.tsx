@@ -1,10 +1,12 @@
-import PropTypes from 'prop-types';
 import AddButtonComponent from '../AddButtonComponent';
 import SearchBarComponent from '../SearchBarComponent';
 
-export default function HomeActionGroupComponent(props) {
-  const { onMeditationClick, onBreathingClick } = props;
+type Props = {
+  onMeditationClick: () => void,
+  onBreathingClick: () => void,
+};
 
+export default function HomeActionGroupComponent({ onMeditationClick, onBreathingClick }: Props) {
   return (
     <div className="flex flex-row items-center px-16 w-full h-16">
       <div className="basis-[60%] h-full"><SearchBarComponent /></div>
@@ -21,6 +23,4 @@ export default function HomeActionGroupComponent(props) {
 }
 
 HomeActionGroupComponent.propTypes = {
-  onMeditationClick: PropTypes.func.isRequired,
-  onBreathingClick: PropTypes.func.isRequired,
 };

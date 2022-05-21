@@ -32,7 +32,7 @@ function FormDialogButtonBuilder(
   negativeCallback: () => void,
   positiveText: string,
   positiveCallback: (e: SyntheticEvent) => void,
-  positiveIcon: React.ReactNode,
+  positiveIcon: JSX.Element,
 ) {
   return (
     <div className="flex w-full h-20">

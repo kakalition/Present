@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import CardWrapper from '../../../common-component/CardWrapper';
 import FilterIcon from '../../../common-component/icons/FilterIcon';
 
-export default function FilterButtonComponent(props) {
-  const { onClickCallback } = props;
+type Props = {
+  onClickCallback: () => void
+};
+
+export default function FilterButtonComponent({
+  onClickCallback,
+}: Props) {
   const component = (
     <button className="flex flex-row items-center py-2 px-4 bg-white" type="button" onClick={onClickCallback}>
       <div className="w-5 h-5 stroke-black stroke-[1.2px]"><FilterIcon /></div>

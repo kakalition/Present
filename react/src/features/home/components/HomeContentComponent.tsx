@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
 import ItemTileComponent from './ItemTileComponent';
 
-export default function HomeContentComponent(props) {
-  const { receivedData } = props;
+type Props = {
+  receivedData: any[]
+};
+
+export default function HomeContentComponent({
+  receivedData,
+}: Props) {
   const content = receivedData.map((element) => (
     <ItemTileComponent
       key={element.shortDescription}
@@ -18,7 +22,3 @@ export default function HomeContentComponent(props) {
     </div>
   );
 }
-
-HomeContentComponent.propTypes = {
-  receivedData: PropTypes.arrayOf(PropTypes.element).isRequired,
-};

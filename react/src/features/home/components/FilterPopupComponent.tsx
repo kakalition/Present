@@ -1,10 +1,31 @@
-import PropTypes from 'prop-types';
+import { MouseEventHandler } from 'react';
 import CarbonChipComponent from '../../../common-component/CarbonChipComponent';
 import CarbonRadioButton from '../../../common-component/CarbonRadioButton';
 import CardWrapper from '../../../common-component/CardWrapper';
+import { FilterPopupActions, FilterPopupStates } from '../typedef/FilterTypeDef';
 
-export default function FilterPopupComponent(props) {
-  const { state, action } = props;
+type Actions = {
+  onClick: MouseEventHandler<HTMLButtonElement>,
+  onXClick: MouseEventHandler<HTMLButtonElement>,
+};
+
+type Props = {
+  states: FilterPopupStates,
+  actions: FilterPopupActions,
+};
+
+export default function FilterPopupComponent({
+  states, actions,
+}: Props) {
+  const meditationActions: Actions = {
+    onClick: () => actions.onToggleMeditation(true),
+    onXClick: () => actions.onToggleMeditation(false),
+  };
+
+  const breathingActions: Actions = {
+    onClick: () => actions.onToggleBreathing(true),
+    onXClick: () => actions.onToggleBreathing(false),
+  };
 
   const element = (
     <form id="sort-by" className="p-4 whitespace-nowrap bg-white">
@@ -15,18 +36,16 @@ export default function FilterPopupComponent(props) {
           bgClass="bg-[#A3FFE9]"
           text="Meditation"
           isFilter
-          isFilterActive={state.meditationFilter}
-          onClick={() => action.onToggleMeditation(true)}
-          onXClick={() => action.onToggleMeditation(false)}
+          isFilterActive={states.meditationFilter}
+          actions={meditationActions}
         />
         <div className="w-3" />
         <CarbonChipComponent
           bgClass="bg-[#B9D5FF]"
           text="Breathing"
           isFilter
-          isFilterActive={state.breathingFilter}
-          onClick={() => action.onToggleBreathing(true)}
-          onXClick={() => action.onToggleBreathing(false)}
+          isFilterActive={states.breathingFilter}
+          actions={breathingActions}
         />
       </div>
       <div className="h-4" />
@@ -38,8 +57,8 @@ export default function FilterPopupComponent(props) {
         inputName="sortby"
         inputValue="name"
         label="Name"
-        isChecked={state.currentSort === 'name'}
-        onRadioChange={action.onRadioChange}
+        isChecked={states.currentSort === 'name'}
+        onRadioChange={actions.onRadioChange}
       />
       <div className="h-2" />
       <CarbonRadioButton
@@ -47,8 +66,8 @@ export default function FilterPopupComponent(props) {
         inputName="sortby"
         inputValue="duration"
         label="Duration"
-        isChecked={state.currentSort === 'duration'}
-        onRadioChange={action.onRadioChange}
+        isChecked={states.currentSort === 'duration'}
+        onRadioChange={actions.onRadioChange}
       />
       <div className="h-2" />
       <CarbonRadioButton
@@ -56,8 +75,8 @@ export default function FilterPopupComponent(props) {
         inputName="sortby"
         inputValue="date-added"
         label="Date added"
-        isChecked={state.currentSort === 'date-added'}
-        onRadioChange={action.onRadioChange}
+        isChecked={states.currentSort === 'date-added'}
+        onRadioChange={actions.onRadioChange}
       />
       <div className="h-2" />
       <CarbonRadioButton
@@ -65,8 +84,8 @@ export default function FilterPopupComponent(props) {
         inputName="sortby"
         inputValue="frequently-used"
         label="Frequently used"
-        isChecked={state.currentSort === 'frequently-used'}
-        onRadioChange={action.onRadioChange}
+        isChecked={states.currentSort === 'frequently-used'}
+        onRadioChange={actions.onRadioChange}
       />
       <div className="h-2" />
       <div className="h-2 border-b-2 border-b-slate-300" />
@@ -79,8 +98,8 @@ export default function FilterPopupComponent(props) {
           id="descending"
           type="checkbox"
           value="true"
-          checked={state.isDescending}
-          onChange={() => action.onToggleDescending(!state.isDescending)}
+          checked={states.isDescending}
+          onChange={() => actions.onToggleDescending(!states.isDescending)}
         />
         <div className="w-2" />
         Descending
@@ -90,18 +109,3 @@ export default function FilterPopupComponent(props) {
 
   return CardWrapper.medium(element);
 }
-
-FilterPopupComponent.propTypes = {
-  state: PropTypes.shape({
-    meditationFilter: PropTypes.bool.isRequired,
-    breathingFilter: PropTypes.bool.isRequired,
-    currentSort: PropTypes.string.isRequired,
-    isDescending: PropTypes.bool.isRequired,
-  }),
-  action: PropTypes.shape({
-    onToggleMeditation: PropTypes.func.isRequired,
-    onToggleBreathing: PropTypes.func.isRequired,
-    onRadioChange: PropTypes.func.isRequired,
-    onToggleDescending: PropTypes.func.isRequired,
-  }),
-};

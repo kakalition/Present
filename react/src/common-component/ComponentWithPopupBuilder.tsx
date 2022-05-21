@@ -2,17 +2,17 @@ import React from 'react';
 import usePopupAddon from '../utils/hooks/usePopupAddon';
 
 type Params = {
-  afterHideCallback: () => void,
+  afterHideCallback?: (() => void) | null,
   alignClass: string,
   fromY: string,
   id: string,
-  mainComponent: (animationCallback: () => void) => React.ReactElement,
-  popupComponent: () => React.ReactElement,
+  mainComponent: (animationCallback: () => void) => JSX.Element,
+  popupComponent: () => JSX.Element,
   toY: string,
 };
 
 export default function ComponentWithPopupBuilder({
-  id, mainComponent, popupComponent, alignClass, fromY, toY, afterHideCallback,
+  id, mainComponent, popupComponent, alignClass, fromY, toY, afterHideCallback = null,
 }: Params) {
   // eslint-disable-next-line max-len
   const [animationCallback, popupClass]: [() => void, string] = usePopupAddon(id, fromY, toY, afterHideCallback);

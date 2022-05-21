@@ -15,9 +15,11 @@ function EmergencyOut() {
   useEffect(() => {
     axios.post('/logout');
   }, []);
+
+  return <div />;
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as Element).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
