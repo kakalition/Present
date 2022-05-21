@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import axios from 'axios';
 
 import UIShellComponent from '../../common-component/UIShellComponent';
@@ -30,11 +32,11 @@ export default function HomePage(): JSX.Element {
     return () => window.removeEventListener('keydown', escListener);
   }, [showMeditationModal, showBreathingModal]);
 
-  const onSubmitFilter = (params: FilterPopupStates) => {
+  const onSubmitFilter = useCallback((params: FilterPopupStates) => {
     axios
       .get('/api/stubget', { params })
       .then((response) => setReceivedData(Object.values(response.data)));
-  };
+  }, []);
 
   const modal = useMemo(() => {
     if (showMeditationModal) {

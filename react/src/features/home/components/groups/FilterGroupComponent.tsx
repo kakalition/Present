@@ -31,7 +31,7 @@ export default function FilterGroupComponent({
   // Initial Fetch
   useEffect(() => {
     onSubmitFilter(params);
-  }, [onSubmitFilter, params]);
+  }, []);
 
   const filterPopupComponentState = useMemo(() => ({
     meditationFilter, breathingFilter, currentSort, isDescending,
