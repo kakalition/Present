@@ -1,11 +1,15 @@
-import PropTypes from 'prop-types';
+import { useMemo } from 'react';
+import { FormStepperStatus } from 'src/features/home/typedef/FormStepperStatus';
 import CheckIcon from '../../../../../common-component/icons/CheckIcon';
 
-export default function SingleFormStepperComponent(props) {
-  const { description, status } = props;
+type Props = {
+  description: string,
+  status: FormStepperStatus
+};
 
-  const getStatusComponent = (stepperStatus) => {
-    switch (stepperStatus) {
+export default function SingleFormStepperComponent({ description, status }: Props) {
+  const StatusComponent = useMemo(() => {
+    switch (status) {
       case 'current': {
         return <div className="w-5 h-5 rounded-full bg-primary-button" />;
       }
@@ -22,10 +26,10 @@ export default function SingleFormStepperComponent(props) {
         return <div />;
       }
     }
-  };
+  }, [status]);
 
-  const getStatusLineComponent = (stepperStatus) => {
-    switch (stepperStatus) {
+  const StatusLineComponent = useMemo(() => {
+    switch (status) {
       case 'current': {
         return <div className="w-full h-1 bg-primary-button" />;
       }
@@ -42,22 +46,17 @@ export default function SingleFormStepperComponent(props) {
         return <div />;
       }
     }
-  };
+  }, [status]);
 
   return (
     <div className="flex flex-col items-start w-full">
-      {getStatusLineComponent(status)}
+      {StatusLineComponent}
       <div className="h-2" />
       <div className="flex flex-row items-center">
-        {getStatusComponent(status)}
+        {StatusComponent}
         <div className="w-2" />
         <p className="text-base font-ibm-plex-sans">{description}</p>
       </div>
     </div>
   );
 }
-
-SingleFormStepperComponent.propTypes = {
-  description: PropTypes.string.isRequired,
-  status: PropTypes.oneOf(['current', 'filled', 'untouched']).isRequired,
-};

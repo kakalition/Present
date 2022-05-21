@@ -4,33 +4,36 @@ import CommonButtonComponent from '../../../../common-component/CommonButtonComp
 import XIcon from '../../../../common-component/icons/XIcon';
 import SingleInputComponent from '../../../../common-component/SingleInputComponent';
 import SingleSliderComponent from '../../../../common-component/SingleSliderComponent';
+import { FormStepperStatus } from '../../typedef/FormStepperStatus';
 import FormTextAreaComponent from './common/FormTextAreaComponent';
 import SingleFormStepperComponent from './common/SingleFormStepperComponent';
 
-export default function NewBreathingModalComponent(props) {
-  const { onCancel } = props;
-  const [pointer, setPointer] = useState(0);
+export default function NewBreathingModalComponent({ onCancel }: { onCancel: () => void }) {
+  const [pointer, setPointer] = useState<number>(0);
 
-  const [descriptionStatus, setDescriptionStatus] = useState('current');
-  const [intervalStatus, setIntervalStatus] = useState('untouched');
+  const [descriptionStatus, setDescriptionStatus] = useState<string>('current');
+  const [intervalStatus, setIntervalStatus] = useState<string>('untouched');
 
   const primaryAction = useMemo(() => {
+    const title = (document.getElementById('title') as HTMLInputElement).value;
+    const description = (document.getElementById('description') as HTMLInputElement).value;
+
     switch (pointer) {
       case 0: return () => {
         setPointer(1);
-        if (document.getElementById('title').value === '' || document.getElementById('description').value === '') {
+        if (title === '' || description === '') {
           setDescriptionStatus('error');
         } else setDescriptionStatus('filled');
         setIntervalStatus('current');
       };
       case 1: return () => {
-        const element = document.getElementById('test-form');
+        const element = document.getElementById('test-form') as HTMLFormElement;
         const form = new FormData(element);
         console.log(form);
       };
-      default: return () => {};
+      default: return () => { };
     }
-  });
+  }, [pointer]);
 
   const primaryText = useMemo(() => {
     switch (pointer) {
@@ -48,7 +51,7 @@ export default function NewBreathingModalComponent(props) {
         setDescriptionStatus('current');
         setIntervalStatus('filled');
       };
-      default: return () => {};
+      default: return () => { };
     }
   }, [pointer]);
 
@@ -70,14 +73,14 @@ export default function NewBreathingModalComponent(props) {
         <div className="h-8" />
 
         <div className="flex flex-row w-full">
-          <SingleFormStepperComponent description="Description" status={descriptionStatus} />
-          <SingleFormStepperComponent description="Interval" status={intervalStatus} />
+          <SingleFormStepperComponent description="Description" status={descriptionStatus as FormStepperStatus} />
+          <SingleFormStepperComponent description="Interval" status={intervalStatus as FormStepperStatus} />
         </div>
         <div className="h-8" />
 
         <form className="w-full h-fit" id="test-form">
           <div id="desc" className={`${pointer === 0 ? 'block' : 'hidden'}`}>
-            <SingleInputComponent id="title" label="Title" placeholder="Stress Relief Meditation" type="text" />
+            <SingleInputComponent id="title" label="Title" placeholder="Stress Relief Meditation" inputType="text" />
             <div className="h-4" />
             <FormTextAreaComponent id="description" />
           </div>

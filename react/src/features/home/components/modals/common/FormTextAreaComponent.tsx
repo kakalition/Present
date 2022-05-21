@@ -1,6 +1,4 @@
-import PropTypes from 'prop-types';
-
-export default function FormTextAreaComponent({ id }) {
+export default function FormTextAreaComponent({ id }: { id: string }) {
   return (
     <label htmlFor="description" className="flex flex-col items-start text-base text-black md:text-lg font-ibm-plex-sans">
       Description
@@ -14,7 +12,3 @@ export default function FormTextAreaComponent({ id }) {
     </label>
   );
 }
-
-FormTextAreaComponent.propTypes = {
-  id: PropTypes.string.isRequired,
-};

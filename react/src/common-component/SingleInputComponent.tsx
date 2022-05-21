@@ -5,7 +5,7 @@ type Props = {
   id: string,
   inlineComponent?: React.ReactElement,
   inputType: string,
-  isError: boolean,
+  isError?: boolean,
   label: string,
   placeholder: string,
 };
