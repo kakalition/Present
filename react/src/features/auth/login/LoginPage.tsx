@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 
 import RightArrrowIcon from '../../../common-component/icons/RightArrrowIcon';
@@ -21,7 +21,7 @@ function loginCallbackBuilder(
 ) {
   const DURATION = 5400;
 
-  return (e: Event) => {
+  return (e: SyntheticEvent) => {
     e.preventDefault();
 
     const formData = new FormData(document.getElementById('login-form') as HTMLFormElement);

@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'white-tertiary' | 'ghost';
 
 type Props = {
   buttonType: ButtonType
-  fillSpace: boolean,
-  fillX: boolean,
-  fillY: boolean,
-  icon: React.ReactNode,
-  onClickCallback: () => void,
-  padding: string,
+  fillSpace?: boolean,
+  fillX?: boolean,
+  fillY?: boolean,
+  icon?: React.ReactNode,
+  onClickCallback: (e: SyntheticEvent) => void,
+  padding?: string,
   text: string,
-  textSize: string,
-}
+  textSize?: string,
+};
 
 export default function CommonButtonComponent({
   buttonType,
@@ -26,7 +26,7 @@ export default function CommonButtonComponent({
   textSize = 'lg:text-xl text-lg',
 }: Props): React.ReactElement {
   let className = `text-left ${textSize} ${padding} ${fillSpace ? 'h-full w-full' : ''} ${fillX ? 'w-full' : ''} ${fillY ? 'h-full' : ''}`
-  + 'whitespace-nowrap font-ibm-plex-sans transition-all duration-100';
+    + 'whitespace-nowrap font-ibm-plex-sans transition-all duration-100';
 
   switch (buttonType) {
     case 'primary': {

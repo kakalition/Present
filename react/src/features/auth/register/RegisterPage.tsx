@@ -1,13 +1,51 @@
-import { useState } from 'react';
+import axios, { AxiosResponse } from 'axios';
+import { SyntheticEvent, useState } from 'react';
+
 import env from '../../../env';
 import RightArrrowIcon from '../../../common-component/icons/RightArrrowIcon';
 import FormDialogComponent from '../common/FormDialogComponent';
 import { FormDialogBodyBuilder, FormDialogButtonBuilder, FormDialogHeaderBuilder } from '../common/FormDialogUtils';
 import SnackbarComponent from '../../../common-component/SnackbarComponent';
 import RegisterFormComponent from './components/RegisterFormComponent';
-import registerCallbackBuilder from './utils/RegisterCallbackBuilder';
 import useInitCsrf from '../../../utils/hooks/useInitCsrf';
 import usePublicExclusiveRoute from '../../../utils/hooks/usePublicExclusiveRoute';
+
+function registerCallbackBuilder(
+  shouldAnimateSetter: (value: boolean) => void,
+  errorMessageSetter: (value: string) => void,
+  errorListSetter: (value: string[]) => void,
+) {
+  return (e: SyntheticEvent) => {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstname') as HTMLInputElement;
+    const lastName = document.getElementById('lastname') as HTMLInputElement;
+    const email = document.getElementById('email') as HTMLInputElement;
+    const password = document.getElementById('password') as HTMLInputElement;
+
+    const formData = new FormData();
+    formData.append('name', `${firstName.value} ${lastName.value}`);
+    formData.append('email', email.value);
+    formData.append('password', password.value);
+    formData.append('password_confirmation', password.value);
+
+    // TODO: Handle all possible response status.
+    const onFulfilled = (response: AxiosResponse) => {
+      if (response.status === 201) window.location.assign('/home');
+    };
+
+    const onRejected = (reason: any) => {
+      shouldAnimateSetter(true);
+      errorMessageSetter(reason.response.data.message);
+      errorListSetter(Object.keys(reason.response.data.errors));
+
+      shouldAnimateSetter(false);
+    };
+
+    axios.post('/register', formData)
+      .then(onFulfilled, onRejected);
+  };
+}
 
 export default function RegisterPage() {
   usePublicExclusiveRoute();
@@ -18,7 +56,7 @@ export default function RegisterPage() {
   const [errorMessage, setErrorMessage] = useState('');
 
   // Form State
-  const [errorList, setErrorList] = useState([]);
+  const [errorList, setErrorList] = useState<string[]>([]);
 
   const formDialogHeader = FormDialogHeaderBuilder('Sign up');
   const formDialogBody = FormDialogBodyBuilder('Already have an account?', 'Login', '/login');
@@ -27,7 +65,11 @@ export default function RegisterPage() {
     'Go back',
     () => { window.location.assign('/'); },
     'Sign up',
-    registerCallbackBuilder(setShouldAnimate, setErrorMessage, setErrorList),
+    registerCallbackBuilder(
+      (value: boolean) => setShouldAnimate(value),
+      (value: string) => setErrorMessage(value),
+      (value: string[]) => setErrorList(value),
+    ),
     <RightArrrowIcon />,
   );
 

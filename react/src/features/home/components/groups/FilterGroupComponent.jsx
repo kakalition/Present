@@ -64,7 +64,7 @@ export default function FilterGroupComponent(props) {
           action={filterPopupComponentAction}
         />
       ),
-      [filterPopupComponentState],
+      [filterPopupComponentState, filterPopupComponentAction],
     ),
     fromY: '4rem',
     toY: '3.5rem',

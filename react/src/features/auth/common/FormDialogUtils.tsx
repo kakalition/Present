@@ -1,10 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
+import { SyntheticEvent } from 'react';
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 
-/**
- * @param {string} text
- */
-function FormDialogHeaderBuilder(text) {
+function FormDialogHeaderBuilder(text: string) {
   return (
     <h1
       className="mt-8 ml-8 text-4xl font-semibold text-black lg:text-5xl
@@ -15,12 +13,7 @@ function FormDialogHeaderBuilder(text) {
   );
 }
 
-/**
- * @param {string} text
- * @param {string} hrefText
- * @param {string} href
- */
-function FormDialogBodyBuilder(text, hrefText, href) {
+function FormDialogBodyBuilder(text: string, hrefText: string, href: string) {
   return (
     <h2
       className="ml-8 text-lg font-normal text-black md:text-xl
@@ -34,21 +27,12 @@ function FormDialogBodyBuilder(text, hrefText, href) {
   );
 }
 
-/**
- *
- * @param {string} negativeText
- * @param {() => void} negativeCallback
- * @param {string} positiveText
- * @param {(e: Event) => void} positiveCallback
- * @param {svg} positiveIcon
- * @returns
- */
 function FormDialogButtonBuilder(
-  negativeText,
-  negativeCallback,
-  positiveText,
-  positiveCallback,
-  positiveIcon,
+  negativeText: string,
+  negativeCallback: () => void,
+  positiveText: string,
+  positiveCallback: (e: SyntheticEvent) => void,
+  positiveIcon: React.ReactNode,
 ) {
   return (
     <div className="flex w-full h-20">

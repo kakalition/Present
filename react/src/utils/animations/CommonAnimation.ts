@@ -20,7 +20,7 @@ namespace Animation{
     });
   }
 
-  export function shakeElement(id: string, duration = 5000) {
+  export function shakeElement(id: string) {
     anime({
       targets: `#${id}`,
       translateX: [
