@@ -1,5 +1,3 @@
-import React from 'react';
-
 type Props = {
   header: JSX.Element,
   body: JSX.Element,

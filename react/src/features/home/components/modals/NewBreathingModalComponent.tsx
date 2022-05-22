@@ -15,12 +15,12 @@ export default function NewBreathingModalComponent({ onCancel }: { onCancel: () 
   const [intervalStatus, setIntervalStatus] = useState<string>('untouched');
 
   const primaryAction = useMemo(() => {
-    const title = (document.getElementById('title') as HTMLInputElement).value;
-    const description = (document.getElementById('description') as HTMLInputElement).value;
-
     switch (pointer) {
       case 0: return () => {
         setPointer(1);
+
+        const title = (document.getElementById('title') as HTMLInputElement)?.value;
+        const description = (document.getElementById('description') as HTMLInputElement)?.value;
         if (title === '' || description === '') {
           setDescriptionStatus('error');
         } else setDescriptionStatus('filled');
@@ -29,7 +29,7 @@ export default function NewBreathingModalComponent({ onCancel }: { onCancel: () 
       case 1: return () => {
         const element = document.getElementById('test-form') as HTMLFormElement;
         const form = new FormData(element);
-        console.log(form);
+        form.forEach((value, key) => console.log(key, value));
       };
       default: return () => { };
     }
