@@ -7,6 +7,7 @@ import LoginPage from './features/auth/login/LoginPage';
 import WelcomePage from './features/welcome/WelcomePage';
 import HomePage from './features/home/HomePage';
 import './index.css';
+import MeditationPage from './features/meditation/MeditationPage';
 
 axios.defaults.baseURL = 'http://localhost';
 axios.defaults.withCredentials = true;
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root') as Element).render(
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/meditation" element={<MeditationPage />} />
         <Route path="/out" element={<EmergencyOut />} />
       </Routes>
     </BrowserRouter>
