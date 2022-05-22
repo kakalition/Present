@@ -7,7 +7,7 @@ import LoginPage from './features/auth/login/LoginPage';
 import WelcomePage from './features/welcome/WelcomePage';
 import HomePage from './features/home/HomePage';
 import './index.css';
-import MeditationPage from './features/meditation/MeditationPage';
+import MeditationPage from './features/session/meditation/MeditationPage';
 
 axios.defaults.baseURL = 'http://localhost';
 axios.defaults.withCredentials = true;
