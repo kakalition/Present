@@ -1,0 +1,33 @@
+import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
+import LeftIcon from '../../../common-component/icons/LeftIcon';
+
+function Header({ title }: { title: string }) {
+  return (
+    <div className="bg-[#ebebeb] flex flex-col h-96 p-16 justify-between w-full">
+      <div className="h-12 w-12 stroke-black stroke-2"><LeftIcon /></div>
+      <div className="flex flex-row items-center w-full">
+        <div className="w-[70%]">
+          <h1 className="font-ibm-plex-sans text-7xl text-black">{title}</h1>
+        </div>
+        <div className="w-[30%]">
+          <CommonButtonComponent buttonType="primary" text="Save this meditation" padding="py-6 pl-6 pr-12" onClickCallback={() => console.log('implement!')} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function DetailPage() {
+  const ob = {
+    title: 'Calmness Meditation',
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+  };
+
+  return (
+    <div className="w-screen min-h-screen flex flex-col bg-web-bg">
+      <Header title={ob.title} />
+    </div>
+  );
+}
