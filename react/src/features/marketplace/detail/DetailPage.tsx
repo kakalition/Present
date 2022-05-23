@@ -17,13 +17,28 @@ function Header({ title }: { title: string }) {
   );
 }
 
+function DetailCard() {
+  return (
+    <div className="bg-[#ebebeb] flex flex-col p-6">
+      <p className="font-ibm-plex-sans text-base text-slate-600">Session Detail</p>
+      <div className="h-4" />
+      <p className="font-ibm-plex-sans text-lg text-black">Author name: Kaka</p>
+      <p className="font-ibm-plex-sans text-lg text-black">Published date: May 23, 2022</p>
+      <p className="font-ibm-plex-sans text-lg text-black">Total saved: 25K</p>
+      <p className="font-ibm-plex-sans text-lg text-black">Rating: </p>
+    </div>
+  );
+}
+
 function MainContent({ description }: { description: string }) {
   return (
-    <div className="flex flex-col h-full w-full p-16">
+    <div className="flex flex-row h-full w-full p-16">
       <div className="w-[70%]">
         <p className="text-black font-ibm-plex-sans whitespace-pre-line text-xl w-3/4">{description}</p>
       </div>
-      <div className="w-[30%]" />
+      <div className="w-[30%]">
+        <DetailCard />
+      </div>
     </div>
   );
 }
