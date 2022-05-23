@@ -17,6 +17,17 @@ function Header({ title }: { title: string }) {
   );
 }
 
+function MainContent({ description }: { description: string }) {
+  return (
+    <div className="flex flex-col h-full w-full p-16">
+      <div className="w-[70%]">
+        <p className="text-black font-ibm-plex-sans whitespace-pre-line text-xl w-3/4">{description}</p>
+      </div>
+      <div className="w-[30%]" />
+    </div>
+  );
+}
+
 export default function DetailPage() {
   const ob = {
     title: 'Calmness Meditation',
@@ -28,6 +39,7 @@ export default function DetailPage() {
   return (
     <div className="w-screen min-h-screen flex flex-col bg-web-bg">
       <Header title={ob.title} />
+      <MainContent description={ob.description} />
     </div>
   );
 }
