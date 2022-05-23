@@ -1,19 +1,30 @@
 import anime from 'animejs';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo } from 'react';
 import SessionHeaderComponent from '../common/SessionHeaderComponent';
 
 export default function BreathingPage() {
+  const gradientColor = useMemo(() => ({
+    current1: '#FFFFFF',
+    current2: '#FFFFFF',
+    inhale1: '#5433FF',
+    inhale2: '#20BDFF',
+    hold1: '#3BB98C',
+    hold2: '#76FFA9',
+    exhale1: '#FF5F6D',
+    exhale2: '#FFC371',
+  }), []);
+
+  const breathingUnit = {
+    repetition: 3,
+    inhale: 3,
+    holdInhale: 3,
+    exhale: 3,
+    holdExhale: 3,
+  };
+
   const ob = {
     time: 4,
   };
-
-  const gradientColor = useMemo(() => ({
-    inhale: '#E0BBE4',
-    inhale2: '#957DAD',
-    exhale: ['#FEC8D8', '#FFDFD3'],
-  }), []);
-
-  const currentGradient = useRef(gradientColor.inhale);
 
   useEffect(() => {
     anime({
@@ -24,16 +35,23 @@ export default function BreathingPage() {
       update: (value) => {
         const doc = document.getElementById('time');
         if (doc?.innerHTML !== undefined) {
-          doc.innerHTML = JSON.stringify(Math.ceil(parseInt(value.animations[0].currentValue, 10)));
+          doc.innerHTML = JSON.stringify(
+            Math.round(parseInt(value.animations[0].currentValue, 10)),
+          );
         }
       },
     });
 
     anime({
       targets: gradientColor,
-      inhale: gradientColor.exhale[0],
-      inhale2: gradientColor.exhale[1],
-      duration: 1000,
+      current1: [
+        { value: gradientColor.inhale1, duration: 0 },
+        { value: gradientColor.exhale1, duration: 200, delay: 3000 },
+      ],
+      current2: [
+        { value: gradientColor.inhale2, duration: 0 },
+        { value: gradientColor.exhale2, duration: 200, delay: 3000 },
+      ],
       easing: 'easeOutQuad',
       update: (value) => {
         const val = value.animations[0].currentValue;
@@ -53,7 +71,7 @@ export default function BreathingPage() {
       <div
         id="bg"
         className="absolute h-full w-full bg-cover bg-center transition"
-        style={{ backgroundImage: `linear-gradient(to right, ${currentGradient.current[0]}, ${currentGradient.current[1]})` }}
+        style={{ backgroundImage: `linear-gradient(to right, ${gradientColor.current1}, ${gradientColor.current2})` }}
       />
       <div className="h-full w-full z-[1] p-8 flex flex-col items-center justify-between">
         <SessionHeaderComponent />
