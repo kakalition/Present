@@ -1,6 +1,7 @@
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 import LeftIcon from '../../../common-component/icons/LeftIcon';
 import PlusIcon from '../../../common-component/icons/PlusIcon';
+import StarIcon from '../../../common-component/icons/StarIcon';
 
 function Header({ title }: { title: string }) {
   return (
@@ -26,7 +27,17 @@ function DetailCard() {
       <p className="font-ibm-plex-sans text-lg text-black">Author name: Kaka</p>
       <p className="font-ibm-plex-sans text-lg text-black">Published date: May 23, 2022</p>
       <p className="font-ibm-plex-sans text-lg text-black">Total saved: 25K</p>
-      <p className="font-ibm-plex-sans text-lg text-black">Rating: </p>
+      <div className="flex flex-row w-full justify-start items-center">
+        <p className="font-ibm-plex-sans text-lg text-black">Rating: </p>
+        <div className="w-2" />
+        <div className="flex flex-row">
+          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -53,11 +64,20 @@ function CommentItem() {
       </div>
       <div className="w-8" />
       <div className="w-full flex flex-col">
-        <p className="font-ibm-plex-sans text-black text-4xl">Lionel Andre</p>
+        <div className="flex flex-row justify-between items-center w-full">
+          <p className="font-ibm-plex-sans text-black text-4xl">Lionel Andre</p>
+          <div className="flex flex-row">
+            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
+          </div>
+        </div>
         <div className="h-1" />
         <p className="font-ibm-plex-sans text-gray-900 text-base">May 03, 2022</p>
         <div className="h-1" />
-        <p className="font-ibm-plex-sans text-black text-lg">
+        <p className="font-ibm-plex-sans text-black text-lg leading-tight">
           {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
         labore et dolore magna aliqua. `}
         </p>
