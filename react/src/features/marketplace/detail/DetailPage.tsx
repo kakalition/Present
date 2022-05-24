@@ -1,5 +1,6 @@
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 import LeftIcon from '../../../common-component/icons/LeftIcon';
+import PlusIcon from '../../../common-component/icons/PlusIcon';
 
 function Header({ title }: { title: string }) {
   return (
@@ -32,12 +33,24 @@ function DetailCard() {
 
 function MainContent({ description }: { description: string }) {
   return (
-    <div className="flex flex-row h-full w-full p-16">
-      <div className="w-[70%]">
-        <p className="text-black font-ibm-plex-sans whitespace-pre-line text-xl w-3/4">{description}</p>
+    <div className="flex flex-row w-full p-16">
+      <div className="w-[60%]">
+        <p className="text-black font-ibm-plex-sans whitespace-pre-line text-xl">{description}</p>
       </div>
+      <div className="w-[10%]" />
       <div className="w-[30%]">
         <DetailCard />
+      </div>
+    </div>
+  );
+}
+
+function CommentSection() {
+  return (
+    <div className="flex flex-col w-[60%] pl-16">
+      <div className="flex flex-row w-full items-center justify-between">
+        <h2 className="font-ibm-plex-sans text-black text-5xl">Comments</h2>
+        <div className="h-8 w-8 stroke-2 stroke-black"><PlusIcon /></div>
       </div>
     </div>
   );
@@ -55,6 +68,7 @@ export default function DetailPage() {
     <div className="w-screen min-h-screen flex flex-col bg-web-bg">
       <Header title={ob.title} />
       <MainContent description={ob.description} />
+      <CommentSection />
     </div>
   );
 }
