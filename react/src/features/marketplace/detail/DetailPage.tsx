@@ -26,6 +26,21 @@ type SessionDetail = {
   comments: Comment[]
 };
 
+function StarRating({ rating }: { rating: number }) {
+  const yellowClass = 'stroke-yellow-400 fill-yellow-400';
+  const grayClass = 'stroke-gray-400 fill-gray-400';
+
+  return (
+    <div className="flex flex-row">
+      <div className={`w-8 h-8 stroke-1 ${rating > 0 ? yellowClass : grayClass}`}><StarIcon /></div>
+      <div className={`w-8 h-8 stroke-1 ${rating > 1 ? yellowClass : grayClass}`}><StarIcon /></div>
+      <div className={`w-8 h-8 stroke-1 ${rating > 2 ? yellowClass : grayClass}`}><StarIcon /></div>
+      <div className={`w-8 h-8 stroke-1 ${rating > 3 ? yellowClass : grayClass}`}><StarIcon /></div>
+      <div className={`w-8 h-8 stroke-1 ${rating > 4 ? yellowClass : grayClass}`}><StarIcon /></div>
+    </div>
+  );
+}
+
 function Header({ title }: { title: string }) {
   return (
     <div className="bg-[#ebebeb] flex flex-col h-96 p-16 justify-between w-full">
@@ -65,13 +80,7 @@ function DetailCard({ detailData }: { detailData: SessionCard }) {
       <div className="flex flex-row w-full justify-start items-center">
         <p className="font-ibm-plex-sans text-lg text-black">Rating: </p>
         <div className="w-2" />
-        <div className="flex flex-row">
-          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-          <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-        </div>
+        <StarRating rating={detailData.rating} />
       </div>
     </div>
   );
@@ -102,13 +111,7 @@ function CommentItem({ commentData }: { commentData: Comment }) {
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center w-full">
           <p className="font-ibm-plex-sans text-black text-4xl">{commentData.authorName}</p>
-          <div className="flex flex-row">
-            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-            <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
-          </div>
+          <StarRating rating={commentData.rating} />
         </div>
         <div className="h-1" />
         <p className="font-ibm-plex-sans text-gray-900 text-base">{commentData.date}</p>
@@ -162,7 +165,7 @@ export default function DetailPage() {
       comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       date: 'May 24, 2022',
       profileImgUrl: '',
-      rating: 5,
+      rating: 3,
     },
   ];
 
