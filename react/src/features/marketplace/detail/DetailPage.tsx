@@ -45,13 +45,39 @@ function MainContent({ description }: { description: string }) {
   );
 }
 
+function CommentItem() {
+  return (
+    <div className="flex flex-row w-full items-start border-b-2 border-b-gray-300 py-8">
+      <div className="h-16 w-16 flex items-center justify-center">
+        <div className="bg-gray-500 rounded-full h-full w-full" />
+      </div>
+      <div className="w-8" />
+      <div className="w-full flex flex-col">
+        <p className="font-ibm-plex-sans text-black text-4xl">Lionel Andre</p>
+        <div className="h-1" />
+        <p className="font-ibm-plex-sans text-gray-900 text-base">May 03, 2022</p>
+        <div className="h-1" />
+        <p className="font-ibm-plex-sans text-black text-lg">
+          {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua. `}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function CommentSection() {
   return (
-    <div className="flex flex-col w-[60%] pl-16">
+    <div className="flex flex-col w-[60%] pl-16 pb-16">
       <div className="flex flex-row w-full items-center justify-between">
-        <h2 className="font-ibm-plex-sans text-black text-5xl">Comments</h2>
+        <h2 className="font-ibm-plex-sans text-black text-5xl font-medium">Comments</h2>
         <div className="h-8 w-8 stroke-2 stroke-black"><PlusIcon /></div>
       </div>
+      <div className="h-4" />
+      <CommentItem />
+      <CommentItem />
+      <CommentItem />
+      <CommentItem />
     </div>
   );
 }
