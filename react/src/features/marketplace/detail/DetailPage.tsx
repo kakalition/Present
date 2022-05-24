@@ -1,7 +1,30 @@
+import { useMemo } from 'react';
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 import LeftIcon from '../../../common-component/icons/LeftIcon';
 import PlusIcon from '../../../common-component/icons/PlusIcon';
 import StarIcon from '../../../common-component/icons/StarIcon';
+
+type SessionCard = {
+  authorName: string,
+  publishedDate: string,
+  totalSaved: number,
+  rating: number,
+};
+
+type Comment = {
+  profileImgUrl: string,
+  authorName: string,
+  date: string,
+  rating: number,
+  comment: string,
+};
+
+type SessionDetail = {
+  name: string,
+  description: string,
+  sessionCard: SessionCard,
+  comments: Comment[]
+};
 
 function Header({ title }: { title: string }) {
   return (
@@ -19,14 +42,26 @@ function Header({ title }: { title: string }) {
   );
 }
 
-function DetailCard() {
+function DetailCard({ detailData }: { detailData: SessionCard }) {
   return (
     <div className="bg-[#ebebeb] flex flex-col p-6">
       <p className="font-ibm-plex-sans text-base text-slate-600">Session Detail</p>
       <div className="h-4" />
-      <p className="font-ibm-plex-sans text-lg text-black">Author name: Kaka</p>
-      <p className="font-ibm-plex-sans text-lg text-black">Published date: May 23, 2022</p>
-      <p className="font-ibm-plex-sans text-lg text-black">Total saved: 25K</p>
+      <p className="font-ibm-plex-sans text-lg text-black">
+        Author name:
+        {' '}
+        {detailData.authorName}
+      </p>
+      <p className="font-ibm-plex-sans text-lg text-black">
+        Published date:
+        {' '}
+        {detailData.publishedDate}
+      </p>
+      <p className="font-ibm-plex-sans text-lg text-black">
+        Total saved:
+        {' '}
+        {detailData.totalSaved}
+      </p>
       <div className="flex flex-row w-full justify-start items-center">
         <p className="font-ibm-plex-sans text-lg text-black">Rating: </p>
         <div className="w-2" />
@@ -42,7 +77,8 @@ function DetailCard() {
   );
 }
 
-function MainContent({ description }: { description: string }) {
+function MainContent({ description, detailData }
+: { description: string, detailData: SessionCard }) {
   return (
     <div className="flex flex-row w-full p-16">
       <div className="w-[60%]">
@@ -50,13 +86,13 @@ function MainContent({ description }: { description: string }) {
       </div>
       <div className="w-[10%]" />
       <div className="w-[30%]">
-        <DetailCard />
+        <DetailCard detailData={detailData} />
       </div>
     </div>
   );
 }
 
-function CommentItem() {
+function CommentItem({ commentData }: { commentData: Comment }) {
   return (
     <div className="flex flex-row w-full items-start border-b-2 border-b-gray-300 py-8">
       <div className="h-16 w-16 flex items-center justify-center">
@@ -65,7 +101,7 @@ function CommentItem() {
       <div className="w-8" />
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center w-full">
-          <p className="font-ibm-plex-sans text-black text-4xl">Lionel Andre</p>
+          <p className="font-ibm-plex-sans text-black text-4xl">{commentData.authorName}</p>
           <div className="flex flex-row">
             <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
             <div className="w-8 h-8 stroke-1 stroke-yellow-400 fill-yellow-400"><StarIcon /></div>
@@ -75,18 +111,24 @@ function CommentItem() {
           </div>
         </div>
         <div className="h-1" />
-        <p className="font-ibm-plex-sans text-gray-900 text-base">May 03, 2022</p>
+        <p className="font-ibm-plex-sans text-gray-900 text-base">{commentData.date}</p>
         <div className="h-1" />
         <p className="font-ibm-plex-sans text-black text-lg leading-tight">
-          {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-        labore et dolore magna aliqua. `}
+          {commentData.comment}
         </p>
       </div>
     </div>
   );
 }
 
-function CommentSection() {
+function CommentSection({ comments }: { comments: Comment[] }) {
+  const elements = useMemo(
+    () => comments.map(
+      (element) => <CommentItem key={element.authorName} commentData={element} />,
+    ),
+    [comments],
+  );
+
   return (
     <div className="flex flex-col w-[60%] pl-16 pb-16">
       <div className="flex flex-row w-full items-center justify-between">
@@ -94,27 +136,52 @@ function CommentSection() {
         <div className="h-8 w-8 stroke-2 stroke-black"><PlusIcon /></div>
       </div>
       <div className="h-4" />
-      <CommentItem />
-      <CommentItem />
-      <CommentItem />
-      <CommentItem />
+      {elements}
     </div>
   );
 }
 
 export default function DetailPage() {
-  const ob = {
-    title: 'Calmness Meditation',
+  const sessionCardData: SessionCard = {
+    authorName: 'Kaka',
+    publishedDate: 'May 24, 2022',
+    rating: 5,
+    totalSaved: 150,
+  };
+
+  const commentsData: Comment[] = [
+    {
+      authorName: 'Ano',
+      comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      date: 'May 23, 2022',
+      profileImgUrl: '',
+      rating: 4,
+    },
+    {
+      authorName: 'Enlio',
+      comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      date: 'May 24, 2022',
+      profileImgUrl: '',
+      rating: 5,
+    },
+  ];
+
+  const detailData: SessionDetail = {
+    name: 'Calmness Meditation',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    sessionCard: sessionCardData,
+    comments: commentsData,
   };
 
   return (
     <div className="w-screen min-h-screen flex flex-col bg-web-bg">
-      <Header title={ob.title} />
-      <MainContent description={ob.description} />
-      <CommentSection />
+      <Header title={detailData.name} />
+      <MainContent
+        description={detailData.description}
+        detailData={detailData.sessionCard}
+      />
+      <CommentSection comments={detailData.comments} />
     </div>
   );
 }
