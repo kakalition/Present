@@ -17,9 +17,9 @@ export default function MarketplacePage() {
           onMeditationTabClick={() => setActiveTab(MarketplaceTabEnum.Meditation)}
           onBreathingTabClick={() => setActiveTab(MarketplaceTabEnum.Breathing)}
         />
-        <div className="h-8" />
+        <div className="h-12" />
         <MarketplaceSectionComponent title="Featured" contents={['Calmness Meditation', 'Fire Breathing']} />
-        <div className="h-8" />
+        <div className="h-12" />
         <MarketplaceSectionComponent title="Newly Added" contents={['Hyper Relaxation', 'Wind Voice']} />
       </div>
     </div>
