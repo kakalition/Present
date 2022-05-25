@@ -22,11 +22,18 @@ function EmergencyOut() {
   return <div />;
 }
 
+function Empty() {
+  return (
+    <div className="flex justify-center items-center w-screen h-screen bg-gray-800" />
+  );
+}
+
 ReactDOM.createRoot(document.getElementById('root') as Element).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
+        <Route path="/empty" element={<Empty />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/home" element={<HomePage />} />
