@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import MarketplaceDetailCommentComponent from './components/MarketplaceDetailCommentComponent';
 import MarketplaceDetailContentComponent from './components/MarketplaceDetailContentComponent';
 import MarketplaceDetailHeaderComponent from './components/MarketplaceDetailHeaderComponent';
@@ -10,7 +11,6 @@ const detailData: MarketplaceDetailType = {
   detailCardData: {
     authorName: 'Kaka',
     publishedDate: 'May 24, 2022',
-    rating: 5,
     totalSaved: 150,
   },
   commentsData: [
@@ -32,12 +32,20 @@ const detailData: MarketplaceDetailType = {
 };
 
 export default function DetailPage() {
+  const averageRating = useMemo(() => {
+    const ratingArr = detailData.commentsData.map((value) => value.rating);
+    return Math.round(
+      ratingArr.reduce((prev, cur) => prev + cur) / ratingArr.length,
+    );
+  }, []);
+
   return (
     <div className="w-screen min-h-screen flex flex-col bg-web-bg">
       <MarketplaceDetailHeaderComponent title={detailData.name} />
       <MarketplaceDetailContentComponent
         description={detailData.description}
         detailCardData={detailData.detailCardData}
+        averageRating={averageRating}
       />
       <MarketplaceDetailCommentComponent comments={detailData.commentsData} />
     </div>

@@ -2,8 +2,8 @@ import { MarketplaceDetailCardType } from '../typedefs/MarketplaceDetailCardType
 import RatingComponent from './RatingComponent';
 
 export default function MarketplaceDetailCardComponent({
-  detailCardData,
-}: { detailCardData: MarketplaceDetailCardType }) {
+  detailCardData, averageRating,
+}: { detailCardData: MarketplaceDetailCardType, averageRating: number }) {
   return (
     <div className="bg-[#ebebeb] flex flex-col p-6">
       <p className="font-ibm-plex-sans text-base text-slate-600">Session Detail</p>
@@ -26,7 +26,7 @@ export default function MarketplaceDetailCardComponent({
       <div className="flex flex-row w-full justify-start items-center">
         <p className="font-ibm-plex-sans text-lg text-black">Rating: </p>
         <div className="w-2" />
-        <RatingComponent rating={detailCardData.rating} />
+        <RatingComponent rating={averageRating} />
       </div>
     </div>
   );
