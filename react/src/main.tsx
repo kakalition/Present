@@ -10,6 +10,7 @@ import './index.css';
 import MeditationPage from './features/session/meditation/MeditationPage';
 import BreathingPage from './features/session/breathing/BreathingPage';
 import DetailPage from './features/marketplace/detail/DetailPage';
+import HistoryPage from './features/history/HistoryPage';
 
 axios.defaults.baseURL = 'http://localhost';
 axios.defaults.withCredentials = true;
@@ -22,11 +23,19 @@ function EmergencyOut() {
   return <div />;
 }
 
+function Empty() {
+  return (
+    <div className="flex justify-center items-center w-screen h-screen bg-gray-800" />
+  );
+}
+
 ReactDOM.createRoot(document.getElementById('root') as Element).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
+        <Route path="/empty" element={<Empty />} />
+        <Route path="/history" element={<HistoryPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/home" element={<HomePage />} />
