@@ -40,7 +40,7 @@ export default function DetailPage() {
   }, []);
 
   return (
-    <div className="w-screen min-h-screen flex flex-col bg-web-bg">
+    <div className="flex flex-col w-screen min-h-screen bg-web-bg">
       <MarketplaceDetailHeaderComponent title={detailData.name} />
       <MarketplaceDetailContentComponent
         description={detailData.description}
