@@ -1,6 +1,6 @@
 export enum SessionType {
-  Meditation,
-  Breathing,
+  Meditation = 'Meditation',
+  Breathing = 'Breathing',
 }
 
 export type DummyType = {

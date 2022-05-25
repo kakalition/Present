@@ -8,9 +8,9 @@ import HistoryTileGenerator from './utils/HistoryTileGenerator';
 
 const dummyData: DummyType[] = [
   { name: 'Body Scan', type: SessionType.Meditation, timestamp: 1653451961000 },
-  { name: 'Calmness Meditation', type: SessionType.Meditation, timestamp: 1653451661000 },
+  { name: 'Calmness Meditation', type: SessionType.Breathing, timestamp: 1653451661000 },
   { name: 'Box Breathing', type: SessionType.Breathing, timestamp: 1653365261000 },
-  { name: 'Fire Breathing', type: SessionType.Breathing, timestamp: 1653278861000 },
+  { name: 'Fire Breathing', type: SessionType.Meditation, timestamp: 1653278861000 },
 ];
 
 const formattedList = _(dummyData)
@@ -30,7 +30,7 @@ export default function HistoryPage() {
   return (
     <div className="flex flex-col items-center w-screen h-screen">
       <UIShellComponent username="Kaka" />
-      <div className="flex flex-col p-8 w-full h-full">
+      <div className="flex flex-col py-4 px-16 w-full h-full">
         {historyComponentList}
       </div>
     </div>
