@@ -1,23 +1,30 @@
+import _ from 'lodash';
 import {
   useEffect, useState,
 } from 'react';
 import UIShellComponent from '../../common-component/UIShellComponent';
-import { DummyType } from './typedefs/DummyType';
+import { DummyType, SessionType } from './typedefs/DummyType';
 import HistoryTileGenerator from './utils/HistoryTileGenerator';
 
 const dummyData: DummyType[] = [
-  { name: 'A', timestamp: 1653451661000 },
-  { name: 'AB', timestamp: 1653451961000 },
-  { name: 'B', timestamp: 1653365261000 },
-  { name: 'C', timestamp: 1653278861000 },
+  { name: 'Body Scan', type: SessionType.Meditation, timestamp: 1653451961000 },
+  { name: 'Calmness Meditation', type: SessionType.Meditation, timestamp: 1653451661000 },
+  { name: 'Box Breathing', type: SessionType.Breathing, timestamp: 1653365261000 },
+  { name: 'Fire Breathing', type: SessionType.Breathing, timestamp: 1653278861000 },
 ];
 
-const sortedDummyData = dummyData.sort((a, b) => b.timestamp - a.timestamp);
+const formattedList = _(dummyData)
+  .sort((a, b) => a.timestamp - b.timestamp)
+  .groupBy((v) => new Date(v.timestamp).getDate())
+  .map((value) => value)
+  .reverse()
+  .flatten()
+  .value();
 
 export default function HistoryPage() {
   const [historyComponentList, setHistoryComponentList] = useState<JSX.Element[]>();
   useEffect(() => {
-    setHistoryComponentList(HistoryTileGenerator(sortedDummyData));
+    setHistoryComponentList(HistoryTileGenerator(formattedList));
   }, []);
 
   return (
