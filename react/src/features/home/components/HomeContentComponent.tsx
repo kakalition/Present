@@ -17,7 +17,7 @@ export default function HomeContentComponent({
   ));
 
   return (
-    <div className="grid grid-cols-4 gap-4 px-16 w-full">
+    <div className="grid grid-cols-4 gap-4 px-24 w-full">
       {content}
     </div>
   );

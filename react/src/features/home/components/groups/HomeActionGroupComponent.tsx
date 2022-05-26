@@ -8,7 +8,7 @@ type Props = {
 
 export default function HomeActionGroupComponent({ onMeditationClick, onBreathingClick }: Props) {
   return (
-    <div className="flex flex-row items-center px-16 w-full h-16">
+    <div className="flex flex-row items-center px-24 w-full h-16">
       <div className="basis-[60%] h-full"><SearchBarComponent /></div>
       <div className="w-8" />
       <div className="basis-[18%] h-full">

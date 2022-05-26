@@ -76,7 +76,7 @@ export default function FilterGroupComponent({
   });
 
   return (
-    <div className="flex flex-row justify-between items-center px-16 w-full">
+    <div className="flex flex-row justify-between items-center px-24 w-full">
       <ResultTextComponent itemName={itemName} total={totalFound} />
       {popupComponent}
     </div>
