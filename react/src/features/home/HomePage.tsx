@@ -40,7 +40,7 @@ export default function HomePage(): JSX.Element {
 
   const modal = useMemo(() => {
     if (showMeditationModal) {
-      return <NewMeditationModalComponent />;
+      return <NewMeditationModalComponent onCancelClick={() => setShowMeditationModal(false)} />;
     }
     if (showBreathingModal) {
       return <NewBreathingModalComponent onCancel={() => setShowBreathingModal(false)} />;

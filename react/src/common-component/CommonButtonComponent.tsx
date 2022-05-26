@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { MouseEventHandler } from 'react';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'white-tertiary' | 'ghost';
 
@@ -9,7 +9,7 @@ type Props = {
   fillY?: boolean,
   icon?: JSX.Element,
   iconAdjustment?: string,
-  onClickCallback: (e: SyntheticEvent) => void,
+  onClickCallback: MouseEventHandler<HTMLButtonElement>,
   padding?: string,
   text: string,
   textSize?: string,
