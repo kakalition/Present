@@ -19,6 +19,10 @@ return new class extends Migration
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
+      $table->foreignId('saved_by_id')
+        ->references('id')
+        ->on('users')
+        ->onDelete('cascade');
       $table->string('name');
       $table->string('interval_json');
       $table->string('short_description');
@@ -26,13 +30,6 @@ return new class extends Migration
       $table->date('published_date');
       $table->bigInteger('total_saved');
       $table->timestamps();
-    });
-
-    Schema::table('users', function (Blueprint $table) {
-      $table->foreignId('saved_breath')
-        ->references('id')
-        ->on('breaths')
-        ->onDelete('cascade');
     });
   }
 

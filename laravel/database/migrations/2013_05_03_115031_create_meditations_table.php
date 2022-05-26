@@ -19,19 +19,16 @@ return new class extends Migration
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
+      $table->foreignId('saved_by_id')
+        ->references('id')
+        ->on('users')
+        ->onDelete('cascade');
       $table->string('name');
       $table->string('file_path');
       $table->string('short_description');
       $table->date('published_date');
       $table->bigInteger('total_saved');
       $table->timestamps();
-    });
-
-    Schema::table('users', function (Blueprint $table) {
-      $table->foreignId('saved_meditation')
-        ->references('id')
-        ->on('meditations')
-        ->onDelete('cascade');
     });
   }
 
