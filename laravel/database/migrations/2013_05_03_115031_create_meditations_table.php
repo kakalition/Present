@@ -22,8 +22,8 @@ return new class extends Migration
       $table->string('name');
       $table->string('file_path');
       $table->string('short_description');
-      $table->date('published_date');
-      $table->bigInteger('total_saved');
+      $table->date('published_date')->nullable();
+      $table->bigInteger('total_saved')->nullable();
       $table->timestamps();
     });
   }

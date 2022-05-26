@@ -11,6 +11,8 @@ class Meditation extends Model
 {
   use HasFactory;
 
+  protected $fillable = ['author_id', 'name', 'file_path', 'short_description'];
+
   public function author()
   {
     return $this->belongsTo(User::class, 'author_id');

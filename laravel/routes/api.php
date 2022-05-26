@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MeditationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,8 @@ Route::get('/getUser', function (Request $request) {
 });
 
 Route::get('/stubget', [HomeController::class, 'stub']);
+Route::get('/test', function(Request $request) {
+  return Auth::user();
+});
+
+Route::post('/newMeditation', [MeditationController::class, 'new']);

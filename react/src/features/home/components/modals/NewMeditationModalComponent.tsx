@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { MouseEventHandler, useState } from 'react';
 import CommonButtonComponent from '../../../../common-component/CommonButtonComponent';
 import XIcon from '../../../../common-component/icons/XIcon';
@@ -25,6 +26,18 @@ export default function NewMeditationModalComponent({
     e.preventDefault();
     (document.getElementById('new-meditation-form') as HTMLFormElement).reset();
     onCancelClick();
+  };
+
+  const onSubmitMeditation: MouseEventHandler<HTMLButtonElement> = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const formData = new FormData(document.getElementById('new-meditation-form') as HTMLFormElement);
+    axios
+      .post('/api/newMeditation', formData)
+      .then((value) => {
+        if (value.status === 200 || value.status === 201) {
+          onCancelClick();
+        } else console.log(value);
+      });
   };
 
   return (
@@ -76,7 +89,7 @@ export default function NewMeditationModalComponent({
         </div>
         <div className="w-1/2 h-full">
           <CommonButtonComponent
-            onClickCallback={() => console.log('implement')}
+            onClickCallback={onSubmitMeditation}
             buttonType="primary"
             text="Submit"
             padding="px-6"

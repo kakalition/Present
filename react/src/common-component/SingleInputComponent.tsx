@@ -33,8 +33,8 @@ export default function SingleInputComponent({
       <div className="flex justify-between items-center w-full">
         <label
           htmlFor={id}
-          className="font-ibm-plex-sans text-base text-black
-          md:text-lg"
+          className="text-base text-black md:text-lg
+          font-ibm-plex-sans"
         >
           {label}
         </label>
