@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Comment;
+use App\Models\BreathComment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +17,6 @@ class Breath extends Model
 
   public function comments()
   {
-    return $this->hasMany(Comment::class);
+    return $this->hasMany(BreathComment::class);
   }
 }

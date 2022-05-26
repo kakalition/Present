@@ -19,10 +19,6 @@ return new class extends Migration
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
-      $table->foreignId('saved_by_id')
-        ->references('id')
-        ->on('users')
-        ->onDelete('cascade');
       $table->string('name');
       $table->string('file_path');
       $table->string('short_description');

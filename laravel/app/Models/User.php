@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Meditation;
+use App\Models\SavedMeditation;
 use App\Models\Breath;
+use App\Models\SavedBreath;
 use App\Models\History;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -47,7 +49,7 @@ class User extends Authenticatable
 
   public function savedMeditation()
   {
-    return $this->hasMany(Meditation::class, 'saved_by_id');
+    return $this->hasMany(SavedMeditation::class, 'meditation_id');
   }
 
   public function createdMeditation()
@@ -57,7 +59,7 @@ class User extends Authenticatable
 
   public function savedBreathing()
   {
-    return $this->hasMany(Breath::class, 'saved_by_id');
+    return $this->hasMany(SavedBreath::class, 'breath_id');
   }
 
   public function createdBreathing()
