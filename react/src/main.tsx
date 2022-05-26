@@ -12,6 +12,7 @@ import BreathingPage from './features/session/breathing/BreathingPage';
 import DetailPage from './features/marketplace/detail/DetailPage';
 import HistoryPage from './features/history/HistoryPage';
 import MarketplacePage from './features/marketplace/root/MarketplacePage';
+import MarketplaceInDetailPage from './features/marketplace/in-category/MarketplaceInDetailPage';
 
 axios.defaults.baseURL = 'http://localhost';
 axios.defaults.withCredentials = true;
@@ -43,6 +44,7 @@ ReactDOM.createRoot(document.getElementById('root') as Element).render(
         <Route path="/meditation" element={<MeditationPage />} />
         <Route path="/breathing" element={<BreathingPage />} />
         <Route path="/marketplace" element={<MarketplacePage />} />
+        <Route path="/marketplace/category" element={<MarketplaceInDetailPage />} />
         <Route path="/marketplace/detail" element={<DetailPage />} />
         <Route path="/out" element={<EmergencyOut />} />
       </Routes>

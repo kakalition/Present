@@ -14,7 +14,7 @@ export default function MarketplaceSectionComponent({
     <div className="flex flex-col w-full">
       <h2 className="text-4xl font-semibold text-black font-ibm-plex-sans">{title}</h2>
       <div className="h-6" />
-      <div className="grid grid-cols-6 gap-4 w-full">
+      <div className="grid grid-cols-6 gap-6 w-full">
         {elements}
         <button
           aria-label="more"
