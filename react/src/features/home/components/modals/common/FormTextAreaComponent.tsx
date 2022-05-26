@@ -1,4 +1,6 @@
-export default function FormTextAreaComponent({ id }: { id: string }) {
+export default function FormTextAreaComponent({
+  id, placeholder,
+}: { id: string, placeholder: string }) {
   return (
     <label htmlFor="description" className="flex flex-col items-start text-base text-black md:text-lg font-ibm-plex-sans">
       Description
@@ -8,6 +10,7 @@ export default function FormTextAreaComponent({ id }: { id: string }) {
         id={id}
         name={id}
         rows={4}
+        placeholder={placeholder}
       />
     </label>
   );

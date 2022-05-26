@@ -6,7 +6,8 @@ import FileInputComponent from './common/FileInputComponent';
 import FormTextAreaComponent from './common/FormTextAreaComponent';
 
 export default function NewMeditationModalComponent() {
-  const [fileName, setFileName] = useState('');
+  const [fileName, setFileName] = useState('non');
+  const [fileSize, setFileSize] = useState(0);
 
   function onFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const target = e.currentTarget;
@@ -14,6 +15,7 @@ export default function NewMeditationModalComponent() {
     if (target.files === null) return;
     if (target.files.length !== 0) {
       setFileName(target.files[0].name);
+      setFileSize(target.files[0].size);
     }
   }
 
@@ -28,7 +30,7 @@ export default function NewMeditationModalComponent() {
         <form className="w-full h-fit">
           <SingleInputComponent id="title" label="Title" placeholder="Stress Relief Meditation" inputType="text" />
           <div className="h-4" />
-          <FormTextAreaComponent id="description" />
+          <FormTextAreaComponent id="description" placeholder="A soothing meditation.." />
           <div className="h-6" />
           <p className="flex flex-col items-start text-lg font-medium text-black font-ibm-plex-sans">Upload file</p>
           <p className="flex flex-col items-start text-lg text-black font-ibm-plex-sans">Max file size is 10 MB. Supported file types are .mp3, .aac, and .flac.</p>
@@ -39,8 +41,9 @@ export default function NewMeditationModalComponent() {
             />
           </div>
           <div className="h-2" />
-          <div className={`${fileName === '' ? '' : 'p-2 bg-slate-200'}`}>
+          <div className={`${fileName === '' || fileSize === 0 ? 'hidden' : 'p-2 bg-slate-200 flex flex-row items-center justify-between w-full'}`}>
             <p>{fileName}</p>
+            <p>{`${(fileSize / 1000000).toPrecision(2)} MB`}</p>
           </div>
         </form>
       </div>
