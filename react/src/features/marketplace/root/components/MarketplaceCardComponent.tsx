@@ -3,7 +3,7 @@ export default function MarketplaceCardComponent({
 }: { text: string, onClick: () => void }) {
   return (
     <button
-      className="flex flex-row justify-start items-end pb-6 h-96 bg-gray-200"
+      className="flex flex-row justify-start items-end pb-6 h-96 bg-gray-100"
       type="button"
       onClick={onClick}
     >

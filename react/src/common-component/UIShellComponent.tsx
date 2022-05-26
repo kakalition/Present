@@ -17,7 +17,7 @@ export default function UIShellComponent({ username }: Props) {
   const notCurrentPageClass = 'font-ibm-plex-sans text-lg text-slate-400';
 
   return (
-    <div className="flex relative justify-between items-center px-16 w-full bg-ui-shell">
+    <div className="flex relative justify-between items-center px-28 w-full bg-ui-shell">
 
       <div className="flex items-center">
         <button type="button">

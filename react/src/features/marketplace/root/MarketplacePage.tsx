@@ -11,7 +11,7 @@ export default function MarketplacePage() {
     <div className="flex flex-col w-screen min-h-screen">
       <UIShellComponent username="Kaka" />
       <div className="h-12" />
-      <div id="content" className="flex flex-col justify-start items-start px-16 pb-16 w-full h-full ">
+      <div id="content" className="flex flex-col justify-start items-start px-28 pb-16 w-full h-full ">
         <MarketplaceTabComponent
           activeTab={activeTab}
           onMeditationTabClick={() => setActiveTab(MarketplaceTabEnum.Meditation)}
