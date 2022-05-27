@@ -1,4 +1,6 @@
-import { useMemo } from 'react';
+import axios from 'axios';
+import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CarbonChipComponent from '../../../common-component/CarbonChipComponent';
 import CommonButtonComponent from '../../../common-component/CommonButtonComponent';
 import RightArrowIcon from '../../../common-component/icons/RightArrrowIcon';
@@ -7,15 +9,23 @@ type Props = {
   title: string,
   tag: string,
   description: string,
+  sessionDetail: { id: number, type: string }
 };
 
 export default function ItemTileComponent({
-  title, tag, description,
+  title, tag, description, sessionDetail,
 }: Props) {
+  const navigateTo = useNavigate();
   const trimmedDescription = useMemo(() => {
     if (description !== null || description !== undefined) return `${description?.substring(0, 100)}...` ?? '';
     return '';
   }, [description]);
+
+  const onClick: React.MouseEventHandler = (e) => {
+    e.preventDefault();
+    axios.post('/api/setSessionCookie', { id: sessionDetail.id, type: sessionDetail.type });
+    navigateTo('/meditation');
+  };
 
   return (
     <div className="flex flex-col justify-between items-start p-8 w-full h-full bg-white">
@@ -29,7 +39,7 @@ export default function ItemTileComponent({
       <div className="h-4" />
       <CommonButtonComponent
         buttonType="tertiary"
-        onClickCallback={() => console.log('TOOD: Change this with actual implementation.')}
+        onClickCallback={onClick}
         text="Start session"
         textSize="text-base"
         icon={<RightArrowIcon />}

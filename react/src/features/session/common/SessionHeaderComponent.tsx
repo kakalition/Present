@@ -1,11 +1,11 @@
 import LeftIcon from '../../../common-component/icons/LeftIcon';
 
-export default function Header() {
+export default function Header({ title }: { title: string }) {
   return (
-    <div className="flex w-full flex-row z-[1] items-center">
-      <div className="h-12 w-12 stroke-white stroke-[3px]"><LeftIcon /></div>
-      <h1 className="font-poppins font-bold text-white text-4xl text-center w-full">Calmness Meditation</h1>
-      <div className="h-12 w-12" />
+    <div className="flex z-[1] flex-row items-center w-full">
+      <div className="w-12 h-12 stroke-white stroke-[3px]"><LeftIcon /></div>
+      <h1 className="w-full text-4xl font-bold text-center text-white font-poppins">{title}</h1>
+      <div className="w-12 h-12" />
     </div>
   );
 }

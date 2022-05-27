@@ -16,10 +16,11 @@ export default function HomeContentComponent({
     const temporary: JSX.Element[] = [];
     temporary?.push(...receivedData.meditations.map((element: any) => (
       <ItemTileComponent
-        key={element.description}
+        key={element.id}
         title={element.title}
         tag="Meditation"
         description={element.description}
+        sessionDetail={{ id: element.id, type: 'Meditation' }}
       />
     )));
 
@@ -29,6 +30,7 @@ export default function HomeContentComponent({
         title={element.title}
         tag="Breathing Exercise"
         description={element.description}
+        sessionDetail={{ id: element.id, type: 'Breathing' }}
       />
     )));
     return temporary;
