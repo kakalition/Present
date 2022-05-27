@@ -4,10 +4,7 @@ export default function AudioTracker({
   currentDuration, duration,
 }: { currentDuration: number, duration: number }) {
   const roundedCurrentDuration = Math.round(currentDuration);
-  const w = `${(currentDuration / duration) * 100}%`;
-  useEffect(() => {
-    console.log(w);
-  }, [w]);
+  const filledWidth = `${(currentDuration / duration) * 100}%`;
 
   return (
     <div className="flex flex-col w-full">
@@ -15,7 +12,7 @@ export default function AudioTracker({
         <div className="absolute w-full h-full bg-slate-600 rounded-full" />
         <div
           className="absolute z-[1] h-full bg-white rounded-full"
-          style={{ width: w }}
+          style={{ width: filledWidth }}
         />
       </div>
       <div className="h-4" />

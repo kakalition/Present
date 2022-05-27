@@ -57,7 +57,7 @@ export default function MeditationPage() {
       <div className="absolute w-full h-full bg-center bg-cover brightness-50" style={{ backgroundImage: 'url(assets/forest2.jpg)' }} />
       <div className="flex z-[1] flex-col justify-between items-center p-8 w-full h-full">
         <SessionHeaderComponent title={meditationData?.title ?? ''} />
-        <PlayButtonComponent onClick={onClick} />
+        <PlayButtonComponent onClick={onClick} isCurrentlyPlaying={currentlyPlaying} />
         <div className="hidden">
           <audio id="audio" key={meditationData.file_path}>
             <source src={`http://localhost/storage/${meditationData.file_path}`} />
