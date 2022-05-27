@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Meditation;
+use App\Models\SavedMeditation;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StubCard
 {
@@ -20,6 +24,16 @@ class StubCard
 
 class HomeController extends Controller
 {
+  public function getAllSaved(Request $request)
+  {
+    $meditations = User::where('id', Auth::id())
+      ->get()[0]
+      ->savedMeditation;
+    return json_encode([
+      'meditations' => $meditations,
+      'breaths' => $meditations
+    ]);
+  }
   public function stub(Request $request)
   {
 

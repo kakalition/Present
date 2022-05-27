@@ -13,10 +13,17 @@ import AuthWrapper from '../../common-component/AuthWrapper';
 import useProtectedRoute from '../../utils/hooks/useProtectedRoute';
 import { FilterPopupStates } from './typedef/FilterTypeDef';
 
+type ReceivedData = {
+  meditations: any[],
+  breaths: any[],
+};
+
 export default function HomePage(): JSX.Element {
   const user = useProtectedRoute();
 
-  const [receivedData, setReceivedData] = useState([]);
+  const [receivedData, setReceivedData] = useState<ReceivedData>(
+    { meditations: [], breaths: [] },
+  );
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
 
@@ -34,13 +41,15 @@ export default function HomePage(): JSX.Element {
 
   const onSubmitFilter = useCallback((params: FilterPopupStates) => {
     axios
-      .get('/api/stubget', { params })
-      .then((response) => setReceivedData(Object.values(response.data)));
+      .get('/api/getAllSaved', { params })
+      .then((response) => {
+        setReceivedData(response.data);
+      });
   }, []);
 
   const modal = useMemo(() => {
     if (showMeditationModal) {
-      return <NewMeditationModalComponent />;
+      return <NewMeditationModalComponent onCancelClick={() => setShowMeditationModal(false)} />;
     }
     if (showBreathingModal) {
       return <NewBreathingModalComponent onCancel={() => setShowBreathingModal(false)} />;
@@ -58,7 +67,7 @@ export default function HomePage(): JSX.Element {
       </div>
       <div className="flex overflow-x-clip flex-col items-center w-full min-h-screen bg-web-bg">
         <UIShellComponent username={user?.name ?? ''} />
-        <div className="h-8" />
+        <div className="h-12" />
         <HomeActionGroupComponent
           onMeditationClick={() => setShowMeditationModal(true)}
           onBreathingClick={() => setShowBreathingModal(true)}

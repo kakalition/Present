@@ -11,6 +11,7 @@ export default function ResultTextComponent({
   return (
     <h3 className="text-base text-black font-ibm-plex-sans">
       Showing
+      {' '}
       {total}
       {' '}
       {itemName}

@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,14 +13,18 @@ return new class extends Migration
    */
   public function up()
   {
-    Schema::create('histories', function (Blueprint $table) {
+    Schema::create('breaths', function (Blueprint $table) {
       $table->id();
-      $table->foreignId('user_id')
+      $table->foreignId('author_id')
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
       $table->string('name');
-      $table->string('session_type');
+      $table->string('interval_json');
+      $table->string('short_description');
+      $table->string('author_name');
+      $table->date('published_date');
+      $table->bigInteger('total_saved');
       $table->timestamps();
     });
   }
@@ -33,6 +36,6 @@ return new class extends Migration
    */
   public function down()
   {
-    Schema::dropIfExists('histories');
+    Schema::dropIfExists('breaths');
   }
 };
