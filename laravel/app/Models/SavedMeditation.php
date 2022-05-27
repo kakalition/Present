@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SavedMeditation extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $fillable = ['user_id', 'meditation_id'];
 }
