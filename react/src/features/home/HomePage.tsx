@@ -13,10 +13,17 @@ import AuthWrapper from '../../common-component/AuthWrapper';
 import useProtectedRoute from '../../utils/hooks/useProtectedRoute';
 import { FilterPopupStates } from './typedef/FilterTypeDef';
 
+type ReceivedData = {
+  meditations: any[],
+  breaths: any[],
+};
+
 export default function HomePage(): JSX.Element {
   const user = useProtectedRoute();
 
-  const [receivedData, setReceivedData] = useState([]);
+  const [receivedData, setReceivedData] = useState<ReceivedData>(
+    { meditations: [], breaths: [] },
+  );
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
 
@@ -36,8 +43,7 @@ export default function HomePage(): JSX.Element {
     axios
       .get('/api/getAllSaved', { params })
       .then((response) => {
-        console.log(Object.values(response.data));
-        setReceivedData(Object.values(response.data));
+        setReceivedData(response.data);
       });
   }, []);
 

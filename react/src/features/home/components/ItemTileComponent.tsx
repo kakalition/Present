@@ -22,7 +22,7 @@ export default function ItemTileComponent({
       <div>
         <h2 className="text-4xl font-semibold text-black font-ibm-plex-sans">{title}</h2>
         <div className="h-3" />
-        <CarbonChipComponent text={tag} />
+        <CarbonChipComponent text={tag} bgClass={tag === 'Meditation' ? 'bg-green-200' : 'bg-orange-200'} />
         <div className="h-3" />
         <p className="text-base leading-tight text-slate-700 font-ibm-plex-sans">{trimmedDescription}</p>
       </div>

@@ -29,7 +29,10 @@ class HomeController extends Controller
     $meditations = User::where('id', Auth::id())
       ->get()[0]
       ->savedMeditation;
-    return json_encode($meditations);
+    return json_encode([
+      'meditations' => $meditations,
+      'breaths' => $meditations
+    ]);
   }
   public function stub(Request $request)
   {
