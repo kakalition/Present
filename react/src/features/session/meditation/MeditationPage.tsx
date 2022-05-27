@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import SessionHeaderComponent from '../common/SessionHeaderComponent';
 import AudioTrackerComponent from './components/AudioTrackerComponent';
 import PlayButtonComponent from './components/PlayButtonComponent';
@@ -11,6 +11,7 @@ type MeditationData = {
 
 export default function MeditationPage() {
   const [meditationData, setMeditationData] = useState<MeditationData>({ title: '', file_path: '' });
+  const [currentlyPlaying, setCurrentlyPlaying] = useState(false);
 
   // Initial fetch
   useEffect(() => {
@@ -20,6 +21,19 @@ export default function MeditationPage() {
       });
   }, []);
 
+  const onClick: React.MouseEventHandler = (e) => {
+    e.preventDefault();
+
+    const element = document.getElementById('audio') as HTMLMediaElement;
+    if (!currentlyPlaying) {
+      element.play();
+      setCurrentlyPlaying(true);
+    } else {
+      element.pause();
+      setCurrentlyPlaying(false);
+    }
+  };
+
   return (
     <div
       className="flex w-screen h-screen"
@@ -27,10 +41,12 @@ export default function MeditationPage() {
       <div className="absolute w-full h-full bg-center bg-cover brightness-50" style={{ backgroundImage: 'url(assets/forest2.jpg)' }} />
       <div className="flex z-[1] flex-col justify-between items-center p-8 w-full h-full">
         <SessionHeaderComponent title={meditationData?.title ?? ''} />
-        <PlayButtonComponent />
-        <audio controls key={meditationData.file_path}>
-          <source src={`http://localhost/storage/${meditationData.file_path}`} />
-        </audio>
+        <PlayButtonComponent onClick={onClick} />
+        <div className="hidden">
+          <audio id="audio" key={meditationData.file_path}>
+            <source src={`http://localhost/storage/${meditationData.file_path}`} />
+          </audio>
+        </div>
         <AudioTrackerComponent />
       </div>
     </div>
