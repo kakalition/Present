@@ -12,6 +12,16 @@ type MeditationData = {
 export default function MeditationPage() {
   const [meditationData, setMeditationData] = useState<MeditationData>({ title: '', file_path: '' });
   const [currentlyPlaying, setCurrentlyPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const audioElement = document.getElementById('audio') as HTMLMediaElement;
+
+  useEffect(() => {
+    const listener = () => setCurrentTime(audioElement?.currentTime ?? 0);
+
+    audioElement?.addEventListener('timeupdate', listener);
+    return () => audioElement?.removeEventListener('timeupdate', listener);
+  }, [audioElement]);
 
   // Initial fetch
   useEffect(() => {
@@ -24,15 +34,21 @@ export default function MeditationPage() {
   const onClick: React.MouseEventHandler = (e) => {
     e.preventDefault();
 
-    const element = document.getElementById('audio') as HTMLMediaElement;
     if (!currentlyPlaying) {
-      element.play();
+      audioElement.play();
       setCurrentlyPlaying(true);
     } else {
-      element.pause();
+      audioElement.pause();
       setCurrentlyPlaying(false);
     }
   };
+
+  const audioTrackerElement = (
+    <AudioTrackerComponent
+      currentDuration={currentTime}
+      duration={audioElement?.duration ?? 0}
+    />
+  );
 
   return (
     <div
@@ -47,7 +63,7 @@ export default function MeditationPage() {
             <source src={`http://localhost/storage/${meditationData.file_path}`} />
           </audio>
         </div>
-        <AudioTrackerComponent />
+        {audioTrackerElement}
       </div>
     </div>
   );
