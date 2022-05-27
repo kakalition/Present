@@ -26,7 +26,8 @@ Route::get('/getUser', function (Request $request) {
 });
 
 Route::get('/stubget', [HomeController::class, 'stub']);
-Route::get('/test', function(Request $request) {
+Route::get('/getAllSaved', [HomeController::class, 'getAllSaved']);
+Route::get('/test', function (Request $request) {
   return Auth::user();
 });
 

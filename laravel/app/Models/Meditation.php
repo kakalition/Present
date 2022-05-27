@@ -11,7 +11,7 @@ class Meditation extends Model
 {
   use HasFactory;
 
-  protected $fillable = ['author_id', 'name', 'file_path', 'short_description'];
+  protected $fillable = ['author_id', 'title', 'file_path', 'description'];
 
   public function author()
   {
@@ -22,4 +22,5 @@ class Meditation extends Model
   {
     return $this->hasMany(MeditationComment::class);
   }
+
 }

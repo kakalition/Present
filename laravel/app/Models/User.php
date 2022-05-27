@@ -49,7 +49,7 @@ class User extends Authenticatable
 
   public function savedMeditation()
   {
-    return $this->hasMany(SavedMeditation::class, 'meditation_id');
+    return $this->belongsToMany(Meditation::class, 'saved_meditations', 'user_id', 'meditation_id', 'id', 'id');
   }
 
   public function createdMeditation()

@@ -9,10 +9,10 @@ export default function HomeContentComponent({
 }: Props) {
   const content = receivedData.map((element) => (
     <ItemTileComponent
-      key={element.shortDescription}
+      key={element.description}
       title={element.title}
       tag={element.tag}
-      shortDescription={element.shortDescription}
+      description={element.description}
     />
   ));
 

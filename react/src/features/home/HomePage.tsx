@@ -34,8 +34,11 @@ export default function HomePage(): JSX.Element {
 
   const onSubmitFilter = useCallback((params: FilterPopupStates) => {
     axios
-      .get('/api/stubget', { params })
-      .then((response) => setReceivedData(Object.values(response.data)));
+      .get('/api/getAllSaved', { params })
+      .then((response) => {
+        console.log(Object.values(response.data));
+        setReceivedData(Object.values(response.data));
+      });
   }, []);
 
   const modal = useMemo(() => {

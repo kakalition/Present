@@ -19,9 +19,9 @@ return new class extends Migration
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
-      $table->string('name');
+      $table->string('title');
       $table->string('file_path');
-      $table->string('short_description');
+      $table->string('description');
       $table->date('published_date')->nullable();
       $table->bigInteger('total_saved')->nullable();
       $table->timestamps();

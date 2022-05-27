@@ -13,11 +13,10 @@ class MeditationController extends Controller
   {
     $meditation = Meditation::create([
       'author_id' => Auth::id(),
-      'name' => $request->title,
+      'title' => $request->title,
       'file_path' => $request->file('file')->store('meditations'),
-      'short_description' => $request->description
+      'description' => $request->description
     ]);
-
 
     $savedMeditation = SavedMeditation::create([
       'user_id' => Auth::id(),
