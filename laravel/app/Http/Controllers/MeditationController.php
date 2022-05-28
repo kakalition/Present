@@ -25,4 +25,12 @@ class MeditationController extends Controller
 
     return response(json_encode([$meditation, $savedMeditation]));
   }
+
+  public function getMeditation(Request $request)
+  {
+    $temp = json_decode($request->cookie('session_detail'));
+    $meditation = Meditation::where('id', $temp->id)
+      ->get()[0];
+    return $meditation;
+  }
 }

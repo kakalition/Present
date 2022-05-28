@@ -25,8 +25,12 @@ Route::get('/getUser', function (Request $request) {
   return Auth::user();
 });
 
-Route::get('/stubget', [HomeController::class, 'stub']);
 Route::get('/getAllSaved', [HomeController::class, 'getAllSaved']);
+Route::post('/setSessionCookie', [HomeController::class, 'setSessionCookie']);
+
+Route::get('/getMeditation', [MeditationController::class, 'getMeditation']);
+
+Route::get('/stubget', [HomeController::class, 'stub']);
 Route::get('/test', function (Request $request) {
   return Auth::user();
 });

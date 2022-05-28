@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Meditation;
 use App\Models\SavedMeditation;
 use App\Models\User;
+use Illuminate\Cookie\CookieJar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class StubCard
 {
@@ -34,6 +36,16 @@ class HomeController extends Controller
       'breaths' => $meditations
     ]);
   }
+
+  public function setSessionCookie(Request $request)
+  {
+    Cookie::queue(
+      'session_detail',
+      json_encode(['id' => $request->id, 'type' => $request->type]),
+      10
+    );
+  }
+
   public function stub(Request $request)
   {
 

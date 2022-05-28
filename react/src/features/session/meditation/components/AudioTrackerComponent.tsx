@@ -1,14 +1,28 @@
-export default function AudioTracker() {
+import { useEffect } from 'react';
+
+export default function AudioTracker({
+  currentDuration, duration,
+}: { currentDuration: number, duration: number }) {
+  const roundedCurrentDuration = Math.round(currentDuration);
+  const filledWidth = `${(currentDuration / duration) * 100}%`;
+
   return (
-    <div className="w-full flex flex-col">
-      <div className="w-full h-2 relative">
-        <div className="w-full h-full absolute bg-slate-600 rounded-full" />
-        <div className="w-1/2 h-full absolute bg-white z-[1] rounded-full" />
+    <div className="flex flex-col w-full">
+      <div className="relative w-full h-2">
+        <div className="absolute w-full h-full bg-slate-600 rounded-full" />
+        <div
+          className="absolute z-[1] h-full bg-white rounded-full"
+          style={{ width: filledWidth }}
+        />
       </div>
       <div className="h-4" />
-      <div className="w-full h-2 flex flex-row justify-between items-center">
-        <p className="text-white font-poppins text-lg font-semibold">06:12</p>
-        <p className="text-white font-poppins text-lg font-semibold">12:00</p>
+      <div className="flex flex-row justify-between items-center w-full h-2">
+        <p className="text-lg font-semibold text-white font-poppins">
+          {`${(Math.floor(roundedCurrentDuration / 60)).toString().padStart(2, '0')}:${(roundedCurrentDuration % 60).toString().padStart(2, '0')}`}
+        </p>
+        <p className="text-lg font-semibold text-white font-poppins">
+          {`${Math.floor(duration / 60).toString().padStart(2, '0')}:${Math.floor(duration % 60).toString().padStart(2, '0')}`}
+        </p>
       </div>
     </div>
   );
