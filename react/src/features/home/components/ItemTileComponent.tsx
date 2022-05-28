@@ -17,7 +17,9 @@ export default function ItemTileComponent({
 }: Props) {
   const navigateTo = useNavigate();
   const trimmedDescription = useMemo(() => {
-    if (description !== null || description !== undefined) return `${description?.substring(0, 100)}...` ?? '';
+    if (description === null || description === undefined) return '';
+    if (description.length >= 100) return `${description.substring(0, 100)}...`;
+    return description;
     return '';
   }, [description]);
 
