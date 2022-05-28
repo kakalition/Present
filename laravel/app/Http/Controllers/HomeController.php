@@ -31,9 +31,14 @@ class HomeController extends Controller
     $meditations = User::where('id', Auth::id())
       ->get()[0]
       ->savedMeditation;
+
+    $breaths = User::where('id', Auth::id())
+      ->get()[0]
+      ->savedBreathing;
+
     return json_encode([
       'meditations' => $meditations,
-      'breaths' => $meditations
+      'breaths' => $breaths
     ]);
   }
 

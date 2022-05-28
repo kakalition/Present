@@ -11,11 +11,19 @@ class BreathController extends Controller
 {
   public function new(Request $request)
   {
+    $interval_json = json_encode([
+      'repetition' => $request->repetition,
+      'inhale' => $request->inhale,
+      'holdInhale' => $request->holdInhale,
+      'exhale' => $request->exhale,
+      'holdExhale' => $request->holdExhale,
+    ]);
+
     $breath = Breath::create([
       'author_id' => Auth::id(),
       'title' => $request->title,
       'description' => $request->description,
-      'interval_json' => $request->intervalJson,
+      'interval_json' => $interval_json,
     ]);
 
     $savedBreath = SavedBreath::create([

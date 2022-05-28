@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BreathController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MeditationController;
 use Illuminate\Http\Request;
@@ -32,5 +33,5 @@ Route::get('/filter', [HomeController::class, 'filter']);
 Route::get('/getMeditation', [MeditationController::class, 'getMeditation']);
 Route::post('/newMeditation', [MeditationController::class, 'new']);
 
-Route::get('/getBreath', [MeditationController::class, 'getMeditation']);
-Route::post('/newBreath', [MeditationController::class, 'new']);
+Route::get('/getBreath', [BreathController::class, 'getBreath']);
+Route::post('/newBreath', [BreathController::class, 'new']);
