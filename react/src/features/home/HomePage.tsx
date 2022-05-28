@@ -54,14 +54,13 @@ export default function HomePage(): JSX.Element {
       .then((response) => {
         const transformedMeditations = response.data.meditations.map((value: any) => sessionMapper(value, 'Meditation')) as SessionItem[];
         const transformedBreaths = response.data.breaths.map((value: any) => sessionMapper(value, 'Breathing Exercise')) as SessionItem[];
-        const receivedData: ReceivedData = {
+        const localReceivedData: ReceivedData = {
           meditations: transformedMeditations,
           breaths: transformedBreaths,
         };
 
-        setReceivedData(receivedData);
-        setFilteredData(receivedData);
-        console.log(receivedData)
+        setReceivedData(localReceivedData);
+        setFilteredData(localReceivedData);
       });
   }, []);
 
@@ -100,6 +99,18 @@ export default function HomePage(): JSX.Element {
 
   const onSearchTextChange: React.ChangeEventHandler = (e) => {
     const searchText = (e.target as HTMLInputElement).value;
+    const filteredMeditations = receivedData.meditations.filter(
+      (value) => value.title.toLowerCase().includes(searchText.toLowerCase()),
+    );
+    const filteredBreaths = receivedData.breaths.filter(
+      (value) => value.title.toLowerCase().includes(searchText.toLowerCase()),
+    );
+    const localReceivedData: ReceivedData = {
+      meditations: filteredMeditations,
+      breaths: filteredBreaths,
+    };
+
+    setFilteredData(localReceivedData);
   };
 
   const element = (
