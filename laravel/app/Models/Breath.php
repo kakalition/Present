@@ -10,6 +10,8 @@ class Breath extends Model
 {
   use HasFactory;
 
+  protected $fillable = ['author_id', 'title', 'description', 'interval_json'];
+
   public function author()
   {
     return $this->belongsTo(User::class, 'author_id');
