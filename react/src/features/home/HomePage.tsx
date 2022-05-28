@@ -1,4 +1,4 @@
-import {
+import React, {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
 import axios from 'axios';
@@ -24,9 +24,12 @@ export default function HomePage(): JSX.Element {
   const [receivedData, setReceivedData] = useState<ReceivedData>(
     { meditations: [], breaths: [] },
   );
+  const [filteredData, setFilteredData] = useState<ReceivedData>(receivedData);
+
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
 
+  // Modal Effect
   useEffect(() => {
     const escListener = (e: KeyboardEvent) => {
       if ((showMeditationModal || showBreathingModal) && e.key === 'Escape') {
@@ -39,14 +42,7 @@ export default function HomePage(): JSX.Element {
     return () => window.removeEventListener('keydown', escListener);
   }, [showMeditationModal, showBreathingModal]);
 
-  const onSubmitFilter = useCallback((params: FilterPopupStates) => {
-    axios
-      .get('/api/getAllSaved', { params })
-      .then((response) => {
-        setReceivedData(response.data);
-      });
-  }, []);
-
+  // Modal Element
   const modal = useMemo(() => {
     if (showMeditationModal) {
       return <NewMeditationModalComponent onCancelClick={() => setShowMeditationModal(false)} />;
@@ -56,6 +52,19 @@ export default function HomePage(): JSX.Element {
     }
     return <div />;
   }, [showMeditationModal, showBreathingModal]);
+
+  const onSubmitFilter = useCallback((params: FilterPopupStates) => {
+    axios
+      .get('/api/getAllSaved', { params })
+      .then((response) => {
+        setReceivedData(response.data);
+        setFilteredData(response.data);
+      });
+  }, []);
+
+  const onSearchTextChange: React.ChangeEventHandler = (e) => {
+    const searchText = (e.target as HTMLInputElement).value;
+  };
 
   const element = (
     <div className={`relative min-w-full ${showMeditationModal || showBreathingModal ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
@@ -71,6 +80,7 @@ export default function HomePage(): JSX.Element {
         <HomeActionGroupComponent
           onMeditationClick={() => setShowMeditationModal(true)}
           onBreathingClick={() => setShowBreathingModal(true)}
+          onTextChange={onSearchTextChange}
         />
         <div className="h-12" />
         <FilterGroupComponent
@@ -79,7 +89,7 @@ export default function HomePage(): JSX.Element {
           onSubmitFilter={onSubmitFilter}
         />
         <div className="h-6" />
-        <HomeContentComponent receivedData={receivedData} />
+        <HomeContentComponent receivedData={filteredData} />
         <div className="h-12" />
       </div>
     </div>
