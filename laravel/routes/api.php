@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BreathController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MeditationController;
 use Illuminate\Http\Request;
@@ -30,10 +31,7 @@ Route::post('/setSessionCookie', [HomeController::class, 'setSessionCookie']);
 Route::get('/filter', [HomeController::class, 'filter']);
 
 Route::get('/getMeditation', [MeditationController::class, 'getMeditation']);
-
-Route::get('/stubget', [HomeController::class, 'stub']);
-Route::get('/test', function (Request $request) {
-  return Auth::user();
-});
-
 Route::post('/newMeditation', [MeditationController::class, 'new']);
+
+Route::get('/getBreath', [BreathController::class, 'getBreath']);
+Route::post('/newBreath', [BreathController::class, 'new']);

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { useMemo, useState } from 'react';
 import CommonButtonComponent from '../../../../common-component/CommonButtonComponent';
@@ -29,7 +30,7 @@ export default function NewBreathingModalComponent({ onCancel }: { onCancel: () 
       case 1: return () => {
         const element = document.getElementById('test-form') as HTMLFormElement;
         const form = new FormData(element);
-        form.forEach((value, key) => console.log(key, value));
+        axios.post('/api/newBreath', form).then(() => onCancel());
       };
       default: return () => { };
     }
@@ -90,11 +91,11 @@ export default function NewBreathingModalComponent({ onCancel }: { onCancel: () 
             <div className="h-4" />
             <SingleSliderComponent id="inhale" label="Inhale duration (secs)" />
             <div className="h-4" />
-            <SingleSliderComponent id="holdinhale" label="Hold after inhale duration (secs)" />
+            <SingleSliderComponent id="holdInhale" label="Hold after inhale duration (secs)" />
             <div className="h-4" />
             <SingleSliderComponent id="exhale" label="Exhale duration (secs)" />
             <div className="h-4" />
-            <SingleSliderComponent id="holdexhale" label="Hold after exhale duration (secs)" />
+            <SingleSliderComponent id="holdExhale" label="Hold after exhale duration (secs)" />
           </div>
         </form>
         <div className="h-8" />

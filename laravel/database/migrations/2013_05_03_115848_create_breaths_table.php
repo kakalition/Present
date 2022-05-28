@@ -19,12 +19,11 @@ return new class extends Migration
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
-      $table->string('name');
+      $table->string('title');
       $table->string('interval_json');
-      $table->string('short_description');
-      $table->string('author_name');
-      $table->date('published_date');
-      $table->bigInteger('total_saved');
+      $table->string('description');
+      $table->date('published_date')->nullable();
+      $table->bigInteger('total_saved')->nullable();
       $table->timestamps();
     });
   }

@@ -59,7 +59,7 @@ class User extends Authenticatable
 
   public function savedBreathing()
   {
-    return $this->hasMany(SavedBreath::class, 'breath_id');
+    return $this->belongsToMany(Breath::class, 'saved_breaths', 'user_id', 'breath_id', 'id', 'id');
   }
 
   public function createdBreathing()
