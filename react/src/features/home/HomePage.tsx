@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import axios from 'axios';
 
+import { string } from 'prop-types';
 import UIShellComponent from '../../common-component/UIShellComponent';
 import HomeActionGroupComponent from './components/groups/HomeActionGroupComponent';
 import FilterGroupComponent from './components/groups/FilterGroupComponent';
@@ -13,9 +14,16 @@ import AuthWrapper from '../../common-component/AuthWrapper';
 import useProtectedRoute from '../../utils/hooks/useProtectedRoute';
 import { FilterPopupStates } from './typedef/FilterTypeDef';
 
+type SessionItem = {
+  id: number,
+  type: string,
+  title: string,
+  description: string,
+};
+
 type ReceivedData = {
-  meditations: any[],
-  breaths: any[],
+  meditations: SessionItem[],
+  breaths: SessionItem[],
 };
 
 export default function HomePage(): JSX.Element {
@@ -28,6 +36,16 @@ export default function HomePage(): JSX.Element {
 
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
+
+  // Initial Fetch
+  useEffect(() => {
+    axios
+      .get('/api/getAllSaved')
+      .then((response) => {
+        setReceivedData(response.data);
+        setFilteredData(response.data);
+      });
+  }, []);
 
   // Modal Effect
   useEffect(() => {

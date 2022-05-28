@@ -28,11 +28,6 @@ export default function FilterGroupComponent({
     isDescending,
   } as FilterPopupStates), [meditationFilter, breathingFilter, isDescending, currentSort]);
 
-  // Initial Fetch
-  useEffect(() => {
-    onSubmitFilter(params);
-  }, []);
-
   const filterPopupComponentState = useMemo(() => ({
     meditationFilter, breathingFilter, currentSort, isDescending,
   }), [meditationFilter, breathingFilter, currentSort, isDescending]);
