@@ -1,5 +1,5 @@
 import {
-  useCallback, useEffect, useMemo, useState,
+  useCallback, useMemo, useState,
 } from 'react';
 import ComponentWithPopupBuilder from '../../../../common-component/ComponentWithPopupBuilder';
 import FilterButtonComponent from '../FilterButtonComponent';
@@ -27,11 +27,6 @@ export default function FilterGroupComponent({
     currentSort,
     isDescending,
   } as FilterPopupStates), [meditationFilter, breathingFilter, isDescending, currentSort]);
-
-  // Initial Fetch
-  useEffect(() => {
-    onSubmitFilter(params);
-  }, []);
 
   const filterPopupComponentState = useMemo(() => ({
     meditationFilter, breathingFilter, currentSort, isDescending,
