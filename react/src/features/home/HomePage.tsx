@@ -26,6 +26,16 @@ type ReceivedData = {
   breaths: SessionItem[],
 };
 
+function sessionMapper(sessionObject: any, type: string) {
+  const sessionItem: SessionItem = {
+    id: sessionObject.id,
+    type,
+    title: sessionObject.title,
+    description: sessionObject.description,
+  };
+  return sessionItem;
+}
+
 export default function HomePage(): JSX.Element {
   const user = useProtectedRoute();
 
@@ -42,8 +52,16 @@ export default function HomePage(): JSX.Element {
     axios
       .get('/api/getAllSaved')
       .then((response) => {
-        setReceivedData(response.data);
-        setFilteredData(response.data);
+        const transformedMeditations = response.data.meditations.map((value: any) => sessionMapper(value, 'Meditation')) as SessionItem[];
+        const transformedBreaths = response.data.breaths.map((value: any) => sessionMapper(value, 'Breathing Exercise')) as SessionItem[];
+        const receivedData: ReceivedData = {
+          meditations: transformedMeditations,
+          breaths: transformedBreaths,
+        };
+
+        setReceivedData(receivedData);
+        setFilteredData(receivedData);
+        console.log(receivedData)
       });
   }, []);
 
