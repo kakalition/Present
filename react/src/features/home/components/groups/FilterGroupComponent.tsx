@@ -1,5 +1,5 @@
 import {
-  useCallback, useEffect, useMemo, useState,
+  useCallback, useMemo, useState,
 } from 'react';
 import ComponentWithPopupBuilder from '../../../../common-component/ComponentWithPopupBuilder';
 import FilterButtonComponent from '../FilterButtonComponent';

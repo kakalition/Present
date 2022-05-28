@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import axios from 'axios';
 
-import { string } from 'prop-types';
 import UIShellComponent from '../../common-component/UIShellComponent';
 import HomeActionGroupComponent from './components/groups/HomeActionGroupComponent';
 import FilterGroupComponent from './components/groups/FilterGroupComponent';
@@ -13,20 +12,9 @@ import NewBreathingModalComponent from './components/modals/NewBreathingModalCom
 import AuthWrapper from '../../common-component/AuthWrapper';
 import useProtectedRoute from '../../utils/hooks/useProtectedRoute';
 import { FilterPopupStates } from './typedef/FilterTypeDef';
+import { SessionData, SessionItem } from './typedef/SessionData';
 
-type SessionItem = {
-  id: number,
-  type: string,
-  title: string,
-  description: string,
-};
-
-type ReceivedData = {
-  meditations: SessionItem[],
-  breaths: SessionItem[],
-};
-
-function sessionMapper(sessionObject: any, type: string) {
+function jsonSessionToSessionItemMapper(sessionObject: any, type: string) {
   const sessionItem: SessionItem = {
     id: sessionObject.id,
     type,
@@ -36,13 +24,45 @@ function sessionMapper(sessionObject: any, type: string) {
   return sessionItem;
 }
 
+function responseToSessionDataMapper(responseData: any) {
+  const transformedMeditations = responseData.meditations.map(
+    (value: any) => jsonSessionToSessionItemMapper(value, 'Meditation'),
+  ) as SessionItem[];
+  const transformedBreaths = responseData.breaths.map(
+    (value: any) => jsonSessionToSessionItemMapper(value, 'Breathing Exercise'),
+  ) as SessionItem[];
+
+  const localReceivedData: SessionData = {
+    meditations: transformedMeditations,
+    breaths: transformedBreaths,
+  };
+
+  return localReceivedData;
+}
+
+function searchThroughData(searchQuery: string, data: SessionData) {
+  const searchText = searchQuery;
+  const filteredMeditations = data.meditations.filter(
+    (value) => value.title.toLowerCase().includes(searchText.toLowerCase()),
+  );
+  const filteredBreaths = data.breaths.filter(
+    (value) => value.title.toLowerCase().includes(searchText.toLowerCase()),
+  );
+  const localReceivedData: SessionData = {
+    meditations: filteredMeditations,
+    breaths: filteredBreaths,
+  };
+
+  return localReceivedData;
+}
+
 export default function HomePage(): JSX.Element {
   const user = useProtectedRoute();
 
-  const [receivedData, setReceivedData] = useState<ReceivedData>(
+  const [receivedData, setReceivedData] = useState<SessionData>(
     { meditations: [], breaths: [] },
   );
-  const [filteredData, setFilteredData] = useState<ReceivedData>(receivedData);
+  const [filteredData, setFilteredData] = useState<SessionData>(receivedData);
 
   const [showMeditationModal, setShowMeditationModal] = useState(false);
   const [showBreathingModal, setShowBreathingModal] = useState(false);
@@ -52,15 +72,8 @@ export default function HomePage(): JSX.Element {
     axios
       .get('/api/getAllSaved')
       .then((response) => {
-        const transformedMeditations = response.data.meditations.map((value: any) => sessionMapper(value, 'Meditation')) as SessionItem[];
-        const transformedBreaths = response.data.breaths.map((value: any) => sessionMapper(value, 'Breathing Exercise')) as SessionItem[];
-        const localReceivedData: ReceivedData = {
-          meditations: transformedMeditations,
-          breaths: transformedBreaths,
-        };
-
-        setReceivedData(localReceivedData);
-        setFilteredData(localReceivedData);
+        setReceivedData(responseToSessionDataMapper(response.data));
+        setFilteredData(responseToSessionDataMapper(response.data));
       });
   }, []);
 
@@ -90,27 +103,24 @@ export default function HomePage(): JSX.Element {
 
   const onSubmitFilter = useCallback((params: FilterPopupStates) => {
     axios
-      .get('/api/getAllSaved', { params })
+      .get('/api/filter', { params })
       .then((response) => {
-        setReceivedData(response.data);
-        setFilteredData(response.data);
+        const query = (document.getElementById('query') as HTMLInputElement).value;
+        const processedData = searchThroughData(
+          query,
+          responseToSessionDataMapper(response.data),
+        );
+        setReceivedData(processedData);
+        setFilteredData(processedData);
       });
   }, []);
 
   const onSearchTextChange: React.ChangeEventHandler = (e) => {
-    const searchText = (e.target as HTMLInputElement).value;
-    const filteredMeditations = receivedData.meditations.filter(
-      (value) => value.title.toLowerCase().includes(searchText.toLowerCase()),
+    const searchedData = searchThroughData(
+      (e.target as HTMLInputElement).value,
+      receivedData,
     );
-    const filteredBreaths = receivedData.breaths.filter(
-      (value) => value.title.toLowerCase().includes(searchText.toLowerCase()),
-    );
-    const localReceivedData: ReceivedData = {
-      meditations: filteredMeditations,
-      breaths: filteredBreaths,
-    };
-
-    setFilteredData(localReceivedData);
+    setFilteredData(searchedData);
   };
 
   const element = (
