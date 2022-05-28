@@ -132,7 +132,7 @@ export default function HomePage(): JSX.Element {
         <div className="h-12" />
         <FilterGroupComponent
           itemName="Meditation"
-          totalFound={18}
+          totalFound={filteredData.meditations.length + filteredData.breaths.length}
           onSubmitFilter={onSubmitFilter}
         />
         <div className="h-6" />
