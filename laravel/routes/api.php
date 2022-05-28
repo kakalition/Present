@@ -27,6 +27,7 @@ Route::get('/getUser', function (Request $request) {
 
 Route::get('/getAllSaved', [HomeController::class, 'getAllSaved']);
 Route::post('/setSessionCookie', [HomeController::class, 'setSessionCookie']);
+Route::get('/filter', [HomeController::class, 'filter']);
 
 Route::get('/getMeditation', [MeditationController::class, 'getMeditation']);
 
