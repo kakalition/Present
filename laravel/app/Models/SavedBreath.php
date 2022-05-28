@@ -9,5 +9,5 @@ class SavedBreath extends Model
 {
     use HasFactory;
 
-  protected $fillable = ['user_id', 'breaths_id'];
+  protected $fillable = ['user_id', 'breath_id'];
 }
